@@ -1,0 +1,2608 @@
+# Huawei Versatile Routing Platform Software
+# VRP (R) software, Version 8.200 (NetEngine 8000 V800R012C10SPC300)
+# Copyright (C) 2012-2020 Huawei Technologies Co., Ltd.
+# Patch Version: V800R012SPH038
+# 
+# NetEngine 8000 M8 version information:
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+# BKP  version information:
+#   PCB        Version  : CR81BKP08A REV A
+#   IPU  Slot  Quantity : 2
+#   CARD Slot  Quantity : 8
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+# IPU version information:
+# 
+#   StartupTime 2025/12/09   17:28:09
+#   SDRAM Memory Size   : 8192 M bytes
+#   FLASH Memory Size   : 64 M bytes
+#   CFCARD Memory Size  : 4096 M bytes
+#   IPU CR8DIPU480C1 version information
+#   PCB         Version : CR81IPU480AS REV B
+#   EPLD        Version : 104
+#   FPGA        Version : 103
+#   NP          Version : 100  
+#   TM          Version : 100
+#   NSE         Version : NSE REV A
+#   BootROM     Version : 08.99
+#   PIC1: CR5D00LAXF91 version information
+#   StartupTime         : 2025/12/09    17:31:38
+#   PCB Version         : CR51LAXFE0 REV B
+#   EPLD Version        : 107
+#   FPGA Version        : 103
+#   CHIP Version        : 100
+#   BOM Version         : 050
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+# Power version information: 
+# 
+# POWER 11's version information:
+#   PCB     Version : DP32PDC1K6A1 REV B
+# 
+# POWER 12's version information:
+#   PCB     Version : DP32PDC1K6A1 REV B
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+# FAN version information: 
+# 
+# FAN 13's version information:
+#   PCB     Version : CR8MM82FBXC1 REV A
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+# CLK version information:
+# 
+#   StartupTime 2025/12/09   17:28:10
+#   FPGA     Version : 256
+#   DSP      Version : 30309007
+# NetEngine 8000 M8's Device status:
+# -------------------------------------------------------------------------------
+# Slot #   Type    Online     Register     Status     Role   LsId   Primary      
+# -------------------------------------------------------------------------------
+# 1        PIC     Present    Registered   Normal     OTHER  0      NA           
+# 9        IPU     Present    Registered   Normal     MMB    0      Master       
+# 11       PWR     Present    Registered   Normal     OTHER  0      NA           
+# 12       PWR     Present    Registered   Normal     OTHER  0      NA           
+# 13       FAN     Present    Registered   Normal     OTHER  0      NA           
+# 14       CLK     Present    Registered   Normal     OTHER  0      Master       
+# -------------------------------------------------------------------------------
+!Software Version V800R012C10SPC300
+!Last configuration was updated at 2026-01-05 17:51:21-03:00 by pwcomadmin
+!Last configuration was saved at 2026-01-05 17:52:21-03:00
+#
+clock timezone BR minus 03:00:00
+#
+sysname PWCOM-BREJ-BNG-01
+#
+set neid 7dfa1e
+#
+undo FTP server-source all-interface
+undo FTP ipv6 server-source all-interface
+#
+info-center loghost source LoopBack0
+info-center loghost 10.125.40.50 channel 6 level informational port 20000
+#
+service-template template-default0
+#
+service-template template-default1
+#
+service-template template-default2
+#
+service-template template-default3
+#
+service-template template-default4
+#
+ntp-service server disable
+ntp-service ipv6 server disable
+ntp-service server source-interface all disable
+ntp-service ipv6 server source-interface all disable
+ntp-service refclock-master 2
+ntp-service unicast-server 45.171.228.20
+ntp-service unicast-server 200.160.0.8
+ntp-service unicast-server 200.160.7.186
+#
+slot 9
+ ip netstream sampler to slot self
+ ipv6 netstream sampler to slot self
+#
+*slot 10
+* ip netstream sampler to slot self
+* ipv6 netstream sampler to slot self
+#
+vlan batch 68 212 232 to 233 235 to 239 880 1100 1114 1510 1515 1520
+vlan batch 1660 1901
+#
+rsa peer-public-key 10.125.125.2
+ public-key-code begin
+ 3082010A
+  02820101
+    00E36E90 AD85BA7B 812AA7C9 0844A5A2 CE913C11 11734FB2 896B1D6D 703AD767
+    30AC34A6 B7613ECB 96C527E8 BC00D985 46CD6A92 7284E41D BC911975 0E0523ED
+    5C6DB9A7 F3060A82 1EF1183C 46A71BC8 A49409F3 13DB0A7A B8315BAA D6F1C80D
+    1F2DFDBD BE847B05 5C5D6278 C702245E 8CE07EE4 21756AC3 7DE442BE 79538949
+    65333203 BA834211 D11AD30D CEC98FC3 73DC35F0 043F2F2D 81243425 91456935
+    7D9DF1F3 26880DA4 52FC0479 B432BF1C C52B964D D5969778 24D089B7 D7522BD0
+    E5ED418E EBF32485 BACACD2E 5E1B7E30 8E4289B7 06AF7C90 6D833695 9C797259
+    B455AC90 9718B6D0 65D279BE 190F9A4A 73D72D91 33E42D91 1AA08131 95BB0B61
+    C7
+  0203
+    010001
+ public-key-code end
+ peer-public-key end
+#
+rsa peer-public-key 119.8.81.142
+ public-key-code begin
+ 3082020A
+  02820201
+    00ACD471 345F8796 0C5D657B D2AFDE2F 760DE0A1 B2C6D1F7 E4DCE160 8E1BDA6C
+    E10A9DD4 F1AC6AA5 225D3DED 775C8D6F AC234C28 CF28467B A6F797CE DF1E16CF
+    EB6FE272 D16993CC 995EB327 13E13006 2D562C10 F607EBC2 BEBEC10B 9F1FF954
+    0721A480 857D0A71 33706BC4 8EEA115A 944DCA2D 0F4BD07A A0FE5427 5D62E86E
+    7260699E FF71358A DA81E071 0D5CB3B5 3A58A17A 291AFB36 07CB5964 1C92C374
+    B77E2A50 A374FEB9 D1C62649 B1552445 F72323DC AB5CDF10 E3A84506 2C9BDEAB
+    5CA1CEE5 194CB1F9 D0831080 94D55BD8 DDA5F7C4 D18C555B FBE7133C 697DACD5
+    44078E40 AC6A66F0 98C95C97 C2ADA1AF 13B7F092 56B0A936 C2EBA711 50765677
+    EFB3173F FB66600C 49AE1A89 5A7CD37C A378C66F AFDEC96B 3D8CBF83 59431B61
+    449540E0 7800DAC7 28BAADEB 9978362C B7FF4073 1A5E03C3 B716963F 15BCA58F
+    738FFC2E A9C65F65 56562813 EA23CEC8 30CFB2DC 6D349A76 1C498A8A 3CD9D5CA
+    F69975DB 8A04A7FC 3E8C8D3D C1B42A5D 303A77E6 36A66BA8 21D65E8D 2F0A75FC
+    C181F24D 23D76A1D 979C02C0 63F3D7CE DF92091F E165E042 DF5FAD16 BC684520
+    DCD3CDAB 18E73E54 6411B383 2AAD4DB9 426F6EC9 D4F2F2D1 23A991D7 AB9F820D
+    4DFE46AD 4B830C17 B323E3A2 66C615BF DA583B76 2A831A7E 1315CB08 5BBEE5FE
+    8F64A716 AAF62E21 C0DF17D4 90C0EB4E 5B5C4E70 E3BDF23B FDEA130E B2011B37
+    5F
+  0203
+    010001
+ public-key-code end
+ peer-public-key end
+#
+rsa peer-public-key 10.125.125.10
+ public-key-code begin
+ 3082010A
+  02820101
+    00A89B05 33A35CA9 9E4167BD E227D59B 806E3821 804008DE 97FB4E23 12A19F11
+    BA827C15 E91FD2CC 32E03125 65A5A252 D25194D8 9A38EC7C 179F4AEA 2D519153
+    6F81BA29 5AE6141E 5BB40D90 35BC5B7B FBEDA76B AC9638FB 7094B5DB C5ABABC8
+    5A8677F0 739D7B09 79AC3997 AE3AEE81 2446BECD DCCF7269 9CA84919 42A7E5AE
+    59CB4E49 75018C8C D2D49F7C 67648E63 AE6D311F AE45EDBA B57DA70A 35365FAA
+    B760B196 5A863DA5 08332A3E BBDB7CA3 16DFF1C7 639EA243 B719467B F64BFFCB
+    82FDDD6E A0ECA662 8D56E153 508F6365 BD6BE9B5 77A9089B 599288FC 427836DF
+    B262C6E7 DC7B4FC7 51E40400 069D26AE 9F5DDE8A 1BFE6722 DC3C36A9 B81F9955
+    2B
+  0203
+    010001
+ public-key-code end
+ peer-public-key end
+#
+rsa peer-public-key 10.125.125.18
+ public-key-code begin
+ 3082010A
+  02820101
+    00E36E90 AD85BA7B 812AA7C9 0844A5A2 CE913C11 11734FB2 896B1D6D 703AD767
+    30AC34A6 B7613ECB 96C527E8 BC00D985 46CD6A92 7284E41D BC911975 0E0523ED
+    5C6DB9A7 F3060A82 1EF1183C 46A71BC8 A49409F3 13DB0A7A B8315BAA D6F1C80D
+    1F2DFDBD BE847B05 5C5D6278 C702245E 8CE07EE4 21756AC3 7DE442BE 79538949
+    65333203 BA834211 D11AD30D CEC98FC3 73DC35F0 043F2F2D 81243425 91456935
+    7D9DF1F3 26880DA4 52FC0479 B432BF1C C52B964D D5969778 24D089B7 D7522BD0
+    E5ED418E EBF32485 BACACD2E 5E1B7E30 8E4289B7 06AF7C90 6D833695 9C797259
+    B455AC90 9718B6D0 65D279BE 190F9A4A 73D72D91 33E42D91 1AA08131 95BB0B61
+    C7
+  0203
+    010001
+ public-key-code end
+ peer-public-key end
+#
+rsa peer-public-key 10.255.255.80
+ public-key-code begin
+ 3082010A
+  02820101
+    00E36E90 AD85BA7B 812AA7C9 0844A5A2 CE913C11 11734FB2 896B1D6D 703AD767
+    30AC34A6 B7613ECB 96C527E8 BC00D985 46CD6A92 7284E41D BC911975 0E0523ED
+    5C6DB9A7 F3060A82 1EF1183C 46A71BC8 A49409F3 13DB0A7A B8315BAA D6F1C80D
+    1F2DFDBD BE847B05 5C5D6278 C702245E 8CE07EE4 21756AC3 7DE442BE 79538949
+    65333203 BA834211 D11AD30D CEC98FC3 73DC35F0 043F2F2D 81243425 91456935
+    7D9DF1F3 26880DA4 52FC0479 B432BF1C C52B964D D5969778 24D089B7 D7522BD0
+    E5ED418E EBF32485 BACACD2E 5E1B7E30 8E4289B7 06AF7C90 6D833695 9C797259
+    B455AC90 9718B6D0 65D279BE 190F9A4A 73D72D91 33E42D91 1AA08131 95BB0B61
+    C7
+  0203
+    010001
+ public-key-code end
+ peer-public-key end
+#
+ecc peer-public-key 10.125.130.2
+ public-key-code begin
+  040044B3 64FAFE66 FD513E5B 21C8C883 C7D4A8D8 340DC48E 731D2BCD 72176227
+  6D048415 93DA9595 637EC923 6A3F0488 1776550C CDA8EB52 4702DEF2 CE9A1F79
+  069C1B01 CCADD52B D9AE37A0 C16CFF04 B297E649 0747ADEE B2CBF85F AA3EA1AC
+  D655CA28 7E635AC5 622C48E4 0DC500AD CCC24408 24E3AE23 6F687C2F 7C4B4969
+  91B08C1A 77
+ public-key-code end
+ peer-public-key end
+#
+ecc peer-public-key 10.125.50.14
+ public-key-code begin
+  04ABEA6D D4C671A3 9F00D697 CF26F1F4 8FCF71CD CD6A3BE8 DAFA721A 490D0D29
+  9A84E0E5 CF96B182 896BFF01 FB6A0086 86B9DCE1 378CACCF 950DCF07 3B2D6E1A
+  FC
+ public-key-code end
+ peer-public-key end
+#
+ecc peer-public-key 192.168.11.10
+ public-key-code begin
+  0463810E DD8B9249 B904158E B10AFD3B 7914CCEE 949AC656 D27DB5A6 3B6A689A
+  CD561E2D 566BC9CE 7FB1FAAA 758DA8A4 2E450096 BFAF8081 331888A1 5645F797
+  8C
+ public-key-code end
+ peer-public-key end
+#
+ecc peer-public-key 45.171.228.20
+ public-key-code begin
+  0400D55A 3374FF15 711789EF 129896A1 88B5376A 1A248C43 F8555D85 16D1B5B0
+  62D3AB9A 701E8EB2 51DF670D E1F24C26 892158A5 9E48B38C A6DBB698 1C601A45
+  12
+ public-key-code end
+ peer-public-key end
+#
+dhcpv6 export pd-route
+#
+undo icmp name timestamp-reply send
+#
+ip netstream as-mode 32
+ip netstream timeout active 1
+ip netstream timeout inactive 15
+ip netstream export version 9
+ip netstream export template sequence-number fixed
+ip netstream export index-switch 32
+ip netstream export template timeout-rate 1
+ip netstream sampler fix-packets 1024 inbound
+ip netstream sampler fix-packets 1024 outbound
+ip netstream export source 45.171.228.1
+ip netstream export host 10.125.50.82 52055
+ip netstream export template option sampler
+ip netstream export template option application-label
+#
+ipv6 netstream as-mode 32
+ipv6 netstream timeout active 1
+ipv6 netstream timeout inactive 15
+ipv6 netstream export version 9
+ipv6 netstream export template sequence-number fixed
+ipv6 netstream export index-switch 32
+ipv6 netstream export template timeout-rate 1
+ipv6 netstream sampler fix-packets 1024 inbound
+ipv6 netstream sampler fix-packets 1024 outbound
+ipv6 netstream export source 45.171.228.1
+ipv6 netstream export host 10.125.50.82 52055
+ipv6 netstream export template option sampler
+ipv6 netstream export template option timeout-rate 1
+#
+set save-configuration interval 3600 delay 1
+set save-configuration backup-to-server server 10.125.50.14 transport-type ftp port 21 user powercom password %^%#|nYz'-0#~#k//!6_@p{,MS{_U*#y,=~L_h#5OKq-%^%# path /Ne8k/BNG
+#
+undo telnet server enable
+undo telnet ipv6 server enable
+undo telnet server-source all-interface
+undo telnet ipv6 server-source all-interface
+#
+radius-attribute delegated-ipv6-prefix encapsulation-method version2
+radius-attribute framed-ip-address encapsulation-method version2
+#
+diffserv domain default
+#
+diffserv domain 5p3d
+#
+qos-profile no-limit-QOS
+#
+qos-profile 500M
+ car cir 3145728 cbs 18700000 green pass red discard inbound
+ car cir 3145728 cbs 18700000 green pass red discard outbound
+#
+qos-profile FIBRA_300_MEGA
+#
+qos-profile PLANO_500K
+ car cir 500 cbs 18700000 green pass red discard inbound
+ car cir 500 cbs 18700000 green pass red discard outbound
+#
+qos-profile PLANO_50M_-_FIBRA
+ car cir 52000 cbs 18700000 green pass red discard inbound
+ car cir 52000 cbs 18700000 green pass red discard outbound
+#
+qos-profile PLANO_5M_-_CAJUEIRO
+ car cir 10240 cbs 18700000 green pass red discard inbound
+ car cir 5120 cbs 18700000 green pass red discard outbound
+#
+qos-profile PLANO_70M_-_FIBRA
+ car cir 73728 cbs 18700000 green pass red discard inbound
+ car cir 53248 cbs 18700000 green pass red discard outbound
+#
+qos-profile POWER_10MB
+ car cir 10240 cbs 18700000 green pass red discard inbound
+ car cir 5120 cbs 18700000 green pass red discard outbound
+#
+qos-profile PowerCom
+ car cir 1048576 cbs 18700000 green pass red discard inbound
+ car cir 1048576 cbs 18700000 green pass red discard outbound
+#
+qos-profile POWER_DIGITAL_100MB_+_10MB_BONUS
+ car cir 133120 cbs 18700000 green pass red discard inbound
+ car cir 76800 cbs 18700000 green pass red discard outbound
+#
+qos-profile POWER_DIGITAL_200MB_+_10MB_BONUS
+ car cir 235520 cbs 18700000 green pass red discard inbound
+ car cir 81920 cbs 18700000 green pass red discard outbound
+#
+qos-profile POWER_DIGITAL_20MB_+_10MB_BONUS
+ car cir 30720 cbs 18700000 green pass red discard inbound
+ car cir 10240 cbs 18700000 green pass red discard outbound
+#
+qos-profile POWER_DIGITAL_400MB_+_10MB_BONUS
+ car cir 471040 cbs 18700000 green pass red discard inbound
+ car cir 92160 cbs 18700000 green pass red discard outbound
+#
+qos-profile POWER_DIGITAL_500MB_+_10MB_BONUS
+ car cir 645120 cbs 18700000 green pass red discard inbound
+ car cir 204800 cbs 18700000 green pass red discard outbound
+#
+qos-profile POWER_DIGITAL_50MB_+_10MB_BONUS
+ car cir 71680 cbs 18700000 green pass red discard inbound
+ car cir 40960 cbs 18700000 green pass red discard outbound
+#
+qos-profile POWER_FIBRA_110MB
+ car cir 112640 cbs 18700000 green pass red discard inbound
+ car cir 56320 cbs 18700000 green pass red discard outbound
+#
+qos-profile POWER_FIBRA_450MB
+ car cir 460800 cbs 18700000 green pass red discard inbound
+ car cir 230400 cbs 18700000 green pass red discard outbound
+#
+qos-profile POWER_FIBRA_60MB
+ car cir 61440 cbs 18700000 green pass red discard inbound
+ car cir 30720 cbs 18700000 green pass red discard outbound
+#
+qos-profile POWER_FIBRA_DIGITAL_110MB
+ car cir 112640 cbs 18700000 green pass red discard inbound
+ car cir 56320 cbs 18700000 green pass red discard outbound
+#
+qos-profile POWER_FIBRA_DIGITAL_450MB
+ car cir 460800 cbs 18700000 green pass red discard inbound
+ car cir 230400 cbs 18700000 green pass red discard outbound
+#
+qos-profile POWER_FIBRA_DIGITAL_60MB
+ car cir 61440 cbs 18700000 green pass red discard inbound
+ car cir 30720 cbs 18700000 green pass red discard outbound
+#
+qos-profile POWER_FIBRA_DIGITAL_650MB
+ car cir 665600 cbs 18700000 green pass red discard inbound
+ car cir 332800 cbs 18700000 green pass red discard outbound
+#
+qos-profile POWER_FIBRA_DIGITAL_850MB
+ car cir 870400 cbs 18700000 green pass red discard inbound
+ car cir 435200 cbs 18700000 green pass red discard outbound
+#
+qos-profile PROMO_200_MEGA_|_2024
+ car cir 204800 cbs 18700000 green pass red discard inbound
+ car cir 102400 cbs 18700000 green pass red discard outbound
+#
+qos-profile PROMO_60_MEGA_|_NATAL_2023
+ car cir 61440 cbs 18700000 green pass red discard inbound
+ car cir 30720 cbs 18700000 green pass red discard outbound
+#
+qos-profile RADIO_10MB
+ car cir 20480 cbs 18700000 green pass red discard inbound
+ car cir 10240 cbs 18700000 green pass red discard outbound
+#
+qos-profile START_-_10_MEGA
+ car cir 10240 cbs 18700000 green pass red discard inbound
+ car cir 5120 cbs 18700000 green pass red discard outbound
+#
+qos-profile START_20_MEGA
+ car cir 20480 cbs 18700000 green pass red discard inbound
+ car cir 10240 cbs 18700000 green pass red discard outbound
+#
+qos-profile START_II_-_20_MEGA
+ car cir 20480 cbs 18700000 green pass red discard inbound
+ car cir 10240 cbs 18700000 green pass red discard outbound
+#
+qos-profile VERO_60_MEGA
+ car cir 61440 cbs 18700000 green pass red discard inbound
+ car cir 30720 cbs 18700000 green pass red discard outbound
+#
+clock test-source testclk0 send-delay 1 slot 14
+#
+soc
+#
+ip vpn-instance __LOCAL_OAM_VPN__
+ ipv4-family
+ ipv6-family
+#
+radius-server group sgp
+ radius-server shared-key-cipher %^%#:=iF9<)4d2#xBk:\xI<4c~;y%nsjBPS)3m&+=Z,#%^%#
+ radius-server authentication 177.52.37.142 source ip-address 45.171.228.1 3512 weight 0
+ radius-server accounting 177.52.37.142 source ip-address 45.171.228.1 3513 weight 0
+ radius-server timeout 25
+ radius-server source interface LoopBack0
+ radius-server user-name original
+ radius-server user-name trust-server-request 
+ radius-attribute include HW-Auth-Type
+ radius-attribute include Reply-Message coa-nak
+ radius-server format-attribute nas-port-id vendor redback-simple
+ radius-attribute disable CISCO-AVPair receive
+ radius-attribute assign hw-mng-ipv6 pppoe motm 
+ radius-attribute case-sensitive qos-profile-name
+ radius-attribute apply user-name match user-type ipoe
+ radius-attribute apply framed-ipv6-pool match pool-type
+ radius-attribute service-type value outbound user-type ipoe 
+ radius-attribute hw-user-password simple coa-request
+#
+radius-server group sgp-ipoe
+ radius-server shared-key-cipher %^%#:=iF9<)4d2#xBk:\xI<4c~;y%nsjBPS)3m&+=Z,#%^%#
+ radius-server authentication 177.52.37.142 source ip-address 45.171.228.1 3512 weight 0
+ radius-server accounting 177.52.37.142 source ip-address 45.171.228.1 3513 weight 0
+ radius-server timeout 25
+ radius-server accounting-start-packet resend 3
+ radius-server accounting-stop-packet resend 3
+ radius-server accounting-interim-packet resend 5
+ radius-server source interface LoopBack0
+ radius-server calling-station-id include mac 
+ radius-server called-station-id include ap-ip account-request
+ radius-server attribute translate
+ undo radius-server user-name domain-included
+ radius-server user-name trust-server-request 
+ radius-server accounting-stop-packet send force
+ radius-attribute include HW-Auth-Type
+ radius-attribute include Reply-Message coa-nak
+ radius-attribute include edsg-service-name accounting-request
+ radius-attribute include Event-Timestamp accounting-on accounting-off 
+ radius-attribute include Framed-Route accounting-request
+ radius-server nas-port-id include interface-description ce-vlan
+ radius-attribute tunnel-password simple
+ radius-server format-attribute nas-port-id vendor redback-simple
+ radius-attribute disable CISCO-AVPair receive
+ radius-attribute translate extend HW-Auth-Type vendor-specific 2011 109 access-request account 
+ radius-attribute assign hw-mng-ipv6 pppoe motm 
+ radius-attribute case-sensitive qos-profile-name
+ radius-attribute policy-name no-exist-policy online
+ radius-attribute apply user-name match user-type ipoe
+ radius-attribute apply framed-ipv6-pool match pool-type
+ radius-attribute service-type value outbound user-type ipoe 
+ radius-attribute include agent-circuit-id value-added-service
+ radius-attribute include agent-remote-id value-added-service
+ radius-attribute hw-user-password simple coa-request
+ radius-server connect-info include refer-option82
+#
+radius local-ip all
+radius-server authorization 45.171.228.52 destination-port 3799 shared-key-cipher %^%#wLVw9s]}1'VtIE1NE9u"Rav)IHa%%G7o]!FxcuuU%^%# server-group sgp
+radius-server authorization 45.171.228.54 destination-port 3799 shared-key-cipher %^%#j[*:4W@@R7N<g_O3xz,%.m"C(j!5W'iBnTKByuj>%^%# server-group sgp
+radius-server authorization 177.52.37.142 destination-port 3799 shared-key-cipher %^%#2x\"X2*>NR9UWu+6DWR&hO}(S6|dmQjA@7V{4v]E%^%# server-group sgp
+#
+service-location 1
+ location follow-forwarding-mode
+#
+service-instance-group LOG-NAT-1
+ service-location 1
+#
+service-instance-group LOT-NAT-1
+#
+nat instance LOG-NAT-1 id 1
+ service-instance-group LOG-NAT-1
+ nat address-group NAT-ADDR-01 group-id 1 
+#
+vlan 68
+ description CLIENTE-POLIMIX-AD
+#
+vlan 212
+ description VLAN-SAIDA-SW
+#
+vlan 232
+ description CLIENTES-MANELPAZ
+#
+vlan 233
+ description CLIENTES-MIRANDA-VLANS-1100-TO-1115
+#
+vlan 235
+ description GERENCIA-OLT-HUAWEI-MIRANDA
+#
+vlan 236
+ description CAMERAS-IP-MIRANDA
+#
+vlan 237
+ description CLIENTES-MIRANDA-OLT-HUAWEI-VLAN-2800-TO-2819
+#
+vlan 238
+ description CLIENTES-OLT-HUAWEI-MIRANDA-VLAN-2822-TO-2023
+#
+vlan 239
+ description GERENCIA-OLT-HUAWEI-MIRANDA
+#
+vlan 880
+ description CLIENTES-OLT-VERA-CRUZ-ADTELECMO
+#
+vlan 1100
+ description OMNI-MANEL.PAZ
+ name OMNI-MANEL.PAZ
+#
+vlan 1114
+ description CAMPO.LIMPO
+#
+vlan 1510
+ description TUNE-ADTELECOM-OLT-MA
+ name TUNEL-ADTELECOM
+#
+vlan 1515
+ description CLIENTES-OLT-GOIANINHA-ADTELECOM
+#
+vlan 1520
+ description OLT-ESP.SANTO-AD
+#
+vlan 1660
+ description OLT MA - AD
+#
+vlan 1901
+ description DNS-ANYCAST-A1-LAN1
+#
+mpls lsr-id 10.254.253.1
+#
+mpls
+ mpls te
+ mpls rsvp-te
+ mpls te cspf
+#
+mpls l2vpn
+#
+vsi DNS-ANYCAST-A1-LAN-1 static
+ pwsignal ldp
+  vsi-id 1901
+  flow-label both
+  peer 10.255.255.4
+ mtu 1600
+#
+vsi DNS-ANYCAST-B1 static
+ pwsignal ldp
+  vsi-id 1902
+  flow-label both
+  peer 10.255.255.4
+ mtu 1600
+#
+bridge-domain 88
+ statistic enable
+ description CLIENTE-POLIMIX-AD
+#
+bridge-domain 726
+ description OLT-HUAWEI-PWCOM-P2P-MULT
+#
+bridge-domain 805
+ description guarda
+#
+bridge-domain 1660
+#
+mpls ldp
+ #
+ ipv4-family
+#
+dhcp server request-packet all-interface disable
+#
+ipv6 prefix pppoe-01-v6-p2p local
+ prefix 2804:5A10:E80::/45
+#
+ipv6 prefix pppoe-01-v6-pd delegation
+ prefix 2804:5A10:8000::/36 delegating-prefix-length 48
+ reserved prefix mac lease
+ pd-unshare-only
+#
+ipv6 prefix pre-pool_aviso_bloqueio_ipv6 delegation
+ prefix 2001:DB8:3003:2::/64
+#
+ipv6 prefix bloqueiov6prefix local
+ prefix 2001:DC8:100::/40
+#
+ipv6 prefix bloqueiov6pd delegation
+ prefix 2001:DB8:900::/40 delegating-prefix-length 56
+#
+ipv6 prefix pppoe-01-v6-p2p-ma local
+ prefix 2804:5A10:E30::/45
+#
+ipv6 prefix pppoe-01-v6-pd-ma delegation
+ prefix 2804:5A10:3000::/36 delegating-prefix-length 48
+ reserved prefix mac lease
+ pd-unshare-only
+#
+ipv6 pool bloqueiov6pd bas delegation
+ dns-server 2001:4860:4860::8888
+ prefix bloqueiov6pd
+#
+ipv6 pool bloqueiov6prefix bas local
+ dns-server 2001:4860:4860::8888
+ prefix bloqueiov6prefix
+#
+ipv6 pool pool_aviso_bloqueio_ipv6 bas delegation
+ prefix pre-pool_aviso_bloqueio_ipv6
+#
+ipv6 pool pppoe-01-v6 bas local
+ dns-server 2001:4860:4860::8888 2001:4860:4860::8844
+ prefix pppoe-01-v6-p2p
+#
+ipv6 pool pppoe-01-v6-p2p-ma bas local
+ prefix pppoe-01-v6-p2p-ma
+#
+ipv6 pool pppoe-01-v6-pd bas delegation
+ prefix pppoe-01-v6-pd
+#
+ipv6 pool pppoe-01-v6-pd-ma bas delegation
+ prefix pppoe-01-v6-pd-ma
+#
+dhcp option-82 agent-remote-id strip
+dhcp frame-ip support reply-option82
+#
+radius-server coa-request hw-policy-name daa same-policy reply-ack
+radius-server coa-request hw-policy-name daa coexist-with-user
+value-added-service enable
+#
+undo ppp connection chasten
+#
+dot1x-template 1
+#
+user-group sgp
+#
+ipv6-pool statistic include shared-user
+#
+ip pool bloqueados bas local
+ gateway 172.16.80.1 255.255.252.0
+ section 0 172.16.80.2 172.16.83.254
+ dns-server 8.8.8.8
+#
+ip pool bloqueio bas local
+ gateway 10.255.4.1 255.255.255.0
+ section 0 10.255.4.2 10.255.4.254
+#
+ip pool pool_aguardando_assinatura bas local
+ gateway 172.22.1.1 255.255.255.0
+ section 0 172.22.1.2 172.22.1.254
+ lease 0 12 0
+#
+ip pool pool_aviso_atraso bas local
+ gateway 172.20.1.1 255.255.255.0
+ section 0 172.20.1.2 172.20.1.254
+ lease 0 12 0
+#
+ip pool pool_bloqueio bas local
+ gateway 172.21.1.1 255.255.255.0
+ section 0 172.21.1.2 172.21.1.254
+ lease 0 12 0
+#
+ip pool pppoe-01 bas local
+ gateway 100.65.0.1 255.255.0.0
+ section 0 100.65.0.2 100.65.3.255
+ section 1 100.65.4.0 100.65.7.255
+ section 2 100.65.8.0 100.65.11.255
+ section 3 100.65.12.0 100.65.15.255
+ section 4 100.65.16.2 100.65.16.255
+ section 5 100.65.20.0 100.65.23.255
+ section 6 100.65.24.0 100.65.27.255
+ section 7 100.65.28.0 100.65.31.255
+ dns-server 8.8.8.8 1.1.1.1
+#
+ip pool pppoe-cgnat bas local
+ gateway 100.64.0.1 255.255.240.0
+ section 0 100.64.0.2 100.64.15.255
+#
+ip pool tr069 bas local
+ gateway 10.150.0.1 255.255.0.0
+ section 0 10.150.0.2 10.150.255.254
+ dns-server 45.171.229.14 8.8.8.8
+ lease 0 12 0
+ option 43 suboption 1 string "https://acs.powercomnetwork.com.br" 
+ frame-ip lease manage
+#
+acl name LIBERADOS-SNMP basic
+ rule 5 permit source 45.171.228.54 0
+ rule 6 permit source 172.16.200.10 0
+ rule 7 permit source 45.171.228.254 0
+ rule 8 permit source 45.171.228.51 0
+ rule 15 permit source 172.16.200.51 0
+ rule 20 permit source 172.16.200.40 0
+ rule 25 permit source 10.125.50.0 0.0.0.255
+ rule 99 deny
+#
+acl number 3001
+ description CGNAT-Classification-ACL
+ rule 301 deny ip destination 10.0.0.0 0.255.255.255
+ rule 302 deny ip destination 172.16.0.0 0.15.255.255
+ rule 303 deny ip destination 192.168.0.0 0.0.255.255
+ rule 304 deny ip destination 100.64.0.0 0.63.255.255
+ rule 999 permit ip source 100.64.0.0 0.63.255.255
+#
+acl number 3010
+ rule 30 permit ip destination 45.171.228.33 0
+ rule 31 permit ip destination 142.250.219.46 0
+ rule 32 permit ip destination 142.251.129.238 0
+ rule 33 permit ip destination 142.250.0.0 0.1.255.255
+ rule 34 permit ip destination 142.251.129.0 0.0.0.255
+ rule 35 permit ip destination 45.171.228.34 0
+#
+acl name IPS-BYPASS-V4 number 3999
+ rule 10 permit ip source 100.64.0.0 0.63.255.255 destination 100.64.0.0 0.63.255.255
+ rule 20 permit ip source 100.64.0.0 0.63.255.255 destination 45.171.228.0 0.0.1.255
+ rule 30 permit ip source 100.64.0.0 0.63.255.255 destination 10.125.50.0 0.0.0.255
+ rule 80 permit ip destination 10.0.0.0 0.0.0.255
+#
+acl name IPS-PRIVADOS-PBR-01-V4 number 3997
+ rule 10 permit ip source 100.64.0.0 0.0.15.255
+ rule 20 permit ip source 100.64.32.0 0.0.31.255
+ rule 30 permit ip source 100.66.0.0 0.0.3.255
+#
+acl ipv6 name SERVIDORES advance
+#
+acl number 7000
+ description CAMERA
+ rule 10 permit ip source user-group any destination ip-address 45.171.228.33 0
+ rule 11 permit ip source user-group any destination ip-address 45.171.228.34 0
+ rule 12 permit ip source ip-address 45.171.228.33 0 destination user-group any
+ rule 13 permit ip source ip-address 45.171.228.34 0 destination user-group any
+#
+acl number 7001
+ description GERAL
+ rule 10 permit ip source user-group any destination ip-address any
+ rule 11 permit ip source ip-address any destination user-group any
+#
+dhcpv6 duid 000100018c7fbeaf002ec7dfcc12
+dhcpv6 source-ip-address format adaptive enable
+#
+dhcpv6 rapid-commit
+#
+traffic classifier BYPASS-V4 operator and
+ if-match acl name IPS-BYPASS-V4
+#
+traffic classifier IPS-PRIVADOS-PBR-01-V4 operator and
+ if-match acl name IPS-PRIVADOS-PBR-01-V4
+#
+traffic classifier no-limit-QOS operator or
+ if-match acl 3010
+#
+traffic classifier tc1 operator or
+ if-match acl 7000
+#
+traffic classifier tc8 operator or
+ if-match acl 7001
+#
+traffic behavior IPS-PRIVADOS-PBR-01-V4
+ redirect ip-nexthop 172.30.10.2
+#
+traffic behavior PERMIT
+#
+traffic behavior no-limit-QOS
+ remark dscp ef
+#
+traffic behavior tb1
+ car
+ tariff-level 1
+ traffic-statistic
+#
+traffic behavior tb8
+ car
+ tariff-level 8
+ traffic-statistic
+#
+traffic policy DAA_1
+ share-mode
+ classifier tc1 behavior tb1 precedence 1
+ classifier tc8 behavior tb8 precedence 8
+#
+traffic policy IPS-PRIVADOS-PBR-V4
+ share-mode
+ classifier BYPASS-V4 behavior PERMIT precedence 1
+ classifier IPS-PRIVADOS-PBR-01-V4 behavior IPS-PRIVADOS-PBR-01-V4 precedence 2
+#
+traffic policy no-limit-QOS
+ share-mode
+ classifier no-limit-QOS behavior no-limit-QOS precedence 1
+#
+security password
+ #
+ rule admin
+  forbidden word changeme_123
+#
+aaa
+ default-password template ipoe-powercom cipher %^%#tFql1DuSu<[b#$Z.F`*T9Lih&}#9)Sz[]Q/~9v(K%^%#
+ default-user-name include option82 
+ default-user-name template ipoe-powercom include option82 
+ local-user root password irreversible-cipher $1c$2/*!.:'Zo3$t`;4MF*_0M|S]fU=fIe!2#tU=HB.`*8-(\9;,XVC$
+ local-user root service-type ssh
+ local-user root level 3
+ local-user root state block fail-times 3 interval 5
+ local-user root expire 2000-01-01
+ local-user pwcomadmin password irreversible-cipher $1c$#f$g3Ju"<G$de)kEuz=L-l(jk2|uUf~[Ao{%v@k91TRQ6BPqS.#$
+ local-user pwcomadmin service-type ssh
+ local-user pwcomadmin state block fail-times 3 interval 5
+ local-user pwcomadmin user-group manage-ug
+ local-user ppnetwork password irreversible-cipher $1c$$0>T-2Hs#N$/|qr',)|oWK,>99%;}PE^Hw]+7_2.BWMlb4P*.{C$
+ local-user ppnetwork service-type terminal telnet ssh
+ local-user ppnetwork level 3
+ local-user ppnetwork state block fail-times 3 interval 5
+ local-user sgpsgp password irreversible-cipher $1c$q#^,KV=y..$XH^*1]}[%>4oB5X9MHsS!R4A4$BBMMIp%`S*W/U%$
+ local-user sgpsgp service-type ssh
+ local-user sgpsgp level 3
+ local-user sgpsgp state block fail-times 3 interval 5
+ local-user byjonas@adm password cipher %^%#owy5E2R<m"hCm/P0CR*YSFy_Sl^7#~Y)g!Yp()9~%^%#
+ local-user byjonas@adm service-type ppp
+ local-user byjonas@adm state block fail-times 3 interval 5
+ local-user bygefson@adm password cipher %^%#YQ4+F<9X!,vxVb:Y1:p:^.0z>Rf\q#_;-8Ddwo_5%^%#
+ local-user bygefson@adm service-type ppp
+ local-user bygefson@adm state block fail-times 3 interval 5
+ local-user pp-csc password irreversible-cipher $1c$DEx:~lT4|2$.#wSF6NaURf%M}DhVTgXi:"''_ZCp-c\/mYElWf=$
+ local-user pp-csc service-type ftp telnet ssh snmp
+ local-user pp-csc level 3
+ local-user pp-csc state block fail-times 3 interval 5
+ local-user jonashc password irreversible-cipher $1c$YV0cDvJ6Z;$`n&>)$e.NK%6F.C(7l(*z(HKT_N~a%~yqRJD4X./$
+ local-user jonashc service-type terminal ssh snmp
+ local-user jonashc level 3
+ local-user jonashc state block fail-times 3 interval 5
+ local-user oxidized password irreversible-cipher $1c$n6i]WSHRy<$g"5{Rvk>K>c7y='S2iOVkb\/'f{GL"Pz$PDK|=sU$
+ local-user oxidized service-type terminal ssh
+ local-user oxidized level 1
+ local-user oxidized state block fail-times 3 interval 5
+ #
+ authentication-scheme default0
+ #
+ authentication-scheme default1
+ #
+ authentication-scheme default
+  authentication-mode local radius
+  authening radius-no-response online authen-domain sgp
+ #
+ authentication-scheme sgp
+  authentication-mode radius local
+ #
+ authentication-scheme tr069
+  authentication-mode none
+ #
+ authorization-scheme default
+ #
+ authorization-scheme tr069
+  authorization-mode none
+ #
+ accounting-scheme default0
+ #
+ accounting-scheme default1
+ #
+ accounting-scheme sgp
+  accounting interim interval 5
+  accounting send-update
+ #
+ accounting-scheme tr069
+  accounting-mode none
+ #
+ domain default0
+ #
+ domain default1
+  authentication-scheme sgp
+  accounting-scheme sgp
+  radius-server group sgp
+  ip-pool pppoe-cgnat
+  ipv6-pool pppoe-01-v6-pd
+  ipv6-pool pppoe-01-v6
+  dns primary-ip 45.171.229.14
+  dns second-ip 45.171.228.19
+  dns primary-ipv6 2804:5A10:701:1::2
+  dns second-ipv6 2804:5A10:E30::2
+  ipv6 nd autoconfig managed-address-flag
+ #
+ domain default_admin
+ #
+ domain bj
+  authentication-scheme sgp
+  accounting-scheme sgp
+  radius-server group sgp
+  ip-pool pppoe-cgnat
+  ipv6-pool pppoe-01-v6-pd
+  ipv6-pool pppoe-01-v6
+  value-added-service account-type radius sgp
+  dns primary-ip 45.171.229.14
+  dns second-ip 45.171.228.19
+  dns primary-ipv6 2804:5A10:701:1::2
+  dns second-ipv6 2804:5A10:E30::2
+  ipv6 nd autoconfig managed-address-flag
+ #
+ domain sgp
+  authentication-scheme sgp
+  accounting-scheme sgp
+  radius-server group sgp
+  ip-pool pppoe-cgnat
+  ipv6-pool pppoe-01-v6-pd
+  ipv6-pool pppoe-01-v6
+  value-added-service account-type radius sgp
+  dns primary-ip 45.171.229.14
+  dns second-ip 45.171.228.19
+  dns primary-ipv6 2804:5A10:701:1::2
+  dns second-ipv6 2804:5A10:E30::2
+  ipv6 nd autoconfig managed-address-flag
+ #
+ domain adm
+  authentication-scheme sgp
+  accounting-scheme sgp
+  radius-server group sgp
+  ip-pool pppoe-cgnat
+  ipv6-pool pppoe-01-v6-pd
+  ipv6-pool pppoe-01-v6
+  value-added-service account-type radius sgp
+  dns primary-ip 45.171.229.14
+  dns second-ip 45.171.228.19
+  dns primary-ipv6 2804:5A10:701:1::2
+  dns second-ipv6 2804:5A10:E30::2
+  ipv6 nd autoconfig managed-address-flag
+ #
+ domain lp
+  authentication-scheme sgp
+  accounting-scheme sgp
+  radius-server group sgp
+  ip-pool pppoe-cgnat
+  ipv6-pool pppoe-01-v6-pd
+  ipv6-pool pppoe-01-v6
+  value-added-service account-type radius sgp
+  dns primary-ip 45.171.229.14
+  dns second-ip 45.171.228.19
+  dns primary-ipv6 2804:5A10:701:1::2
+  dns second-ipv6 2804:5A10:E30::2
+  ipv6 nd autoconfig managed-address-flag
+ #
+ domain ma
+  authentication-scheme sgp
+  accounting-scheme sgp
+  radius-server group sgp
+  ip-pool pppoe-cgnat
+  ipv6-pool pppoe-01-v6-pd-ma
+  ipv6-pool pppoe-01-v6-p2p-ma
+  value-added-service account-type radius sgp
+  dns primary-ip 45.171.229.14
+  dns second-ip 45.171.228.19
+  dns primary-ipv6 2804:5A10:701:1::2
+  dns second-ipv6 2804:5A10:E30::2
+  ipv6 nd autoconfig managed-address-flag
+ #
+ domain gn
+  authentication-scheme sgp
+  accounting-scheme sgp
+  radius-server group sgp
+  ip-pool pppoe-cgnat
+  ipv6-pool pppoe-01-v6-pd
+  ipv6-pool pppoe-01-v6
+  value-added-service account-type radius sgp
+  dns primary-ip 45.171.229.14
+  dns second-ip 45.171.228.19
+  dns primary-ipv6 2804:5A10:701:1::2
+  dns second-ipv6 2804:5A10:E30::2
+  ipv6 nd autoconfig managed-address-flag
+ #
+ domain ipv4ipv6
+  authentication-scheme sgp
+  accounting-scheme sgp
+  radius-server group sgp
+  ip-pool pppoe-cgnat
+  ipv6-pool pppoe-01-v6-pd
+  ipv6-pool pppoe-01-v6
+  value-added-service account-type radius sgp
+  dns primary-ip 45.171.229.14
+  dns second-ip 45.171.228.19
+  dns primary-ipv6 2804:5A10:701:1::2
+  dns second-ipv6 2804:5A10:E30::2
+  ipv6 nd autoconfig managed-address-flag
+ #
+ domain bloqueados
+  authentication-scheme sgp
+  accounting-scheme sgp
+  radius-server group sgp
+  ip-pool bloqueio
+  ipv6-pool bloqueiov6prefix
+  ipv6-pool bloqueiov6pd
+  dns primary-ip 8.8.8.8
+  dns second-ip 8.8.4.4
+  dns primary-ipv6 2001:4860:4860::8888
+  dns second-ipv6 2001:4860:4860::8844
+ #
+ domain tr069
+  authentication-scheme tr069
+  accounting-scheme tr069
+  ip-pool tr069
+  dns primary-ip 45.171.229.14
+  dns second-ip 8.8.8.8
+  reallocate-ip-address
+ #
+ domain ipoe
+  authentication-scheme sgp
+  accounting-scheme sgp
+  radius-server group sgp-ipoe
+  ip-pool pppoe-cgnat
+  ipv6-pool pppoe-01-v6-pd
+  ipv6-pool pppoe-01-v6
+  dns primary-ip 45.171.229.14
+  dns second-ip 45.171.228.19
+  dns primary-ipv6 2804:5A10:701:1::2
+  dns second-ipv6 2804:5A10:E30::2
+  accounting-start-delay 10 online user-type ppp ipoe static
+  accounting dual-stack identical
+  reallocate-ip-address
+  user-basic-service-ip-type ipv4
+  ipv6 nd autoconfig managed-address-flag
+  ipv6 pd-address-release separate user-type ipoe
+ #
+ user-group made4it
+ #
+ user-group sgp
+#
+value-added-service policy plano_500k daa
+ accounting-scheme sgp
+ user-group sgp
+ tariff-level 1 qos-profile 500M
+ tariff-level 8 qos-profile PLANO_500K
+#
+license
+#
+ospfv3 1
+ router-id 10.254.253.1
+ import-route direct
+ import-route static
+ import-route bgp route-policy OSPF-V6-IN
+ import-route unr
+ area 0.0.0.0
+#
+interface Eth-Trunk0
+ bandwidth 30000
+ description PWCOM-BREJ-BNG-01-TO-SW-HUAWEI-6730-POP-BREJ
+ mode lacp-static
+#
+interface Eth-Trunk0.10
+ vlan-type dot1q 10
+ description GERENCIA-OLT
+ ip address 192.168.10.1 255.255.255.0
+#
+interface Eth-Trunk0.30
+ vlan-type dot1q 30
+ description GERENCIA-DELL
+ ipv6 enable
+ ip address 10.125.50.9 255.255.255.252
+ ip address 10.125.50.1 255.255.255.252 sub
+ ip address 10.125.50.5 255.255.255.252 sub
+ ip address 10.125.50.37 255.255.255.252 sub
+ ip address 10.125.50.41 255.255.255.252 sub
+ ip address 10.125.50.45 255.255.255.252 sub
+ ip address 10.125.50.49 255.255.255.252 sub
+ ip address 10.125.50.53 255.255.255.252 sub
+ ip address 10.125.50.57 255.255.255.252 sub
+ ip address 10.125.50.61 255.255.255.252 sub
+ ip address 10.125.50.65 255.255.255.252 sub
+ ip address 10.125.50.69 255.255.255.252 sub
+ ip address 10.125.50.73 255.255.255.252 sub
+ ip address 10.125.50.77 255.255.255.252 sub
+ ip address 10.125.50.81 255.255.255.252 sub
+ ip address 10.125.50.85 255.255.255.252 sub
+ ip address 10.125.50.89 255.255.255.252 sub
+ ip address 10.125.50.93 255.255.255.252 sub
+ ip address 10.125.50.97 255.255.255.252 sub
+ ip address 10.125.50.109 255.255.255.252 sub
+ ip address 10.125.50.113 255.255.255.252 sub
+ ip address 10.125.50.117 255.255.255.252 sub
+ ip address 10.125.50.121 255.255.255.252 sub
+ ip address 10.125.50.125 255.255.255.252 sub
+ ip address 10.125.50.129 255.255.255.252 sub
+ ip address 10.125.50.133 255.255.255.252 sub
+ ip address 10.125.50.137 255.255.255.252 sub
+ ip address 10.125.50.145 255.255.255.252 sub
+ ip address 10.125.50.149 255.255.255.252 sub
+ ip address 10.125.50.153 255.255.255.252 sub
+ ip address 10.125.50.157 255.255.255.252 sub
+ ip address 10.125.50.161 255.255.255.248 sub
+ ip address 10.125.50.237 255.255.255.252 sub
+ ip address 10.125.50.241 255.255.255.248 sub
+ ip address 10.125.50.245 255.255.255.252 sub
+ ip address 10.125.50.249 255.255.255.252 sub
+ ip address 10.125.50.253 255.255.255.252 sub
+ ip address 10.125.121.13 255.255.255.252 sub
+ ip address 45.171.228.10 255.255.255.254 sub
+ ipv6 address 2804:5A10:EF0:2::1/64
+ ipv6 address 2804:5A10:EF0:3::1/64
+ ipv6 address 2804:5A10:EF0:4::1/64
+ ipv6 address 2804:5A10:EF0:7::1/64
+ ipv6 address 2804:5A10:EF0:8::1/64
+ ipv6 address 2804:5A10:EF0:9::1/64
+ ipv6 address 2804:5A10:EF0:A::1/64
+ ipv6 address 2804:5A10:EF0:C::1/64
+ ipv6 address 2804:5A10:EF0:D::1/64
+ ipv6 address 2804:5A10:EF0:F::1/64
+ ipv6 address 2804:5A10:EF0:10::1/64
+ ipv6 address FD00:0:0:3::1/64
+ ipv6 address FD00:0:0:A::1/64
+ ipv6 address FD00:0:0:C::1/64
+ ip netstream inbound
+ ip netstream outbound
+ ipv6 netstream inbound
+ ipv6 netstream outbound
+#
+interface Eth-Trunk0.50
+ vlan-type dot1q 50
+ description MNG-SW-HUAWEI-6730-POP-BREJ
+ ipv6 enable
+ ip address 10.125.130.1 255.255.255.252
+ ipv6 address auto link-local
+ statistic enable
+ ospfv3 1 area 0.0.0.0
+ ospfv3 network-type p2p
+ ospf network-type p2p
+ ospf ldp-sync
+ ospf enable 1 area 0.0.0.0
+ mpls
+ mpls te
+ mpls rsvp-te
+ mpls ldp
+#
+interface Eth-Trunk0.65
+ description CLIENTES-TIMBAUBA
+ ipv6 enable
+ ipv6 address auto link-local
+ statistic enable
+ 8021p 0
+ user-vlan 65
+ pppoe-server bind Virtual-Template 2
+ ipv6 nd autoconfig managed-address-flag
+ ipv6 nd autoconfig other-flag
+ bas
+ #
+  access-type layer2-subscriber default-domain authentication force ma
+ #
+#
+interface Eth-Trunk0.66
+ vlan-type dot1q 66
+ description SANTAFE
+ ipv6 enable
+ ip address 172.30.2.1 255.255.255.252
+ ipv6 address 2804:5A10:EFF:0:172:30:2:1A/126
+ ipv6 address auto link-local
+ statistic enable
+ ospfv3 1 area 0.0.0.0
+ ospfv3 network-type p2p
+ ospf network-type p2p
+ ospf enable 1 area 0.0.0.0
+#
+interface Eth-Trunk0.67
+ vlan-type dot1q 67
+ description TIMBAUBA
+ ip address 172.30.5.1 255.255.255.252
+ statistic enable
+ ospf network-type p2p
+ ospf enable 1 area 0.0.0.0
+#
+interface Eth-Trunk0.68 mode l2
+ description CLIENTE-POLIMIX-AD
+ statistic enable mode single
+ encapsulation dot1q vid 68
+ bridge-domain 88
+#
+interface Eth-Trunk0.70
+ vlan-type dot1q 70
+#
+interface Eth-Trunk0.87
+ vlan-type dot1q 87
+ description SPEEDTEST
+ ipv6 enable
+ statistic enable
+#
+interface Eth-Trunk0.88
+ vlan-type dot1q 88
+ description MNG-OLT-X7-BJ
+ ipv6 enable
+ ip address 10.125.125.9 255.255.255.252
+ ipv6 address FC00:0:8:45:171:228:1:1/64
+ ipv6 address auto link-local
+#
+interface Eth-Trunk0.89
+ vlan-type dot1q 89
+ description LINK-OLT-MONTEALEGRE
+#
+interface Eth-Trunk0.90
+ vlan-type dot1q 90
+#
+interface Eth-Trunk0.96
+ vlan-type dot1q 96
+ description GERENCIA-OLT-MIRANDA-VIA-SANTA-FE
+ ip address 10.125.125.17 255.255.255.252
+#
+interface Eth-Trunk0.97
+ vlan-type dot1q 97
+ description DNS-02
+ ipv6 enable
+ ip address 10.125.50.33 255.255.255.252
+ ip address 10.125.50.13 255.255.255.252 sub
+ ip address 10.125.50.105 255.255.255.252 sub
+ ipv6 address 2804:5A10:EF0:6::1/64
+#
+interface Eth-Trunk0.98
+ description CLIENTE ACENTAMENTO
+ ipv6 enable
+ ipv6 address auto link-local
+ statistic enable
+ 8021p 0
+ user-vlan 98
+ pppoe-server bind Virtual-Template 2
+ ipv6 nd autoconfig managed-address-flag
+ ipv6 nd autoconfig other-flag
+ bas
+ #
+  access-type layer2-subscriber default-domain authentication sgp
+ #
+#
+interface Eth-Trunk0.99
+ vlan-type dot1q 99
+#
+interface Eth-Trunk0.100
+ vlan-type dot1q 100
+ description CGNAT
+ ipv6 enable
+ ip address 172.16.254.6 255.255.255.252
+ ipv6 address 2804:5A10:EFF:0:172:16:254:5B/126
+ statistic enable
+ ospf network-type p2p
+ ospf enable 1 area 0.0.0.0
+ ip netstream inbound
+ ip netstream outbound
+ ipv6 netstream inbound
+ ipv6 netstream outbound
+#
+interface Eth-Trunk0.101
+ vlan-type dot1q 101
+#
+interface Eth-Trunk0.102
+ vlan-type dot1q 102
+#
+interface Eth-Trunk0.103
+ vlan-type dot1q 103
+#
+interface Eth-Trunk0.104
+ vlan-type dot1q 104
+#
+interface Eth-Trunk0.105
+ vlan-type dot1q 105
+#
+interface Eth-Trunk0.107
+ description CLIENTE SAAE
+ ipv6 enable
+ ipv6 address auto link-local
+ statistic enable
+ 8021p 0
+ user-vlan 107
+ pppoe-server bind Virtual-Template 2
+ ipv6 nd autoconfig managed-address-flag
+ ipv6 nd autoconfig other-flag
+ bas
+ #
+  access-type layer2-subscriber default-domain authentication sgp
+ #
+#
+interface Eth-Trunk0.130
+ vlan-type dot1q 130
+#
+interface Eth-Trunk0.145
+ description swith-santafe
+ ipv6 enable
+ ipv6 address auto link-local
+ statistic enable
+ 8021p 0
+ user-vlan 145 148
+ pppoe-server bind Virtual-Template 2
+ ipv6 nd autoconfig managed-address-flag
+ ipv6 nd autoconfig other-flag
+ bas
+ #
+  access-type layer2-subscriber default-domain authentication sgp
+ #
+#
+interface Eth-Trunk0.149
+ description UPLINK-OLT-SANTAFE
+ ipv6 enable
+ ipv6 address auto link-local
+ statistic enable
+ 8021p 0
+ user-vlan 149
+ pppoe-server bind Virtual-Template 2
+ ipv6 nd autoconfig managed-address-flag
+ ipv6 nd autoconfig other-flag
+ bas
+ #
+  access-type layer2-subscriber default-domain authentication sgp
+ #
+#
+interface Eth-Trunk0.201
+ vlan-type dot1q 201
+#
+interface Eth-Trunk0.212
+ vlan-type dot1q 212
+ description COMUNICACAO-SAAE
+ ip address 172.30.6.1 255.255.255.252
+ statistic enable
+ ospf network-type p2p
+ ospf enable 1 area 0.0.0.0
+#
+interface Eth-Trunk0.232
+ description CLIENTES-MANELPAZ
+ ipv6 enable
+ ipv6 address auto link-local
+ statistic enable
+ 8021p 0
+ user-vlan 232
+ pppoe-server bind Virtual-Template 2
+ ipv6 nd autoconfig managed-address-flag
+ ipv6 nd autoconfig other-flag
+ bas
+ #
+  access-type layer2-subscriber default-domain authentication sgp
+ #
+#
+interface Eth-Trunk0.233
+ description CLIENTES-MIRANDA-VLANS-1100-TO-1115
+ shutdown
+ ipv6 enable
+ ipv6 address auto link-local
+ statistic enable
+ 8021p 0
+ user-vlan 1100 1115 qinq 70
+ pppoe-server bind Virtual-Template 2
+ ipv6 nd autoconfig managed-address-flag
+ ipv6 nd autoconfig other-flag
+ bas
+ #
+  access-type layer2-subscriber default-domain authentication sgp
+  access-delay 200
+ #
+#
+interface Eth-Trunk0.235
+ description GERENCIA-OLT-HUAWEI-MIRANDA
+ encapsulation qinq-termination
+ qinq termination pe-vid 232 ce-vid 2820
+ arp broadcast enable
+ ospf enable 1 area 0.0.0.0
+#
+interface Eth-Trunk0.236
+ description CAMERAS-IP-MIRANDA
+ ip address 10.99.98.5 255.255.255.252
+ encapsulation qinq-termination
+ qinq termination pe-vid 70 ce-vid 2821
+ arp broadcast enable
+#
+interface Eth-Trunk0.237
+ description CLIENTES-MIRANDA-OLT-HUAWEI-VLAN-2800-TO-2819
+ ipv6 enable
+ ipv6 address auto link-local
+ statistic enable
+ user-vlan 2800 2819 qinq 70
+ pppoe-server bind Virtual-Template 2
+ ipv6 nd autoconfig managed-address-flag
+ ipv6 nd autoconfig other-flag
+ bas
+ #
+  access-type layer2-subscriber default-domain authentication sgp
+  access-delay 200
+ #
+#
+interface Eth-Trunk0.238
+ description CLIENTES-OLT-HUAWEI-MIRANDA-VLAN-2822-TO-2023
+ ipv6 enable
+ ipv6 address auto link-local
+ statistic enable
+ user-vlan 2822 2823 qinq 70
+ pppoe-server bind Virtual-Template 2
+ ipv6 nd autoconfig managed-address-flag
+ ipv6 nd autoconfig other-flag
+ bas
+ #
+  access-type layer2-subscriber default-domain authentication sgp
+ #
+#
+interface Eth-Trunk0.239
+ description GERENCIA-OLT-HUAWEI-MIRANDA-VIA-ADTELECOM
+ ip address 10.125.125.13 255.255.255.252
+ encapsulation qinq-termination
+ qinq termination pe-vid 70 ce-vid 95
+ arp broadcast enable
+ ospf enable 1 area 0.0.0.0
+#
+interface Eth-Trunk0.400
+ description ONU-MUNDO-NOVO-MULT
+ ipv6 enable
+ ipv6 address auto link-local
+ statistic enable
+ 8021p 0
+ user-vlan 400
+ pppoe-server bind Virtual-Template 2
+ ipv6 nd autoconfig managed-address-flag
+ ipv6 nd autoconfig other-flag
+ bas
+ #
+  access-type layer2-subscriber default-domain authentication force bj
+ #
+#
+interface Eth-Trunk0.567
+ vlan-type dot1q 567
+ description A10-INSIDE
+ ip address 172.30.10.1 255.255.255.252
+ ip netstream inbound
+ ip netstream outbound
+ ipv6 netstream inbound
+ ipv6 netstream outbound
+#
+interface Eth-Trunk0.568
+ vlan-type dot1q 568
+#
+interface Eth-Trunk0.600
+ vlan-type dot1q 600
+ description baby
+ ipv6 enable
+ ip address 10.188.188.17 255.255.255.252
+ ipv6 address 2804:5A10:EFF:0:2000:188:188:15/126
+ ipv6 address auto link-local
+ statistic enable
+ ospfv3 1 area 0.0.0.0
+ ospfv3 network-type p2p
+ ospf network-type p2p
+ ospf enable 1 area 0.0.0.0
+#
+interface Eth-Trunk0.605
+ vlan-type dot1q 605
+#
+interface Eth-Trunk0.610
+ description CLIENTE-BABY
+ ipv6 enable
+ ipv6 address auto link-local
+ statistic enable
+ 8021p 0
+ user-vlan 610
+ pppoe-server bind Virtual-Template 2
+ ipv6 nd autoconfig managed-address-flag
+ ipv6 nd autoconfig other-flag
+ bas
+ #
+  access-type layer2-subscriber default-domain authentication sgp
+ #
+#
+interface Eth-Trunk0.620
+ description IPOE TESTE
+ ipv6 enable
+ ipv6 address auto link-local
+ statistic enable
+ user-vlan 620
+ pppoe-server bind Virtual-Template 2
+ ipv6 nd autoconfig managed-address-flag
+ bas
+ #
+  access-type layer2-subscriber default-domain authentication ipoe
+  client-option82
+  authentication-method bind
+  authentication-method-ipv6 bind
+  nd-trigger
+  default-user-name-template ipoe-powercom
+  default-password-template ipoe-powercom
+ #
+#
+interface Eth-Trunk0.725
+ vlan-type dot1q 725
+#
+interface Eth-Trunk0.726 mode l2
+ description OLT-HUAWEI-PWCOM-P2P-MULT
+ encapsulation dot1q vid 726
+ bridge-domain 726
+#
+interface Eth-Trunk0.727
+ vlan-type dot1q 727
+#
+interface Eth-Trunk0.728
+ vlan-type dot1q 728
+#
+interface Eth-Trunk0.800
+ vlan-type dot1q 800
+ description SUA-CONVENIENCIA
+ ipv6 enable
+ ip address 10.172.172.169 255.255.255.252
+ ipv6 address FC00:0:B:45:171:229:4:1/125
+ ipv6 address auto link-local
+ statistic enable
+ ospf network-type p2p
+ ospf enable 1 area 0.0.0.0
+#
+interface Eth-Trunk0.802
+ ipv6 enable
+ ipv6 address auto link-local
+ statistic enable
+ 8021p 0
+ user-vlan 802
+ pppoe-server bind Virtual-Template 2
+ ipv6 nd autoconfig managed-address-flag
+ ipv6 nd autoconfig other-flag
+ bas
+ #
+  access-type layer2-subscriber default-domain authentication sgp
+ #
+#
+interface Eth-Trunk0.805 mode l2
+ description ont-guarda
+ encapsulation dot1q vid 805
+ bridge-domain 805
+#
+interface Eth-Trunk0.870
+ vlan-type dot1q 870
+#
+interface Eth-Trunk0.871
+ vlan-type dot1q 871
+#
+interface Eth-Trunk0.880
+ description CLIENTES-OLT-VERA-CRUZ-ADTELECMO
+ ipv6 enable
+ ipv6 address auto link-local
+ statistic enable
+ 8021p 0
+ user-vlan 880
+ pppoe-server bind Virtual-Template 2
+ ipv6 nd autoconfig managed-address-flag
+ ipv6 nd autoconfig other-flag
+ bas
+ #
+  access-type layer2-subscriber default-domain authentication sgp
+ #
+#
+interface Eth-Trunk0.881
+#
+interface Eth-Trunk0.1000
+ description CLI-OLT-MA-5800-X2
+ ipv6 enable
+ ipv6 address auto link-local
+ statistic enable
+ 8021p 0
+ user-vlan 984 1014
+ pppoe-server bind Virtual-Template 2
+ ipv6 nd autoconfig managed-address-flag
+ ipv6 nd autoconfig other-flag
+ bas
+ #
+  access-type layer2-subscriber default-domain authentication force ma
+ #
+#
+interface Eth-Trunk0.1015
+ vlan-type dot1q 1015
+#
+interface Eth-Trunk0.1065
+ vlan-type dot1q 1065
+#
+interface Eth-Trunk0.1066
+ vlan-type dot1q 1066
+#
+interface Eth-Trunk0.1100
+ description OMNI-MANEL.PAZ
+ statistic enable
+#
+interface Eth-Trunk0.1112
+ description CLI-OLT-MIRANDA-5800-X2
+ ipv6 enable
+ ipv6 address auto link-local
+ statistic enable
+ 8021p 0
+ user-vlan 1100 1115
+ pppoe-server bind Virtual-Template 2
+ ipv6 nd autoconfig managed-address-flag
+ ipv6 nd autoconfig other-flag
+ bas
+ #
+  access-type layer2-subscriber default-domain authentication sgp
+  access-delay 2000
+ #
+#
+interface Eth-Trunk0.1114
+ description CAMPO.LIMPO
+ pppoe-server bind Virtual-Template 2
+#
+interface Eth-Trunk0.1170
+ description CLIENTE-OLT-MANDU
+ ipv6 enable
+ ipv6 address auto link-local
+ statistic enable
+ 8021p 0
+ user-vlan 1170
+ pppoe-server bind Virtual-Template 2
+ ipv6 nd autoconfig managed-address-flag
+ ipv6 nd autoconfig other-flag
+ bas
+ #
+  access-type layer2-subscriber default-domain authentication force lp
+ #
+#
+interface Eth-Trunk0.1171
+ description CLIENTE-OLT-MANDU
+ ipv6 enable
+ ipv6 address auto link-local
+ statistic enable
+ 8021p 0
+ user-vlan 1171
+ pppoe-server bind Virtual-Template 2
+ ipv6 nd autoconfig managed-address-flag
+ ipv6 nd autoconfig other-flag
+ bas
+ #
+  access-type layer2-subscriber default-domain authentication sgp
+ #
+#
+interface Eth-Trunk0.1300
+ vlan-type dot1q 1300
+ description CONVENIENCIA-MA
+ ip address 10.125.125.5 255.255.255.252
+ ospf network-type p2p
+ ospf enable 1 area 0.0.0.0
+#
+interface Eth-Trunk0.1510
+ description TUNE-ADTELECOM-OLT-MA
+ ipv6 enable
+ ipv6 address auto link-local
+ statistic enable
+ 8021p 0
+ user-vlan 1510
+ pppoe-server bind Virtual-Template 2
+ ipv6 nd autoconfig managed-address-flag
+ ipv6 nd autoconfig other-flag
+ bas
+ #
+  access-type layer2-subscriber default-domain authentication sgp
+ #
+#
+interface Eth-Trunk0.1515
+ description CLIENTES-OLT-GOIANINHA-ADTELECOM
+ ipv6 enable
+ ipv6 address auto link-local
+ statistic enable
+ 8021p 0
+ user-vlan 1515
+ pppoe-server bind Virtual-Template 2
+ ipv6 nd autoconfig managed-address-flag
+ ipv6 nd autoconfig other-flag
+ bas
+ #
+  access-type layer2-subscriber default-domain authentication sgp
+ #
+#
+interface Eth-Trunk0.1520
+ description OLT-ESP.SANTO-AD
+ ipv6 enable
+ ipv6 address auto link-local
+ statistic enable
+ 8021p 0
+ user-vlan 1520
+ pppoe-server bind Virtual-Template 2
+ ipv6 nd autoconfig managed-address-flag
+ ipv6 nd autoconfig other-flag
+ bas
+ #
+  access-type layer2-subscriber default-domain authentication sgp
+ #
+#
+interface Eth-Trunk0.1660 mode l2
+ description OLT MA - AD
+ statistic enable mode multiple
+ encapsulation dot1q vid 1660
+ bridge-domain 1660
+#
+interface Eth-Trunk0.1820
+ vlan-type dot1q 1820
+#
+interface Eth-Trunk0.1821
+ vlan-type dot1q 1821
+#
+interface Eth-Trunk0.1900
+ vlan-type dot1q 1900
+ description DNS-ANYCAST
+ ipv6 enable
+ ip address 10.125.130.17 255.255.255.252
+ ipv6 address FD00:0:0:F::1/64
+ statistic enable
+#
+interface Eth-Trunk0.2000
+ description CLI-OLT-LP
+ ipv6 enable
+ ipv6 address auto link-local
+ statistic enable
+ 8021p 0
+ user-vlan 3210 3217 qinq 2000
+ pppoe-server bind Virtual-Template 2
+ ipv6 nd autoconfig managed-address-flag
+ ipv6 nd autoconfig other-flag
+ bas
+ #
+  access-type layer2-subscriber default-domain authentication sgp
+  access-delay 200
+ #
+#
+interface Eth-Trunk0.2001
+ description CLI-OLT-MA5800-X2-SOBRADO
+ ipv6 enable
+ ipv6 address auto link-local
+ statistic enable
+ 8021p 0
+ user-vlan 1201 1232 qinq 2001
+ pppoe-server bind Virtual-Template 2
+ ipv6 nd autoconfig managed-address-flag
+ ipv6 nd autoconfig other-flag
+ bas
+ #
+  access-type layer2-subscriber default-domain authentication sgp
+ #
+#
+interface Eth-Trunk0.2002
+ description CLI-OLT-MA-5800-X2
+ ipv6 enable
+ ipv6 address auto link-local
+ statistic enable
+ 8021p 0
+ user-vlan 984 1014 qinq 2002
+ pppoe-server bind Virtual-Template 2
+ ipv6 nd autoconfig managed-address-flag
+ ipv6 nd autoconfig other-flag
+ bas
+ #
+  access-type layer2-subscriber default-domain authentication sgp
+  access-delay 200
+ #
+#
+interface Eth-Trunk0.2003
+ description CLI-OLT-X7-BJ
+ ipv6 enable
+ ipv6 address auto link-local
+ statistic enable
+ 8021p 0
+ user-vlan 900 963 qinq 2003
+ pppoe-server bind Virtual-Template 2
+ ipv6 nd autoconfig managed-address-flag
+ ipv6 nd autoconfig other-flag
+ bas
+ #
+  access-type layer2-subscriber default-domain authentication sgp
+  access-delay 200
+ #
+#
+interface Eth-Trunk0.2810
+ description CLIENTE-LAGOA-DO-MATO
+ ipv6 enable
+ ipv6 address auto link-local
+ statistic enable
+ 8021p 0
+ user-vlan 2810
+ pppoe-server bind Virtual-Template 2
+ ipv6 nd autoconfig managed-address-flag
+ ipv6 nd autoconfig other-flag
+ bas
+ #
+  access-type layer2-subscriber default-domain authentication force ma
+ #
+#
+interface Eth-Trunk0.2811
+ description CLIENTE-LAGOA-DO-MATO-PON-02
+ ipv6 enable
+ ipv6 address auto link-local
+ statistic enable
+ 8021p 0
+ user-vlan 2811
+ pppoe-server bind Virtual-Template 2
+ ipv6 nd autoconfig managed-address-flag
+ ipv6 nd autoconfig other-flag
+ bas
+ #
+  access-type layer2-subscriber default-domain authentication force ma
+ #
+#
+interface Eth-Trunk0.2812
+ description CLIENTE-LAGOA-DO-MATO-PON-03
+ ipv6 enable
+ ipv6 address auto link-local
+ statistic enable
+ 8021p 0
+ user-vlan 2812
+ pppoe-server bind Virtual-Template 2
+ ipv6 nd autoconfig managed-address-flag
+ ipv6 nd autoconfig other-flag
+ bas
+ #
+  access-type layer2-subscriber default-domain authentication force ma
+ #
+#
+interface Eth-Trunk0.2813
+ description CLIENTE-LAGOA-DO-MATO-PON-04
+ ipv6 enable
+ ipv6 address auto link-local
+ statistic enable
+ 8021p 0
+ user-vlan 2813
+ pppoe-server bind Virtual-Template 2
+ ipv6 nd autoconfig managed-address-flag
+ ipv6 nd autoconfig other-flag
+ bas
+ #
+  access-type layer2-subscriber default-domain authentication force ma
+ #
+#
+interface Eth-Trunk0.2820
+ vlan-type dot1q 2820
+ ipv6 enable
+ statistic enable
+#
+interface Eth-Trunk0.3000
+ description CLIENTES-MONTE-ALEGRE-VIA-SOBRADO
+ ipv6 enable
+ ipv6 address auto link-local
+ statistic enable
+ 8021p 0
+ user-vlan 3000
+ pppoe-server bind Virtual-Template 2
+ ipv6 nd autoconfig managed-address-flag
+ ipv6 nd autoconfig other-flag
+ bas
+ #
+  access-type layer2-subscriber default-domain authentication sgp
+ #
+#
+interface Eth-Trunk0.3001
+ description CLIENTES-MONTE-ALEGRE-VIA-SOBRADO
+ ipv6 enable
+ ipv6 address auto link-local
+ statistic enable
+ 8021p 0
+ user-vlan 3001
+ pppoe-server bind Virtual-Template 2
+ ipv6 nd autoconfig managed-address-flag
+ ipv6 nd autoconfig other-flag
+ bas
+ #
+  access-type layer2-subscriber default-domain authentication sgp
+ #
+#
+interface Eth-Trunk0.3002
+ description CLIENTES-MONTE-ALEGRE-VIA-SOBRADO
+ ipv6 enable
+ ipv6 address auto link-local
+ statistic enable
+ 8021p 0
+ user-vlan 3002
+ pppoe-server bind Virtual-Template 2
+ ipv6 nd autoconfig managed-address-flag
+ ipv6 nd autoconfig other-flag
+ bas
+ #
+  access-type layer2-subscriber default-domain authentication sgp
+ #
+#
+interface Eth-Trunk0.3003
+ description CLIENTES-MONTE-ALEGRE-VIA-SOBRADO
+ ipv6 enable
+ ipv6 address auto link-local
+ statistic enable
+ 8021p 0
+ user-vlan 3003
+ pppoe-server bind Virtual-Template 2
+ ipv6 nd autoconfig managed-address-flag
+ ipv6 nd autoconfig other-flag
+ bas
+ #
+  access-type layer2-subscriber default-domain authentication sgp
+ #
+#
+interface Eth-Trunk0.3004
+ description CLIENTES-MONTE-ALEGRE-VIA-SOBRADO
+ ipv6 enable
+ ipv6 address auto link-local
+ statistic enable
+ 8021p 0
+ user-vlan 3004
+ pppoe-server bind Virtual-Template 2
+ ipv6 nd autoconfig managed-address-flag
+ ipv6 nd autoconfig other-flag
+ bas
+ #
+  access-type layer2-subscriber default-domain authentication sgp
+ #
+#
+interface Eth-Trunk0.3005
+ description CLIENTES-MONTE-ALEGRE-VIA-SOBRADO
+ ipv6 enable
+ ipv6 address auto link-local
+ statistic enable
+ 8021p 0
+ user-vlan 3005
+ pppoe-server bind Virtual-Template 2
+ ipv6 nd autoconfig managed-address-flag
+ ipv6 nd autoconfig other-flag
+ bas
+ #
+  access-type layer2-subscriber default-domain authentication sgp
+ #
+#
+interface Eth-Trunk0.3006
+ description CLIENTES-MONTE-ALEGRE-VIA-SOBRADO
+ ipv6 enable
+ ipv6 address auto link-local
+ statistic enable
+ 8021p 0
+ user-vlan 3006
+ pppoe-server bind Virtual-Template 2
+ ipv6 nd autoconfig managed-address-flag
+ ipv6 nd autoconfig other-flag
+ bas
+ #
+  access-type layer2-subscriber default-domain authentication sgp
+ #
+#
+interface Eth-Trunk0.3007
+ description CLIENTES-MONTE-ALEGRE-VIA-SOBRADO
+ ipv6 enable
+ ipv6 address auto link-local
+ statistic enable
+ 8021p 0
+ user-vlan 3007
+ pppoe-server bind Virtual-Template 2
+ ipv6 nd autoconfig managed-address-flag
+ ipv6 nd autoconfig other-flag
+ bas
+ #
+  access-type layer2-subscriber default-domain authentication sgp
+ #
+#
+interface Eth-Trunk0.3008
+ description CLIENTES-MONTE-ALEGRE-VIA-SOBRADO
+ ipv6 enable
+ ipv6 address auto link-local
+ statistic enable
+ 8021p 0
+ user-vlan 3008
+ pppoe-server bind Virtual-Template 2
+ ipv6 nd autoconfig managed-address-flag
+ ipv6 nd autoconfig other-flag
+ bas
+ #
+  access-type layer2-subscriber default-domain authentication sgp
+ #
+#
+interface Eth-Trunk0.3009
+ description CLIENTES-MONTE-ALEGRE-VIA-SOBRADO
+ ipv6 enable
+ ipv6 address auto link-local
+ statistic enable
+ 8021p 0
+ user-vlan 3009
+ pppoe-server bind Virtual-Template 2
+ ipv6 nd autoconfig managed-address-flag
+ ipv6 nd autoconfig other-flag
+ bas
+ #
+  access-type layer2-subscriber default-domain authentication sgp
+ #
+#
+interface Eth-Trunk0.3010
+ description CLIENTES-MONTE-ALEGRE-VIA-SOBRADO
+ ipv6 enable
+ ipv6 address auto link-local
+ statistic enable
+ 8021p 0
+ user-vlan 3010
+ pppoe-server bind Virtual-Template 2
+ ipv6 nd autoconfig managed-address-flag
+ ipv6 nd autoconfig other-flag
+ bas
+ #
+  access-type layer2-subscriber default-domain authentication sgp
+ #
+#
+interface Eth-Trunk0.3011
+ description CLIENTES-MONTE-ALEGRE-VIA-SOBRADO
+ ipv6 enable
+ ipv6 address auto link-local
+ statistic enable
+ 8021p 0
+ user-vlan 3011
+ pppoe-server bind Virtual-Template 2
+ ipv6 nd autoconfig managed-address-flag
+ ipv6 nd autoconfig other-flag
+ bas
+ #
+  access-type layer2-subscriber default-domain authentication sgp
+ #
+#
+interface Eth-Trunk0.3012
+ description CLIENTES-MONTE-ALEGRE-VIA-SOBRADO
+ ipv6 enable
+ ipv6 address auto link-local
+ statistic enable
+ 8021p 0
+ user-vlan 3012
+ pppoe-server bind Virtual-Template 2
+ ipv6 nd autoconfig managed-address-flag
+ ipv6 nd autoconfig other-flag
+ bas
+ #
+  access-type layer2-subscriber default-domain authentication sgp
+ #
+#
+interface Eth-Trunk0.3013
+ description CLIENTES-MONTE-ALEGRE-VIA-SOBRADO
+ ipv6 enable
+ ipv6 address auto link-local
+ statistic enable
+ 8021p 0
+ pppoe-server bind Virtual-Template 2
+ ipv6 nd autoconfig managed-address-flag
+ ipv6 nd autoconfig other-flag
+ bas
+ #
+  access-type layer2-subscriber default-domain authentication sgp
+ #
+#
+interface Eth-Trunk0.3014
+ description CLIENTES-MONTE-ALEGRE-VIA-SOBRADO
+ ipv6 enable
+ ipv6 address auto link-local
+ statistic enable
+ 8021p 0
+ user-vlan 3014
+ pppoe-server bind Virtual-Template 2
+ ipv6 nd autoconfig managed-address-flag
+ ipv6 nd autoconfig other-flag
+ bas
+ #
+  access-type layer2-subscriber default-domain authentication sgp
+ #
+#
+interface Eth-Trunk0.3210
+ description LP-OLT-VLANS-3210to3217
+ ipv6 enable
+ ipv6 address auto link-local
+ statistic enable
+ 8021p 0
+ user-vlan 3210 3217
+ pppoe-server bind Virtual-Template 2
+ ipv6 nd autoconfig managed-address-flag
+ ipv6 nd autoconfig other-flag
+ bas
+ #
+  access-type layer2-subscriber default-domain authentication force lp
+ #
+#
+interface Eth-Trunk0.3999
+ vlan-type dot1q 3999
+ ipv6 enable
+ ip address 10.125.130.125 255.255.255.252
+ ipv6 address 2804:5A10:702::1/64
+#
+interface Eth-Trunk0.4050
+ vlan-type dot1q 4050
+ description CLIENTES-OLT-PASSAGEM-MULT
+ ip address 172.99.99.1 255.255.255.252
+#
+interface Eth-Trunk0.4060
+ description CLIENTES-OLT-LARANJ-MULT
+ ipv6 enable
+ ipv6 address auto link-local
+ statistic enable
+ 8021p 0
+ user-vlan 4060
+ pppoe-server bind Virtual-Template 2
+ ipv6 nd autoconfig managed-address-flag
+ ipv6 nd autoconfig other-flag
+ bas
+ #
+  access-type layer2-subscriber default-domain authentication sgp
+ #
+#
+interface Eth-Trunk0.4080
+ description CLIENTES-OLT-PASSAGEM-MULT
+ ipv6 enable
+ ipv6 address auto link-local
+ statistic enable
+ 8021p 0
+ user-vlan 4080
+ pppoe-server bind Virtual-Template 2
+ ipv6 nd autoconfig managed-address-flag
+ ipv6 nd autoconfig other-flag
+ bas
+ #
+  access-type layer2-subscriber default-domain authentication sgp
+ #
+#
+interface Eth-Trunk0.200000
+ description GERENCIAR OLT-LP
+ ip address 10.102.102.1 255.255.255.252
+ encapsulation qinq-termination
+ qinq termination pe-vid 2000 ce-vid 3220
+ arp broadcast enable
+#
+interface Eth-Trunk0.200100
+ description GERENCIA-OLT-SOBRADO
+ ip address 10.125.125.21 255.255.255.252
+ encapsulation qinq-termination
+ qinq termination pe-vid 2001 ce-vid 91
+ arp broadcast enable
+#
+interface Eth-Trunk0.200200
+ description GERENCIA-OLT-MA-5800-X2
+#
+interface Ethernet0/0/0
+ speed auto
+ duplex auto
+ undo shutdown
+ ip binding vpn-instance __LOCAL_OAM_VPN__
+ ip address 192.168.0.20 255.255.255.0
+#
+interface Virtual-Template0
+ ppp authentication-mode auto
+#
+interface Virtual-Template2
+ ip address unnumbered interface LoopBack0
+ ppp authentication-mode pap
+ ppp keepalive interval 60 retransmit 3
+ ppp mru 1500
+ pppoe-server service-name-parameter PWCOM-BREJ-BNG-01
+ pppoe-server service-name-parameter LOG-TCDV-BNG-01
+ pppoe-server ac-name LOG-TCDV-BNG-01
+ tcp adjust-mss 1420
+ ipv6 urpf strict enable check subnet
+#
+interface GigabitEthernet0/1/0
+ description Eth-Trunk0-SW-HUAWEI-6730-POP-BREJ
+ undo shutdown
+ eth-trunk 0
+ undo dcn
+#
+interface GigabitEthernet0/1/1
+ description Eth-Trunk0-SW-HUAWEI-6730-POP-BREJ
+ undo shutdown
+ eth-trunk 0
+ undo dcn
+#
+interface GigabitEthernet0/1/2
+ description Eth-Trunk0-SW-HUAWEI-6730-POP-BREJ-XG0/0/3
+ undo shutdown
+ eth-trunk 0
+ undo dcn
+#
+interface GigabitEthernet0/1/3
+ description Eth-Trunk0-SW-HUAWEI-6730-POP-BREJ-XG0/0/4
+ undo shutdown
+ eth-trunk 0
+ undo dcn
+#
+interface GigabitEthernet0/1/4
+ port-mode 1GE
+ description LP
+ undo shutdown
+ undo dcn
+#
+interface GigabitEthernet0/1/5
+ undo shutdown
+ undo dcn
+#
+interface GigabitEthernet0/1/6
+ port-mode 1GE
+ undo shutdown
+ undo dcn
+#
+interface GigabitEthernet0/1/7
+ port-mode 1GE
+ undo shutdown
+ undo dcn
+#
+interface GigabitEthernet0/1/8
+ undo shutdown
+ ipv6 enable
+ undo dcn
+#
+interface GigabitEthernet0/1/9
+ port-mode 1GE
+ speed 1000
+ duplex full
+ description DNS-ANYCAST-B1-LAN2
+ undo shutdown
+ ipv6 enable
+ undo dcn
+#
+interface GigabitEthernet0/1/9.1901
+ ip address 10.125.125.25 255.255.255.252
+#
+interface LoopBack0
+ ipv6 enable
+ ip address 10.254.253.1 255.255.255.255
+ ip address 45.171.228.1 255.255.255.255 sub
+ ipv6 address 2804:5A10:0:45:171:228:1:B/128
+ ospf enable 1 area 0.0.0.0
+#
+interface Virtual-Ethernet0/2/2
+ ve-group 2 l2-terminate
+#
+interface Virtual-Ethernet0/2/2.1014
+ vlan-type dot1q 1014
+#
+interface Virtual-Ethernet0/2/2.1902
+ vlan-type dot1q 1902
+ l2 binding vsi DNS-ANYCAST-B1
+#
+interface Virtual-Ethernet0/2/21
+ mac-address c4b8-cafe-a321
+ ve-group 2 l3-access
+#
+interface Virtual-Ethernet0/2/21.1014
+ vlan-type dot1q 1014
+#
+interface Virtual-Ethernet0/2/21.1902
+ vlan-type dot1q 1902
+ description DNS-ANYCAST-B1
+ ipv6 enable
+ ip address 10.125.130.21 255.255.255.252
+ ipv6 address FD00:0:0:10::1/64
+ statistic enable
+#
+interface Virtual-Ethernet0/3/3
+ ve-group 3 l2-terminate
+#
+interface Virtual-Ethernet0/3/3.1014
+ vlan-type dot1q 1014
+#
+interface Virtual-Ethernet0/3/31
+ mac-address c4b8-cafe-b431
+ ve-group 3 l3-access
+#
+interface Virtual-Ethernet0/3/31.1014
+ vlan-type dot1q 1014
+ description OSPF-BGP
+ ipv6 enable
+ ip address 172.16.251.2 255.255.255.252
+ ipv6 address 2804:5A10:EFF:0:172:16:251:1B/126
+ ipv6 address auto link-local
+ statistic enable
+ ospfv3 1 area 0.0.0.0
+ ospfv3 network-type p2p
+ ospf network-type p2p
+ ospf enable 1 area 0.0.0.0
+ ip netstream inbound
+ ip netstream outbound
+ ipv6 netstream inbound
+ ipv6 netstream outbound
+#
+interface Virtual-Ethernet0/4/1
+#
+interface NULL0
+#
+ccc p2p-1014 interface Virtual-Ethernet0/2/2.1014 tagged out-interface Virtual-Ethernet0/3/3.1014 tagged
+#
+bgp 65000
+ peer 10.125.50.2 as-number 65001
+ peer 10.125.50.2 description VM-DNS-01
+ peer 10.125.50.2 connect-interface 10.125.50.1
+ peer 10.125.50.2 bfd enable
+ peer 10.125.50.34 as-number 65002
+ peer 10.125.50.34 description VM-DNS-02
+ peer 10.125.50.34 connect-interface 10.125.50.33
+ peer 10.125.50.34 bfd enable
+ peer 10.125.50.130 as-number 65005
+ peer 10.125.50.130 description VM-K8S-WORK-01
+ peer 10.125.50.130 connect-interface 10.125.50.129
+ peer 10.125.50.134 as-number 65005
+ peer 10.125.50.134 description VM-K8S-WORK-02
+ peer 10.125.50.134 connect-interface 10.125.50.133
+ peer 10.125.50.138 as-number 65005
+ peer 10.125.50.138 description VM-K8S-WORK-03
+ peer 10.125.50.138 connect-interface 10.125.50.137
+ peer 10.125.50.154 as-number 65003
+ peer 10.125.50.154 description VM-MAIL-POWERBOOKS-01
+ peer 10.125.50.154 connect-interface 10.125.50.153
+ peer 10.125.130.18 as-number 65001
+ peer 10.125.130.18 description VM-DNS-03
+ peer 10.125.130.18 connect-interface 10.125.130.17
+ peer 10.125.130.22 as-number 65001
+ peer 10.125.130.22 description DNS-ANYCAST-B1
+ peer 10.125.130.22 connect-interface 10.125.130.21
+ peer 2804:5A10:EF0:3::2 as-number 65001
+ peer 2804:5A10:EF0:3::2 description VM-DNS-01
+ peer 2804:5A10:EF0:3::2 connect-interface 2804:5A10:EF0:3::1
+ peer 2804:5A10:EF0:3::2 bfd enable
+ peer 2804:5A10:EF0:4::1FFD as-number 65005
+ peer 2804:5A10:EF0:4::1FFD description VM-K8S-WORK-01
+ peer 2804:5A10:EF0:4::1FFD connect-interface 2804:5A10:EF0:4::1
+ peer 2804:5A10:EF0:6::2 as-number 65002
+ peer 2804:5A10:EF0:6::2 description VM-DNS-02
+ peer 2804:5A10:EF0:6::2 connect-interface 2804:5A10:EF0:6::1
+ peer 2804:5A10:EF0:6::2 bfd enable
+ peer 2804:5A10:EF0:F::2 as-number 65005
+ peer 2804:5A10:EF0:F::2 description VM-K8S-WORK-03
+ peer 2804:5A10:EF0:F::2 connect-interface 2804:5A10:EF0:F::1
+ peer 2804:5A10:EF0:10::1FFF as-number 65005
+ peer 2804:5A10:EF0:10::1FFF description VM-K8S-WORK-02
+ peer 2804:5A10:EF0:10::1FFF connect-interface 2804:5A10:EF0:10::1
+ peer FD00:0:0:3::2 as-number 65003
+ peer FD00:0:0:3::2 description VM-MAIL-POWERBOOKS-01
+ peer FD00:0:0:3::2 connect-interface FD00:0:0:3::1
+ peer FD00:0:0:F::2 as-number 65001
+ peer FD00:0:0:F::2 description VM-DNS-03
+ peer FD00:0:0:F::2 connect-interface FD00:0:0:F::1
+ peer FD00:0:0:10::2 as-number 65001
+ peer FD00:0:0:10::2 description DNS-ANYCAST-B1
+ peer FD00:0:0:10::2 connect-interface FD00:0:0:10::1
+ #
+ ipv4-family unicast
+  undo synchronization
+  peer 10.125.50.2 enable
+  peer 10.125.50.2 route-policy DENY-ALL export
+  peer 10.125.50.2 next-hop-local
+  peer 10.125.50.2 load-balancing 
+  peer 10.125.50.34 enable
+  peer 10.125.50.34 route-policy DNS-02-IN import
+  peer 10.125.50.34 route-policy DENY-ALL export
+  peer 10.125.50.34 next-hop-local
+  peer 10.125.50.34 load-balancing 
+  peer 10.125.50.130 enable
+  peer 10.125.50.130 route-policy k8S-WORK-01-V4-IN import
+  peer 10.125.50.130 route-policy DENY-ALL export
+  peer 10.125.50.130 next-hop-local
+  peer 10.125.50.134 enable
+  peer 10.125.50.134 route-policy k8S-WORK-01-V4-IN import
+  peer 10.125.50.134 route-policy DENY-ALL export
+  peer 10.125.50.134 next-hop-local
+  peer 10.125.50.138 enable
+  peer 10.125.50.138 route-policy k8S-WORK-01-V4-IN import
+  peer 10.125.50.138 route-policy DENY-ALL export
+  peer 10.125.50.138 next-hop-local
+  peer 10.125.50.154 enable
+  peer 10.125.50.154 route-policy VM-MAIL-POWERBOOKS-V4-IN import
+  peer 10.125.50.154 route-policy DENY-ALL export
+  peer 10.125.50.154 next-hop-local
+  peer 10.125.130.18 enable
+  peer 10.125.130.18 route-policy DENY-ALL export
+  peer 10.125.130.18 next-hop-local
+  peer 10.125.130.18 load-balancing 
+  peer 10.125.130.22 enable
+  peer 10.125.130.22 route-policy DENY-ALL export
+  peer 10.125.130.22 next-hop-local
+ #
+ ipv6-family unicast
+  undo synchronization
+  peer 2804:5A10:EF0:3::2 enable
+  peer 2804:5A10:EF0:3::2 route-policy DENY-ALL export
+  peer 2804:5A10:EF0:3::2 next-hop-local
+  peer 2804:5A10:EF0:4::1FFD enable
+  peer 2804:5A10:EF0:4::1FFD next-hop-local
+  peer 2804:5A10:EF0:6::2 enable
+  peer 2804:5A10:EF0:6::2 route-policy DENY-ALL export
+  peer 2804:5A10:EF0:6::2 next-hop-local
+  peer 2804:5A10:EF0:F::2 enable
+  peer 2804:5A10:EF0:F::2 next-hop-local
+  peer 2804:5A10:EF0:10::1FFF enable
+  peer 2804:5A10:EF0:10::1FFF next-hop-local
+  peer FD00:0:0:3::2 enable
+  peer FD00:0:0:3::2 route-policy DENY-ALL export
+  peer FD00:0:0:3::2 next-hop-local
+  peer FD00:0:0:F::2 enable
+  peer FD00:0:0:F::2 route-policy DENY-ALL export
+  peer FD00:0:0:F::2 next-hop-local
+  peer FD00:0:0:10::2 enable
+  peer FD00:0:0:10::2 route-policy DENY-ALL export
+  peer FD00:0:0:10::2 next-hop-local
+#
+ospf 1 router-id 10.254.253.1
+ import-route direct
+ import-route static
+ import-route bgp route-policy OSPF-V4-IN
+ import-route unr
+ area 0.0.0.0
+#
+undo dcn
+#
+route-policy DENY-ALL deny node 99
+#
+route-policy DNS-01-IN permit node 10
+ if-match ip-prefix DNS-IN-V4
+#
+route-policy DNS-01-IN deny node 99
+#
+route-policy DNS-02-IN permit node 5
+ if-match ip-prefix DNS-01-PRIORIZA-V4
+ apply local-preference 200
+#
+route-policy DNS-02-IN permit node 10
+ if-match ip-prefix DNS-IN-V4
+#
+route-policy DNS-02-IN deny node 99
+#
+route-policy OSPF-V4-IN permit node 5
+ if-match ip-prefix DNS-IN-V4
+#
+route-policy OSPF-V4-IN permit node 10
+ if-match ip-prefix k8S-WORK-01-V4-IN
+#
+route-policy OSPF-V4-IN permit node 15
+ if-match ip-prefix VM-MAIL-POWERBOOKS-V4-IN
+#
+route-policy OSPF-V4-IN deny node 99
+#
+route-policy OSPF-V6-IN permit node 5
+ if-match ipv6 address prefix-list OSPF-V6-IN
+#
+route-policy OSPF-V6-IN deny node 99
+#
+route-policy VM-MAIL-POWERBOOKS-V4-IN permit node 10
+ if-match ip-prefix VM-MAIL-POWERBOOKS-V4-IN
+#
+route-policy VM-MAIL-POWERBOOKS-V4-IN deny node 100
+#
+route-policy k8S-WORK-01-V4-IN permit node 10
+ if-match ip-prefix k8S-WORK-01-V4-IN
+#
+ip ip-prefix DNS-01-PRIORIZA-V4 index 10 permit 45.171.228.18 32 greater-equal 32 less-equal 32
+ip ip-prefix DNS-IN-V4 index 10 permit 45.171.228.18 32 greater-equal 32 less-equal 32
+ip ip-prefix DNS-IN-V4 index 15 permit 45.171.228.19 32 greater-equal 32 less-equal 32
+ip ip-prefix DNS-IN-V4 index 20 permit 45.171.228.16 32 greater-equal 32 less-equal 32
+ip ip-prefix DNS-IN-V4 index 30 permit 45.171.229.14 32 greater-equal 32 less-equal 32
+ip ip-prefix DNS-IN-V4 index 40 permit 45.171.228.4 32 greater-equal 32 less-equal 32
+ip ip-prefix DNS-IN-V4 index 50 permit 45.171.229.5 32 greater-equal 32 less-equal 32
+ip ip-prefix VM-MAIL-POWERBOOKS-V4-IN index 10 permit 45.171.228.18 32 greater-equal 32 less-equal 32
+ip ip-prefix VM-MAIL-POWERBOOKS-V4-IN index 15 permit 45.171.228.11 32 greater-equal 32 less-equal 32
+ip ip-prefix k8S-WORK-01-V4-IN index 10 permit 45.171.228.23 32 greater-equal 32 less-equal 32
+ip ip-prefix k8S-WORK-01-V4-IN index 15 permit 45.171.228.27 32 greater-equal 32 less-equal 32
+ip ip-prefix k8S-WORK-01-V4-IN index 20 permit 10.125.40.0 24 greater-equal 32 less-equal 32
+#
+ip route-static 0.0.0.0 0.0.0.0 172.16.254.5
+ip route-static 10.255.255.80 255.255.255.255 10.125.125.14 preference 90 description LO-GERENCIA-OLT-HUAWEI-MIRANDA
+ip route-static 10.255.255.80 255.255.255.255 10.125.125.18 preference 80 description LO-GERENCIA-OLT-HUAWEI-MIRANDA
+ip route-static 45.171.228.17 255.255.255.255 10.125.50.82 description fastnetmoncgnat
+ip route-static 45.171.228.20 255.255.255.255 10.125.50.38 description GENEACS
+ip route-static 45.171.228.21 255.255.255.255 10.125.50.94 description DOCKER-SERVER
+ip route-static 45.171.228.22 255.255.255.255 10.125.50.98 description portainer
+ip route-static 45.171.228.25 255.255.255.255 10.125.50.70 description site
+ip route-static 45.171.228.26 255.255.255.255 10.125.50.254 description APP-BACK-END
+ip route-static 45.171.228.33 255.255.255.255 10.125.50.58 description CLICK190-PRE-GRAVACOES
+ip route-static 45.171.228.34 255.255.255.255 10.125.50.62 description CLICK190-PROXY
+ip route-static 45.171.228.35 255.255.255.255 172.30.10.2 description DEST-NAT-A10
+ip route-static 45.171.228.53 255.255.255.255 10.125.50.46 description SPEEDTEST
+ip route-static 45.171.228.120 255.255.255.255 10.125.130.126 description BAR-DA-PRATA
+ip route-static 100.64.0.0 255.192.0.0 172.30.10.2 description CGNAT
+#
+ipv6 route-static 2804:5A10:702:: 48 2804:5A10:702::2 description BAR-DA-PRATA
+ipv6 route-static 2804:5A10:E98:: 45 2804:5A10:EFF:0:172:30:2:1B
+ipv6 route-static 2804:5A10:EB8:: 45 2804:5A10:EFF:0:172:16:254:5A
+ipv6 route-static 2804:5A10:EF0:5:: 64 2804:5A10:EF0:4::2 description DOCKER-NETWORK
+ipv6 route-static 2804:5A10:EF8:: 48 2804:5A10:EFF:0:172:16:254:5A description RB-CGNAT-IPV6
+ipv6 route-static 2804:5A10:3000:: 36 2804:5A10:EFF:0:172:16:254:5A
+ipv6 route-static 2804:5A10:8000:: 36 2804:5A10:EFF:0:172:16:254:5A
+ipv6 route-static 2804:5A10:A800:: 38 2804:5A10:EFF:0:172:30:2:1B
+ipv6 route-static FD00:0:0:D:: 64 2804:5A10:EFF:0:172:16:254:5A description k8s-work-04
+#
+ip ipv6-prefix OSPF-V6-IN index 10 permit 2804:5A10:E30::2 128 greater-equal 128 less-equal 128
+ip ipv6-prefix OSPF-V6-IN index 15 permit 2804:5A10:E30::3 128 greater-equal 128 less-equal 128
+ip ipv6-prefix OSPF-V6-IN index 20 permit 2804:5A10:EF0:11::2 128 greater-equal 128 less-equal 128
+ip ipv6-prefix OSPF-V6-IN index 25 permit 2804:5A10:0:1:: 64 greater-equal 64 less-equal 128
+ip ipv6-prefix OSPF-V6-IN index 30 permit 2804:5A10:EF0:12:: 64 greater-equal 64 less-equal 128
+#
+snmp-agent
+snmp-agent acl LIBERADOS-SNMP
+snmp-agent local-engineid 800007DB032811EC6B9335
+snmp-agent community read cipher %^%#mN+C5;zbn=HQA\OH",k6.5,39jzaJ=$mEC-[xpo(P2c.YBeoU)^Ql'67`V#~0E7E/AD{[/nlJ8I9'42'%^%# alias __CommunityAliasName_01_31500
+snmp-agent community read cipher %^%#o0^s@<J|*)o~|gHo$bxM&36YGC,!sX&(+<#o8eBFy}#E#H&{N3EnG<<z|31R>ar+*U6J\6BZGO;J,(G~%^%# alias __CommunityAliasName_02_37797
+#
+snmp-agent sys-info version v2c v3
+#
+snmp-agent udp-port 55001
+#
+snmp-agent protocol source-status all-interface
+undo snmp-agent protocol source-status ipv6 all-interface
+#
+undo snmp-agent proxy protocol source-status all-interface
+undo snmp-agent proxy protocol source-status ipv6 all-interface
+#
+lldp enable
+#
+undo web-auth-server source-ip all
+#
+undo web-auth-server source-ipv6 all
+#
+stelnet server enable
+snetconf server enable
+ssh ipv4 server port 55220
+ssh user jonashc
+ssh user jonashc authentication-type password
+ssh user jonashc service-type all
+ssh user ppnetwork
+ssh user ppnetwork authentication-type password
+ssh user ppnetwork service-type all
+ssh user pwcomadmin
+ssh user pwcomadmin authentication-type password
+ssh user pwcomadmin service-type stelnet
+ssh user root
+ssh user root authentication-type password
+ssh user root service-type snetconf stelnet
+ssh user sgpsgp
+ssh user sgpsgp authentication-type all
+ssh user sgpsgp service-type all
+ssh server-source all-interface
+ssh ipv6 server-source all-interface
+ssh authorization-type default aaa
+#
+ssh server cipher aes256_gcm aes128_gcm aes256_ctr aes192_ctr aes128_ctr
+ssh server hmac sha2_512 sha2_256
+ssh server key-exchange dh_group_exchange_sha256 dh_group_exchange_sha1 dh_group14_sha1 ecdh_sha2_nistp256 ecdh_sha2_nistp384 ecdh_sha2_nistp521
+#
+ssh server publickey ecc rsa
+#
+ssh server dh-exchange min-len 2048
+#
+ssh client first-time enable
+ssh client peer 10.125.125.10 assign rsa-key 10.125.125.10
+ssh client peer 10.125.125.18 assign rsa-key 10.125.125.18
+ssh client peer 10.125.125.2 assign rsa-key 10.125.125.2
+ssh client peer 10.125.130.2 assign ecc-key 10.125.130.2
+ssh client peer 10.125.50.14 assign ecc-key 10.125.50.14
+ssh client peer 10.255.255.80 assign rsa-key 10.255.255.80
+ssh client peer 119.8.81.142 assign rsa-key 119.8.81.142
+ssh client peer 192.168.11.10 assign ecc-key 192.168.11.10
+ssh client peer 45.171.228.20 assign ecc-key 45.171.228.20
+#
+ssh client publickey ecc rsa
+#
+ssh client cipher aes256_gcm aes128_gcm aes256_ctr aes192_ctr aes128_ctr
+ssh client hmac sha2_512 sha2_256
+ssh client key-exchange dh_group_exchange_sha256 dh_group_exchange_sha1 dh_group14_sha1 ecdh_sha2_nistp256 ecdh_sha2_nistp384 ecdh_sha2_nistp521
+#
+traffic-policy IPS-PRIVADOS-PBR-V4 inbound global-acl
+#
+ip userlog access export version 1
+ip userlog access export host 10.125.40.50 20000
+ip userlog access send format syslog
+ip userlog access
+ip userlog call-status
+#
+command-privilege level 1 view global display current-configuration all
+command-privilege level 1 view shell screen-length
+#
+user-interface maximum-vty 21
+#
+user-interface con 0
+#
+user-interface vty 0 4
+ authentication-mode aaa
+ user privilege level 3
+ idle-timeout 2555 0
+ protocol inbound ssh
+#
+netconf
+ activate module huawei-ip
+#
+local-aaa-server
+#
+admin
+ virtual-system PWCOM-BREJ-BGP-01 pvmb slot 10 9
+  port-mode port
+  resource u4route upper-limit 1048576
+  resource m4route upper-limit 2000
+  resource u6route upper-limit 1048576
+  resource m6route upper-limit 512
+  resource vpn-instance upper-limit 512
+  resource cpu weight 5
+  assign interface Eth-Trunk0.70
+  assign interface Eth-Trunk0.90
+  assign interface Eth-Trunk0.99
+  assign interface Eth-Trunk0.101
+  assign interface Eth-Trunk0.103
+  assign interface Eth-Trunk0.104
+  assign interface Eth-Trunk0.105
+  assign interface Eth-Trunk0.130
+  assign interface Eth-Trunk0.201
+  assign interface Eth-Trunk0.568
+  assign interface Eth-Trunk0.605
+  assign interface Eth-Trunk0.725
+  assign interface Eth-Trunk0.727
+  assign interface Eth-Trunk0.728
+  assign interface Eth-Trunk0.870
+  assign interface Eth-Trunk0.871
+  assign interface Eth-Trunk0.1015
+  assign interface Eth-Trunk0.1065
+  assign interface Eth-Trunk0.1066
+  assign interface Eth-Trunk0.1820
+  assign interface Eth-Trunk0.1821
+  assign interface Virtual-Ethernet0/2/21.1014
+#
+accounting-service-policy DAA_1
+#
+l2tp-group default-lac
+ tunnel name pwcomborda
+#
+l2tp-group default-lns
+ tunnel name pwcomborda
+#
+return
