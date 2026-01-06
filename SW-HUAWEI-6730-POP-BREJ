@@ -1,0 +1,888 @@
+# Huawei Versatile Routing Platform Software
+# VRP (R) software, Version 5.170 (S6730 V200R021C00SPC100)
+# Copyright (C) 2000-2021 HUAWEI TECH Co., Ltd.
+# 
+# DDR             Memory Size : 4096  M bytes
+# FLASH Total     Memory Size : 2048  M bytes
+# FLASH Available Memory Size : 740   M bytes
+# Pcb           Version   : VER.A
+# MAB           Version   : 0
+# BootROM       Version   : 0000.051a
+# BootLoad      Version   : 0215.0000
+# CPLD          Version   : 0107 
+# Software      Version   : VRP (R) Software, Version 5.170 (V200R021C00SPC100)
+# FLASH         Version   : 0000.0000
+# PWR1 information
+# Pcb           Version   : PWR VER.A
+# PWR2 information
+# Pcb           Version   : PWR VER.B
+# FAN1 information
+# Pcb           Version   : NA
+# FAN2 information
+# Pcb           Version   : NA
+# FAN3 information
+# Pcb           Version   : NA
+# FAN4 information
+# Pcb           Version   : NA
+# S6730-H48X6C's Device status:
+# Slot Sub  Type                   Online    Power    Register     Status   Role  
+# --------------------------------------------------------------------------------------
+# 0    -    S6730-H48X6C           Present   PowerOn  Registered   Normal   Master
+#      PWR1 POWER                  Present   PowerOn  Registered   Normal   NA    
+#      PWR2 POWER                  Present   PowerOn  Registered   Normal   NA    
+#      FAN1 FAN                    Present   PowerOn  Registered   Normal   NA    
+#      FAN2 FAN                    Present   PowerOn  Registered   Normal   NA    
+#      FAN3 FAN                    Present   PowerOn  Registered   Normal   NA    
+#      FAN4 FAN                    Present   PowerOn  Registered   Normal   NA    
+!Software Version V200R021C00SPC100
+#
+sysname SW-HUAWEI-6730-POP-BREJ
+#
+info-center loghost source LoopBack0
+info-center loghost 10.125.40.50 channel 6 port 20002 security-log operation-log
+#
+ipv6
+#
+vlan batch 9 to 10 30 50 to 51 55 65 to 68 70 87 to 90 95 to 105 107 112 to 113
+vlan batch 130 145 to 147 149 201 212 232 to 233 235 to 239 567 to 568 600 605
+vlan batch 610 620 725 to 728 800 to 801 870 to 871 880 900 to 963 984 to 1015 1065 to 1066 1100 to 1115
+vlan batch 1170 to 1171 1184 to 1185 1300 1510 1515 1520 1660 1820 to 1821 1900 to 1902 2000 to 2003
+vlan batch 2810 to 2813 2820 2896 3000 to 3014 3200 3210 to 3217 3220 3230 3500 3998 to 4000
+vlan batch 4060 4080
+#
+lnp disable
+#
+stp disable
+#
+authentication-profile name default_authen_profile
+authentication-profile name dot1x_authen_profile
+authentication-profile name dot1xmac_authen_profile
+authentication-profile name mac_authen_profile
+authentication-profile name multi_authen_profile
+authentication-profile name portal_authen_profile
+#
+set save-configuration interval 3600
+set save-configuration backup-to-server server 10.125.50.14 transport-type ftp user powercom password ****** path /SWiTH/SW-HUAWEI-6730-POP-BREJ
+#
+http server-source -i MEth0/0/1
+#
+dhcp enable
+#
+diffserv domain default
+#
+radius-server template default
+#
+mpls lsr-id 10.255.255.4
+mpls
+ mpls te
+ mpls rsvp-te
+ mpls te cspf
+#
+mpls l2vpn
+#
+vsi 2000
+ description CLIENTES-OLT-LD-to-BNG
+ pwsignal ldp
+  vsi-id 2000
+  peer 10.255.255.5
+ mtu 1600
+#
+vsi 2001
+ description CLIENTES-OLT-SOBRADO-to-BNG
+ pwsignal ldp
+  vsi-id 2001
+  peer 10.255.255.5
+ mtu 1600
+#
+vsi 1901
+ description DNS-ANYCAST-A1-LAN-1
+ pwsignal ldp
+  vsi-id 1901
+  peer 10.254.253.1
+ mtu 1600
+#
+vsi 1902
+ description DNS-ANYCAST-B1
+ pwsignal ldp
+  vsi-id 1902
+  peer 10.254.253.1
+ mtu 1600
+#
+mpls ldp
+#
+#
+mpls ldp remote-peer 10.255.255.5
+#
+pki realm default
+ certificate-check none
+#
+acl name LIBERADOS-SNMP 2999
+ rule 5 permit source 45.171.228.54 0
+ rule 6 permit source 172.16.200.10 0
+ rule 7 permit source 45.171.228.254 0
+ rule 8 permit source 45.171.228.51 0
+ rule 15 permit source 172.16.200.51 0
+ rule 20 permit source 172.16.200.40 0
+ rule 25 permit source 10.125.50.0 0.0.0.255
+ rule 99 deny
+#
+free-rule-template name default_free_rule
+#
+portal-access-profile name portal_access_profile
+#
+drop-profile default
+#
+vlan 9
+ description AGINET
+vlan 10
+ description MNG-OLT-MONTEALEGRE
+vlan 30
+ description GERENCIA-DELL
+vlan 50
+ description MNG-SWITH
+vlan 51
+ description SW-HUAWEI-6730-POP-BREJ-TO-SW-HUAWEI-6730-H24X6C-POP-SOBRADO
+vlan 55
+ description P2P-SOBRADO-S6730-VIA-MONTE-ALEGRE
+vlan 68
+ description CLIENTE-POLIMIX-AD
+vlan 70
+ description CONCENTRADOR-MANEL-PAZ
+vlan 87
+ description SPEEDTEST
+vlan 88
+ name GERENCIA-OLT-BREJINHO
+vlan 90
+ description SIMET
+vlan 95
+ description GERENCIA-OLT-MIRANDA
+vlan 96
+ description GERENACIA-OLT-MIRANDA-VIA-SANTA-FE
+vlan 97
+ description DNS-02
+vlan 98
+ description CLIENTE ACENTAMENTO
+vlan 99
+ description APPLIANCE-WEDEV
+vlan 100
+ description CGNAT
+vlan 101
+ description CGNAT
+ name SPEEDTEST
+vlan 103
+ description IPV6-CGNAT
+vlan 104
+ name SERVIDOR-ITTV
+vlan 105
+ description made4flow
+vlan 107
+ description CLIENTE SAAE
+vlan 113
+ description DHCP-ESCRITORIO
+vlan 130
+ description ADTELECOM-CDN
+vlan 149
+ description UPLINK-OLT-SANTAFE
+vlan 201
+ description ESPIRITO-SANTO
+vlan 212
+ name COMUNICACAO-SAAE
+vlan 232
+ description CLIENTES-MANELPAZ
+ statistic enable
+vlan 233
+ description CLIENTES-MIRANDA-VLANS-1100-TO-1115
+vlan 235
+ description GERENCIA-OLT-HUAWEI-MIRANDA
+vlan 236
+ description CAMERAS-IP-MIRANDA
+vlan 237
+ description CLIENTES-MIRANDA-OLT-HUAWEI-VLAN-2800-TO-2819
+vlan 238
+ description CLIENTES-OLT-HUAWEI-MIRANDA-VLAN-2822-TO-2023
+vlan 239
+ description GERENCIA-OLT-HUAWEI-MIRANDA
+vlan 567
+ description OUTSIDE-A10
+vlan 568
+ description INSIDE-A10
+vlan 605
+ description LINK-ADTECOM-VIA-ESP
+vlan 610
+ description BABY-CLI
+vlan 620
+ description TR069
+vlan 728
+ description LINK-MULTI-VIA-AD
+vlan 800
+ description SUA-CONVENIENCIA
+vlan 801
+ description RB-ESCRITORIO-01
+vlan 870
+ description ADTELECOM
+vlan 871
+ description LINK-ADTELECOM-LINKIP-IPv6
+vlan 880
+ description CLIENTES-OLT-VERA-CRUZ-ADTELECMO
+vlan 900
+ name UPLINK-OLT-BREJINHO
+vlan 1015
+ description LINK-ADTELECOM
+vlan 1065
+ description PEER-V4-MOBWIRE-GIGA+
+vlan 1066
+ description PEER-V6-MOBWIRE-GIGA+
+vlan 1100
+ description OMNI-MANEL.PAZ
+vlan 1114
+ description CAMPO.LIMPO
+vlan 1170
+ description CLIENTE-OLT-MANDU
+vlan 1171
+ description CLIENTE-OLT-MANDU
+vlan 1184
+ description OLT-MANDU
+vlan 1185
+ description MGN-SWITH-TP-LINK-SANTAFE
+vlan 1510
+ description TUNE-ADTELECOM-OLT-MA
+vlan 1515
+ description CLIENTES-OLT-GOIANINHA-ADTELECOM
+vlan 1520
+ description OLT-ESP.SANTO-AD
+vlan 1660
+ description OLT MA - AD
+vlan 1820
+ description LINK-IP-GIGA+
+vlan 1821
+ description CDNs-AGRESTE-TELECOM
+vlan 1900
+ description DNS-ANYCAST
+vlan 1901
+ description DNS-A1-LAN-1
+vlan 1902
+ description DNS-ANYCAST-B1
+vlan 2000
+ description OLT-SOBREADO
+vlan 2001
+ description OLT-HUAWEI-MA5800-X2
+vlan 2002
+ description OLT-MA-5800-X2
+vlan 2003
+ description CLI-OLT-X7-BJ
+vlan 2810
+ description CLIENTE-LAGOA-DO-MATO
+vlan 2811
+ description CLIENTE-LAGOA-DO-MATO-PON-02
+vlan 2812
+ description CLIENTE-LAGOA-DO-MATO-PON-03
+vlan 2813
+ description CLIENTE-LAGOA-DO-MATO-PON-04
+vlan 2896
+ description RAIDOS-MANDU
+vlan 3220
+ description GERENCIA-OLT-LP
+vlan 3230
+ name UPLINK-OLT-LP
+vlan 3998
+ description TESTE-WIFI
+vlan 3999
+ description BAR-DA-PRATA
+vlan 4000
+ description REDE-GERENCIA
+vlan 4060
+ description TRANS-OLT-LARANJ-MULT
+vlan 4080
+ description CLIENTES-OLT-PASSAGEM-MULT
+#
+aaa
+ authentication-scheme default
+  authentication-mode local
+ authentication-scheme radius
+  authentication-mode radius
+ authorization-scheme default
+  authorization-mode local
+ accounting-scheme default
+  accounting-mode none
+ local-aaa-user password policy administrator
+  password history record number 0
+  password expire 0
+ domain default
+  authentication-scheme radius
+  accounting-scheme default
+  radius-server default
+ domain default_admin
+  authentication-scheme default
+  accounting-scheme default
+ local-user jonas password irreversible-cipher $1c$[E'R,QQ4I)$m`)B<_6(/No[rvU)VI_<G+Tg02wLwSjJxQFa{irD$
+ local-user jonas privilege level 15
+ local-user jonas service-type terminal ssh
+ local-user ppnetwork password irreversible-cipher $1c$PQuFYwa{`<$_aYv~4uc"AB^=oMC{}F#0&Y%WLj.i1,`[I9R}H{,$
+ local-user ppnetwork privilege level 15
+ local-user ppnetwork service-type telnet terminal ssh
+ local-user pwcomadmin password irreversible-cipher $1c$/P(%.'8GZJ$}c5-/Q]N-K|Uu4/hI(S,[jE%6aYb}2YNIx~*<'_@$
+ local-user pwcomadmin privilege level 15
+ local-user pwcomadmin service-type terminal ssh http
+ local-user monitorzabbix password irreversible-cipher $1c$d{*:="e()9$-(Yb<it-G!WQ.=GssFf@ma~jIGoNX-j8D*L@#qV($
+ local-user monitorzabbix privilege level 1
+ local-user monitorzabbix service-type terminal ssh
+#
+ospfv3 1
+ router-id 10.255.255.4
+ import-route direct
+ import-route static
+ import-route unr
+#
+interface Vlanif1
+ ip address dhcp-alloc
+#
+interface Vlanif50
+ description MNG-SW-HUAWEI-6730-POP-BREJ
+ ipv6 enable
+ ip address 10.125.130.2 255.255.255.252
+ ipv6 address auto link-local
+ ospfv3 1 area 0.0.0.0
+ ospfv3 network-type p2p
+ ospf network-type p2p
+ ospf ldp-sync
+ ospf enable 1 area 0.0.0.0
+ mpls
+ mpls te
+ mpls rsvp-te
+ mpls ldp
+ statistic enable both
+#
+interface Vlanif51
+ description SW-HUAWEI-6730-POP-BREJ-TO-SW-HUAWEI-6730-H24X6C-POP-SOBRADO
+ bandwidth 10000
+ ipv6 enable
+ ip address 10.125.130.5 255.255.255.252
+ ipv6 address FEC0:CAFE::10:125:130:5/126
+ ipv6 address auto link-local
+ ospfv3 1 area 0.0.0.0
+ ospfv3 network-type p2p
+ ospf network-type p2p
+ ospf ldp-sync
+ ospf enable 1 area 0.0.0.0
+ mpls
+ mpls te
+ mpls rsvp-te
+ mpls ldp
+ statistic enable both
+#
+interface Vlanif55
+ description P2P-SOBRADO-S6730-VIA-MONTE-ALEGRE
+ ipv6 enable
+ ip address 10.125.130.14 255.255.255.252
+ ipv6 address auto link-local
+ ospf cost 55
+ ospf network-type p2p
+ ospf ldp-sync
+ ospf enable 1 area 0.0.0.0
+ mpls
+ mpls te
+ mpls rsvp-te
+ mpls ldp
+ statistic enable both
+#
+interface Vlanif89
+ description MGN-OLT-MONTEALEGRE
+ ip address 10.125.125.1 255.255.255.252
+ ospf network-type p2p
+ ospf enable 1 area 0.0.0.0
+#
+interface Vlanif97
+ description PROXOMOX-PVE02
+#
+interface Vlanif98
+ description ACENTAMENTO-RADIOS
+ ip address 10.0.5.1 255.255.255.248
+ ip address 10.0.5.9 255.255.255.248 sub
+ ip address 10.0.5.17 255.255.255.248 sub
+ ip address 172.30.1.73 255.255.255.248 sub
+#
+interface Vlanif112
+ ip address 10.188.188.5 255.255.255.252
+#
+interface Vlanif1170
+ description TORRE-MANDU
+ ip address 10.88.89.1 255.255.255.0
+#
+interface Vlanif1171
+#
+interface Vlanif1184
+ description MNG-OLT-MANDU
+ ip address 10.101.11.249 255.255.255.252
+#
+interface Vlanif1185
+ description MGN-SWITH-ACENTAMENTO
+ ip address 10.188.188.1 255.255.255.252
+#
+interface Vlanif1901
+ mtu 1600
+ l2 binding vsi 1901
+#
+interface Vlanif1902
+ description DNS-ANYCAST-B1
+ l2 binding vsi 1902
+#
+interface Vlanif2000
+ description CLIENTES-OLT-LP-to-BNG
+ mtu 1600
+ l2 binding vsi 2000
+#
+interface Vlanif2001
+ description CLIENTES-OLT-SOBRADO-to-BNG
+ l2 binding vsi 2001
+#
+interface Vlanif2820
+ description OLT-LAGOA DO MATO
+ ip address 10.99.98.1 255.255.255.252
+#
+interface Vlanif2896
+ ip address 10.101.101.97 255.255.255.224
+#
+interface Vlanif3000
+ description CLIENTES-MONTE-ALEGRE-VIA-SOBRADO
+ mpls l2vc 10.255.255.5 3000 mtu 9198 control-word
+#
+interface Vlanif3001
+ description CLIENTES-MONTE-ALEGRE-VIA-SOBRADO
+ mpls l2vc 10.255.255.5 3001 mtu 9198 control-word
+#
+interface Vlanif3002
+ description CLIENTES-MONTE-ALEGRE-VIA-SOBRADO
+ mpls l2vc 10.255.255.5 3002 mtu 9198 control-word
+#
+interface Vlanif3003
+ description CLIENTES-MONTE-ALEGRE-VIA-SOBRADO
+ mpls l2vc 10.255.255.5 3003 mtu 9198 control-word
+#
+interface Vlanif3004
+ description CLIENTES-MONTE-ALEGRE-VIA-SOBRADO
+ mpls l2vc 10.255.255.5 3004 mtu 9198 control-word
+#
+interface Vlanif3005
+ description CLIENTES-MONTE-ALEGRE-VIA-SOBRADO
+ mpls l2vc 10.255.255.5 3005 mtu 9198 control-word
+#
+interface Vlanif3006
+ description CLIENTES-MONTE-ALEGRE-VIA-SOBRADO
+ mpls l2vc 10.255.255.5 3006 mtu 9198 control-word
+#
+interface Vlanif3007
+ description CLIENTES-MONTE-ALEGRE-VIA-SOBRADO
+ mpls l2vc 10.255.255.5 3007 mtu 9198 control-word
+#
+interface Vlanif3008
+ description CLIENTES-MONTE-ALEGRE-VIA-SOBRADO
+ mpls l2vc 10.255.255.5 3008 mtu 9198 control-word
+#
+interface Vlanif3009
+ description CLIENTES-MONTE-ALEGRE-VIA-SOBRADO
+ mpls l2vc 10.255.255.5 3009 mtu 9198 control-word
+#
+interface Vlanif3010
+ description CLIENTES-MONTE-ALEGRE-VIA-SOBRADO
+ mpls l2vc 10.255.255.5 3010 mtu 9198 control-word
+#
+interface Vlanif3011
+ description CLIENTES-MONTE-ALEGRE-VIA-SOBRADO
+ mpls l2vc 10.255.255.5 3011 mtu 9198 control-word
+#
+interface Vlanif3012
+ description CLIENTES-MONTE-ALEGRE-VIA-SOBRADO
+ mpls l2vc 10.255.255.5 3012 mtu 9198 control-word
+#
+interface Vlanif3013
+ description CLIENTES-MONTE-ALEGRE-VIA-SOBRADO
+ mpls l2vc 10.255.255.5 3013 mtu 9198 control-word
+#
+interface Vlanif3014
+ description CLIENTES-MONTE-ALEGRE-VIA-SOBRADO
+ mpls l2vc 10.255.255.5 3014 mtu 9198 control-word
+#
+interface Vlanif3200
+ description CLIENTES-MONTE-ALEGRE-VIA-SOBRADO-AD
+ mpls l2vc 10.255.255.5 3200 mtu 9198 control-word
+#
+interface Vlanif3500
+ ip address 10.4.5.1 255.255.255.0
+#
+interface Vlanif4000
+ description REDE-GERENCIA
+ ip address 172.25.0.1 255.255.255.0
+#
+interface MEth0/0/1
+ ip address 192.168.1.253 255.255.255.0
+#
+*interface MEth0/0/2
+#
+load-balance-profile LACP-LAG
+ l2 field smac dmac l2-protocol vlan sport
+ ipv6 field sip dip vlan l4-sport l4-dport protocol sport
+ ipv4 field sip dip vlan l4-sport l4-dport protocol sport
+ mpls field smac dmac top-label 2nd-label 3rd-label sip dip vlan sport protocol l4-sport l4-dport
+#
+interface Eth-Trunk0
+ description SW-HUAWEI-6730-POP-BREJ-TO-PWCOM-BREJ-BNG-01
+ bandwidth 40000
+ port link-type trunk
+ undo port trunk allow-pass vlan 1
+ port trunk allow-pass vlan 10 30 40 to 41 50 65 to 68 70 87 to 90 95 to 107 130 145 to 147
+ port trunk allow-pass vlan 149 201 212 232 to 233 235 to 239 400 567 to 568 600 605 610
+ port trunk allow-pass vlan 620 725 to 728 800 to 801 870 to 871 880 900 to 963 984 to 1015 1065 to 1066 1100 to 1115 1170 to 1171
+ port trunk allow-pass vlan 1300 1510 1515 1520 1660 1820 to 1821 1900 2000 to 2003 2810 to 2813 2820
+ port trunk allow-pass vlan 3000 to 3014 3210 to 3217 3999 4060 4080
+ mode lacp
+#
+interface Eth-Trunk1
+ description LACP-A10
+ port link-type trunk
+ undo port trunk allow-pass vlan 1
+ port trunk allow-pass vlan 567 to 568
+ mode lacp
+#
+interface Eth-Trunk2
+ description OLT-BREJINHO
+ port link-type hybrid
+ qinq vlan-translation enable
+ port hybrid tagged vlan 88 800
+ port hybrid untagged vlan 2003
+ port vlan-stacking vlan 900 to 963 stack-vlan 2003
+ mode lacp
+#
+interface Eth-Trunk3
+ description SERVER-DELL-PVE01
+ port link-type hybrid
+ port hybrid pvid vlan 30
+ port hybrid tagged vlan 104 1902
+ port hybrid untagged vlan 30
+ stp disable
+ mode lacp
+ load-balance enhanced profile LACP-LAG
+#
+interface Eth-Trunk10
+ description SW-HUAWEI-6730-POP-BREJ-TO-SW-HUAWEI-6730-H24X6C-POP-SOBRADO
+ bandwidth 100000
+ port link-type hybrid
+ port hybrid tagged vlan 51 65 67 to 68 89 1660 2001 to 2002
+#
+interface XGigabitEthernet0/0/1
+ description SW-HUAWEI-6730-POP-BREJ-TO-PWCOM-BREJ-BNG-01
+ eth-trunk 0
+#
+interface XGigabitEthernet0/0/2
+ description SW-HUAWEI-6730-POP-BREJ-TO-PWCOM-BREJ-BNG-01
+ eth-trunk 0
+#
+interface XGigabitEthernet0/0/3
+ description SW-HUAWEI-6730-POP-BREJ-TO-PWCOM-BREJ-BNG-01-GE0/1/2
+ eth-trunk 0
+#
+interface XGigabitEthernet0/0/4
+ description SW-HUAWEI-6730-POP-BREJ-TO-PWCOM-BREJ-BNG-01-GE0/1/3
+ eth-trunk 0
+#
+interface XGigabitEthernet0/0/5
+ description OLT-X7-PORT-0-9-0
+ eth-trunk 2
+#
+interface XGigabitEthernet0/0/6
+ description OLT-X7-PORT-0-9-1
+ eth-trunk 2
+#
+interface XGigabitEthernet0/0/7
+ description OUTSIDE-A10
+ eth-trunk 1
+#
+interface XGigabitEthernet0/0/8
+ description INSIDE-A10
+ eth-trunk 1
+#
+interface XGigabitEthernet0/0/9
+ description SERVER-DELL-SFP-1
+ eth-trunk 3
+#
+interface XGigabitEthernet0/0/10
+ description SERVER-DELL-SFP-2
+ eth-trunk 3
+#
+interface XGigabitEthernet0/0/11
+ undo negotiation auto
+ description LINK-SAAE
+ port link-type trunk
+ undo port trunk allow-pass vlan 1
+ port trunk allow-pass vlan 212
+#
+interface XGigabitEthernet0/0/12
+ undo negotiation auto
+ description LINK-MANDU
+ port link-type trunk
+ undo port trunk allow-pass vlan 1
+ port trunk allow-pass vlan 98 1170 to 1171 1184 to 1185 2896
+ port negotiation disable
+#
+interface XGigabitEthernet0/0/13
+#
+interface XGigabitEthernet0/0/14
+#
+interface XGigabitEthernet0/0/15
+ undo negotiation auto
+ description SW-HUAWEI-6730-POP-BREJ-TO-RB-BABY
+ port link-type trunk
+ undo port trunk allow-pass vlan 1
+ port trunk allow-pass vlan 600 610 3998
+ stp disable
+#
+interface XGigabitEthernet0/0/16
+ description SW-HUAWEI-6730-POP-BREJ-TO-OLT-MIRANDA-X2
+ port link-type hybrid
+ port hybrid tagged vlan 66 96 112 145 to 147 149 605 1100 to 1115
+#
+interface XGigabitEthernet0/0/17
+ description LINK SW-ESCRITORIO
+ port link-type hybrid
+ port hybrid tagged vlan 9 113 3998 4000
+#
+interface XGigabitEthernet0/0/18
+ description CGNAT
+ port link-type trunk
+ undo port trunk allow-pass vlan 1
+ port trunk allow-pass vlan 97 to 103 107 113 1100 1104 1109 1114 1170 to 1171 1900 2810 to 2813
+ port trunk allow-pass vlan 2820 3998
+ stp disable
+#
+interface XGigabitEthernet0/0/19
+ description SW-HUAWEI-6730-POP-BREJ-TO-SW-HUAWEI-6730-H24X6C-POP-SOBRADO-XG0/0/24
+ eth-trunk 10
+#
+interface XGigabitEthernet0/0/20
+ description SW-HUAWEI-6730-POP-BREJ-TO-OLT-MIRANDA-X2
+ port link-type hybrid
+ port hybrid tagged vlan 66 96 112 145 to 147 149 605 1100 to 1115 3999
+#
+interface XGigabitEthernet0/0/21
+#
+interface XGigabitEthernet0/0/22
+#
+interface XGigabitEthernet0/0/23
+ description SW-HUAWEI-6730-POP-BREJ-TO-MONTE_ALEGRE
+ port link-type hybrid
+ qinq vlan-translation enable
+ port hybrid tagged vlan 55 65 67 to 68 89 1660
+ port hybrid untagged vlan 2002
+ port vlan-stacking vlan 984 to 1014 stack-vlan 2002
+#
+interface XGigabitEthernet0/0/24
+ description SW-HUAWEI-6730-POP-BREJ-TO-RB-SANTAFE
+ port link-type trunk
+ undo port trunk allow-pass vlan 1
+ port trunk allow-pass vlan 66 95 to 96 112 145 to 147 149 605 1100 to 1115
+#
+interface XGigabitEthernet0/0/25
+ description LINK-ADTELECOM
+ port link-type trunk
+ undo port trunk allow-pass vlan 1
+ port trunk allow-pass vlan 40 to 41 68 70 130 201 232 to 233 235 to 239 728 870 to 871 880
+ port trunk allow-pass vlan 1015 1100 1114 1510 1515 1520 1660 4060 4080
+#
+interface XGigabitEthernet0/0/26
+ description LINK-IP-GIGA+
+ port link-type trunk
+ undo port trunk allow-pass vlan 1
+ port trunk allow-pass vlan 1065 to 1066 1820 to 1821
+#
+interface XGigabitEthernet0/0/27
+#
+interface XGigabitEthernet0/0/28
+#
+interface XGigabitEthernet0/0/29
+#
+interface XGigabitEthernet0/0/30
+#
+interface XGigabitEthernet0/0/31
+#
+interface XGigabitEthernet0/0/32
+ description SW-HUAWEI-6730-POP-BREJ-TO-SW-HUAWEI-6730-H24X6C-POP-SOBRADO-XG0/0/24
+ eth-trunk 10
+#
+interface XGigabitEthernet0/0/33
+#
+interface XGigabitEthernet0/0/34
+#
+interface XGigabitEthernet0/0/35
+#
+interface XGigabitEthernet0/0/36
+ description LINK-SAAE
+ port link-type trunk
+ undo port trunk allow-pass vlan 1
+ port trunk allow-pass vlan 212
+#
+interface XGigabitEthernet0/0/37
+ description LINK-MANDU
+ port link-type trunk
+ undo port trunk allow-pass vlan 1
+ port trunk allow-pass vlan 98 1170 to 1171 1184 to 1185 2896
+#
+interface XGigabitEthernet0/0/38
+#
+interface XGigabitEthernet0/0/39
+ description CGNAT
+ port link-type trunk
+ undo port trunk allow-pass vlan 1
+ port trunk allow-pass vlan 97 to 103 107 113 1100 1104 1109 1114 1170 to 1171 1900 2810 to 2813
+ port trunk allow-pass vlan 2820
+ stp disable
+#
+interface XGigabitEthernet0/0/40
+ description OLT-BREJINHO
+ port link-type hybrid
+ qinq vlan-translation enable
+ port hybrid tagged vlan 88 800
+ port hybrid untagged vlan 2003
+ port vlan-stacking vlan 900 to 963 stack-vlan 2003
+#
+interface XGigabitEthernet0/0/41
+ description SW-HUAWEI-6730-POP-BREJ-TO-MONTE_ALEGRE
+ port link-type hybrid
+ qinq vlan-translation enable
+ port hybrid tagged vlan 55 65 67 to 68 89 1660
+ port hybrid untagged vlan 2002
+ port vlan-stacking vlan 984 to 1014 stack-vlan 2002
+#
+interface XGigabitEthernet0/0/42
+#
+interface XGigabitEthernet0/0/43
+ description SW-HUAWEI-6730-POP-BREJ-TO-RB-BABY
+ port link-type trunk
+ undo port trunk allow-pass vlan 1
+ port trunk allow-pass vlan 600 610
+ stp disable
+#
+interface XGigabitEthernet0/0/44
+ description SW-HUAWEI-6730-POP-BREJ-TO-RB-SANTAFE
+ port link-type trunk
+ undo port trunk allow-pass vlan 1
+ port trunk allow-pass vlan 66 95 to 96 112 145 to 147 149 605 1100 to 1115
+#
+interface XGigabitEthernet0/0/45
+#
+interface XGigabitEthernet0/0/46
+#
+interface XGigabitEthernet0/0/47
+ port media type copper
+  undo negotiation auto
+ description DNS-A1-LAN-1
+ port link-type access
+ port default vlan 1901
+#
+interface XGigabitEthernet0/0/48
+ description LINK-IP-GIGA+
+ port link-type trunk
+ undo port trunk allow-pass vlan 1
+ port trunk allow-pass vlan 1065 to 1066 1820 to 1821
+#
+interface 40GE0/0/1
+#
+interface 40GE0/0/2
+#
+interface 40GE0/0/3
+#
+interface 40GE0/0/4
+#
+interface 40GE0/0/5
+#
+interface 40GE0/0/6
+#
+interface NULL0
+#
+interface LoopBack0
+ ip address 10.255.255.4 255.255.255.255
+#
+ospf 1 router-id 10.255.255.4
+ import-route direct
+ import-route static
+ import-route unr
+ area 0.0.0.0
+#
+undo icmp name timestamp-request receive
+#
+ip route-static 0.0.0.0 0.0.0.0 10.125.130.1
+ip route-static 10.99.98.8 255.255.255.252 10.188.188.2 description OLT-ACENTAMENTO
+#
+snmp-agent
+snmp-agent acl LIBERADOS-SNMP
+snmp-agent local-engineid 800007DB0374E9BFCEAD40
+snmp-agent community read cipher ******
+snmp-agent sys-info version v2c v3
+snmp-agent protocol source-status all-interface
+undo snmp-agent protocol source-status ipv6 all-interface
+#
+stelnet server enable
+ssh ipv4 server port 55220
+ssh user jonas
+ssh user jonas authentication-type password
+ssh user jonas service-type stelnet
+ssh user monitorzabbix
+ssh user monitorzabbix authentication-type password
+ssh user monitorzabbix service-type stelnet
+ssh user ppnetwork
+ssh user ppnetwork authentication-type password
+ssh user ppnetwork service-type all
+ssh user pwcomadmin
+ssh user pwcomadmin authentication-type password
+ssh user pwcomadmin service-type stelnet
+ssh server-source all-interface
+ssh ipv6 server acl 2999
+ssh server cipher aes256_ctr aes128_ctr
+ssh server hmac sha2_256
+ssh server key-exchange dh_group16_sha512 dh_group15_sha512 dh_group14_sha256 dh_group_exchange_sha256
+ssh client cipher aes256_ctr aes128_ctr
+ssh client hmac sha2_256
+ssh client key-exchange dh_group16_sha512 dh_group15_sha512 dh_group14_sha256 dh_group_exchange_sha256
+ssh server dh-exchange min-len 2048
+ssh server publickey ecc dsa rsa
+#
+command-privilege level 1 view shell display current-configuration all
+#
+capwap dtls cert-mandatory-match enable
+#
+user-interface con 0
+ authentication-mode password
+ set authentication password cipher $1c$qu#Y!HhPGV$lL`jP:&pi(8(kLK[8XF@-P\1MOp3'B82+"EQkbx/$
+user-interface vty 0 4
+ authentication-mode aaa
+user-interface vty 16 20
+#
+wlan
+ traffic-profile name default
+ security-profile name default
+ security-profile name default-wds
+ security-profile name default-mesh
+ ssid-profile name default
+ vap-profile name default
+ wds-profile name default
+ mesh-handover-profile name default
+ mesh-profile name default
+ regulatory-domain-profile name default
+ air-scan-profile name default
+ rrm-profile name default
+ radio-2g-profile name default
+ radio-5g-profile name default
+ wids-spoof-profile name default
+ wids-whitelist-profile name default
+ wids-profile name default
+ ap-system-profile name default
+ port-link-profile name default
+ wired-port-profile name default
+ ap-group name default
+ provision-ap
+#
+dot1x-access-profile name dot1x_access_profile
+#
+mac-access-profile name mac_access_profile
+#
+ops
+#
+return
