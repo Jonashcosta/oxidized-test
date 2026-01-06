@@ -1,0 +1,727 @@
+#             version: 6.48 (stable)
+#    factory-software: 6.38.5
+#        total-memory: 1952.0MiB
+#                 cpu: tilegx
+#           cpu-count: 36
+#     total-hdd-space: 1024.0MiB
+#   architecture-name: tile
+#          board-name: CCR1036-8G-2S+
+#            platform: MikroTik
+#   installed-version: 6.48
+# Flags: U - undoable, R - redoable, F - floating-undo
+#   ACTION                                   BY               POLICY
+# U device changed                           pwcomadmin       write
+# U address changed                          pwcomadmin       write
+# U address added                            pwcomadmin       write
+# U device added                             pwcomadmin       write
+# U address list entry changed               pwcomadmin       write
+# U address list entry changed               pwcomadmin       write
+# U ssh-key removed                          pwcomadmin       write
+#                                                             policy
+# U address list entry changed               pwcomadmin       write
+# U ip service changed                       pwcomadmin       write
+# U ip service changed                       pwcomadmin       write
+# U ip service changed                       pwcomadmin       write
+# U user oxidized added                      pwcomadmin       write
+#                                                             policy
+# U ip service changed                       pwcomadmin       write
+# U ip service changed                       pwcomadmin       write
+# U nat rule changed                         pwcomadmin       write
+# U nat rule changed                         pwcomadmin       write
+# U nat rule changed                         pwcomadmin       write
+# U nat rule changed                         pwcomadmin       write
+# U device changed                           pwcomadmin       write
+# U device changed                           pwcomadmin       write
+# U device changed                           pwcomadmin       write
+# U device changed                           pwcomadmin       write
+# U device changed                           pwcomadmin       write
+# U device changed                           pwcomadmin       write
+# U device changed                           pwcomadmin       write
+# U device changed                           pwcomadmin       write
+# U device changed                           pwcomadmin       write
+# U device changed                           pwcomadmin       write
+# U device changed                           pwcomadmin       write
+# U device changed                           pwcomadmin       write
+# U device changed                           pwcomadmin       write
+# U address added                            pwcomadmin       write
+# U device changed                           pwcomadmin       write
+# U device changed                           pwcomadmin       write
+# U device changed                           pwcomadmin       write
+# U bridge port changed                      pwcomadmin       write
+# U device changed                           pwcomadmin       write
+# U nat rule changed                         pwcomadmin       write
+# U nat rule changed                         pwcomadmin       write
+# U nat rule changed                         pwcomadmin       write
+# U nat rule changed                         pwcomadmin       write
+# U nat rule changed                         pwcomadmin       write
+# U address changed                          pwcomadmin       write
+# U nat rule changed                         pwcomadmin       write
+# U nat rule changed                         pwcomadmin       write
+# U ppp secret <5382> removed                pwcomadmin       write
+# U ppp secret <ClientEvento001> changed     pwcomadmin       write
+# U ppp secret <ClientEvento001> changed     pwcomadmin       write
+# U ppp secret <ClientEvento001> added       pwcomadmin       write
+# U ppp secret <evento> changed              pwcomadmin       write
+# U address changed                          pwcomadmin       write
+# U address changed                          pwcomadmin       write
+# U address changed                          pwcomadmin       write
+# U address changed                          pwcomadmin       write
+# U address changed                          pwcomadmin       write
+# U address changed                          pwcomadmin       write
+# U address changed                          pwcomadmin       write
+# U address added                            pwcomadmin       write
+# U address changed                          pwcomadmin       write
+# U device changed                           ppnetwork        write
+# U device changed                           ppnetwork        write
+# U device changed                           ppnetwork        write
+# U device changed                           ppnetwork        write
+# U address changed                          ppnetwork        write
+# U address added                            ppnetwork        write
+# U ip service changed                       pwcomadmin       write
+# U ppp secret <7084> changed                pwcomadmin       write
+# U RoMON configuration changed              pwcomadmin       write
+# U RoMON configuration changed              pwcomadmin       write
+# U dhcp server dhcp2 removed                pwcomadmin       write
+# U dhcp lease removed                       pwcomadmin       write
+# 
+# software id = R74J-4Q7G
+#
+# model = CCR1036-8G-2S+
+# serial number = 742B07FA4C20
+/interface bridge
+add name="bridge DNS-02"
+add name=bridge1
+add name=bridge2
+add name=bridge3
+add disabled=yes name=bridge4
+add disabled=yes name=bridge5 protocol-mode=none
+add name=bridge6 protocol-mode=none
+add comment="OLT EPON LAGOA DO MATA" disabled=yes name="bridge7 GERENCIA OLT EPON LAGOA DO MATA"
+add disabled=yes name=bridge8-CLIENTES-LAGOA-MATO
+add disabled=yes name=bridge9-CLIENTE-LAGOA-DO-MATO-PON-02
+add disabled=yes name=bridge10-CLIENTE-LAGOA-DO-MATO-PON-03
+add disabled=yes name=bridge11-CLIENTE-LAGOA-DO-MATO-PON-04
+add disabled=yes name=bridge12AGINET
+add disabled=yes name="bridgePPPOE SAAE"
+add disabled=yes name="bridgePPPoE ACENTAMENTO"
+add name=loopback protocol-mode=none
+/interface ethernet
+set [ find default-name=ether1 ] advertise=10M-full,100M-full,1000M-full,2500M-full,5000M-full,10000M-full
+set [ find default-name=ether2 ] loop-protect=off
+set [ find default-name=ether4 ] advertise=1000M-full
+set [ find default-name=ether5 ] comment=IDRAC
+set [ find default-name=ether6 ] speed=100Mbps
+set [ find default-name=ether8 ] advertise=10M-half,10M-full,100M-half,100M-full,1000M-half,1000M-full speed=100Mbps
+set [ find default-name=sfp-sfpplus1 ] auto-negotiation=no comment=NE8000
+set [ find default-name=sfp-sfpplus2 ] auto-negotiation=no comment="Swith TP LINK ESCRITORIO" disabled=yes
+/interface vlan
+add comment="mandu BNG" disabled=yes interface=sfp-sfpplus1 name="IN VLAN 1170" vlan-id=1170
+add comment="mandu BNG" disabled=yes interface=sfp-sfpplus1 name="IN VLAN 1171" vlan-id=1171
+add comment="mandu OLT" disabled=yes interface=sfp-sfpplus2 name="OUT VLAN 1170" vlan-id=1170
+add comment="mandu OLT" disabled=yes interface=sfp-sfpplus2 name="OUT VLAN 1171" vlan-id=1171
+add disabled=yes interface=sfp-sfpplus2 name="SAAE PPPOE 107 BA" vlan-id=107
+add comment=DNS-02 interface=sfp-sfpplus1 name="VLAN 97 AB" vlan-id=97
+add interface=ether8 name="VLAN 97 BA" vlan-id=97
+add interface=sfp-sfpplus1 name="VLAN 107 PPPEO AB" vlan-id=107
+add comment=SAAE disabled=yes interface=sfp-sfpplus2 name="VLAN 212" vlan-id=212
+add comment="BABY IPV6" disabled=yes interface=sfp-sfpplus2 name="VLAN 601 IPV6" vlan-id=601
+add disabled=yes interface=sfp-sfpplus2 name="VLAN 1184" vlan-id=1184
+add disabled=yes interface=sfp-sfpplus2 name="VLAN 1185" vlan-id=1185
+add disabled=yes interface=sfp-sfpplus2 name="VLAN 1284 OLT" vlan-id=1284
+add interface=sfp-sfpplus1 name="VLAN 1900" vlan-id=1900
+add comment=ACENTAMENTO disabled=yes interface=sfp-sfpplus1 name="VLAN IN 98" vlan-id=98
+add comment=ACENTAMENTO disabled=yes interface=sfp-sfpplus2 name="VLAN OUT 98" vlan-id=98
+add interface=sfp-sfpplus1 name=VLAN-99-APPLIANCE vlan-id=99
+add interface=sfp-sfpplus1 name=VLAN-100-BNG vlan-id=100
+add interface=sfp-sfpplus1 name=VLAN-101-BGP vlan-id=101
+add interface=sfp-sfpplus1 name=VLAN-102-BGP-IPV6 vlan-id=102
+add interface=sfp-sfpplus1 name=VLAN-103-BGP-IPV6 vlan-id=103
+add disabled=yes interface=sfp-sfpplus1 name=VLAN-610-PPPOES-BABY-A vlan-id=610
+add disabled=yes interface=sfp-sfpplus2 name=VLAN-610-PPPOES-BABY-B vlan-id=610
+add comment="OLT EPON LAGOA DO MATA" disabled=yes interface=sfp-sfpplus1 name=VLAN-2810-PPPOE-IN vlan-id=2810
+add comment="OLT EPON LAGOA DO MATA" disabled=yes interface=sfp-sfpplus2 name=VLAN-2810-PPPOE-OUT vlan-id=2810
+add disabled=yes interface=sfp-sfpplus1 name=VLAN-2811-PPPOE-IN vlan-id=2811
+add disabled=yes interface=sfp-sfpplus2 name=VLAN-2811-PPPOE-OUT vlan-id=2811
+add disabled=yes interface=sfp-sfpplus1 name=VLAN-2812-PPPOE-IN vlan-id=2812
+add disabled=yes interface=sfp-sfpplus2 name=VLAN-2812-PPPOE-OUT vlan-id=2812
+add disabled=yes interface=sfp-sfpplus1 name=VLAN-2813-PPPOE-IN vlan-id=2813
+add disabled=yes interface=sfp-sfpplus2 name=VLAN-2813-PPPOE-OUT vlan-id=2813
+add comment="OLT EPON LAGOA DO MATA" disabled=yes interface=sfp-sfpplus1 name=VLAN-2820-IN vlan-id=2820
+add comment="OLT EPON LAGOA DO MATA" disabled=yes interface=sfp-sfpplus2 name=VLAN-2820-OUT vlan-id=2820
+add disabled=yes interface=sfp-sfpplus1 name=VLAN-3998 vlan-id=3998
+add disabled=yes interface=ether2 name=vlan9 vlan-id=9
+add disabled=yes interface=sfp-sfpplus2 name="vlan9 OUT" vlan-id=9
+add disabled=yes interface=sfp-sfpplus2 name=vlan89 vlan-id=89
+add disabled=yes interface=sfp-sfpplus2 name="vlan112 GERENCIA SW TP-LINKRACK" vlan-id=112
+add interface=sfp-sfpplus1 name="vlan113 DHCP ESCRITORIO" vlan-id=113
+add comment="PON OLT HUAWEI MIRANDA" interface=sfp-sfpplus1 name=vlan1100 vlan-id=1100
+add interface=sfp-sfpplus1 name=vlan1104 vlan-id=1104
+add comment="PON OLT MIRANDA" interface=sfp-sfpplus1 name=vlan1109 vlan-id=1109
+add comment="PON OLT HUAWEI MIRANDA" interface=sfp-sfpplus1 name=vlan1114 vlan-id=1114
+add disabled=yes interface=sfp-sfpplus2 name=vlan1186 vlan-id=1186
+/interface bonding
+add name=bonding1 slaves=ether6,ether7 transmit-hash-policy=layer-2-and-3
+/interface wireless security-profiles
+set [ find default=yes ] supplicant-identity=MikroTik
+/ip pool
+add name=dhcp_pool0 ranges=192.168.80.50-192.168.81.200
+add name=dhcp_pool1 ranges=192.168.200.12-192.168.200.254
+add name=pool1PPPOE-local ranges=10.125.70.0/24
+/ip dhcp-server
+add address-pool=dhcp_pool0 disabled=no interface=bridge2 name=dhcp1
+/ipv6 dhcp-server
+add address-pool=escritorio interface=bridge2 name=server1
+/ipv6 pool
+add name=escritorio prefix=2804:5a10:ef8::/48 prefix-length=58
+/ppp profile
+set *0 dns-server=45.171.228.19,1.1.1.1 local-address=45.171.229.6 remote-address=pool1PPPOE-local
+add change-tcp-mss=yes local-address=45.171.229.6 name=profile1 remote-address=dhcp_pool0 use-encryption=yes
+add change-tcp-mss=yes name=VPNs use-encryption=yes
+/routing bgp instance
+set default as=65000 out-filter=BGP-AS65002-OUT router-id=45.171.229.6
+/routing ospf instance
+set [ find default=yes ] metric-bgp=60 redistribute-bgp=as-type-1 redistribute-connected=as-type-1 redistribute-static=as-type-1 router-id=10.255.255.100
+/routing ospf-v3 area
+set [ find default=yes ] disabled=yes
+/routing ospf-v3 instance
+set [ find default=yes ] disabled=yes redistribute-connected=as-type-1 redistribute-static=as-type-1 router-id=10.255.255.100
+/snmp community
+set [ find default=yes ] disabled=yes
+add addresses=10.125.50.0/24 name=POWERCOM
+/system logging action
+set 0 memory-lines=10000
+set 1 disk-lines-per-file=100
+add name=RouterLog remote=10.125.50.14 remote-port=55515 src-address=45.171.229.6 target=remote
+/user group
+set read policy="local,telnet,ssh,reboot,read,write,test,winbox,password,web,sniff,sensitive,api,romon,tikapp,!ftp,!policy,!dude"
+set full policy="local,telnet,ssh,ftp,reboot,read,write,policy,test,winbox,password,web,sniff,sensitive,api,romon,dude,tikapp"
+add name=ftp policy="ftp,read,sensitive,!local,!telnet,!ssh,!reboot,!write,!policy,!test,!winbox,!password,!web,!sniff,!api,!romon,!dude,!tikapp"
+/interface bridge port
+add bridge=bridge3 interface=ether1
+add bridge=bridge1 disabled=yes interface=ether2
+add bridge=bridge1 interface=ether3
+add bridge=bridge2 interface="vlan113 DHCP ESCRITORIO"
+add bridge=bridge12AGINET disabled=yes interface="vlan9 OUT"
+add bridge=bridge2 disabled=yes interface=sfp-sfpplus2
+add bridge=bridge4 disabled=yes interface="IN VLAN 1171"
+add bridge=bridge4 disabled=yes interface="OUT VLAN 1171"
+add bridge=bridge2 disabled=yes interface=ether7
+add bridge=bridge5 disabled=yes interface=VLAN-610-PPPOES-BABY-A
+add bridge=bridge5 disabled=yes interface=VLAN-610-PPPOES-BABY-B
+add bridge=bridge6 disabled=yes interface=ether4
+add bridge="bridgePPPOE SAAE" disabled=yes interface="VLAN 107 PPPEO AB"
+add bridge="bridgePPPOE SAAE" disabled=yes interface="SAAE PPPOE 107 BA"
+add bridge=bridge2 disabled=yes interface=ether6
+add bridge=bridge6 interface=VLAN-99-APPLIANCE
+add bridge="bridgePPPoE ACENTAMENTO" disabled=yes interface="VLAN IN 98"
+add bridge="bridgePPPoE ACENTAMENTO" disabled=yes interface="VLAN OUT 98"
+add bridge="bridge DNS-02" interface="VLAN 97 AB"
+add bridge="bridge DNS-02" interface="VLAN 97 BA"
+add bridge="bridge7 GERENCIA OLT EPON LAGOA DO MATA" comment="OLT EPON LAGOA DO MATA" disabled=yes interface=VLAN-2820-IN
+add bridge="bridge7 GERENCIA OLT EPON LAGOA DO MATA" comment="OLT EPON LAGOA DO MATA" disabled=yes interface=VLAN-2820-OUT
+add bridge=bridge8-CLIENTES-LAGOA-MATO disabled=yes interface=VLAN-2810-PPPOE-IN
+add bridge=bridge8-CLIENTES-LAGOA-MATO disabled=yes interface=VLAN-2810-PPPOE-OUT
+add bridge=bridge9-CLIENTE-LAGOA-DO-MATO-PON-02 disabled=yes interface=VLAN-2811-PPPOE-IN
+add bridge=bridge9-CLIENTE-LAGOA-DO-MATO-PON-02 disabled=yes interface=VLAN-2811-PPPOE-OUT
+add bridge=bridge10-CLIENTE-LAGOA-DO-MATO-PON-03 disabled=yes interface=VLAN-2812-PPPOE-IN
+add bridge=bridge10-CLIENTE-LAGOA-DO-MATO-PON-03 disabled=yes interface=VLAN-2812-PPPOE-OUT
+add bridge=bridge11-CLIENTE-LAGOA-DO-MATO-PON-04 disabled=yes interface=VLAN-2813-PPPOE-IN
+add bridge=bridge11-CLIENTE-LAGOA-DO-MATO-PON-04 disabled=yes interface=VLAN-2813-PPPOE-OUT
+add bridge=bridge12AGINET disabled=yes interface=vlan9
+add bridge=bridge3 interface="VLAN 1900"
+/interface bridge vlan
+add bridge=bridge12AGINET disabled=yes tagged=ether2,sfp-sfpplus2 vlan-ids=9
+/interface l2tp-server server
+set authentication=mschap1,mschap2 enabled=yes ipsec-secret=6oanr6OuCBAdYem1 use-ipsec=yes
+/interface pppoe-server server
+add disabled=no interface=bridge2 one-session-per-host=yes service-name=service1
+add interface=bridge2 one-session-per-host=yes service-name=service2
+add interface="OUT VLAN 1170" one-session-per-host=yes service-name=service3
+add one-session-per-host=yes service-name=service4
+add one-session-per-host=yes service-name=service5
+add one-session-per-host=yes service-name=service6
+add one-session-per-host=yes service-name=service7
+add one-session-per-host=yes service-name=service8
+add one-session-per-host=yes service-name=service9
+add one-session-per-host=yes service-name=service10
+/interface pptp-server server
+set authentication=pap,chap,mschap1,mschap2
+/interface sstp-server server
+set authentication=mschap2 certificate=Server enabled=yes pfs=yes port=55443 tls-version=only-1.2 verify-client-certificate=yes
+/ip address
+add address=172.16.254.2/30 comment=BGP interface=VLAN-101-BGP network=172.16.254.0
+add address=172.16.254.5/30 comment=BNG interface=VLAN-100-BNG network=172.16.254.4
+add address=10.255.255.100 interface=loopback network=10.255.255.100
+add address=192.168.80.2/23 interface="vlan113 DHCP ESCRITORIO" network=192.168.80.0
+add address=172.16.200.1/26 comment="XEN 2" disabled=yes interface=bridge1 network=172.16.200.0
+add address=45.171.229.6 interface=loopback network=45.171.229.6
+add address=10.188.188.5/30 disabled=yes interface="vlan112 GERENCIA SW TP-LINKRACK" network=10.188.188.4
+add address=172.16.254.9/30 disabled=yes network=172.16.254.8
+add address=192.168.10.2/24 disabled=yes interface=ether4 network=192.168.10.0
+add address=10.101.11.249/30 comment="OLT MANDU" disabled=yes interface="VLAN 1184" network=10.101.11.248
+add address=10.88.88.1/24 disabled=yes interface="OUT VLAN 1171" network=10.88.88.0
+add address=172.30.6.1/30 disabled=yes interface="VLAN 212" network=172.30.6.0
+add address=172.16.201.1/26 disabled=yes interface=ether1 network=172.16.201.0
+add address=10.188.188.1/30 disabled=yes interface="VLAN 1185" network=10.188.188.0
+add address=172.30.1.73/29 disabled=yes interface="VLAN OUT 98" network=172.30.1.72
+add address=10.0.5.17/29 comment="CLIENTE ACENTAMENTO " disabled=yes interface="VLAN OUT 98" network=10.0.5.16
+add address=10.0.5.9/29 comment="CLIENTE ACENTAMENTO " disabled=yes interface="VLAN OUT 98" network=10.0.5.8
+add address=10.0.5.1/29 comment="CLIENTE ACENTAMENTO " disabled=yes interface="VLAN OUT 98" network=10.0.5.0
+add address=10.135.245.1/24 disabled=yes interface=vlan1186 network=10.135.245.0
+add address=192.168.0.121/24 disabled=yes interface=ether5 network=192.168.0.0
+add address=10.125.120.1/30 comment=idrac interface=ether5 network=10.125.120.0
+add address=10.172.168.1/30 interface=bonding1 network=10.172.168.0
+add address=10.125.121.1/30 comment="PROXMOX SRV1" interface=bonding1 network=10.125.121.0
+add address=10.125.50.17/30 interface=bonding1 network=10.125.50.16
+add address=10.125.50.21/30 interface=bonding1 network=10.125.50.20
+add address=10.125.50.25/30 interface=bonding1 network=10.125.50.24
+add address=10.125.50.29/30 interface=bonding1 network=10.125.50.28
+add address=10.125.121.5/30 comment="PROXMOX SRV2" interface=ether8 network=10.125.121.4
+add address=10.125.70.1/30 disabled=yes interface=bridge2 network=10.125.70.0
+add address=10.125.121.9/30 comment="PROXMOX SRV3" interface=ether2 network=10.125.121.8
+add address=10.88.89.1/24 comment="TORRE MANDU" disabled=yes interface="OUT VLAN 1170" network=10.88.89.0
+add address=45.171.228.2 interface=loopback network=45.171.228.2
+add address=10.99.98.1/30 comment="OLT LAGOA DO MATO" disabled=yes interface=VLAN-2820-OUT network=10.99.98.0
+add address=192.168.0.2/24 disabled=yes interface=sfp-sfpplus2 network=192.168.0.0
+add address=10.188.188.21/30 comment="swith tplink escritorio" disabled=yes interface="vlan112 GERENCIA SW TP-LINKRACK" network=10.188.188.20
+add address=10.0.10.1/29 comment="PON OLT HUAWEI MIRANDA" interface=vlan1100 network=10.0.10.0
+add address=10.0.13.1/24 interface=vlan1114 network=10.0.13.0
+add address=10.0.7.1/24 interface=vlan1109 network=10.0.7.0
+add address=10.0.8.1/24 interface=vlan1104 network=10.0.8.0
+add address=172.31.31.1/24 interface=ether8 network=172.31.31.0
+add address=192.168.100.10/24 disabled=yes interface=ether1 network=192.168.100.0
+add address=10.125.121.13/30 disabled=yes interface=bridge1 network=10.125.121.12
+add address=192.168.66.9/24 comment="windows aginet" disabled=yes interface=vlan9 network=192.168.66.0
+add address=10.125.50.141/30 interface=ether2 network=10.125.50.140
+add address=192.168.1.1/24 disabled=yes interface="vlan113 DHCP ESCRITORIO" network=192.168.1.0
+add address=45.165.128.202 interface=loopback network=45.165.128.202
+add address=10.11.104.1/24 disabled=yes interface=ether3 network=10.11.104.0
+add address=172.16.200.1/26 interface="vlan113 DHCP ESCRITORIO" network=172.16.200.0
+add address=10.125.125.26/30 interface=ether4 network=10.125.125.24
+add address=10.170.0.1/22 disabled=yes interface=VLAN-3998 network=10.170.0.0
+/ip dhcp-server lease
+add address=192.168.81.199 client-id=1:80:5e:c0:1b:10:c2 mac-address=80:5E:C0:1B:10:C2 server=dhcp1
+add address=192.168.81.59 comment=solar mac-address=34:EA:E7:89:1C:82 server=dhcp1
+add address=192.168.80.123 client-id=1:48:51:cf:3e:7d:ca comment="camera conveniencia fundo " mac-address=48:51:CF:3E:7D:CA server=dhcp1
+add address=192.168.80.87 client-id=1:44:3b:32:cb:66:53 comment="camera estoque 01" mac-address=44:3B:32:CB:66:53 server=dhcp1
+add address=192.168.80.86 client-id=1:48:51:cf:3e:7d:d5 comment="Camera Ferramentas" mac-address=48:51:CF:3E:7D:D5 server=dhcp1
+add address=192.168.80.77 client-id=1:48:51:cf:3e:7d:c3 comment="Camera Entrada meio" mac-address=48:51:CF:3E:7D:C3 server=dhcp1
+add address=192.168.81.196 client-id=1:80:5e:c0:1b:10:f3 mac-address=80:5E:C0:1B:10:F3 server=dhcp1
+add address=192.168.81.0 client-id=1:dc:21:5c:e5:63:2 mac-address=DC:21:5C:E5:63:02 server=dhcp1
+add address=192.168.80.251 client-id=1:dc:b7:2e:56:6e:50 mac-address=DC:B7:2E:56:6E:50 server=dhcp1
+add address=192.168.80.80 mac-address=84:EA:ED:23:52:A0 server=dhcp1
+add address=192.168.81.20 client-id=1:48:51:cf:44:87:22 comment=nvr mac-address=48:51:CF:44:87:22 server=dhcp1
+add address=192.168.81.21 client-id=1:d8:36:5f:d:fe:9a comment=financeiro mac-address=D8:36:5F:0D:FE:9A server=dhcp1
+add address=192.168.81.36 client-id=1:48:51:cf:3e:7d:d3 mac-address=48:51:CF:3E:7D:D3 server=dhcp1
+add address=192.168.80.50 client-id=1:48:51:cf:3e:7d:be comment="garagen frente" mac-address=48:51:CF:3E:7D:BE server=dhcp1
+add address=192.168.80.51 client-id=1:48:51:cf:3e:7d:df comment="fora lado garagen" mac-address=48:51:CF:3E:7D:DF server=dhcp1
+add address=192.168.80.59 client-id=1:48:51:cf:3e:7d:e4 comment="garagen fundo" mac-address=48:51:CF:3E:7D:E4 server=dhcp1
+add address=192.168.80.60 client-id=1:d8:36:5f:e:6:b comment="frente 2" mac-address=D8:36:5F:0E:06:0B server=dhcp1
+add address=192.168.80.64 client-id=1:44:3b:32:c0:10:d6 mac-address=44:3B:32:C0:10:D6 server=dhcp1
+add address=192.168.81.91 client-id=1:6c:3c:7c:8d:72:28 comment="IMPRESSORA CANON" mac-address=6C:3C:7C:8D:72:28 server=dhcp1
+add address=192.168.80.227 client-id=1:24:fd:d:65:28:84 mac-address=24:FD:0D:65:28:84 server=dhcp1
+/ip dhcp-server network
+add address=192.168.80.0/23 gateway=192.168.80.2
+add address=192.168.200.0/24 gateway=192.168.200.1
+/ip dns
+set servers=45.171.229.14,45.171.228.19,2804:5a10:e30::2,2804:5a10:e30::3
+/ip firewall address-list
+add address=45.171.228.1 list=EQUIPAMENTOS
+add address=45.171.228.0 list=EQUIPAMENTOS
+add address=192.168.10.3 list=EQUIPAMENTOS
+add address=10.102.102.2 list=EQUIPAMENTOS
+add address=8.8.8.8 list=DNS
+add address=8.8.4.4 list=DNS
+add address=1.1.1.1 list=DNS
+add address=208.67.222.222 list=DNS
+add address=45.171.228.18 list=DNS
+add address=45.171.228.19 list=DNS
+add address=45.171.228.50 list=PERMITIDOS
+add address=172.16.200.0/26 list=PERMITIDOS
+add address=51.222.156.94 list=DNS
+add address=135.148.32.77 list=DNS
+add address=45.171.229.2 list=EQUIPAMENTOS
+add address=45.171.229.3 list=EQUIPAMENTOS
+add address=45.171.229.4 list=EQUIPAMENTOS
+add address=45.171.229.5 list=EQUIPAMENTOS
+add address=45.171.229.6 list=EQUIPAMENTOS
+add address=45.171.229.7 list=EQUIPAMENTOS
+add address=45.171.229.8 list=EQUIPAMENTOS
+add address=45.171.229.9 list=EQUIPAMENTOS
+add address=45.171.229.10 list=EQUIPAMENTOS
+add address=192.168.81.0 list=PERMITIDOS
+add address=172.16.200.35 list=EQUIPAMENTOS
+add address=118.194.251.58 list=BLOQUEIO
+add address=167.94.146.59 list=BLOQUEIO
+add address=198.235.24.49 list=BLOQUEIO
+add address=23.90.160.146 list=BLOQUEIO
+add address=198.235.24.162 list=BLOQUEIO
+add address=162.142.125.220 list=BLOQUEIO
+add address=170.106.115.253 list=BLOQUEIO
+add address=198.235.24.32 list=BLOQUEIO
+add address=167.248.133.45 list=BLOQUEIO
+add address=205.210.31.30 list=BLOQUEIO
+add address=103.203.59.7 list=BLOQUEIO
+add address=167.94.145.59 list=BLOQUEIO
+add address=162.142.125.210 list=BLOQUEIO
+add address=167.248.133.119 list=BLOQUEIO
+add address=103.123.1.216 list=BLOQUEIO
+add address=87.236.176.53 list=BLOQUEIO
+add address=172.16.200.38 list=EQUIPAMENTOS
+add address=192.168.80.0/23 list=PERMITIDOS
+add address=45.171.228.51 list=PERMITIDOS
+add address=45.171.228.51 list=EQUIPAMENTOS
+add address=208.67.220.220 list=DNS
+add address=94.102.61.29 list=BLOQUEIO
+add address=45.171.228.91 list=PERMITIDOS
+add address=inclusao.musica.ufrn.br list=https://inclusao.musica.ufrn.br/
+add address=web.skydocs.com.br list=web.skydocs.com.br
+add address=177.73.130.0/23 list=PERMITIDOS
+add address=10.125.50.0/24 list=PERMITIDOS
+add address=54.160.144.165 comment="teste acesso maquinas" list=PERMITIDOS
+add address=34.200.103.197 comment="teste acesso maquinas" list=PERMITIDOS
+add address=45.178.100.0/22 comment="teste acesso maquinas" list=PERMITIDOS
+add address=187.109.21.140 list=PERMITIDOS
+add address=10.125.50.6 disabled=yes list=NO-NAT
+add address=www.youtube.com list=BLOQUEIOSITE
+add address=177.73.131.1 list=PERMITIDOS
+add address=45.172.87.46 list=PERMITIDOS
+add address=45.171.228.91 list=GENIEACS-PERMIT
+add address=177.52.37.142 list=GENIEACS-PERMIT
+add address=177.52.37.0/24 list=OLT-PERMIT
+add address=45.171.228.0/22 list=OLT-PERMIT
+add address=170.233.120.0/22 list=OLT-PERMIT
+add address=10.125.121.0/24 list=EQUIPAMENTOS
+/ip firewall filter
+add action=drop chain=input disabled=yes dst-port=1723 protocol=tcp src-address=!45.178.100.0/22
+add action=fasttrack-connection chain=forward connection-state=established,related
+add action=accept chain=forward protocol=l2tp
+add action=accept chain=input comment=LIBERA src-address-list=PERMITIDOS
+add action=accept chain=input comment=LIBERA dst-address-list=PERMITIDOS
+add action=accept chain=input connection-state=established,related disabled=yes in-interface=*F00022
+add action=accept chain=input connection-state=established,related dst-port=55443 protocol=tcp
+add action=drop chain=input comment="BLOQUEIA PORTAS BAIXAS" dst-port=0-1024 protocol=tcp
+add action=drop chain=input comment="BLOQUEIA PORTAS BAIXAS" dst-port=0-1024 protocol=udp
+add action=drop chain=input comment="BLOQUEIA PORTAS BAIXAS" disabled=yes protocol=icmp
+/ip firewall mangle
+add action=mark-routing chain=prerouting disabled=yes dst-address=!45.171.228.0/22 new-routing-mark=CGNAT2 src-address=100.65.8.0/22
+/ip firewall nat
+add action=src-nat chain=srcnat comment="NAT SSTP-VPN" dst-address=172.31.254.0/24 to-addresses=10.255.255.100
+add action=accept chain=srcnat dst-address=198.51.100.2
+add action=src-nat chain=srcnat src-address=10.125.130.18 to-addresses=45.171.229.6
+add action=masquerade chain=srcnat disabled=yes dst-address=192.168.100.1 out-interface=ether1
+add action=src-nat chain=srcnat comment=a10 src-address=172.31.31.0/24 to-addresses=45.171.229.6
+add action=dst-nat chain=dstnat comment=GRAFANA dst-address=45.171.229.6 dst-port=3000 protocol=tcp to-addresses=10.125.50.30 to-ports=3000
+add action=dst-nat chain=dstnat comment=GRAFANA disabled=yes dst-address=45.171.229.6 dst-port=56000 protocol=tcp to-addresses=172.31.31.31 to-ports=22
+add action=dst-nat chain=dstnat comment=GRAFANA disabled=yes dst-address=45.171.229.6 dst-port=56001 protocol=tcp to-addresses=172.31.31.31 to-ports=443
+add action=src-nat chain=srcnat src-address=10.10.10.10 to-addresses=45.171.229.6
+add action=src-nat chain=srcnat dst-address=177.74.129.224 to-addresses=45.171.229.6
+add action=masquerade chain=srcnat comment="OLT HUAWE MIRANDA" disabled=yes dst-address=192.168.100.1 to-addresses=10.99.98.2
+add action=src-nat chain=srcnat dst-address-list=web.skydocs.com.br to-addresses=45.171.228.128
+add action=src-nat chain=srcnat dst-address-list=https://inclusao.musica.ufrn.br/ to-addresses=45.165.131.202
+add action=src-nat chain=srcnat disabled=yes dst-address-list=https://inclusao.musica.ufrn.br/ to-addresses=45.171.229.128
+add action=src-nat chain=srcnat dst-address=103.107.219.38 to-addresses=45.171.230.255
+add action=src-nat chain=srcnat dst-address=170.233.122.142 to-addresses=45.171.230.0
+add action=dst-nat chain=dstnat dst-address=177.52.37.142 dst-port=2222 protocol=tcp to-addresses=10.125.125.2 to-ports=22
+add action=masquerade chain=srcnat comment="OLT HUAWE MIRANDA" disabled=yes dst-address=10.125.125.18 to-addresses=10.125.125.18
+add action=dst-nat chain=dstnat comment="OLT HUAWE MIRANDA" dst-address=45.171.229.6 dst-port=2290 protocol=tcp src-address-list=OLT-PERMIT to-addresses=10.255.255.80 to-ports=22
+add action=dst-nat chain=dstnat comment="SGP TO GENIEACS" dst-address=45.171.229.6 dst-port=55001 log=yes protocol=tcp to-addresses=10.125.40.14 to-ports=22
+add action=dst-nat chain=dstnat comment="SGP TO GENIEACS" dst-address=45.171.229.6 dst-port=7557 log=yes protocol=tcp to-addresses=10.125.40.14 to-ports=7557
+add action=dst-nat chain=dstnat comment="SGP OLT HUAWEI" disabled=yes dst-address=45.171.229.6 dst-port=2350 protocol=tcp to-addresses=192.168.10.3 to-ports=23
+add action=dst-nat chain=dstnat comment="SGP OLT HUAWEI" dst-address=45.171.229.6 dst-port=2370 protocol=tcp src-address-list=OLT-PERMIT to-addresses=10.102.102.2 to-ports=23
+add action=dst-nat chain=dstnat comment="OLT HUAWE BJx7" dst-address=45.171.229.6 dst-port=2280 protocol=tcp src-address-list=OLT-PERMIT to-addresses=10.125.125.10 to-ports=22
+add action=dst-nat chain=dstnat comment="OLT HUAWE SOBRADO" dst-address=45.171.229.6 dst-port=2291 protocol=tcp src-address-list=OLT-PERMIT to-addresses=10.125.125.22 to-ports=22
+add action=masquerade chain=srcnat disabled=yes dst-address=10.125.125.2
+add action=dst-nat chain=dstnat comment="OLT HUAWE MA" dst-address=45.171.229.6 dst-port=2240 protocol=tcp to-addresses=10.255.255.81 to-ports=23
+add action=masquerade chain=srcnat disabled=yes dst-address=192.168.10.3
+add action=masquerade chain=srcnat disabled=yes dst-address=192.168.0.1
+add action=dst-nat chain=dstnat comment="OLT HUAWE MA-5600" disabled=yes dst-address=45.171.229.6 dst-port=23447 protocol=tcp to-addresses=192.168.10.3 to-ports=23
+add action=dst-nat chain=dstnat comment="OLT HUAWE BJx7" disabled=yes dst-address=45.171.229.6 dst-port=2281 protocol=tcp to-addresses=10.125.125.10 to-ports=21
+add action=dst-nat chain=dstnat comment="OLT MANDU INTELBRAS" dst-address=45.171.229.6 dst-port=2260 protocol=tcp src-address-list=OLT-PERMIT to-addresses=10.101.11.250 to-ports=23
+add action=dst-nat chain=dstnat comment="RED. A10" disabled=yes dst-address=45.171.229.6 dst-port=2265 protocol=tcp to-addresses=172.31.31.31 to-ports=22
+add action=dst-nat chain=dstnat comment=ZAP disabled=yes dst-address=45.171.229.6 dst-port=5698 protocol=tcp to-addresses=172.16.200.38 to-ports=5698
+add action=dst-nat chain=dstnat comment=ZAP disabled=yes dst-address=45.171.229.6 dst-port=5700 protocol=tcp to-addresses=172.16.200.25 to-ports=8080
+add action=dst-nat chain=dstnat comment=ZAP disabled=yes dst-address=45.171.229.6 dst-port=5699 protocol=tcp src-address=177.52.37.142 to-addresses=10.125.50.86 to-ports=5699
+add action=dst-nat chain=dstnat comment=ZAP disabled=yes dst-address=45.171.229.6 dst-port=5699 protocol=tcp to-addresses=172.16.201.10 to-ports=5699
+add action=src-nat chain=srcnat comment=tr069 disabled=yes src-address=10.150.0.0/16 to-addresses=45.171.228.2
+add action=src-nat chain=srcnat comment="CAMERA MIRNADa" disabled=yes src-address=10.125.121.14 to-addresses=45.171.228.2
+add action=src-nat chain=srcnat comment=escritorio src-address=192.168.80.0/23 to-addresses=45.171.229.6
+add action=src-nat chain=srcnat comment="CAMERA MIRNADa" disabled=yes src-address=10.99.98.4/30 to-addresses=45.171.229.6
+add action=src-nat chain=srcnat comment="REDE INTERNA SERVIDORES" disabled=yes dst-address-list=!EQUIPAMENTOS out-interface=VLAN-101-BGP protocol=!ospf src-address=172.16.200.0/26 to-addresses=45.171.229.240
+add action=src-nat chain=srcnat comment="SERVIDORES PROXMOX" dst-address-list=!EQUIPAMENTOS out-interface=VLAN-101-BGP protocol=!ospf src-address=10.125.121.0/24 to-addresses=45.171.229.6
+add action=src-nat chain=srcnat comment="SERVIDORES PROXMOX" dst-address-list=!EQUIPAMENTOS out-interface=VLAN-101-BGP protocol=!ospf src-address=10.125.50.0/24 src-address-list=!NO-NAT to-addresses=45.171.229.6
+add action=src-nat chain=srcnat comment="SERVIDORES PROXMOX" dst-address-list=!EQUIPAMENTOS protocol=!ospf src-address=10.125.70.0/24 to-addresses=45.171.229.6
+add action=src-nat chain=srcnat comment="SERVIDORES PROXMOX" disabled=yes dst-address-list=!EQUIPAMENTOS out-interface=VLAN-101-BGP protocol=!ospf src-address=10.102.102.28/30 to-addresses=45.171.229.6
+add action=src-nat chain=srcnat comment=DNS-ANYCAST-B1 disabled=yes dst-address-list=!EQUIPAMENTOS out-interface=VLAN-101-BGP protocol=!ospf src-address=172.16.201.0/26 to-addresses=45.171.229.255
+add action=src-nat chain=srcnat comment="REDE INTERNA " dst-address-list=!EQUIPAMENTOS out-interface=VLAN-101-BGP protocol=!ospf src-address=172.16.200.0/26 to-addresses=45.171.229.6
+add action=jump chain=srcnat comment="CGNAT NOVO" jump-target=CGNAT_100_64_0 out-interface=VLAN-101-BGP src-address=100.64.0.0/24
+add action=jump chain=srcnat jump-target=CGNAT_100_64_1 out-interface=VLAN-101-BGP src-address=100.64.1.0/24
+add action=jump chain=srcnat jump-target=CGNAT_100_64_2 out-interface=VLAN-101-BGP src-address=100.64.2.0/24
+add action=jump chain=srcnat jump-target=CGNAT_100_64_4 out-interface=VLAN-101-BGP src-address=100.64.4.0/24
+add action=jump chain=srcnat jump-target=CGNAT_100_64_3 out-interface=VLAN-101-BGP src-address=100.64.3.0/24
+add action=jump chain=srcnat jump-target=CGNAT_100_64_5 out-interface=VLAN-101-BGP src-address=100.64.5.0/24
+add action=jump chain=srcnat jump-target=CGNAT_100_64_6 out-interface=VLAN-101-BGP src-address=100.64.6.0/24
+add action=jump chain=srcnat jump-target=CGNAT_100_64_7 out-interface=VLAN-101-BGP src-address=100.64.7.0/24
+add action=jump chain=srcnat jump-target=CGNAT_100_64_8 out-interface=VLAN-101-BGP src-address=100.64.8.0/24
+add action=jump chain=srcnat jump-target=CGNAT_100_64_9 out-interface=VLAN-101-BGP src-address=100.64.9.0/24
+add action=jump chain=srcnat jump-target=CGNAT_100_64_10 out-interface=VLAN-101-BGP src-address=100.64.10.0/24
+add action=jump chain=srcnat jump-target=CGNAT_100_64_11 out-interface=VLAN-101-BGP src-address=100.64.11.0/24
+add action=jump chain=srcnat jump-target=CGNAT_100_64_12 out-interface=VLAN-101-BGP src-address=100.64.12.0/24
+add action=jump chain=srcnat jump-target=CGNAT_100_64_13 out-interface=VLAN-101-BGP src-address=100.64.13.0/24
+add action=jump chain=srcnat jump-target=CGNAT_100_64_14 out-interface=VLAN-101-BGP src-address=100.64.14.0/24
+add action=jump chain=srcnat jump-target=CGNAT_100_64_15 out-interface=VLAN-101-BGP src-address=100.64.15.0/24
+add action=jump chain=CGNAT_100_64_0 jump-target=CGNAT_0 src-address=100.64.0.0/25
+add action=jump chain=CGNAT_100_64_0 jump-target=CGNAT_1 src-address=100.64.0.128/25
+add action=jump chain=CGNAT_100_64_1 jump-target=CGNAT_2 src-address=100.64.1.0/25
+add action=jump chain=CGNAT_100_64_1 jump-target=CGNAT_3 src-address=100.64.1.128/25
+add action=jump chain=CGNAT_100_64_2 jump-target=CGNAT_4 src-address=100.64.2.0/25
+add action=jump chain=CGNAT_100_64_2 jump-target=CGNAT_5 src-address=100.64.2.128/25
+add action=jump chain=CGNAT_100_64_3 jump-target=CGNAT_6 src-address=100.64.3.0/25
+add action=jump chain=CGNAT_100_64_3 jump-target=CGNAT_7 src-address=100.64.3.128/25
+add action=jump chain=CGNAT_100_64_4 jump-target=CGNAT_8 src-address=100.64.4.0/25
+add action=jump chain=CGNAT_100_64_4 jump-target=CGNAT_9 src-address=100.64.4.128/25
+add action=jump chain=CGNAT_100_64_5 jump-target=CGNAT_10 src-address=100.64.5.0/25
+add action=jump chain=CGNAT_100_64_5 jump-target=CGNAT_11 src-address=100.64.5.128/25
+add action=jump chain=CGNAT_100_64_6 jump-target=CGNAT_12 src-address=100.64.6.0/25
+add action=jump chain=CGNAT_100_64_6 jump-target=CGNAT_13 src-address=100.64.6.128/25
+add action=jump chain=CGNAT_100_64_7 jump-target=CGNAT_14 src-address=100.64.7.0/25
+add action=jump chain=CGNAT_100_64_7 jump-target=CGNAT_15 src-address=100.64.7.128/25
+add action=jump chain=CGNAT_100_64_8 jump-target=CGNAT_16 src-address=100.64.8.0/25
+add action=jump chain=CGNAT_100_64_8 jump-target=CGNAT_17 src-address=100.64.8.128/25
+add action=jump chain=CGNAT_100_64_9 jump-target=CGNAT_18 src-address=100.64.9.0/25
+add action=jump chain=CGNAT_100_64_9 jump-target=CGNAT_19 src-address=100.64.9.128/25
+add action=jump chain=CGNAT_100_64_10 jump-target=CGNAT_20 src-address=100.64.10.0/25
+add action=jump chain=CGNAT_100_64_10 jump-target=CGNAT_21 src-address=100.64.10.128/25
+add action=jump chain=CGNAT_100_64_11 jump-target=CGNAT_22 src-address=100.64.11.0/25
+add action=jump chain=CGNAT_100_64_11 jump-target=CGNAT_23 src-address=100.64.11.128/25
+add action=jump chain=CGNAT_100_64_12 jump-target=CGNAT_24 src-address=100.64.12.0/25
+add action=jump chain=CGNAT_100_64_12 jump-target=CGNAT_25 src-address=100.64.12.128/25
+add action=jump chain=CGNAT_100_64_13 jump-target=CGNAT_26 src-address=100.64.13.0/25
+add action=jump chain=CGNAT_100_64_13 jump-target=CGNAT_27 src-address=100.64.13.128/25
+add action=jump chain=CGNAT_100_64_14 jump-target=CGNAT_28 src-address=100.64.14.0/25
+add action=jump chain=CGNAT_100_64_14 jump-target=CGNAT_29 src-address=100.64.14.128/25
+add action=jump chain=CGNAT_100_64_15 jump-target=CGNAT_30 src-address=100.64.15.0/25
+add action=jump chain=CGNAT_100_64_15 jump-target=CGNAT_31 src-address=100.64.15.128/25
+add action=netmap chain=CGNAT_0 protocol=tcp src-address=100.64.0.0/25 to-addresses=45.171.228.128/25 to-ports=1024-5056
+add action=netmap chain=CGNAT_0 protocol=udp src-address=100.64.0.0/25 to-addresses=45.171.228.128/25 to-ports=1024-5056
+add action=netmap chain=CGNAT_0 src-address=100.64.0.0/25 to-addresses=45.171.228.128/25
+add action=netmap chain=CGNAT_1 protocol=tcp src-address=100.64.0.128/25 to-addresses=45.171.228.128/25 to-ports=5057-9088
+add action=netmap chain=CGNAT_1 protocol=udp src-address=100.64.0.128/25 to-addresses=45.171.228.128/25 to-ports=5057-9088
+add action=netmap chain=CGNAT_1 src-address=100.64.0.128/25 to-addresses=45.171.228.128/25
+add action=netmap chain=CGNAT_2 protocol=tcp src-address=100.64.1.0/25 to-addresses=45.171.228.128/25 to-ports=9089-13120
+add action=netmap chain=CGNAT_2 protocol=udp src-address=100.64.1.0/25 to-addresses=45.171.228.128/25 to-ports=9089-13120
+add action=netmap chain=CGNAT_2 src-address=100.64.1.0/25 to-addresses=45.171.228.128/25
+add action=netmap chain=CGNAT_3 protocol=tcp src-address=100.64.1.128/25 to-addresses=45.171.228.128/25 to-ports=13121-17152
+add action=netmap chain=CGNAT_3 protocol=udp src-address=100.64.1.128/25 to-addresses=45.171.228.128/25 to-ports=13121-17152
+add action=netmap chain=CGNAT_3 src-address=100.64.1.128/25 to-addresses=45.171.228.128/25
+add action=netmap chain=CGNAT_4 protocol=tcp src-address=100.64.2.0/25 to-addresses=45.171.228.128/25 to-ports=17153-21184
+add action=netmap chain=CGNAT_4 protocol=udp src-address=100.64.2.0/25 to-addresses=45.171.228.128/25 to-ports=17153-21184
+add action=netmap chain=CGNAT_4 src-address=100.64.2.0/25 to-addresses=45.171.228.128/25
+add action=netmap chain=CGNAT_5 protocol=tcp src-address=100.64.2.128/25 to-addresses=45.171.228.128/25 to-ports=21185-25216
+add action=netmap chain=CGNAT_5 protocol=udp src-address=100.64.2.128/25 to-addresses=45.171.228.128/25 to-ports=21185-25216
+add action=netmap chain=CGNAT_5 src-address=100.64.2.128/25 to-addresses=45.171.228.128/25
+add action=netmap chain=CGNAT_6 protocol=tcp src-address=100.64.3.0/25 to-addresses=45.171.228.128/25 to-ports=25217-29248
+add action=netmap chain=CGNAT_6 protocol=udp src-address=100.64.3.0/25 to-addresses=45.171.228.128/25 to-ports=25217-29248
+add action=netmap chain=CGNAT_6 src-address=100.64.3.0/25 to-addresses=45.171.228.128/25
+add action=netmap chain=CGNAT_7 protocol=tcp src-address=100.64.3.128/25 to-addresses=45.171.228.128/25 to-ports=29249-33280
+add action=netmap chain=CGNAT_7 protocol=udp src-address=100.64.3.128/25 to-addresses=45.171.228.128/25 to-ports=29249-33280
+add action=netmap chain=CGNAT_7 src-address=100.64.3.128/25 to-addresses=45.171.228.128/25
+add action=netmap chain=CGNAT_8 protocol=tcp src-address=100.64.4.0/25 to-addresses=45.171.228.128/25 to-ports=33281-37312
+add action=netmap chain=CGNAT_8 protocol=udp src-address=100.64.4.0/25 to-addresses=45.171.228.128/25 to-ports=33281-37312
+add action=netmap chain=CGNAT_8 src-address=100.64.4.0/25 to-addresses=45.171.228.128/25
+add action=netmap chain=CGNAT_9 protocol=tcp src-address=100.64.4.128/25 to-addresses=45.171.228.128/25 to-ports=37313-41344
+add action=netmap chain=CGNAT_9 protocol=udp src-address=100.64.4.128/25 to-addresses=45.171.228.128/25 to-ports=37313-41344
+add action=netmap chain=CGNAT_9 src-address=100.64.4.128/25 to-addresses=45.171.228.128/25
+add action=netmap chain=CGNAT_10 protocol=tcp src-address=100.64.5.0/25 to-addresses=45.171.228.128/25 to-ports=41345-45376
+add action=netmap chain=CGNAT_10 protocol=udp src-address=100.64.5.0/25 to-addresses=45.171.228.128/25 to-ports=41345-45376
+add action=netmap chain=CGNAT_10 src-address=100.64.5.0/25 to-addresses=45.171.228.128/25
+add action=netmap chain=CGNAT_11 protocol=tcp src-address=100.64.5.128/25 to-addresses=45.171.228.128/25 to-ports=45377-49408
+add action=netmap chain=CGNAT_11 protocol=udp src-address=100.64.5.128/25 to-addresses=45.171.228.128/25 to-ports=45377-49408
+add action=netmap chain=CGNAT_11 src-address=100.64.5.128/25 to-addresses=45.171.228.128/25
+add action=netmap chain=CGNAT_12 protocol=tcp src-address=100.64.6.0/25 to-addresses=45.171.228.128/25 to-ports=49409-53440
+add action=netmap chain=CGNAT_12 protocol=udp src-address=100.64.6.0/25 to-addresses=45.171.228.128/25 to-ports=49409-53440
+add action=netmap chain=CGNAT_12 src-address=100.64.6.0/25 to-addresses=45.171.228.128/25
+add action=netmap chain=CGNAT_13 protocol=tcp src-address=100.64.6.128/25 to-addresses=45.171.228.128/25 to-ports=53441-57472
+add action=netmap chain=CGNAT_13 protocol=udp src-address=100.64.6.128/25 to-addresses=45.171.228.128/25 to-ports=53441-57472
+add action=netmap chain=CGNAT_13 src-address=100.64.6.128/25 to-addresses=45.171.228.128/25
+add action=netmap chain=CGNAT_14 protocol=tcp src-address=100.64.7.0/25 to-addresses=45.171.228.128/25 to-ports=57473-61504
+add action=netmap chain=CGNAT_14 protocol=udp src-address=100.64.7.0/25 to-addresses=45.171.228.128/25 to-ports=57473-61504
+add action=netmap chain=CGNAT_14 src-address=100.64.7.0/25 to-addresses=45.171.228.128/25
+add action=netmap chain=CGNAT_15 protocol=tcp src-address=100.64.7.128/25 to-addresses=45.171.228.128/25 to-ports=61505-65535
+add action=netmap chain=CGNAT_15 protocol=udp src-address=100.64.7.128/25 to-addresses=45.171.228.128/25 to-ports=61505-65535
+add action=netmap chain=CGNAT_15 src-address=100.64.7.128/25 to-addresses=45.171.228.128/25
+add action=netmap chain=CGNAT_16 protocol=tcp src-address=100.64.8.0/25 to-addresses=45.171.229.128/25 to-ports=1024-5056
+add action=netmap chain=CGNAT_16 protocol=udp src-address=100.64.8.0/25 to-addresses=45.171.229.128/25 to-ports=1024-5056
+add action=netmap chain=CGNAT_16 src-address=100.64.8.0/25 to-addresses=45.171.229.128/25
+add action=netmap chain=CGNAT_17 protocol=tcp src-address=100.64.8.128/25 to-addresses=45.171.229.128/25 to-ports=5057-9088
+add action=netmap chain=CGNAT_17 protocol=udp src-address=100.64.8.128/25 to-addresses=45.171.229.128/25 to-ports=5057-9088
+add action=netmap chain=CGNAT_17 src-address=100.64.8.128/25 to-addresses=45.171.229.128/25
+add action=netmap chain=CGNAT_18 protocol=tcp src-address=100.64.9.0/25 to-addresses=45.171.229.128/25 to-ports=9089-13120
+add action=netmap chain=CGNAT_18 protocol=udp src-address=100.64.9.0/25 to-addresses=45.171.229.128/25 to-ports=9089-13120
+add action=netmap chain=CGNAT_18 src-address=100.64.9.0/25 to-addresses=45.171.229.128/25
+add action=netmap chain=CGNAT_19 protocol=tcp src-address=100.64.9.128/25 to-addresses=45.171.229.128/25 to-ports=13121-17152
+add action=netmap chain=CGNAT_19 protocol=udp src-address=100.64.9.128/25 to-addresses=45.171.229.128/25 to-ports=13121-17152
+add action=netmap chain=CGNAT_19 src-address=100.64.9.128/25 to-addresses=45.171.229.128/25
+add action=netmap chain=CGNAT_20 protocol=tcp src-address=100.64.10.0/25 to-addresses=45.171.229.128/25 to-ports=17153-21184
+add action=netmap chain=CGNAT_20 protocol=udp src-address=100.64.10.0/25 to-addresses=45.171.229.128/25 to-ports=17153-21184
+add action=netmap chain=CGNAT_20 src-address=100.64.10.0/25 to-addresses=45.171.229.128/25
+add action=netmap chain=CGNAT_21 protocol=tcp src-address=100.64.10.128/25 to-addresses=45.171.229.128/25 to-ports=21185-25216
+add action=netmap chain=CGNAT_21 protocol=udp src-address=100.64.10.128/25 to-addresses=45.171.229.128/25 to-ports=21185-25216
+add action=netmap chain=CGNAT_21 src-address=100.64.10.128/25 to-addresses=45.171.229.128/25
+add action=netmap chain=CGNAT_22 protocol=tcp src-address=100.64.11.0/25 to-addresses=45.171.229.128/25 to-ports=25217-29248
+add action=netmap chain=CGNAT_22 protocol=udp src-address=100.64.11.0/25 to-addresses=45.171.229.128/25 to-ports=25217-29248
+add action=netmap chain=CGNAT_22 src-address=100.64.11.0/25 to-addresses=45.171.229.128/25
+add action=netmap chain=CGNAT_23 protocol=tcp src-address=100.64.11.128/25 to-addresses=45.171.229.128/25 to-ports=29249-33280
+add action=netmap chain=CGNAT_23 protocol=udp src-address=100.64.11.128/25 to-addresses=45.171.229.128/25 to-ports=29249-33280
+add action=netmap chain=CGNAT_23 src-address=100.64.11.128/25 to-addresses=45.171.229.128/25
+add action=netmap chain=CGNAT_24 protocol=tcp src-address=100.64.12.0/25 to-addresses=45.171.229.128/25 to-ports=33281-37312
+add action=netmap chain=CGNAT_24 protocol=udp src-address=100.64.12.0/25 to-addresses=45.171.229.128/25 to-ports=33281-37312
+add action=netmap chain=CGNAT_24 src-address=100.64.12.0/25 to-addresses=45.171.229.128/25
+add action=netmap chain=CGNAT_25 protocol=tcp src-address=100.64.12.128/25 to-addresses=45.171.229.128/25 to-ports=37313-41344
+add action=netmap chain=CGNAT_25 protocol=udp src-address=100.64.12.128/25 to-addresses=45.171.229.128/25 to-ports=37313-41344
+add action=netmap chain=CGNAT_25 src-address=100.64.12.128/25 to-addresses=45.171.229.128/25
+add action=netmap chain=CGNAT_26 protocol=tcp src-address=100.64.13.0/25 to-addresses=45.171.229.128/25 to-ports=41345-45376
+add action=netmap chain=CGNAT_26 protocol=udp src-address=100.64.13.0/25 to-addresses=45.171.229.128/25 to-ports=41345-45376
+add action=netmap chain=CGNAT_26 src-address=100.64.13.0/25 to-addresses=45.171.229.128/25
+add action=netmap chain=CGNAT_27 protocol=tcp src-address=100.64.13.128/25 to-addresses=45.171.229.128/25 to-ports=45377-49408
+add action=netmap chain=CGNAT_27 protocol=udp src-address=100.64.13.128/25 to-addresses=45.171.229.128/25 to-ports=45377-49408
+add action=netmap chain=CGNAT_27 src-address=100.64.13.128/25 to-addresses=45.171.229.128/25
+add action=netmap chain=CGNAT_28 protocol=tcp src-address=100.64.14.0/25 to-addresses=45.171.229.128/25 to-ports=49409-53440
+add action=netmap chain=CGNAT_28 protocol=udp src-address=100.64.14.0/25 to-addresses=45.171.229.128/25 to-ports=49409-53440
+add action=netmap chain=CGNAT_28 src-address=100.64.14.0/25 to-addresses=45.171.229.128/25
+add action=netmap chain=CGNAT_29 protocol=tcp src-address=100.64.14.128/25 to-addresses=45.171.229.128/25 to-ports=53441-57472
+add action=netmap chain=CGNAT_29 protocol=udp src-address=100.64.14.128/25 to-addresses=45.171.229.128/25 to-ports=53441-57472
+add action=netmap chain=CGNAT_29 src-address=100.64.14.128/25 to-addresses=45.171.229.128/25
+add action=netmap chain=CGNAT_30 protocol=tcp src-address=100.64.15.0/25 to-addresses=45.171.229.128/25 to-ports=57473-61504
+add action=netmap chain=CGNAT_30 protocol=udp src-address=100.64.15.0/25 to-addresses=45.171.229.128/25 to-ports=57473-61504
+add action=netmap chain=CGNAT_30 src-address=100.64.15.0/25 to-addresses=45.171.229.128/25
+add action=netmap chain=CGNAT_31 protocol=tcp src-address=100.64.15.128/25 to-addresses=45.171.229.128/25 to-ports=61505-65535
+add action=netmap chain=CGNAT_31 protocol=udp src-address=100.64.15.128/25 to-addresses=45.171.229.128/25 to-ports=61505-65535
+add action=netmap chain=CGNAT_31 src-address=100.64.15.128/25 to-addresses=45.171.229.128/25
+add action=masquerade chain=srcnat disabled=yes dst-address=172.16.200.35
+add action=dst-nat chain=dstnat disabled=yes dst-address=45.171.228.2 dst-port=80 protocol=tcp to-addresses=10.125.121.14 to-ports=80
+add action=dst-nat chain=dstnat disabled=yes dst-address=45.171.228.2 protocol=icmp to-addresses=10.125.121.14
+add action=dst-nat chain=dstnat disabled=yes dst-address=45.171.228.2 dst-port=80 protocol=udp to-addresses=10.125.121.14 to-ports=80
+add action=dst-nat chain=dstnat disabled=yes dst-address=45.171.228.2 dst-port=443 protocol=tcp to-addresses=10.125.121.14 to-ports=443
+add action=dst-nat chain=dstnat disabled=yes dst-address=45.171.228.2 dst-port=443 protocol=udp to-addresses=10.125.121.14 to-ports=443
+/ip firewall raw
+add action=drop chain=prerouting src-address-list=BLOQUEIO
+add action=accept chain=prerouting src-address-list=DNS
+add action=accept chain=prerouting dst-address-list=DNS
+add action=drop chain=prerouting disabled=yes dst-port=53 protocol=udp
+/ip route
+add distance=1 gateway=172.16.254.1
+add disabled=yes distance=1 dst-address=45.171.228.64/26 type=blackhole
+add comment=CGNAT disabled=yes distance=1 dst-address=45.171.228.128/25 gateway=loopback
+add comment=CGNAT disabled=yes distance=1 dst-address=45.171.229.128/25 gateway=loopback
+add check-gateway=ping distance=1 dst-address=100.64.0.0/20 gateway=172.16.254.6 scope=20
+add check-gateway=ping distance=1 dst-address=100.64.56.0/23 gateway=172.16.254.6 scope=20
+add check-gateway=ping distance=1 dst-address=100.64.120.0/22 gateway=172.16.254.1 scope=20
+add check-gateway=ping distance=1 dst-address=100.64.171.198/32 gateway=172.30.6.2 scope=20
+/ip service
+set telnet disabled=yes port=22224
+set ftp disabled=yes
+set www disabled=yes
+set ssh address="45.171.228.0/23,10.125.50.0/24,10.244.0.0/24,192.168.80.0/23,192.168.111.0/24"
+set api disabled=yes
+set api-ssl disabled=yes
+/ip ssh
+set allow-none-crypto=yes forwarding-enabled=remote
+/ip tftp
+add ip-addresses=192.168.200.0/24 read-only=no real-filename=disk1/BKP req-filename=.*
+/ip traffic-flow
+set active-flow-timeout=5s cache-entries=1k inactive-flow-timeout=1s interfaces=VLAN-100-BNG
+/ip traffic-flow target
+add disabled=yes dst-address=10.125.50.82 port=52055 src-address=45.171.229.6 v9-template-refresh=5 v9-template-timeout=1s
+add dst-address=45.171.228.91 port=3009 src-address=45.171.229.6 v9-template-refresh=5 v9-template-timeout=1s
+/ipv6 address
+add address=2804:5a10:c181::1/125 advertise=no comment=DESATIVADO disabled=yes interface=ether1
+add address=2804:5a10:eff:: advertise=no comment="zabbix 2804:5a10:eff::/64" interface=bonding1
+add address=2804:5a10:eff:0:172:16:254:5a/126 advertise=no comment="COMUNICA\C7AO IPV6 - BNG" interface=VLAN-100-BNG
+add address=::1 comment="DESATIVADO IPV6 da lan do escritorio" from-pool=escritorio interface=bridge2
+add address=2804:5a10:eff:0:2000:188:188:15/126 advertise=no comment=baby disabled=yes interface="VLAN 212"
+add address=2804:5a10:eff:0:3172:16:254:2/126 advertise=no disabled=yes interface=VLAN-102-BGP-IPV6
+add address=2804:5a10:9000::1/125 advertise=no disabled=yes interface=ether1
+add address=fc00:1184:10:88:88:: advertise=no interface="IN VLAN 1171"
+add address=fc00:1184:10:101:11:: advertise=no interface="VLAN 1184"
+add address=fc00:112:10:188:188:: advertise=no interface="vlan112 GERENCIA SW TP-LINKRACK"
+add address=2804:5a10:701::1 advertise=no comment="APPLIANCE DNS" disabled=yes interface=ether4
+add address=2804:5a10:ef8:ffc0::1/58 advertise=no disabled=yes interface=ether1
+add address=2804:5a10:e30::1/124 advertise=no disabled=yes interface=ether1
+add address=fc00::8cff:fe42:7320 interface="VLAN 1184"
+add address=2804:5a10:eff:0:172:16:254:5d/126 advertise=no comment="COMUNICA\C7AO IPV6 - BGP" interface=VLAN-103-BGP-IPV6
+add address=fd00:0:0:4::1 advertise=no interface=bridge1
+add address=2804:5a10:ef8:ab::1 advertise=no interface=ether2
+/ipv6 route
+add check-gateway=ping comment=BGP distance=100 gateway=2804:5a10:eff:0:172:16:254:5e
+add distance=1 dst-address=2804:5a10:701:1::/64 gateway=2804:5a10:eff:0:172:16:254:5b
+add comment="baby wan" disabled=yes distance=1 dst-address=2804:5a10:eb8::/45 gateway=2804:5a10:eff:0:2000:188:188:16
+add comment="baby pd" disabled=yes distance=1 dst-address=2804:5a10:a000::/38 gateway=2804:5a10:eff:0:2000:188:188:16
+/lcd
+set time-interval=weekly
+/ppp secret
+add name=pw password=01 service=pppoe
+add name=intelbras@remotize password=zpiww6pv service=pppoe
+add local-address=45.171.229.6 name=ppnetwork password=1rV6u4rxnvKgHUOA remote-address=10.10.10.10 service=l2tp
+add name=byjonas@adm password=Pw@11223344 profile=profile1
+add name=evento password=evento service=pppoe
+add name=intelbras@customize password=fdjdKLdj56dv6dvJH service=pppoe
+add name=testepw01 password=11223344 service=pppoe
+add name=eventoap password=11223344ap service=pppoe
+add name=cameradome password=11223344 service=pppoe
+add name=tl-wr829n@aginet password=ij9esii65 service=pppoe
+add name=anaceevento password=11223344 service=pppoe
+add local-address=10.255.255.100 name=Client001 password=ki8ju7hy6gt5 profile=VPNs remote-address=172.31.254.1 service=sstp
+add local-address=10.255.255.100 name=ClientEvento001 password=ki8ju7hy6gt5 profile=VPNs remote-address=172.31.254.2 service=sstp
+/routing bfd interface
+set [ find default=yes ] disabled=yes
+/routing bgp peer
+add address-families=ip,ipv6 disabled=yes in-filter=BGP-AS65002-IN name=k8s-work-04 nexthop-choice=force-self out-filter=BGP-AS65002-OUT remote-address=10.125.50.142 remote-as=65005 remove-private-as=yes update-source=ether2
+add address-families=ip,ipv6 disabled=yes in-filter=BGP-AS65002-IN name=k8s-work-04-v6 nexthop-choice=force-self out-filter=BGP-AS65002-OUT remote-address=2804:5a10:ef8:ab::1fff remote-as=65005 update-source=ether2
+/routing filter
+add action=discard chain=ospf-out disabled=yes prefix=192.168.10.0/24
+add action=accept address-family=ip,ipv6 append-bgp-communities="" chain=BGP-AS65002-IN prefix=10.125.40.0/24 prefix-length=24-32 set-bgp-communities="" set-distance=120
+add action=accept chain=BGP-AS65002-IN prefix=2804:5a10:ef0:11::/64 prefix-length=64-128
+add action=accept chain=ospf-in match-chain=BGP-AS65002-IN
+add action=discard chain=BGP-AS65002-OUT prefix=0.0.0.0/0 prefix-length=0-32
+add action=discard chain=BGP-AS65002-OUT prefix=::/0 prefix-length=0-128
+/routing ospf interface
+add interface=VLAN-101-BGP network-type=point-to-point
+add interface=VLAN-100-BNG network-type=point-to-point
+add interface="VLAN 212" network-type=point-to-point
+add disabled=yes interface=ether7 network-type=point-to-point
+/routing ospf network
+add area=backbone network=172.16.254.0/30
+add area=backbone network=172.16.254.4/30
+add area=backbone network=10.255.255.100/32
+add area=backbone network=172.16.254.8/30
+add area=backbone network=10.188.188.16/30
+add area=backbone network=10.172.172.168/30
+add area=backbone network=172.30.6.0/30
+/routing ospf-v3 interface
+add area=backbone disabled=yes interface=VLAN-102-BGP-IPV6 network-type=point-to-point
+add area=backbone disabled=yes interface="VLAN 212" network-type=point-to-point
+/snmp
+set enabled=yes trap-community=POWERCOM trap-version=2
+/system clock
+set time-zone-autodetect=no time-zone-name=America/Sao_Paulo
+/system identity
+set name=POWERCOM.CGNAT
+/system logging
+add action=RouterLog topics=info
+add action=RouterLog topics=warning
+add action=RouterLog topics=critical
+add action=RouterLog topics=error
+/system ntp client
+set enabled=yes primary-ntp=10.125.50.14 server-dns-names=45.171.228.19,45.171.228.18
+/system routerboard settings
+# Warning: cpu not running at default frequency
+set cpu-frequency=1000MHz
+/system scheduler
+add interval=1d name=FTP on-event=FTP policy=ftp,reboot,read,write,policy,test,password,sniff,sensitive,romon start-date=feb/22/2022 start-time=23:59:00
+/system script
+add dont-require-permissions=no name=FTP owner=pwcomadmin policy=ftp,reboot,read,write,policy,test,password,sniff,sensitive,romon source=":log warning \"***************************************\"\r\n# Conex\E3o FTP\r\n:global host 10.125.50.14\r\n:global usuario powercom\r\n:global senha gJ3hcIxpWQQ4wp5\r\n:global diretorio /CONCENTRADOR/CGNAT\r\n# Pega o nome do Router\r\n:global identifica [/system identity get name ];\r\n# Gera data no formato AAAA-MM-DD\r\n:global data [/system clock get date]\r\n:global meses (\"jan\",\"feb\",\"mar\",\"apr\",\"may\",\"jun\",\"jul\",\"aug\",\"sep\",\"oct\",\"nov\",\"dec\");\r\n:global ano ([:pick \$data 7 11])\r\n:global mestxt ([:pick \$data 0 3])\r\n:global mm ([ :find \$meses \$mestxt -1 ] + 1);\r\n:if (\$mm < 10) do={ :set mm (\"0\" . \$mm); }\r\n:global mes ([:pick \$ds 7 11] . \$mm . [:pick \$ds 4 6])\r\n:global dia ([:pick \$data 4 6])\r\n:log info \"Gerando backup: \$ano-\$mes-\$dia.\$identifica.backup\";\r\n/system backup save name=\"\$ano-\$mes-\$dia.\$identifica\";\r\n:log info \"Gerando export: \$ano-\$mes-\$dia.\$identifica.rsc\";\r\n/export file=\"\$ano-\$mes-\$dia.\$identifica\"\r\n:log info \"Processando...\";\r\n:delay 5s\r\n:log info \"Conectando FTP Server...\";\r\n:log info \"Enviando Backup [\$ano-\$mes-\$dia.\$identifica.backup] ...\";\r\n/tool fetch address=\$host src-path=\"\$ano-\$mes-\$dia.\$identifica.backup\" user=\"\$usuario\" password=\"\$senha\" port=21 upload=yes mode=ftp dst-path=\"\$diretorio/\$ano-\$mes-\$dia.\$identifica.backup\"\r\n:log info \"Enviando Export [\$ano-\$mes-\$dia.\$identifica.rsc] ...\";\r\n/tool fetch address=\$host src-path=\"\$ano-\$mes-\$dia.\$identifica.rsc\" user=\"\$usuario\" password=\"\$senha\" port=21 upload=yes mode=ftp dst-path=\"\$diretorio/\$ano-\$mes-\$dia.\$identifica.rsc\"\r\n:delay 1\r\n:log info \"Backup enviado com sucesso...\";\r\n:log info \"Removendo arquivos...\";\r\n /file remove \"\$ano-\$mes-\$dia.\$identifica.backup\"\r\n /file remove \"\$ano-\$mes-\$dia.\$identifica.rsc\"\r\n:log info \"Rotina de backup finalizada...\";\r\n:log warning \"***************************************\";\r\n"
+/tool bandwidth-server
+set authenticate=no
+/tool romon
+set enabled=yes secrets=123@powercom
