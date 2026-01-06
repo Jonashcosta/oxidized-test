@@ -1,0 +1,149 @@
+#             version: 6.49.10 (long-term)
+#    factory-software: 6.37.1
+#        total-memory: 960.0MiB
+#                 cpu: tilegx
+#           cpu-count: 9
+#     total-hdd-space: 128.0MiB
+#   architecture-name: tile
+#          board-name: CCR1009-7G-1C
+#            platform: MikroTik
+#   installed-version: 6.49.10
+# Flags: U - undoable, R - redoable, F - floating-undo
+#   ACTION                                   BY               POLICY
+# U user oxidized added                      pwcomadmin       write
+#                                                             policy
+# U user oxidized removed                    pwcomadmin       write
+#                                                             policy
+# U ip service changed                       pwcomadmin       write
+# U ip service changed                       pwcomadmin       write
+# U ssh-key removed                          pwcomadmin       write
+#                                                             policy
+# U user oxidized added                      pwcomadmin       write
+#                                                             policy
+# 
+# software id = RFRX-VBM1
+#
+# model = CCR1009-7G-1C
+# serial number = 79AF06BE42D9
+/interface bridge
+add name=bridge1 protocol-mode=none
+add name=bridge2 protocol-mode=none
+add name=bridge3 protocol-mode=none
+add name=bridge4 protocol-mode=none
+add name=bridge5 protocol-mode=none
+add name=bridge6 protocol-mode=none
+add name=loopback protocol-mode=none
+/interface ethernet
+set [ find default-name=ether1 ] comment=Energia speed=100Mbps
+set [ find default-name=ether2 ] speed=100Mbps
+set [ find default-name=ether3 ] speed=100Mbps
+set [ find default-name=ether4 ] speed=100Mbps
+set [ find default-name=ether5 ] comment="OMINI SAAE NOVA" speed=100Mbps
+set [ find default-name=ether6 ] comment="sw intelbras" speed=100Mbps
+set [ find default-name=ether7 ] advertise="10M-half,10M-full,100M-half,100M-full,1000M-half,1000M-full,2500M-full,5000M-full,10000M-full" comment=CAJUEIRO speed=100Mbps
+set [ find default-name=combo1 ] auto-negotiation=no name=sfp1
+/interface vlan
+add comment="REDE CABEADA" interface=sfp1 name=VLAN-103 vlan-id=103
+add comment=PPOE-SAAE interface=sfp1 name=VLAN-104 vlan-id=104
+add comment=RADIOS interface=sfp1 name=VLAN-105 vlan-id=105
+add comment=OMINI-SAAE interface=sfp1 name=VLAN-106 vlan-id=106
+add interface=sfp1 name=VLAN-107 vlan-id=107
+add disabled=yes interface=sfp1 name=VLAN-108-A vlan-id=108
+add comment=VLAN-NE-8000 interface=sfp1 name=VLAN-212 vlan-id=212
+/interface wireless security-profiles
+set [ find default=yes ] supplicant-identity=MikroTik
+/ip pool
+add name=poolL2TP ranges=10.15.15.2-10.15.15.254
+add name=poolpppoe ranges=100.64.170.0/23
+/ppp profile
+set *0 local-address=45.171.229.3 remote-address=poolpppoe
+set *FFFFFFFE local-address=45.171.228.10 remote-address=poolL2TP
+/routing ospf instance
+set [ find default=yes ] redistribute-connected=as-type-1 router-id=45.171.229.3
+/snmp community
+set [ find default=yes ] addresses=0.0.0.0/0 disabled=yes
+add addresses="45.171.228.51/32,172.16.200.40/32,172.16.200.41/32,172.16.200.42/32,172.16.200.43/32,10.125.50.0/24" name=POWERCOM
+/user group
+set full policy="local,telnet,ssh,ftp,reboot,read,write,policy,test,winbox,password,web,sniff,sensitive,api,romon,dude,tikapp"
+/interface bridge port
+add bridge=bridge2 hw=no interface=ether7
+add bridge=bridge1 disabled=yes interface=VLAN-108-A
+add bridge=bridge6 interface=VLAN-107
+add bridge=bridge2 hw=no interface=ether6
+add bridge=bridge3 interface=VLAN-106
+add bridge=bridge4 interface=VLAN-105
+add bridge=bridge5 interface=VLAN-104
+add bridge=bridge2 disabled=yes interface=ether3
+add bridge=bridge6 disabled=yes interface=VLAN-103
+add bridge=bridge2 interface=ether1 multicast-router=disabled
+add bridge=bridge2 interface=ether5
+add bridge=bridge2 interface=ether2
+add bridge=bridge2 interface=ether4
+/ip neighbor discovery-settings
+set discover-interface-list=all
+/interface l2tp-server server
+set authentication=mschap1,mschap2 ipsec-secret=powercom@123.mudar use-ipsec=required
+/interface pppoe-server server
+add disabled=no interface=bridge2 service-name=service1
+/ip address
+add address=10.4.5.1/30 interface=VLAN-103 network=10.4.5.0
+add address=10.80.7.2/30 disabled=yes interface=ether7 network=10.80.7.0
+add address=45.171.228.10 disabled=yes interface=loopback network=45.171.228.10
+add address=172.30.6.2/30 interface=VLAN-212 network=172.30.6.0
+add address=10.0.0.254/24 disabled=yes interface=VLAN-105 network=10.0.0.0
+add address=10.0.0.65/26 disabled=yes interface=ether5 network=10.0.0.64
+add address=10.0.0.1/26 disabled=yes interface=ether4 network=10.0.0.0
+add address=10.0.0.129/26 interface=ether7 network=10.0.0.128
+add address=10.0.0.65/26 interface=bridge2 network=10.0.0.64
+add address=10.0.0.49/28 comment="energia saae" interface=ether1 network=10.0.0.48
+add address=10.100.1.1/29 interface=bridge2 network=10.100.1.0
+add address=10.100.1.9/29 interface=bridge2 network=10.100.1.8
+add address=10.100.1.17/29 interface=bridge2 network=10.100.1.16
+add address=10.100.1.25/29 interface=bridge2 network=10.100.1.24
+add address=45.171.229.3 interface=loopback network=45.171.229.3
+add address=10.123.123.9/29 comment="ANTENA VAQUEJADA MK" disabled=yes interface=ether2 network=10.123.123.8
+add address=10.100.1.33/29 comment="antena de franklin" disabled=yes interface=bridge2 network=10.100.1.32
+add address=10.100.1.41/29 interface=bridge2 network=10.100.1.40
+add address=10.125.70.1/30 disabled=yes interface=bridge2 network=10.125.70.0
+add address=10.125.70.1/30 disabled=yes interface=bridge2 network=10.125.70.0
+/ip dns
+set servers=45.171.229.14,45.171.228.19
+/ip firewall nat
+add action=accept chain=srcnat dst-address=177.52.37.142 dst-port=3512-3513,3799 protocol=udp
+add action=src-nat chain=srcnat src-address=100.64.170.0/23 to-addresses=45.171.229.3
+add action=src-nat chain=srcnat src-address=10.125.70.0/24 to-addresses=45.171.229.3
+add action=accept chain=srcnat dst-address=177.52.37.142 dst-port=3512-3513,3799 protocol=udp
+add action=src-nat chain=srcnat src-address=100.64.170.0/23 to-addresses=45.171.229.3
+add action=src-nat chain=srcnat src-address=10.125.70.0/24 to-addresses=45.171.229.3
+/ip service
+set telnet disabled=yes port=233
+set ftp disabled=yes
+set www disabled=yes
+set api disabled=yes
+set api-ssl disabled=yes
+/ppp aaa
+set interim-update=1m use-radius=yes
+/ppp secret
+add name=jonas password=11223344@123 profile=default-encryption service=l2tp
+/radius
+add accounting-port=3513 address=177.52.37.142 authentication-port=3512 secret=123456 service=ppp,login src-address=45.171.229.3 timeout=3s
+add accounting-port=3513 address=177.52.37.142 authentication-port=3512 secret=123456 service=ppp,login src-address=45.171.229.3 timeout=3s
+/radius incoming
+set accept=yes
+/routing ospf interface
+add interface=VLAN-212 network-type=point-to-point
+/routing ospf network
+add area=backbone network=172.30.6.0/30
+add area=backbone network=45.171.229.3/32
+/snmp
+set enabled=yes trap-community=POWERCOM trap-version=2
+/system clock
+set time-zone-autodetect=no time-zone-name=America/Recife
+/system identity
+set name=POWERCOM.SW.SAAE
+/system ntp client
+set enabled=yes primary-ntp=45.171.228.20 server-dns-names=45.171.228.19,45.171.228.18
+/system scheduler
+add interval=1d name=FTP on-event=FTP policy=ftp,reboot,read,write,policy,test,password,sniff,sensitive,romon start-date=feb/23/2022 start-time=10:10:36
+/system script
+add dont-require-permissions=no name=FTP owner=pwcomadmin policy=ftp,reboot,read,write,policy,test,password,sniff,sensitive,romon source=":log warning \"***************************************\"\r\n# Conex\E3o FTP\r\n:global host 10.125.50.14\r\n:global usuario powercom\r\n:global senha gJ3hcIxpWQQ4wp5\r\n:global diretorio /CONCENTRADOR/RB-SAAE\r\n# Pega o nome do Router\r\n:global identifica [/system identity get name ];\r\n# Gera data no formato AAAA-MM-DD\r\n:global data [/system clock get date]\r\n:global meses (\"jan\",\"feb\",\"mar\",\"apr\",\"may\",\"jun\",\"jul\",\"aug\",\"sep\",\"oct\",\"nov\",\"dec\");\r\n:global ano ([:pick \$data 7 11])\r\n:global mestxt ([:pick \$data 0 3])\r\n:global mm ([ :find \$meses \$mestxt -1 ] + 1);\r\n:if (\$mm < 10) do={ :set mm (\"0\" . \$mm); }\r\n:global mes ([:pick \$ds 7 11] . \$mm . [:pick \$ds 4 6])\r\n:global dia ([:pick \$data 4 6])\r\n:log info \"Gerando backup: \$ano-\$mes-\$dia.\$identifica.backup\";\r\n/system backup save name=\"\$ano-\$mes-\$dia.\$identifica\";\r\n:log info \"Gerando export: \$ano-\$mes-\$dia.\$identifica.rsc\";\r\n/export file=\"\$ano-\$mes-\$dia.\$identifica\"\r\n:log info \"Processando...\";\r\n:delay 5s\r\n:log info \"Conectando FTP Server...\";\r\n:log info \"Enviando Backup [\$ano-\$mes-\$dia.\$identifica.backup] ...\";\r\n/tool fetch address=\$host src-path=\"\$ano-\$mes-\$dia.\$identifica.backup\" user=\"\$usuario\" password=\"\$senha\" port=21 upload=yes mode=ftp dst-path=\"\$diretorio/\$ano-\$mes-\$dia.\$identifica.backup\"\r\n:log info \"Enviando Export [\$ano-\$mes-\$dia.\$identifica.rsc] ...\";\r\n/tool fetch address=\$host src-path=\"\$ano-\$mes-\$dia.\$identifica.rsc\" user=\"\$usuario\" password=\"\$senha\" port=21 upload=yes mode=ftp dst-path=\"\$diretorio/\$ano-\$mes-\$dia.\$identifica.rsc\"\r\n:delay 1\r\n:log info \"Backup enviado com sucesso...\";\r\n:log info \"Removendo arquivos...\";\r\n /file remove \"\$ano-\$mes-\$dia.\$identifica.backup\"\r\n /file remove \"\$ano-\$mes-\$dia.\$identifica.rsc\"\r\n:log info \"Rotina de backup finalizada...\";\r\n:log warning \"***************************************\";\r\n"
