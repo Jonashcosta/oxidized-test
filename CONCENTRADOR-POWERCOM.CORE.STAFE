@@ -1,0 +1,268 @@
+#             version: 6.48 (stable)
+#    factory-software: 6.35.4
+#        total-memory: 1024.0MiB
+#                 cpu: ARMv7
+#           cpu-count: 2
+#     total-hdd-space: 128.3MiB
+#   architecture-name: arm
+#          board-name: RB3011UiAS
+#            platform: MikroTik
+#   installed-version: 6.48
+# Flags: U - undoable, R - redoable, F - floating-undo
+#   ACTION                                   BY               POLICY
+# U ip service changed                       pwcomadmin       write
+# 
+# software id = RR06-YDKP
+#
+# model = RouterBOARD 3011UiAS
+# serial number = 71A0065F2407
+/interface bridge
+add name=bridge-OLT-SANTA-FE
+add name=bridge145
+add name=bridge146
+add name=bridge147
+add name=loopback
+/interface ethernet
+set [ find default-name=ether1 ] comment="sito oliveia VLAN 145"
+set [ find default-name=ether2 ] comment="OMINI VLAN 145"
+set [ find default-name=ether3 ] comment="MNG OLT" speed=100Mbps
+set [ find default-name=ether4 ] auto-negotiation=no comment="escola VLAN 146" disabled=yes speed=100Mbps
+set [ find default-name=ether5 ] comment="antena vaquejada"
+set [ find default-name=ether6 ] speed=100Mbps
+set [ find default-name=ether7 ] comment="olt esperanca"
+set [ find default-name=ether8 ] comment="energia VLAN 147"
+set [ find default-name=ether9 ] comment="VLAN 147"
+set [ find default-name=ether10 ] comment="VLAN 147"
+set [ find default-name=sfp1 ] auto-negotiation=no
+/interface vlan
+add interface=sfp1 name="IN VLAN 100" vlan-id=100
+add disabled=yes interface=sfp1 name="IN VLAN 109" vlan-id=109
+add disabled=yes interface=sfp1 name="IN VLAN 117" vlan-id=117
+add disabled=yes interface=ether6 name="VLAN 220 OLT PASS" vlan-id=220
+add comment="PON 0" disabled=yes interface=ether6 name="VLAN 222" vlan-id=222
+add comment="PON 1" interface=sfp1 name="VLAN 223" vlan-id=223
+add comment="PON 2" interface=sfp1 name="VLAN 224" vlan-id=224
+add comment="PON 3" interface=sfp1 name="VLAN 225" vlan-id=225
+add disabled=yes interface=sfp1 name="VLAN 1170" vlan-id=1170
+add disabled=yes interface=sfp1 name="VLAN 1171" vlan-id=1171
+add disabled=yes interface=sfp1 name="VLAN 1172" vlan-id=1172
+add disabled=yes interface=sfp1 name="VLAN 1173" vlan-id=1173
+add disabled=yes interface=sfp1 name="VLAN 1174" vlan-id=1174
+add disabled=yes interface=sfp1 name="VLAN 1175" vlan-id=1175
+add disabled=yes interface=sfp1 name="VLAN 1176" vlan-id=1176
+add disabled=yes interface=sfp1 name="VLAN 1177" vlan-id=1177
+add disabled=yes interface=sfp1 name="VLAN 1184 OLT" vlan-id=1184
+add comment="SWITH TP LINK" interface=sfp1 name="VLAN 1185" vlan-id=1185
+add comment=camera disabled=yes interface=sfp1 name="VLAN 2897" vlan-id=2897
+add interface=sfp1 name=VLAN-66-BGP vlan-id=66
+add comment="Parta 1 a 8" interface=sfp1 name=VLAN-145 vlan-id=145
+add comment="Parta 9 e 16" interface=sfp1 name=VLAN-146 vlan-id=146
+add comment="Parta 17 a 24" interface=sfp1 name=VLAN-147 vlan-id=147
+add comment="Parta 9 e 16" interface=sfp1 name=VLAN-149-UPLINK-OLT-STAFE vlan-id=149
+add comment="PON 0" disabled=yes interface=ether6 name="vlan 226" vlan-id=226
+add comment=equipamentos disabled=yes interface=ether4 name=vlan2896 vlan-id=2896
+/interface wireless security-profiles
+set [ find default=yes ] supplicant-identity=MikroTik
+/ip pool
+add name=pool-cliente ranges=100.64.56.0/23
+/ipv6 pool
+add name=SANTAFE-IPV6-PD prefix=2804:5a10:a800::/38 prefix-length=48
+add name="SANTA-FE IPV6-WAN" prefix=2804:5a10:e98::/45 prefix-length=64
+add name=bloqueiov6pd prefix=fc00:9026:bab1:9000::/52 prefix-length=64
+add name=bloqueiov6prefix prefix=fc00:4927:91c0::/52 prefix-length=64
+/ppp profile
+add dns-server=8.8.4.4,45.171.228.19 local-address=10.255.255.25 name=PPPoE.SANTA-FE on-up="local TOKEN \"811f2b60-f950-454b-843c-689e410f871f\"\r\n:local ipv6pool \"IPv6-PD\"\r\n:local ipnas \"45.171.229.10\"\r\n:local linksgp \"https://sgp.powercomnetwork.com.br\"\r\n:local prefixo\r\n:local servername \"<pppoe-\$user>\"\r\n:delay 15s\r\n:log info [/ipv6 dhcp-server binding find server=\"\$servername\"]\r\n:foreach binding in=[/ipv6 dhcp-server binding find status=\"bound\" server=\"\$servername\"] do={\r\n:set prefixo [/ipv6 dhcp-server binding get \$binding address]\r\n:log info \"FETCH \$linksgp/ws/radius/ipv6/update/\\\?token=\$TOKEN&username=\$user&app=mikrotik&nasip=\$ipnas&pd=\$prefixo\"\r\n/tool fetch url=\"\$linksgp/ws/radius/ipv6/update/\\\?token=\$TOKEN&username=\$user&app=mikrotik&nasip=\$ipnas&pd=\$prefixo\"\r\n}" remote-address=pool-cliente
+/queue simple
+add dst=VLAN-66-BGP name=DNS target=45.171.228.18/32,45.171.228.19/32,1.1.1.1/32,8.8.8.8/32,8.8.4.4/32
+/routing ospf instance
+set [ find default=yes ] redistribute-connected=as-type-1 redistribute-static=as-type-1 router-id=10.20.20.1
+/routing ospf-v3 instance
+set [ find default=yes ] router-id=10.20.20.1
+/snmp community
+set [ find default=yes ] disabled=yes
+add addresses=45.171.228.0/22,10.125.50.0/24 name=POWERCOM
+/system logging action
+set 0 memory-lines=10000
+set 1 disk-lines-per-file=100
+add name=RouterLog remote=45.171.228.54 remote-port=65014 src-address=45.171.229.10 target=remote
+/interface bridge port
+add bridge=bridge-OLT-SANTA-FE interface=VLAN-149-UPLINK-OLT-STAFE
+add bridge=bridge-OLT-SANTA-FE interface=ether7
+add bridge=bridge145 interface=VLAN-145
+add bridge=bridge145 interface=ether2
+add bridge=bridge145 disabled=yes interface=ether3
+add bridge=bridge145 interface=ether1
+add bridge=bridge146 interface=VLAN-146
+add bridge=bridge146 disabled=yes interface=ether4
+add bridge=bridge146 disabled=yes interface=ether5
+add bridge=bridge147 interface=VLAN-147
+add bridge=bridge147 interface=ether9
+add bridge=bridge147 interface=ether8
+add bridge=bridge147 disabled=yes interface=ether10
+add bridge=bridge146 interface=ether6
+/interface pppoe-server server
+# Service is on a slave interface
+add authentication=pap default-profile=PPPoE.SANTA-FE disabled=no interface=ether6 one-session-per-host=yes service-name=service2
+add authentication=pap default-profile=PPPoE.SANTA-FE interface="VLAN 222" one-session-per-host=yes service-name=service14
+add authentication=pap default-profile=PPPoE.SANTA-FE interface="VLAN 223" one-session-per-host=yes service-name=service15
+add authentication=pap default-profile=PPPoE.SANTA-FE interface="VLAN 224" one-session-per-host=yes service-name=service16
+add authentication=pap default-profile=PPPoE.SANTA-FE interface="VLAN 225" one-session-per-host=yes service-name=service17
+add authentication=pap default-profile=PPPoE.SANTA-FE disabled=no interface=sfp1 one-session-per-host=yes service-name=service18
+add authentication=pap default-profile=PPPoE.SANTA-FE disabled=no interface="IN VLAN 100" one-session-per-host=yes service-name=service25
+# Service is on a slave interface
+add authentication=pap disabled=no interface=ether7 service-name=service1
+add authentication=pap default-profile=PPPoE.SANTA-FE disabled=no interface=ether5 one-session-per-host=yes service-name=service3
+# Service is on a slave interface
+add authentication=pap default-profile=PPPoE.SANTA-FE disabled=no interface=ether9 one-session-per-host=yes service-name=service4
+add interface="IN VLAN 100" service-name=service5
+/ip address
+add address=10.101.101.1/27 interface=VLAN-145 network=10.101.101.0
+add address=10.101.101.33/27 interface=ether1 network=10.101.101.32
+add address=10.101.101.65/27 interface=VLAN-145 network=10.101.101.64
+add address=10.101.101.246/30 interface=VLAN-145 network=10.101.101.244
+add address=192.168.79.9/29 comment="CAMERA =>.10  VLAN 2897" interface=ether10 network=192.168.79.8
+add address=10.101.101.97/27 comment="MIMOSA PASSAGEM" interface=VLAN-145 network=10.101.101.96
+add address=10.123.123.9/29 comment="ANTENA VAQUEJADA MK" interface=ether4 network=10.123.123.8
+add address=45.171.229.10 interface=loopback network=45.171.229.10
+add address=172.30.2.2/30 interface=VLAN-66-BGP network=172.30.2.0
+add address=10.255.255.25 interface=loopback network=10.255.255.25
+add address=10.15.0.1/24 interface=VLAN-149-UPLINK-OLT-STAFE network=10.15.0.0
+add address=10.123.123.1/29 disabled=yes interface=ether7 network=10.123.123.0
+add address=10.110.11.1/30 interface=ether7 network=10.110.11.0
+add address=192.168.88.2/24 disabled=yes interface=ether9 network=192.168.88.0
+add address=192.168.1.1/24 comment="MNG OLT" interface=ether1 network=192.168.1.0
+add address=10.101.101.129/27 interface=VLAN-145 network=10.101.101.128
+add address=10.0.7.1/24 comment="antena ubsolf vaquejada" disabled=yes interface=ether9 network=10.0.7.0
+add address=10.100.1.33/29 interface=ether3 network=10.100.1.32
+/ip dns
+set servers=45.171.229.14,2804:5a10:701::2
+/ip firewall address-list
+add address=149.18.73.14 list=BLOQUEIO
+add address=45.171.228.0/22 list=PERMITIDOS
+add address=172.16.200.0/26 list=PERMITIDOS
+add address=8.8.8.8 list=DNS
+add address=8.8.4.4 list=DNS
+add address=1.1.1.1 list=DNS
+add address=208.67.220.220 list=DNS
+add address=208.67.222.222 list=DNS
+add address=45.171.228.18 list=DNS
+add address=45.171.228.19 list=DNS
+add address=51.222.156.94 list=DNS
+add address=135.148.32.77 list=DNS
+add address=45.171.228.1 list=EQUIPAMENTOS
+add address=45.171.228.0 list=EQUIPAMENTOS
+add address=45.171.229.2 list=EQUIPAMENTOS
+add address=45.171.229.3 list=EQUIPAMENTOS
+add address=45.171.229.4 list=EQUIPAMENTOS
+add address=45.171.229.5 list=EQUIPAMENTOS
+add address=45.171.229.6 list=EQUIPAMENTOS
+add address=45.171.229.7 list=EQUIPAMENTOS
+add address=45.171.229.8 list=EQUIPAMENTOS
+add address=45.171.229.9 list=EQUIPAMENTOS
+add address=45.171.229.10 list=EQUIPAMENTOS
+add address=118.194.251.58 list=BLOQUEIO
+add address=167.94.146.59 list=BLOQUEIO
+add address=198.235.24.49 list=BLOQUEIO
+add address=23.90.160.146 list=BLOQUEIO
+add address=198.235.24.162 list=BLOQUEIO
+add address=162.142.125.220 list=BLOQUEIO
+add address=170.106.115.253 list=BLOQUEIO
+add address=115.84.91.39 list=BLOQUEIO
+add address=167.248.133.45 list=BLOQUEIO
+add address=205.210.31.30 list=BLOQUEIO
+add address=103.203.59.7 list=BLOQUEIO
+add address=167.94.145.59 list=BLOQUEIO
+add address=162.142.125.210 list=BLOQUEIO
+add address=167.248.133.119 list=BLOQUEIO
+add address=103.123.1.216 list=BLOQUEIO
+add address=87.236.176.53 list=BLOQUEIO
+add address=94.102.61.29 list=BLOQUEIO
+add address=177.52.37.142 list=PERMITIDOS
+add address=85.121.205.159 list=BLOQUEIO
+add address=188.169.129.236 list=BLOQUEIO
+add address=103.189.249.229 list=BLOQUEIO
+add address=37.210.88.22 list=BLOQUEIO
+add address=201.144.11.166 list=BLOQUEIO
+add address=212.56.203.142 list=BLOQUEIO
+add address=100.64.0.0/10 list=PERMITIDOS
+add address=192.168.0.0/16 list=PERMITIDOS
+add address=172.16.0.0/12 list=PERMITIDOS
+add address=10.0.0.0/8 list=PERMITIDOS
+add address=37.44.238.95 list=BLOQUEIO
+add address=103.6.184.222 list=BLOQUEIO
+add address=10.125.50.0/24 list=PERMITIDOS
+/ip firewall filter
+add action=accept chain=input src-address-list=PERMITIDOS
+add action=drop chain=input dst-port=0-1024 protocol=tcp src-address-list=!PERMITIDOS
+add action=drop chain=input dst-port=0-1024 protocol=udp src-address-list=!PERMITIDOS
+/ip firewall nat
+add action=src-nat chain=srcnat src-address=10.10.10.10 to-addresses=45.171.229.10
+add action=src-nat chain=srcnat src-address=100.64.56.0/23 to-addresses=45.171.229.10
+add action=src-nat chain=srcnat src-address=192.168.79.8/29 to-addresses=45.171.229.10
+add action=dst-nat chain=dstnat comment="MNG OLT" dst-address=45.171.229.10 dst-port=2265 protocol=tcp to-addresses=192.168.1.100 to-ports=80
+add action=dst-nat chain=dstnat dst-address=45.171.229.10 dst-port=2265 protocol=udp to-addresses=192.168.1.100 to-ports=80
+add action=dst-nat chain=dstnat disabled=yes dst-address=45.171.229.10 dst-port=2929 protocol=tcp to-addresses=192.168.1.100 to-ports=80
+/ip firewall raw
+add action=drop chain=prerouting src-address-list=BLOQUEIO
+/ip route
+add distance=1 gateway=172.30.2.1
+add distance=1 dst-address=100.64.56.0/23 type=blackhole
+/ip service
+set telnet disabled=yes
+set ftp disabled=yes
+set www disabled=yes
+set ssh address=45.171.228.0/23,177.52.37.142/32,10.244.0.0/24,10.125.50.0/24 port=2221
+/ipv6 address
+add address=2804:5a10:eff:0:172:30:2:1b/126 advertise=no interface=VLAN-66-BGP
+/ipv6 route
+add distance=1 gateway=2804:5a10:eff:0:172:30:2:1a
+/mpls ldp
+set loop-detect=yes lsr-id=10.255.255.25
+/ppp aaa
+set use-radius=yes
+/ppp secret
+add name=brisasantafe password=11223344 profile=PPPoE.SANTA-FE service=pppoe
+add name=Marcone password=1 profile=PPPoE.SANTA-FE service=pppoe
+add name=byjonas@adm password=Pw@11223344 profile=PPPoE.SANTA-FE service=pppoe
+add disabled=yes name=eduardo20 password=11223344 profile=PPPoE.SANTA-FE service=pppoe
+add name=fabio password=11223344 profile=PPPoE.SANTA-FE service=pppoe
+add local-address=45.171.229.10 name=temp password=temp remote-address=10.10.10.10 service=pppoe
+add name=powercom password=44332211 profile=PPPoE.SANTA-FE service=pppoe
+/radius
+add address=45.171.228.19 comment="RADIUS SGP" disabled=yes secret=123456 service=ppp src-address=45.171.229.10 timeout=3s
+add accounting-port=3513 address=177.52.37.142 authentication-port=3512 comment="RADIUS SGP - POWERCOM (CLOUD)" disabled=yes secret=123456 service=ppp src-address=45.171.229.10 timeout=3s
+add address=209.14.70.19 secret=tulipa service=ppp src-address=45.171.229.10
+/radius incoming
+set accept=yes
+/routing filter
+add action=discard chain=ospf-out prefix=100.64.56.0/23 prefix-length=32
+/routing ospf interface
+add interface=VLAN-66-BGP network-type=point-to-point
+add interface=loopback
+add disabled=yes interface=ether7 network-type=point-to-point
+/routing ospf network
+add area=backbone network=45.171.229.10/32
+add area=backbone network=172.30.2.0/30
+add area=backbone network=10.110.11.0/30
+/routing ospf-v3 interface
+add area=backbone interface=VLAN-66-BGP network-type=point-to-point
+add area=backbone disabled=yes interface=ether7 network-type=point-to-point
+/snmp
+set enabled=yes trap-community=POWERCOM
+/system clock
+set time-zone-autodetect=no time-zone-name=America/Sao_Paulo
+/system identity
+set name=POWERCOM.CORE.STAFE
+/system logging
+add action=RouterLog topics=info
+add action=RouterLog topics=warning
+add action=RouterLog topics=critical
+add action=RouterLog topics=error
+/system ntp client
+set enabled=yes primary-ntp=45.171.228.20 secondary-ntp=200.160.7.186 server-dns-names=45.171.228.18
+/system scheduler
+add interval=1d name=FTP policy=ftp,reboot,read,write,policy,test,password,sniff,sensitive,romon start-date=jan/07/1970 start-time=23:59:00
+/system script
+add dont-require-permissions=no name=FTP owner=pwcomadmin policy=ftp,reboot,read,write,policy,test,password,sniff,sensitive,romon source=":log warning \"***************************************\"\r\n# Conex\E3o FTP\r\n:global host 10.125.50.14\r\n:global usuario powercom\r\n:global senha gJ3hcIxpWQQ4wp5\r\n:global diretorio /CONCENTRADOR/RB-SANTA-FE\r\n# Pega o nome do Router\r\n:global identifica [/system identity get name ];\r\n# Gera data no formato AAAA-MM-DD\r\n:global data [/system clock get date]\r\n:global meses (\"jan\",\"feb\",\"mar\",\"apr\",\"may\",\"jun\",\"jul\",\"aug\",\"sep\",\"oct\",\"nov\",\"dec\");\r\n:global ano ([:pick \$data 7 11])\r\n:global mestxt ([:pick \$data 0 3])\r\n:global mm ([ :find \$meses \$mestxt -1 ] + 1);\r\n:if (\$mm < 10) do={ :set mm (\"0\" . \$mm); }\r\n:global mes ([:pick \$ds 7 11] . \$mm . [:pick \$ds 4 6])\r\n:global dia ([:pick \$data 4 6])\r\n:log info \"Gerando backup: \$ano-\$mes-\$dia.\$identifica.backup\";\r\n/system backup save name=\"\$ano-\$mes-\$dia.\$identifica\";\r\n:log info \"Gerando export: \$ano-\$mes-\$dia.\$identifica.rsc\";\r\n/export file=\"\$ano-\$mes-\$dia.\$identifica\"\r\n:log info \"Processando...\";\r\n:delay 5s\r\n:log info \"Conectando FTP Server...\";\r\n:log info \"Enviando Backup [\$ano-\$mes-\$dia.\$identifica.backup] ...\";\r\n/tool fetch address=\$host src-path=\"\$ano-\$mes-\$dia.\$identifica.backup\" user=\"\$usuario\" password=\"\$senha\" port=21 upload=yes mode=ftp dst-path=\"\$diretorio/\$ano-\$mes-\$dia.\$identifica.backup\"\r\n:log info \"Enviando Export [\$ano-\$mes-\$dia.\$identifica.rsc] ...\";\r\n/tool fetch address=\$host src-path=\"\$ano-\$mes-\$dia.\$identifica.rsc\" user=\"\$usuario\" password=\"\$senha\" port=21 upload=yes mode=ftp dst-path=\"\$diretorio/\$ano-\$mes-\$dia.\$identifica.rsc\"\r\n:delay 1\r\n:log info \"Backup enviado com sucesso...\";\r\n:log info \"Removendo arquivos...\";\r\n /file remove \"\$ano-\$mes-\$dia.\$identifica.backup\"\r\n /file remove \"\$ano-\$mes-\$dia.\$identifica.rsc\"\r\n:log info \"Rotina de backup finalizada...\";\r\n:log warning \"***************************************\";\r\n"
+/tool romon
+set enabled=yes secrets=123@powercom
