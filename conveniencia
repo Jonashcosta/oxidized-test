@@ -1,0 +1,159 @@
+#                   version: 6.48.3 (stable)
+#          factory-software: 6.46.3
+#              total-memory: 256.0MiB
+#                       cpu: MIPS 1004Kc V2.15
+#                 cpu-count: 4
+#           total-hdd-space: 16.3MiB
+#         architecture-name: mmips
+#                board-name: hEX S
+#                  platform: MikroTik
+#   installed-version: 6.48.3
+# Flags: U - undoable, R - redoable, F - floating-undo
+#   ACTION                                   BY               POLICY
+# U item changed                             pwcomadmin       write
+# U ip service changed                       pwcomadmin       write
+# U user oxidized added                      pwcomadmin       write
+#                                                             policy
+# 
+# software id = V6EN-BL30
+#
+# model = RB760iGS
+# serial number = A36A0CE6290D
+/interface bridge
+add name=bridge1
+add admin-mac=48:8F:5A:D6:22:00 auto-mac=no name=lan
+add name=loopback
+add name=lp
+/interface ethernet
+set [ find default-name=ether2 ] advertise=10M-full,100M-full,1000M-full
+/interface vlan
+add interface=ether5 name="VLAN 100" vlan-id=100
+add interface=ether5 name="VLAN 101" vlan-id=101
+add interface=ether5 name="VLAN 102" vlan-id=102
+/interface wireless security-profiles
+set [ find default=yes ] supplicant-identity=MikroTik
+/ip pool
+add name=dhcp_pool0 ranges=192.168.22.3-192.168.22.254
+add name=dhcp_pool1 ranges=10.60.0.2-10.60.3.254
+add name=dhcp_pool2 ranges=10.60.0.2-10.60.3.230
+add name=dhcp_pool3 ranges=10.56.0.2-10.56.0.230
+add name=poolexterno ranges=172.16.202.0/26
+/ip dhcp-server
+add address-pool=dhcp_pool0 interface=lan name=dhcp1
+add address-pool=dhcp_pool1 disabled=no interface="VLAN 102" name=dhcp2
+add address-pool=dhcp_pool3 disabled=no interface=bridge1 name=dhcp3
+/ipv6 dhcp-server
+add address-pool=pwcom_poolV6 interface=lan name=server1
+add address-pool=pwcom_poolV6 interface="VLAN 102" name=server2
+/ipv6 pool
+add name=ipv6pool prefix=2804:5a10:ef0::/48 prefix-length=64
+/ppp profile
+set *FFFFFFFE dns-server=8.8.8.8,45.171.228.18 local-address=45.171.229.4 remote-address=poolexterno
+/routing ospf instance
+set [ find default=yes ] router-id=45.171.229.4
+/snmp community
+set [ find default=yes ] addresses=45.171.228.0/23,10.125.50.0/24
+/interface bridge port
+add bridge=bridge1 interface=ether2
+add bridge=lan disabled=yes interface=ether3
+add bridge=bridge1 interface=ether4
+add bridge=lan disabled=yes interface=ether5
+add bridge=lan disabled=yes interface=ether1
+add bridge=bridge1 interface="VLAN 101"
+add bridge=bridge1 interface=ether3
+/interface l2tp-server server
+set enabled=yes ipsec-secret=asdgwqgvwvcasq one-session-per-host=yes use-ipsec=required
+/interface pptp-server server
+set enabled=yes
+/ip address
+add address=192.168.88.1/24 interface=lan network=192.168.88.0
+add address=10.172.172.170/30 interface=ether1 network=10.172.172.168
+add address=45.171.229.4 interface=loopback network=45.171.229.4
+add address=172.16.187.1/30 interface=ether5 network=172.16.187.0
+add address=172.16.198.1/26 interface=bridge1 network=172.16.198.0
+add address=10.56.0.1/24 interface="VLAN 101" network=10.56.0.0
+add address=10.60.0.1/22 interface="VLAN 102" network=10.60.0.0
+/ip dhcp-client
+add comment=defconf interface=lan
+/ip dhcp-server lease
+add address=10.56.0.6 client-id=1:b4:8c:9d:1:12:2f comment=pc mac-address=B4:8C:9D:01:12:2F server=dhcp3
+/ip dhcp-server network
+add address=10.56.0.0/24 gateway=10.56.0.1
+add address=10.60.0.0/22 gateway=10.60.0.1
+add address=192.168.88.0/24 dns-server=45.171.229.14 gateway=192.168.88.1
+/ip dns
+set cache-size=30720KiB servers=45.171.229.14,45.171.228.18
+/ip firewall address-list
+add address=192.168.22.0/24 list=PERMITIDOS
+add address=10.60.0.0/22 list=clientes
+add address=45.171.229.18 list=DNS
+add address=45.171.228.19 list=DNS
+add address=192.168.81.0 list=ACESSO
+/ip firewall filter
+add action=drop chain=forward disabled=yes dst-address=172.16.198.0/26 src-address=10.60.0.0/22
+add action=drop chain=forward disabled=yes dst-address=10.56.0.0/24 src-address=10.60.0.0/22
+add action=drop chain=input dst-port=53 in-interface=sfp1 protocol=tcp src-address-list=!ACESSO
+add action=drop chain=input dst-port=53 in-interface=sfp1 protocol=udp src-address-list=!ACESSO
+/ip firewall nat
+add action=passthrough chain=unused-hs-chain comment="place hotspot rules here" disabled=yes
+add action=src-nat chain=srcnat src-address=192.168.88.0/24 to-addresses=45.171.229.4
+add action=src-nat chain=srcnat src-address=192.168.1.0/24 to-addresses=45.171.229.4
+add action=src-nat chain=srcnat comment="clientes ap huawei" dst-address-list=!DNS out-interface=ether1 src-address=10.60.0.0/22 to-addresses=45.171.229.4
+add action=src-nat chain=srcnat comment="funcionario HUAWEI" dst-address-list=!DNS out-interface=ether1 src-address=10.56.0.0/24 to-addresses=45.171.229.4
+add action=src-nat chain=srcnat comment="funcionario HUAWEI" dst-address-list=!DNS out-interface=ether1 src-address=172.16.202.0/24 to-addresses=45.171.229.4
+add action=src-nat chain=srcnat comment="funcionario HUAWEI" dst-address-list=!DNS out-interface=ether1 src-address=172.16.187.0/30 to-addresses=45.171.229.4
+add action=src-nat chain=srcnat comment="funcionario HUAWEI" dst-address-list=!DNS out-interface=ether1 src-address=172.16.198.0/24 to-addresses=45.171.229.4
+add action=src-nat chain=srcnat src-address=10.10.10.10 to-addresses=45.171.229.4
+/ip hotspot user
+add name=pwcomadmin password=Pwcom@2021
+add limit-uptime=10h name=user1 password=1
+add limit-uptime=10h name=mauricio password=1
+/ip route
+add distance=1 gateway=10.172.172.169
+add disabled=yes distance=1 dst-address=10.60.0.0/22 gateway="VLAN 102"
+/ip service
+set telnet disabled=yes
+set ftp disabled=yes
+set www disabled=yes
+set ssh port=55220
+set api disabled=yes
+set api-ssl disabled=yes
+/ipv6 address
+add disabled=yes from-pool=ipv6pool interface=bridge1
+add address=2804:5a10:ef0:ffff::1 advertise=no disabled=yes interface=loopback
+add address=fc00:0:b:45:171:229:4:2/125 advertise=no interface=ether1
+add disabled=yes from-pool=ipv6pool interface="VLAN 102"
+/ipv6 dhcp-client
+add add-default-route=yes pool-name=pwcom_poolV6 request=prefix
+/ipv6 firewall address-list
+add address=2804:5a10::/32 list=PERMIT
+add address=fc00:0:b:45:171:229:4:1/128 list=PERMIT
+add address=fc00:0:b:45:171:229:4:2/128 list=PERMIT
+/ipv6 firewall filter
+add action=accept chain=input src-address-list=PERMIT
+add action=drop chain=input src-address-list=!PERMIT
+/ipv6 route
+add check-gateway=ping distance=1 gateway=fc00:0:b:45:171:229:4:1
+/ppp secret
+add name=byjonas@adm password=Pw@11223344 profile=default-encryption
+add local-address=45.171.229.4 name=ppnetwork password=123@mudar remote-address=10.10.10.10
+add name=lais password=Pw@11223344 profile=default-encryption
+/routing ospf interface
+add interface=ether1 network-type=point-to-point
+/routing ospf network
+add area=backbone network=10.172.172.168/30
+add area=backbone network=45.171.229.4/32
+add area=backbone network=172.16.187.0/30
+add area=backbone network=172.16.198.0/26
+/system clock
+set time-zone-name=America/Fortaleza
+/system identity
+set name="SUA CONVENIENCIA"
+/system ntp client
+set enabled=yes primary-ntp=45.171.228.20 server-dns-names=45.171.228.18
+/system scheduler
+add interval=1d name=FTP on-event=FTP policy=ftp,reboot,read,write,policy,test,password,sniff,sensitive,romon start-date=nov/22/2022 start-time=12:43:26
+/system script
+add dont-require-permissions=no name=FTP owner=pwcomadmin policy=ftp,reboot,read,write,policy,test,password,sniff,sensitive,romon source=":log warning \"***************************************\"\r\n# Conex\E3o FTP\r\n:global host 10.125.50.14\r\n:global usuario powercom\r\n:global senha gJ3hcIxpWQQ4wp5\r\n# Pega o nome do Router\r\n:global identifica [/system identity get name ];\r\n:global diretorio /CONVENIENCIA/BREJINHO\r\n# Gera data no formato AAAA-MM-DD\r\n:global data [/system clock get date]\r\n:global meses (\"jan\",\"feb\",\"mar\",\"apr\",\"may\",\"jun\",\"jul\",\"aug\",\"sep\",\"oct\",\"nov\",\"dec\");\r\n:global ano ([:pick \$data 7 11])\r\n:global mestxt ([:pick \$data 0 3])\r\n:global mm ([ :find \$meses \$mestxt -1 ] + 1);\r\n:if (\$mm < 10) do={ :set mm (\"0\" . \$mm); }\r\n:global mes ([:pick \$ds 7 11] . \$mm . [:pick \$ds 4 6])\r\n:global dia ([:pick \$data 4 6])\r\n:log info \"Gerando backup: \$ano-\$mes-\$dia.\$identifica.backup\";\r\n/system backup save name=\"\$ano-\$mes-\$dia.\$identifica\";\r\n:log info \"Gerando export: \$ano-\$mes-\$dia.\$identifica.rsc\";\r\n/export file=\"\$ano-\$mes-\$dia.\$identifica\"\r\n:log info \"Processando...\";\r\n:delay 5s\r\n:log info \"Conectando FTP Server...\";\r\n:log info \"Enviando Backup [\$ano-\$mes-\$dia.\$identifica.backup] ...\";\r\n/tool fetch address=\$host src-path=\"\$ano-\$mes-\$dia.\$identifica.backup\" user=\"\$usuario\" password=\"\$senha\" port=21 upload=yes mode=ftp dst-path=\"\$diretorio/\$ano-\$mes-\$dia.\$identifica.backup\"\r\n:log info \"Enviando Export [\$ano-\$mes-\$dia.\$identifica.rsc] ...\";\r\n/tool fetch address=\$host src-path=\"\$ano-\$mes-\$dia.\$identifica.rsc\" user=\"\$usuario\" password=\"\$senha\" port=21 upload=yes mode=ftp dst-path=\"\$diretorio/\$ano-\$mes-\$dia.\$identifica.rsc\"\r\n:delay 1\r\n:log info \"Backup enviado com sucesso...\";\r\n:log info \"Removendo arquivos...\";\r\n /file remove \"\$ano-\$mes-\$dia.\$identifica.backup\"\r\n /file remove \"\$ano-\$mes-\$dia.\$identifica.rsc\"\r\n:log info \"Rotina de backup finalizada...\";\r\n:log warning \"***************************************\";\r\n"
+/tool romon
+set enabled=yes secrets=123@powercom
