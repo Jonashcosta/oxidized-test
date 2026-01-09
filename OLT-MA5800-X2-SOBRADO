@@ -1,0 +1,1608 @@
+[Active: H901MPSA; Standby: H901MPSA]
+[Patch Info: SPH308]
+[MA5800V100R019: 7211]
+#
+[pre-config]
+  <pre-config>
+ board-template start H903GPSF 
+ board add 0/0 H901PISA 
+ board add 0/1 H903GPSF 
+#
+[sysmode]
+  <sysmode>
+ switch vdsl mode to tr129
+ xpon mode switch-to profile-mode
+ sysmode end
+#
+[global-config]
+  <global-config>
+ sysname OLT-MA5800-X2-SOBRADO
+ terminal user-profile name oxidized 0 0 00:00:00 00:00:00
+ terminal user name buildrun_new_password root *j$1b$$`rpHA9!{P$tTDR4L%"bIkED7AqswC#rk^FL<X/&(k"Q1;[#P{-$* 7 0000:00:00:00:00:00 2022:08:31:02:16:49 root 1 
+first-login-info 0 self-changed-password 1 "-----"
+ terminal user name buildrun_new_password sgpsgp *~uc$1b$;P|B;a<!`M$lP~rWiEc<+5E;YBO5rN)zKZu#0jn%E>k;pE"Upg6$* 0 2000:01:01:11:40:47 2000:01:01:11:40:47 root 2 first-login-info 0 self-changed-password 0 "-----"
+ terminal user name buildrun_new_password ppnetwork *~uc$1b$R~m41^JDc0$=aK:!2J%V(EJC~0_>`R!8u-S91Jxq-4Ba!8qP)%V$* 0 2024:10:07:21:12:50 2024:10:07:21:12:50 root 3 first-login-info 0 self-changed-password 0 "-----"
+ terminal user name buildrun_new_password oxidized *~uc$1b$mgc`6A<mr5$H~1|6LC_dOrI^'U4"wM*Ol5~@n{Z4OS^_j=VOYH"$* 0 2024:12:31:20:27:09 2024:12:31:20:27:09 admin 4 first-login-info 0 self-changed-password 0 "oxidized"
+ system user password security-length 8
+ terminal user name history_password root *j$1b$j{sEBv{^^:$JA'59#)W;UpWJq-;4n^/=aJ8,&}A`<2YtvT6Y()8$* *j$1b$!&#|,^qu6U$"7HeWz_+qIE-EQ~`Ccg&L:<.W+d3l<w_z:~@]}]-$* *j$1b$kX_|*z,l&8$2,ezMyFnI9/ofHBAnqB:Kp;SE=l/`<QRP-)kS#&C$* *j$1b$[+7&=A0Jx#$C~NZHR_TqSy;[<D$PTlWzRtg8WLak'+psd'hh,]8$*
+ ftp set powercom *%$%#LY(!!!!!!!!!!!!%,J|H!Z/iBQ/e"-igi#UE#)O/=IY7OdSsm/'"7&AF&.7R_.aMV"UEJ*hV5J7%q<H$\{_Y1#2~}!C+HzQ8TC9CUb/k;%$%#*
+ xpon ont optical-ddm quick-query enable
+ dba-profile add profile-id 10 profile-name "1gb" type4 max 1024000
+ ont tr069-server-profile add profile-id 1 profile-name "PW-ACS" url 
+"https://acs.powercomnetwork.com.br" user "powercom" "%$%#LY(!!!!!!!!!!!!)_:L&6re0&+gZn!hQAcUol__BT%9fWIqbaU%9J)=x`An$j9q[:u0csEQ`t6Ay5-k$QY"EZ%$%#"
+ ont wan-profile profile-id 10 profile-name "wan-profile_10"
+  nat enable
+  quit
+ gpon ont home-gateway config-method omci
+ ont-srvprofile gpon profile-id 199 profile-name "ONU-BRIDGE"
+  ont-port eth adaptive 8 
+  commit
+ ont-srvprofile gpon profile-id 200 profile-name "EG8145v5"
+  ont-port pots adaptive 32 eth adaptive 8 
+  commit
+ ont-srvprofile gpon profile-id 201 profile-name "ONU-ETH01"
+  ont-port eth 1 
+  commit
+ ont-srvprofile gpon profile-id 300 profile-name "teste"
+ ont-lineprofile gpon profile-id 0 profile-name "line-profile_default_0"
+  omcc encrypt off
+  tcont 0 dba-profile-id 2
+  tcont 1 dba-profile-id 0
+  commit
+  quit
+ ont-lineprofile gpon profile-id 200 profile-name "mapppoe"
+  omcc encrypt on
+  tcont 4 dba-profile-id 10
+  gem add 200 eth tcont 4 encrypt on
+  gem mapping 200 0 vlan 200
+  commit
+  quit
+ ont-lineprofile gpon profile-id 500 profile-name "TR069"
+  omcc encrypt off
+  tr069-management enable
+  tcont 1 dba-profile-id 10
+  gem add 1 eth tcont 1 encrypt off
+  gem mapping 1 1 vlan 200
+  commit
+  quit
+#
+[device-config]
+  <device-config>
+ board add standby sub0 CPCA
+#
+[public-config]
+  <public-config>
+ monitor uplink-port traffic port 0/3/0
+ monitor uplink-port traffic port 0/3/1
+ monitor uplink-port traffic port 0/3/2
+ monitor uplink-port traffic port 0/3/3
+ monitor uplink-port traffic port 0/4/0
+ monitor uplink-port traffic port 0/4/1
+ monitor uplink-port traffic port 0/4/2
+ monitor uplink-port traffic port 0/4/3
+ time date-format DD-MM-YYYY
+ sysman service telnet enable
+ sysman service dhcp-relay disable
+ sysman service dhcpv6-relay disable
+#
+[vlan-config]
+  <vlan-config>
+ vlan 91 smart
+ vlan 1201 to 1232 smart
+ port vlan 91 0/3 0
+ port vlan 91 0/4 0
+ port vlan 1201 to 1232 0/3 0
+ port vlan 1201 to 1232 0/4 0
+#
+[mpu]
+  <mpu-0/3>
+interface mpu 0/3
+ auto-neg 0 disable
+ speed 0 10000
+ auto-neg 1 disable
+ speed 1 10000
+ auto-neg 2 enable
+ speed 2 1000
+ auto-neg 3 enable
+ speed 3 1000
+#
+  <mpu-0/4>
+interface mpu 0/4
+ auto-neg 0 disable
+ speed 0 10000
+ auto-neg 1 disable
+ speed 1 10000
+ auto-neg 2 enable
+ speed 2 1000
+ auto-neg 3 enable
+ speed 3 1000
+#
+[gpon]
+  <gpon-0/1>
+ interface gpon 0/1
+ port 0 ont-auto-find enable
+ port 0 ont-password-renew extra 1440
+ port 1 ont-auto-find enable
+ port 1 ont-password-renew extra 1440
+ port 2 ont-auto-find enable
+ port 2 ont-password-renew extra 1440
+ port 3 ont-auto-find enable
+ port 3 ont-password-renew extra 1440
+ port 4 ont-auto-find enable
+ port 4 ont-password-renew extra 1440
+ port 5 ont-auto-find enable
+ port 5 ont-password-renew extra 1440
+ port 6 ont-auto-find enable
+ port 6 ont-password-renew extra 1440
+ port 7 ont-auto-find enable
+ port 7 ont-password-renew extra 1440
+ port 8 ont-auto-find enable
+ port 8 ont-password-renew extra 1440
+ port 9 ont-auto-find enable
+ port 9 ont-password-renew extra 1440
+ port 10 ont-auto-find enable
+ port 10 ont-password-renew extra 1440
+ port 11 ont-auto-find enable
+ port 11 ont-password-renew extra 1440
+ port 12 ont-auto-find enable
+ port 12 ont-password-renew extra 1440
+ port 13 ont-auto-find enable
+ port 13 ont-password-renew extra 1440
+ port 14 ont-auto-find enable
+ port 14 ont-password-renew extra 1440
+ port 15 ont-auto-find enable
+ port 15 ont-password-renew extra 1440
+ ont add 0 1 sn-auth "54504C47D21DC610" omci ont-lineprofile-id 200 
+ont-srvprofile-id 200 desc "8570 - 8570" 
+ ont add 0 2 sn-auth "495442530A7155C8" omci ont-lineprofile-id 200 
+ont-srvprofile-id 199 desc "CLIENTE LP" 
+ ont add 0 3 sn-auth "54504C478E8F6928" omci ont-lineprofile-id 200 
+ont-srvprofile-id 200 desc "6962 - 6962" 
+ ont add 0 4 sn-auth "495442530AC1D6C6" omci ont-lineprofile-id 200 
+ont-srvprofile-id 200 desc "CLIENTE LP" 
+ ont add 0 5 sn-auth "53554D43B29F3754" omci ont-lineprofile-id 200 
+ont-srvprofile-id 199 desc "3661 - farmacia02@lp" 
+ ont add 0 6 sn-auth "54504C478E8EA5A8" omci ont-lineprofile-id 200 
+ont-srvprofile-id 200 desc "8817 - knannnz" 
+ ont add 1 0 sn-auth "44443732E62134B9" omci ont-lineprofile-id 200 
+ont-srvprofile-id 199 desc "CLIENTE LP" 
+ ont add 1 1 sn-auth "5A5445479B030774" omci ont-lineprofile-id 200 
+ont-srvprofile-id 199 desc "CLIENTE LP" 
+ ont add 1 2 sn-auth "495442530A5A4411" omci ont-lineprofile-id 200 
+ont-srvprofile-id 200 desc "CLIENTE LP" 
+ ont add 1 3 sn-auth "495442530A5E41D7" omci ont-lineprofile-id 200 
+ont-srvprofile-id 199 desc "CLIENTE LP" 
+ ont add 1 4 sn-auth "495442530A9389AE" omci ont-lineprofile-id 200 
+ont-srvprofile-id 199 desc "CLIENTE LP" 
+ ont add 1 5 sn-auth "54504C47D2217130" omci ont-lineprofile-id 200 
+ont-srvprofile-id 200 desc "8412 - 8412" 
+ ont add 1 6 sn-auth "54504C47D21DB610" omci ont-lineprofile-id 200 
+ont-srvprofile-id 200 desc "2075 - 2075" 
+ ont add 1 7 sn-auth "4954425332CBF592" omci ont-lineprofile-id 200 
+ont-srvprofile-id 199 desc "CLIENTE LP" 
+ ont add 1 8 sn-auth "54504C478E8E30F8" omci ont-lineprofile-id 200 
+ont-srvprofile-id 200 desc "2357 - 2357" 
+ ont add 1 9 sn-auth "54504C47B5354649" omci ont-lineprofile-id 200 
+ont-srvprofile-id 199 desc "2829 - mpaula@lgpedras" 
+ ont add 1 10 sn-auth "495442535F567D1D" omci ont-lineprofile-id 200 
+ont-srvprofile-id 199 desc "CLIENTE LP" 
+ ont add 1 11 sn-auth "54504C478E8CB1E8" omci ont-lineprofile-id 200 
+ont-srvprofile-id 200 desc "6148 - 6148" 
+ ont add 1 12 sn-auth "54504C47B5239978" omci ont-lineprofile-id 200 
+ont-srvprofile-id 199 desc "6087 - 6087" 
+ ont add 1 13 sn-auth "495442535F6BF53E" omci ont-lineprofile-id 200 
+ont-srvprofile-id 199 desc "CLIENTE LP" 
+ ont add 1 14 sn-auth "495442535F6BF5FC" omci ont-lineprofile-id 200 
+ont-srvprofile-id 199 desc "CLIENTE LP" 
+ ont add 1 15 sn-auth "53553130B2038267" omci ont-lineprofile-id 200 
+ont-srvprofile-id 199 desc "3754 - marleide@lp" 
+ ont add 1 16 sn-auth "53553130B203827D" omci ont-lineprofile-id 200 
+ont-srvprofile-id 199 desc "CLIENTE LP" 
+ ont add 1 17 sn-auth "54504C4700C515C4" omci ont-lineprofile-id 200 
+ont-srvprofile-id 199 desc "7887 - 7887" 
+ ont add 1 18 sn-auth "54504C4700C513D4" omci ont-lineprofile-id 200 
+ont-srvprofile-id 199 desc "6435 - 6435" 
+ ont add 1 19 sn-auth "53554D43B29F368C" omci ont-lineprofile-id 200 
+ont-srvprofile-id 199 desc "2278 - 2278" 
+ ont add 1 20 sn-auth "53553231B2A1603C" omci ont-lineprofile-id 200 
+ont-srvprofile-id 199 desc "CLIENTE LP" 
+ ont add 1 21 sn-auth "4F454D543C073FE6" omci ont-lineprofile-id 200 
+ont-srvprofile-id 199 desc "CLIENTE LP" 
+ ont add 1 22 sn-auth "49544253CF61D46E" omci ont-lineprofile-id 200 
+ont-srvprofile-id 199 desc "CLIENTE LP" 
+ ont add 1 23 sn-auth "54504C474A483667" omci ont-lineprofile-id 200 
+ont-srvprofile-id 199 desc "7830 - 7830" 
+ ont add 1 24 sn-auth "54504C474A483544" omci ont-lineprofile-id 200 
+ont-srvprofile-id 199 desc "6892 - 6892" 
+ ont add 1 25 sn-auth "49544253CF619A5A" omci ont-lineprofile-id 200 
+ont-srvprofile-id 199 desc "2257 - 2257" 
+ ont add 1 26 sn-auth "54504C4731ECF208" omci ont-lineprofile-id 200 
+ont-srvprofile-id 200 desc "8174 - 8174" 
+ ont add 1 27 sn-auth "54504C471DF19E38" omci ont-lineprofile-id 200 
+ont-srvprofile-id 200 desc "8417 - 8417" 
+ ont add 1 28 sn-auth "54504C470D2FBDE0" omci ont-lineprofile-id 200 
+ont-srvprofile-id 200 desc "6253 - 6253" 
+ ont add 1 29 sn-auth "49544253F1A56A30" omci ont-lineprofile-id 200 
+ont-srvprofile-id 200 desc "CLIENTE LP" 
+ ont add 1 30 sn-auth "49544253F1A56AFF" omci ont-lineprofile-id 200 
+ont-srvprofile-id 200 desc "CLIENTE LP" 
+ ont add 1 31 sn-auth "54504C47B52393E5" omci ont-lineprofile-id 200 
+ont-srvprofile-id 199 desc "8688 - 8688" 
+ ont add 1 32 sn-auth "54504C4779BF8A40" omci ont-lineprofile-id 200 
+ont-srvprofile-id 200 desc "2283 - 2283" 
+ ont add 1 33 sn-auth "54504C478474AE22" omci ont-lineprofile-id 200 
+ont-srvprofile-id 199 desc "2656 - 2656" 
+ ont add 1 34 sn-auth "54504C478474A33B" omci ont-lineprofile-id 200 
+ont-srvprofile-id 199 desc "CLIENTE LP" 
+ ont add 1 35 sn-auth "54504C47842F5D47" omci ont-lineprofile-id 200 
+ont-srvprofile-id 199 desc "919 - 919" 
+ ont add 1 36 sn-auth "54504C4779C0D758" omci ont-lineprofile-id 200 
+ont-srvprofile-id 200 desc "CLIENTE LP" 
+ ont add 1 37 sn-auth "49544253CF8C33AF" omci ont-lineprofile-id 200 
+ont-srvprofile-id 199 desc "CLIENTE LP" 
+ ont add 1 38 sn-auth "54504C4762092B39" omci ont-lineprofile-id 200 
+ont-srvprofile-id 199 desc "2348 - sinerdinoeli" 
+ ont add 1 39 sn-auth "54504C478E8E26C0" omci ont-lineprofile-id 200 
+ont-srvprofile-id 200 desc "7585 - 7585" 
+ ont add 1 40 sn-auth "54504C478E8E2698" omci ont-lineprofile-id 200 
+ont-srvprofile-id 200 desc "2025 - 2025" 
+ ont add 1 41 sn-auth "54504C478E8F2BD8" omci ont-lineprofile-id 200 
+ont-srvprofile-id 200 desc "4571 - 4571" 
+ ont add 1 42 sn-auth "54504C478E8EAF70" omci ont-lineprofile-id 200 
+ont-srvprofile-id 200 desc "1211 - 1211" 
+ ont add 1 43 sn-auth "54504C478E8E2758" omci ont-lineprofile-id 200 
+ont-srvprofile-id 200 desc "2995 - 2995" 
+ ont add 1 44 sn-auth "54504C478E8E9188" omci ont-lineprofile-id 200 
+ont-srvprofile-id 200 desc "815 - 815" 
+ ont add 1 45 sn-auth "54504C47B5353F81" omci ont-lineprofile-id 200 
+ont-srvprofile-id 199 desc "2721 - mariasales@lgpedras" 
+ ont add 1 46 sn-auth "54504C47CEAF1CB8" omci ont-lineprofile-id 200 
+ont-srvprofile-id 200 desc "CLIENTE LP" 
+ ont add 1 47 sn-auth "4954425344538BB7" omci ont-lineprofile-id 200 
+ont-srvprofile-id 200 desc "6793 - 6793" 
+ ont add 1 48 sn-auth "53554D43B29F375C" omci ont-lineprofile-id 200 
+ont-srvprofile-id 199 desc "2054 - 2054" 
+ ont add 1 49 sn-auth "54504C47D18BE180" omci ont-lineprofile-id 200 
+ont-srvprofile-id 200 desc "8411 - 8411" 
+ ont add 2 0 sn-auth "3230313235045075" omci ont-lineprofile-id 200 
+ont-srvprofile-id 199 desc "CLIENTE LP" 
+ ont add 2 1 sn-auth "495442530A481D19" omci ont-lineprofile-id 200 
+ont-srvprofile-id 199 desc "CLIENTE LP" 
+ ont add 2 2 sn-auth "54504C478E8F3FE0" omci ont-lineprofile-id 200 
+ont-srvprofile-id 200 desc "8834 - 8834" 
+ ont add 2 3 sn-auth "414C434CFE133892" omci ont-lineprofile-id 200 
+ont-srvprofile-id 200 desc "3168 - 3168" 
+ ont add 2 5 sn-auth "4954425332CBDA1C" omci ont-lineprofile-id 200 
+ont-srvprofile-id 199 desc "CLIENTE LP" 
+ ont add 2 7 sn-auth "54504C47CEAEF980" omci ont-lineprofile-id 200 
+ont-srvprofile-id 200 desc "2874 - 2874" 
+ ont add 2 8 sn-auth "53554D43B29E200C" omci ont-lineprofile-id 200 
+ont-srvprofile-id 199 desc "5713 - 5713" 
+ ont add 2 10 sn-auth "4954425332CBF590" omci ont-lineprofile-id 200 
+ont-srvprofile-id 199 desc "CLIENTE LP" 
+ ont add 2 11 sn-auth "54504C4700C51C77" omci ont-lineprofile-id 200 
+ont-srvprofile-id 199 desc "6561 - 6561" 
+ ont add 2 12 sn-auth "54504C478E8FDEB0" omci ont-lineprofile-id 200 
+ont-srvprofile-id 200 desc "844 - 844" 
+ ont add 2 13 sn-auth "495442535F6BDF5C" omci ont-lineprofile-id 200 
+ont-srvprofile-id 199 desc "CLIENTE LP" 
+ ont add 2 14 sn-auth "49544253CF6188CC" omci ont-lineprofile-id 200 
+ont-srvprofile-id 199 desc "CLIENTE LP" 
+ ont add 2 16 sn-auth "49544253CF61E967" omci ont-lineprofile-id 200 
+ont-srvprofile-id 199 desc "CLIENTE LP" 
+ ont add 2 18 sn-auth "49544253CF682B56" omci ont-lineprofile-id 200 
+ont-srvprofile-id 199 desc "CLIENTE LP" 
+ ont add 2 19 sn-auth "54504C478E8F6728" omci ont-lineprofile-id 200 
+ont-srvprofile-id 200 desc "8707 - 8707" 
+ ont add 2 20 sn-auth "54504C478E8F6788" omci ont-lineprofile-id 200 
+ont-srvprofile-id 200 desc "cliente lp" 
+ ont add 2 21 sn-auth "54504C478E8E3180" omci ont-lineprofile-id 200 
+ont-srvprofile-id 200 desc "5712 - 5712" 
+ ont add 2 22 sn-auth "54504C478E8ED550" omci ont-lineprofile-id 200 
+ont-srvprofile-id 200 desc "2456 - 2456" 
+ ont add 2 23 sn-auth "53553130B20382F3" omci ont-lineprofile-id 200 
+ont-srvprofile-id 199 desc "888 - 888" 
+ ont add 2 24 sn-auth "53553130B20382ED" omci ont-lineprofile-id 200 
+ont-srvprofile-id 199 desc "851 - josefalp" 
+ ont add 2 25 sn-auth "54504C478E8E3160" omci ont-lineprofile-id 200 
+ont-srvprofile-id 200 desc "3142 - 3142" 
+ ont add 2 27 sn-auth "54504C478E8F8FC0" omci ont-lineprofile-id 200 
+ont-srvprofile-id 200 desc "2913 - 2913" 
+ ont add 3 0 sn-auth "49544253CF61D134" omci ont-lineprofile-id 200 
+ont-srvprofile-id 199 desc "cliente LP" 
+ ont add 3 1 sn-auth "54504C478E8DA8C8" omci ont-lineprofile-id 200 
+ont-srvprofile-id 200 desc "CLIENTE LP" 
+ ont add 3 2 sn-auth "54504C47B523930C" omci ont-lineprofile-id 200 
+ont-srvprofile-id 199 desc "CLIENTE LP" 
+ ont add 3 3 sn-auth "54504C47D21FAE30" omci ont-lineprofile-id 200 
+ont-srvprofile-id 200 desc "cliente LP" 
+ ont add 3 4 sn-auth "44443732E621350D" omci ont-lineprofile-id 200 
+ont-srvprofile-id 199 desc "CLIENTE LP" 
+ ont add 3 5 sn-auth "495442530A48A182" omci ont-lineprofile-id 200 
+ont-srvprofile-id 199 desc "CLIENTE LP" 
+ ont add 3 6 sn-auth "54504C474A48226D" omci ont-lineprofile-id 200 
+ont-srvprofile-id 199 desc "CLIENTE LP" 
+ ont add 3 7 sn-auth "495442530A481E2B" omci ont-lineprofile-id 200 
+ont-srvprofile-id 199 desc "CLIENTE LP" 
+ ont add 3 8 sn-auth "54504C478E8F4AC8" omci ont-lineprofile-id 200 
+ont-srvprofile-id 200 desc "845 - 845" 
+ ont add 3 9 sn-auth "54504C47B523936C" omci ont-lineprofile-id 200 
+ont-srvprofile-id 199 desc "6201 - lotericalagoadepedras" 
+ ont add 3 10 sn-auth "49544253CF620154" omci ont-lineprofile-id 200 
+ont-srvprofile-id 199 desc "CLIENTE LP" 
+ ont add 3 12 sn-auth "54504C47B523961F" omci ont-lineprofile-id 200 
+ont-srvprofile-id 199 desc "CLIENTE LP" 
+ ont add 3 13 sn-auth "54504C47CEAF8180" omci ont-lineprofile-id 200 
+ont-srvprofile-id 200 desc "CLIENTE LP" 
+ ont add 3 14 sn-auth "54504C47B5352D9B" omci ont-lineprofile-id 200 
+ont-srvprofile-id 199 desc "CLIENTE LP" 
+ ont add 3 15 sn-auth "54504C478E8EAC80" omci ont-lineprofile-id 200 
+ont-srvprofile-id 200 desc "2940 - fabinhogame" 
+ ont add 3 16 sn-auth "54504C4779BFB250" omci ont-lineprofile-id 200 
+ont-srvprofile-id 200 desc "CLIENTE LP" 
+ ont add 3 17 sn-auth "49544253CF682C21" omci ont-lineprofile-id 200 
+ont-srvprofile-id 199 desc "CLIENTE LP" 
+ ont add 3 18 sn-auth "54504C478BD92940" omci ont-lineprofile-id 200 
+ont-srvprofile-id 199 desc "CLIENTE LP" 
+ ont add 3 19 sn-auth "54504C478E8FA198" omci ont-lineprofile-id 200 
+ont-srvprofile-id 200 desc "1149 - 1149" 
+ ont add 3 20 sn-auth "42545054DD20EB87" omci ont-lineprofile-id 200 
+ont-srvprofile-id 199 desc "ONU LP" 
+ ont add 3 21 sn-auth "443031316A940456" omci ont-lineprofile-id 200 
+ont-srvprofile-id 199 desc "Cliente LP" 
+ ont add 3 22 sn-auth "54504C47E32F1B6D" omci ont-lineprofile-id 200 
+ont-srvprofile-id 199 desc "CLIENTE LP" 
+ ont add 3 23 sn-auth "48575443708F0037" omci ont-lineprofile-id 200 
+ont-srvprofile-id 199 desc "CLIENTE LP" 
+ ont add 3 24 sn-auth "54504C478E8FD7B8" omci ont-lineprofile-id 200 
+ont-srvprofile-id 200 desc "8732 - 8732" 
+ ont add 3 25 sn-auth "54504C478E8E2928" omci ont-lineprofile-id 200 
+ont-srvprofile-id 200 desc "826 - 826" 
+ ont add 3 26 sn-auth "495442535F8344D7" omci ont-lineprofile-id 200 
+ont-srvprofile-id 199 desc "2487 - fatimafernandes" 
+ ont add 3 27 sn-auth "4954425332CC80BA" omci ont-lineprofile-id 200 
+ont-srvprofile-id 199 desc "CLIENTE LP" 
+ ont add 3 28 sn-auth "495442530AC1B6DA" omci ont-lineprofile-id 200 
+ont-srvprofile-id 200 desc "CLIENTE LP" 
+ ont add 3 29 sn-auth "54504C478E8F9EE0" omci ont-lineprofile-id 200 
+ont-srvprofile-id 200 desc "876 - 876" 
+ ont add 3 30 sn-auth "48575443901E6A7D" omci ont-lineprofile-id 200 
+ont-srvprofile-id 199 desc "CLIENTE LP" 
+ ont add 3 31 sn-auth "54504C478E8F26A0" omci ont-lineprofile-id 200 
+ont-srvprofile-id 200 desc "6378 - 6378" 
+ ont add 3 33 sn-auth "54504C478E8F0B00" omci ont-lineprofile-id 200 
+ont-srvprofile-id 200 desc "2994 - 2994" 
+ ont add 3 34 sn-auth "54504C478E8F8E00" omci ont-lineprofile-id 200 
+ont-srvprofile-id 200 desc "877 - 877" 
+ ont add 3 35 sn-auth "54504C478E8F28D0" omci ont-lineprofile-id 200 
+ont-srvprofile-id 200 desc "3144 - 3144" 
+ ont add 3 36 sn-auth "54504C478E8E2E80" omci ont-lineprofile-id 200 
+ont-srvprofile-id 200 desc "5873 - 5873" 
+ ont add 3 37 sn-auth "54504C478E8E26D0" omci ont-lineprofile-id 200 
+ont-srvprofile-id 200 desc "7051 - 7051" 
+ ont add 3 38 sn-auth "54504C477EA62C88" omci ont-lineprofile-id 200 
+ont-srvprofile-id 200 desc "CLIENTE LP" 
+ ont add 3 39 sn-auth "495442535F453445" omci ont-lineprofile-id 200 
+ont-srvprofile-id 199 desc "CLIENTE LP" 
+ ont add 3 40 sn-auth "495442532CCF6D89" omci ont-lineprofile-id 200 
+ont-srvprofile-id 199 desc "CLIENTE LP" 
+ ont add 3 41 sn-auth "54504C47D220DB38" omci ont-lineprofile-id 200 
+ont-srvprofile-id 200 desc "CLIENTE LP" 
+ ont add 3 42 sn-auth "54504C478474AE55" omci ont-lineprofile-id 200 
+ont-srvprofile-id 199 desc "CLIENTE LP" 
+ ont add 3 43 sn-auth "495442530A97D180" omci ont-lineprofile-id 200 
+ont-srvprofile-id 199 desc "CLIENTE LP" 
+ ont add 3 44 sn-auth "54504C4784235748" omci ont-lineprofile-id 200 
+ont-srvprofile-id 200 desc "CLIENTE LP" 
+ ont add 3 45 sn-auth "54504C478E8E53D0" omci ont-lineprofile-id 200 
+ont-srvprofile-id 200 desc "1123 - viniciuslp" 
+ ont add 3 46 sn-auth "54504C478E8F2EE8" omci ont-lineprofile-id 200 
+ont-srvprofile-id 200 desc "2818 - 2818" 
+ ont add 3 47 sn-auth "54504C478E8FA3F8" omci ont-lineprofile-id 200 
+ont-srvprofile-id 200 desc "830 - 830" 
+ ont add 3 48 sn-auth "54504C478E8FA440" omci ont-lineprofile-id 200 
+ont-srvprofile-id 200 desc "2337 - marcosantonionunes" 
+ ont add 3 49 sn-auth "54504C478E8E7238" omci ont-lineprofile-id 200 
+ont-srvprofile-id 200 desc "2719 - 2719" 
+ ont add 3 50 sn-auth "54504C478E8ED4D8" omci ont-lineprofile-id 200 
+ont-srvprofile-id 200 desc "837 - 837" 
+ ont add 3 51 sn-auth "54504C478E8E31F8" omci ont-lineprofile-id 200 
+ont-srvprofile-id 200 desc "2716 - 2716" 
+ ont add 3 52 sn-auth "54504C478E8E5290" omci ont-lineprofile-id 200 
+ont-srvprofile-id 200 desc "5097 - 5097" 
+ ont add 3 53 sn-auth "54504C478E8FADE0" omci ont-lineprofile-id 200 
+ont-srvprofile-id 200 desc "835 - 835" 
+ ont add 3 54 sn-auth "54504C478E8F1638" omci ont-lineprofile-id 200 
+ont-srvprofile-id 200 desc "8808 - 8808" 
+ ont add 3 55 sn-auth "54504C478E8F7FF8" omci ont-lineprofile-id 200 
+ont-srvprofile-id 200 desc "8812 - 8812" 
+ ont add 3 56 sn-auth "54504C478E8E5420" omci ont-lineprofile-id 200 
+ont-srvprofile-id 200 desc "3641 - 3641" 
+ ont add 3 57 sn-auth "54504C478E8EF900" omci ont-lineprofile-id 200 
+ont-srvprofile-id 200 desc "2153 - 2153" 
+ ont add 3 58 sn-auth "495442530A7145CC" omci ont-lineprofile-id 200 
+ont-srvprofile-id 199 desc "8623 - 8623" 
+ ont add 4 0 sn-auth "42545054DD218AFF" omci ont-lineprofile-id 200 
+ont-srvprofile-id 199 desc "CLIENTE LP" 
+ ont add 4 1 sn-auth "54504C478E8E2A00" omci ont-lineprofile-id 200 
+ont-srvprofile-id 200 desc "5273 - 5273" 
+ ont add 4 2 sn-auth "495442530A48A18C" omci ont-lineprofile-id 200 
+ont-srvprofile-id 199 desc "CLIENTE LP" 
+ ont add 4 3 sn-auth "495442530A97D174" omci ont-lineprofile-id 200 
+ont-srvprofile-id 199 desc "CLIENTE LP" 
+ ont add 4 4 sn-auth "4954425344529770" omci ont-lineprofile-id 200 
+ont-srvprofile-id 200 desc "CLIENTE LP" 
+ ont add 4 5 sn-auth "495442530A97D188" omci ont-lineprofile-id 200 
+ont-srvprofile-id 199 desc "CLIENTE LP" 
+ ont add 4 6 sn-auth "495442535F6BDA9C" omci ont-lineprofile-id 200 
+ont-srvprofile-id 199 desc "CLIENTE LP" 
+ ont add 4 7 sn-auth "49544253CF616834" omci ont-lineprofile-id 200 
+ont-srvprofile-id 199 desc "CLIENTE LP" 
+ ont add 4 8 sn-auth "49544253CF6214B7" omci ont-lineprofile-id 200 
+ont-srvprofile-id 199 desc "CLIENTE LP" 
+ ont add 4 9 sn-auth "49544253E876AA50" omci ont-lineprofile-id 200 
+ont-srvprofile-id 199 desc "922 - ariana@lp" 
+ ont add 4 10 sn-auth "54504C470D2F4F38" omci ont-lineprofile-id 200 
+ont-srvprofile-id 200 desc "CLIENTE LP" 
+ ont add 4 11 sn-auth "54504C47B5239696" omci ont-lineprofile-id 200 
+ont-srvprofile-id 199 desc "CLIENTE LP" 
+ ont add 4 12 sn-auth "54504C470D2F5D80" omci ont-lineprofile-id 200 
+ont-srvprofile-id 200 desc "893 - 893" 
+ ont add 4 13 sn-auth "54504C474A483669" omci ont-lineprofile-id 200 
+ont-srvprofile-id 199 desc "CLIENTE LP" 
+ ont add 4 14 sn-auth "54504C478474A33D" omci ont-lineprofile-id 200 
+ont-srvprofile-id 199 desc "CLIENTE LP" 
+ ont add 4 15 sn-auth "54504C478474B69A" omci ont-lineprofile-id 200 
+ont-srvprofile-id 199 desc "CLIENTE LP" 
+ ont add 4 16 sn-auth "54504C478BD9294B" omci ont-lineprofile-id 200 
+ont-srvprofile-id 199 desc "CLIENTE LP" 
+ ont add 4 17 sn-auth "54504C478E8FE100" omci ont-lineprofile-id 200 
+ont-srvprofile-id 200 desc "2449 - 2449" 
+ ont add 4 18 sn-auth "53554D43B29E4DFC" omci ont-lineprofile-id 200 
+ont-srvprofile-id 199 desc "2677 - damires@lgpedras" 
+ ont add 4 19 sn-auth "49544253CF61CE55" omci ont-lineprofile-id 200 
+ont-srvprofile-id 199 desc "3358 - 3358" 
+ ont add 4 20 sn-auth "53554D43B2A2C67C" omci ont-lineprofile-id 200 
+ont-srvprofile-id 199 desc "5758 - 5758" 
+ ont add 4 21 sn-auth "54504C47D0475D8F" omci ont-lineprofile-id 200 
+ont-srvprofile-id 199 desc "2269 - karlizetemaria" 
+ ont add 4 22 sn-auth "54504C4700C52580" omci ont-lineprofile-id 200 
+ont-srvprofile-id 199 desc "2472 - sandrarosa" 
+ ont add 5 0 sn-auth "54504C478E8EB228" omci ont-lineprofile-id 200 
+ont-srvprofile-id 200 desc "CLIENTE LP" 
+ ont add 5 1 sn-auth "54504C47D220CF58" omci ont-lineprofile-id 200 
+ont-srvprofile-id 199 desc "8258 - 8258" 
+ ont add 5 2 sn-auth "54504C47CEB07A58" omci ont-lineprofile-id 200 
+ont-srvprofile-id 200 desc "3653 - 3653" 
+ ont add 5 3 sn-auth "54504C47B535345E" omci ont-lineprofile-id 200 
+ont-srvprofile-id 199 desc "8491 - 8491" 
+ ont add 5 4 sn-auth "495442530A46F331" omci ont-lineprofile-id 200 
+ont-srvprofile-id 200 desc "CLIENTE LP" 
+ ont add 5 5 sn-auth "495442530A849F86" omci ont-lineprofile-id 200 
+ont-srvprofile-id 200 desc "CLIENTE LP" 
+ ont add 5 6 sn-auth "495442530A949CB5" omci ont-lineprofile-id 200 
+ont-srvprofile-id 200 desc "CLIENTE LP" 
+ ont add 5 7 sn-auth "4954425332CB5F3C" omci ont-lineprofile-id 200 
+ont-srvprofile-id 199 desc "CLIENTE LP" 
+ ont add 5 8 sn-auth "4954425332CC8050" omci ont-lineprofile-id 200 
+ont-srvprofile-id 199 desc "CLIENTE LP" 
+ ont add 5 9 sn-auth "54504C478474B3D7" omci ont-lineprofile-id 200 
+ont-srvprofile-id 199 desc "7382 - 7382" 
+ ont add 5 10 sn-auth "4954425344529779" omci ont-lineprofile-id 200 
+ont-srvprofile-id 200 desc "CLIENTE LP" 
+ ont add 5 11 sn-auth "49544253446E4251" omci ont-lineprofile-id 200 
+ont-srvprofile-id 200 desc "CLIENTE LP" 
+ ont add 5 12 sn-auth "54504C478474ACAA" omci ont-lineprofile-id 200 
+ont-srvprofile-id 199 desc "7424 - 7424" 
+ ont add 5 13 sn-auth "495442535F14E589" omci ont-lineprofile-id 200 
+ont-srvprofile-id 200 desc "CLIENTE LP" 
+ ont add 5 14 sn-auth "495442535F80BDA9" omci ont-lineprofile-id 200 
+ont-srvprofile-id 199 desc "CLIENTE LP" 
+ ont add 5 15 sn-auth "54504C478E8E2AF0" omci ont-lineprofile-id 200 
+ont-srvprofile-id 200 desc "2501 - 2501" 
+ ont add 5 16 sn-auth "495442538C8089FA" omci ont-lineprofile-id 200 
+ont-srvprofile-id 199 desc "CLIENTE LP" 
+ ont add 5 17 sn-auth "49544253CF658815" omci ont-lineprofile-id 200 
+ont-srvprofile-id 199 desc "CLIENTE LP" 
+ ont add 5 18 sn-auth "49544253F1A86199" omci ont-lineprofile-id 200 
+ont-srvprofile-id 200 desc "CLIENTE LP" 
+ ont add 5 19 sn-auth "4F454D543C073AB6" omci ont-lineprofile-id 200 
+ont-srvprofile-id 199 desc "CLIENTE LP" 
+ ont add 5 20 sn-auth "4F454D543C07447E" omci ont-lineprofile-id 200 
+ont-srvprofile-id 199 desc "CLIENTE LP" 
+ ont add 5 21 sn-auth "53554D43B28A5A8C" omci ont-lineprofile-id 200 
+ont-srvprofile-id 199 desc "4286 - 4286" 
+ ont add 5 22 sn-auth "54504C47487A4DC0" omci ont-lineprofile-id 200 
+ont-srvprofile-id 200 desc "5777 - 5777" 
+ ont add 5 23 sn-auth "54504C478474A662" omci ont-lineprofile-id 200 
+ont-srvprofile-id 199 desc "2529 - 2529" 
+ ont add 5 24 sn-auth "54504C477E955050" omci ont-lineprofile-id 200 
+ont-srvprofile-id 200 desc "CLIENTE LP" 
+ ont add 5 25 sn-auth "54504C47842F5E43" omci ont-lineprofile-id 200 
+ont-srvprofile-id 199 desc "2500 - 2500" 
+ ont add 5 26 sn-auth "54504C478423A7A8" omci ont-lineprofile-id 200 
+ont-srvprofile-id 200 desc "CLIENTE LP" 
+ ont add 5 27 sn-auth "54504C47487A4E58" omci ont-lineprofile-id 200 
+ont-srvprofile-id 200 desc "1890 - adrianaaguiar" 
+ ont add 5 28 sn-auth "49544253CF621D7E" omci ont-lineprofile-id 200 
+ont-srvprofile-id 199 desc "CLIENTE LP" 
+ ont add 5 29 sn-auth "54504C478E8DFF70" omci ont-lineprofile-id 200 
+ont-srvprofile-id 200 desc "1960 - 1960" 
+ ont add 5 30 sn-auth "54504C478E8E2CF0" omci ont-lineprofile-id 200 
+ont-srvprofile-id 200 desc "2402 - 2402" 
+ ont add 5 31 sn-auth "54504C47B5239491" omci ont-lineprofile-id 200 
+ont-srvprofile-id 199 desc "2717 - 2717" 
+ ont add 5 32 sn-auth "54504C47B5353F6C" omci ont-lineprofile-id 200 
+ont-srvprofile-id 199 desc "2424 - 2424" 
+ ont add 5 33 sn-auth "54504C478E8D90D8" omci ont-lineprofile-id 200 
+ont-srvprofile-id 200 desc "2163 - 2163" 
+ ont add 6 0 sn-auth "48575443D120467D" omci ont-lineprofile-id 200 
+ont-srvprofile-id 199 desc "CLIENTE LP" 
+ ont add 6 1 sn-auth "495442530A481E25" omci ont-lineprofile-id 200 
+ont-srvprofile-id 199 desc "CLIENTE LP" 
+ ont add 6 2 sn-auth "495442530A849F8F" omci ont-lineprofile-id 200 
+ont-srvprofile-id 200 desc "CLIENTE LP" 
+ ont add 6 3 sn-auth "49544253328BEC4D" omci ont-lineprofile-id 200 
+ont-srvprofile-id 199 desc "CLIENTE LP" 
+ ont add 6 4 sn-auth "49544253445299C2" omci ont-lineprofile-id 200 
+ont-srvprofile-id 200 desc "CLIENTE LP" 
+ ont add 6 5 sn-auth "495442535F480209" omci ont-lineprofile-id 200 
+ont-srvprofile-id 199 desc "CLIENTE LP" 
+ ont add 6 6 sn-auth "495442535F6BD8CA" omci ont-lineprofile-id 200 
+ont-srvprofile-id 199 desc "CLIENTE LP" 
+ ont add 6 7 sn-auth "49544253CF620655" omci ont-lineprofile-id 200 
+ont-srvprofile-id 199 desc "CLIENTE LP" 
+ ont add 6 8 sn-auth "49544253CF66B91A" omci ont-lineprofile-id 200 
+ont-srvprofile-id 199 desc "CLIENTE LP" 
+ ont add 6 9 sn-auth "49544253CF8937B3" omci ont-lineprofile-id 200 
+ont-srvprofile-id 199 desc "CLIENTE LP" 
+ ont add 6 10 sn-auth "49544253F172DF08" omci ont-lineprofile-id 200 
+ont-srvprofile-id 200 desc "CLIENTE LP" 
+ ont add 6 11 sn-auth "53553130B2037153" omci ont-lineprofile-id 200 
+ont-srvprofile-id 199 desc "866 - mariaavaneidelp" 
+ ont add 6 12 sn-auth "53554D43B29E1FAC" omci ont-lineprofile-id 200 
+ont-srvprofile-id 199 desc "894 - ezequionespaulino" 
+ ont add 6 13 sn-auth "53554D43B2A08A14" omci ont-lineprofile-id 200 
+ont-srvprofile-id 199 desc "2539 - patriciacristina" 
+ ont add 6 14 sn-auth "54504C471DF1D390" omci ont-lineprofile-id 200 
+ont-srvprofile-id 200 desc "8413 - 8413" 
+ ont add 6 15 sn-auth "54504C4779BE0BA0" omci ont-lineprofile-id 200 
+ont-srvprofile-id 200 desc "CLIENTE LP" 
+ ont add 6 16 sn-auth "54504C4779C0D670" omci ont-lineprofile-id 200 
+ont-srvprofile-id 200 desc "CLIENTE LP" 
+ ont add 6 17 sn-auth "54504C478E8E7C30" omci ont-lineprofile-id 200 
+ont-srvprofile-id 200 desc "7242 - 7242" 
+ ont add 6 18 sn-auth "54504C474A481B78" omci ont-lineprofile-id 200 
+ont-srvprofile-id 199 desc "CLIENTE LP" 
+ ont add 6 19 sn-auth "54504C474A4835F4" omci ont-lineprofile-id 200 
+ont-srvprofile-id 199 desc "6916 - 6916" 
+ ont add 6 20 sn-auth "54504C478423BC40" omci ont-lineprofile-id 200 
+ont-srvprofile-id 200 desc "7773 - 7773" 
+ ont add 6 21 sn-auth "54504C478474BA5D" omci ont-lineprofile-id 200 
+ont-srvprofile-id 199 desc "8068 - 8068" 
+ ont add 6 22 sn-auth "54504C478474BC1B" omci ont-lineprofile-id 200 
+ont-srvprofile-id 199 desc "CLIENTE LP" 
+ ont add 6 23 sn-auth "54504C478BD92A01" omci ont-lineprofile-id 200 
+ont-srvprofile-id 199 desc "6749 - 6749" 
+ ont add 6 24 sn-auth "54504C47897BB518" omci ont-lineprofile-id 200 
+ont-srvprofile-id 200 desc "7875 - 7875" 
+ ont add 6 25 sn-auth "54504C478E8CF770" omci ont-lineprofile-id 200 
+ont-srvprofile-id 200 desc "CLIENTE LP" 
+ ont add 6 26 sn-auth "54504C478E8E26A8" omci ont-lineprofile-id 200 
+ont-srvprofile-id 200 desc "8814 - 8814" 
+ ont add 6 27 sn-auth "54504C47B523967F" omci ont-lineprofile-id 200 
+ont-srvprofile-id 199 desc "6005 - 6005" 
+ ont add 6 28 sn-auth "54504C47E32EFEBA" omci ont-lineprofile-id 200 
+ont-srvprofile-id 199 desc "898 - 898" 
+ ont add 6 29 sn-auth "54504C478E8E3058" omci ont-lineprofile-id 200 
+ont-srvprofile-id 200 desc "8804 - 8804" 
+ ont add 6 30 sn-auth "54504C478E8FB238" omci ont-lineprofile-id 200 
+ont-srvprofile-id 200 desc "CLIENTE PL" 
+ ont add 6 31 sn-auth "54504C4700C513DB" omci ont-lineprofile-id 200 
+ont-srvprofile-id 199 desc "2162 - 2162" 
+ ont add 6 32 sn-auth "54504C478E8F3F30" omci ont-lineprofile-id 200 
+ont-srvprofile-id 200 desc "8811 - 8811" 
+ ont add 6 33 sn-auth "54504C47E32F0206" omci ont-lineprofile-id 200 
+ont-srvprofile-id 199 desc "3435 - 3435" 
+ ont add 6 34 sn-auth "54504C47D220DA28" omci ont-lineprofile-id 200 
+ont-srvprofile-id 200 desc "8262 - 8262" 
+ ont add 6 35 sn-auth "54504C47CEAF1EF0" omci ont-lineprofile-id 200 
+ont-srvprofile-id 200 desc "7673 - 7673" 
+ ont add 6 36 sn-auth "54504C47CEB07A30" omci ont-lineprofile-id 200 
+ont-srvprofile-id 200 desc "8438 - 8438" 
+ ont add 6 37 sn-auth "54504C478E8FBB38" omci ont-lineprofile-id 200 
+ont-srvprofile-id 200 desc "8809 - 8809" 
+ ont add 6 38 sn-auth "54504C47CE6046E8" omci ont-lineprofile-id 200 
+ont-srvprofile-id 200 desc "CLIENTE LP" 
+ ont add 6 39 sn-auth "54504C478474BD1D" omci ont-lineprofile-id 200 
+ont-srvprofile-id 199 desc "CLIENTE lp" 
+ ont add 6 40 sn-auth "54504C47B5239631" omci ont-lineprofile-id 200 
+ont-srvprofile-id 199 desc "CLIENTE PL" 
+ ont add 6 41 sn-auth "54504C478E8FBE80" omci ont-lineprofile-id 200 
+ont-srvprofile-id 200 desc "8833 - 8833" 
+ ont add 6 42 sn-auth "49544253CF61C5BF" omci ont-lineprofile-id 200 
+ont-srvprofile-id 199 desc "1911 - 1911" 
+ ont add 6 43 sn-auth "54504C474A483628" omci ont-lineprofile-id 200 
+ont-srvprofile-id 199 desc "2362 - mariaalice" 
+ ont add 6 44 sn-auth "495442530A82BA2D" omci ont-lineprofile-id 200 
+ont-srvprofile-id 199 desc "8482 - 8482" 
+ ont add 6 45 sn-auth "54504C47D18BE130" omci ont-lineprofile-id 200 
+ont-srvprofile-id 200 desc "8944 - 8944" 
+ ont add 7 0 sn-auth "4954425332CB5F5E" omci ont-lineprofile-id 200 
+ont-srvprofile-id 199 desc "CLIENTE LP" 
+ ont add 7 1 sn-auth "495442535F152D4A" omci ont-lineprofile-id 200 
+ont-srvprofile-id 200 desc "4494 - diogenes@lp" 
+ ont add 7 2 sn-auth "495442535F4808D8" omci ont-lineprofile-id 200 
+ont-srvprofile-id 199 desc "CLIENTE LP" 
+ ont add 7 3 sn-auth "495442535F6BE2D8" omci ont-lineprofile-id 200 
+ont-srvprofile-id 199 desc "5059 - 5059" 
+ ont add 7 4 sn-auth "495442535F165F4A" omci ont-lineprofile-id 200 
+ont-srvprofile-id 200 desc "CLIENTE LP" 
+ ont add 7 5 sn-auth "54504C47B5239648" omci ont-lineprofile-id 200 
+ont-srvprofile-id 199 desc "2678 - 2678" 
+ ont add 7 6 sn-auth "49544253CF621551" omci ont-lineprofile-id 200 
+ont-srvprofile-id 199 desc "CLIENTE LP" 
+ ont add 7 7 sn-auth "49544253CF66BC38" omci ont-lineprofile-id 200 
+ont-srvprofile-id 199 desc "860 - francilp" 
+ ont add 7 8 sn-auth "54504C47B52397E8" omci ont-lineprofile-id 200 
+ont-srvprofile-id 199 desc "7341 - 7341" 
+ ont add 7 9 sn-auth "495442538C808AFC" omci ont-lineprofile-id 200 
+ont-srvprofile-id 199 desc "1950 - avanilp2" 
+ ont add 7 10 sn-auth "53553130B2037D11" omci ont-lineprofile-id 200 
+ont-srvprofile-id 199 desc "CLIENTE LP" 
+ ont add 7 11 sn-auth "54504C4779C0D810" omci ont-lineprofile-id 200 
+ont-srvprofile-id 200 desc "5811 - 5811" 
+ ont add 7 12 sn-auth "54504C47842F613A" omci ont-lineprofile-id 200 
+ont-srvprofile-id 199 desc "841 - 841" 
+ ont add 7 13 sn-auth "54504C478474B9F3" omci ont-lineprofile-id 200 
+ont-srvprofile-id 199 desc "CLIENTE LP" 
+ ont add 7 14 sn-auth "54504C477E75A650" omci ont-lineprofile-id 200 
+ont-srvprofile-id 200 desc "2240 - 2240" 
+ ont add 7 15 sn-auth "54504C470D2FFB20" omci ont-lineprofile-id 200 
+ont-srvprofile-id 200 desc "2360 - 2360" 
+ ont add 7 16 sn-auth "54504C4784241090" omci ont-lineprofile-id 200 
+ont-srvprofile-id 200 desc "2588 - 2588" 
+ ont add 7 17 sn-auth "443031316A93F694" omci ont-lineprofile-id 200 
+ont-srvprofile-id 199 desc "854 - 854" 
+ ont add 7 18 sn-auth "53553130B203826B" omci ont-lineprofile-id 200 
+ont-srvprofile-id 199 desc "CLIENTE LP" 
+ ont add 7 19 sn-auth "443031316A93F644" omci ont-lineprofile-id 200 
+ont-srvprofile-id 199 desc "4544 - larissa@lp" 
+ ont add 7 20 sn-auth "4954425332CB5EE2" omci ont-lineprofile-id 200 
+ont-srvprofile-id 199 desc "3357 - maria@lp" 
+ ont add 7 21 sn-auth "443031316A940E82" omci ont-lineprofile-id 200 
+ont-srvprofile-id 199 desc "8439 - 8439" 
+ ont add 7 22 sn-auth "495442530AC96292" omci ont-lineprofile-id 200 
+ont-srvprofile-id 199 desc "CLIENTE LP" 
+ ont add 7 23 sn-auth "54504C47D21DB508" omci ont-lineprofile-id 200 
+ont-srvprofile-id 200 desc "8277 - 8277" 
+ ont add 7 24 sn-auth "54504C47CEB078E8" omci ont-lineprofile-id 200 
+ont-srvprofile-id 200 desc "1209 - 1209" 
+ ont add 7 25 sn-auth "54504C478E8FB938" omci ont-lineprofile-id 200 
+ont-srvprofile-id 200 desc "8813 - 8813" 
+ ont add 7 26 sn-auth "53554D43B28A5A74" omci ont-lineprofile-id 200 
+ont-srvprofile-id 199 desc "2156 - 2156" 
+ ont add 7 27 sn-auth "53553130B20382E9" omci ont-lineprofile-id 200 
+ont-srvprofile-id 199 desc "1098 - ednalva@lp" 
+ ont add 7 28 sn-auth "54504C477E75E020" omci ont-lineprofile-id 200 
+ont-srvprofile-id 200 desc "8519 - 8519" 
+ ont add 7 29 sn-auth "54504C4700C513DE" omci ont-lineprofile-id 200 
+ont-srvprofile-id 199 desc "1212 - 1212" 
+ ont add 7 30 sn-auth "54504C476209697A" omci ont-lineprofile-id 200 
+ont-srvprofile-id 199 desc "CLIENTE LP" 
+ ont add 7 31 sn-auth "54504C478E8F9160" omci ont-lineprofile-id 200 
+ont-srvprofile-id 200 desc "CLIENTE LP" 
+ ont add 7 32 sn-auth "54504C478E8F3E50" omci ont-lineprofile-id 200 
+ont-srvprofile-id 200 desc "8816 - 8816" 
+ ont add 7 33 sn-auth "53553130B20382F7" omci ont-lineprofile-id 200 
+ont-srvprofile-id 199 desc "852 - mariagomeslp" 
+ ont add 7 34 sn-auth "54504C478E8C2980" omci ont-lineprofile-id 200 
+ont-srvprofile-id 200 desc "864 - 864" 
+ ont add 7 35 sn-auth "54504C478E8F9580" omci ont-lineprofile-id 200 
+ont-srvprofile-id 200 desc "8815 - 8815" 
+ ont add 7 36 sn-auth "54504C478E8FB9C0" omci ont-lineprofile-id 200 
+ont-srvprofile-id 200 desc "3054 - 3054" 
+ ont add 7 37 sn-auth "54504C478E8FBAA8" omci ont-lineprofile-id 200 
+ont-srvprofile-id 200 desc "843 - 843" 
+ ont add 7 38 sn-auth "54504C47D0475E67" omci ont-lineprofile-id 200 
+ont-srvprofile-id 199 desc "2209 - 2209" 
+ ont add 7 39 sn-auth "54504C47B53534AC" omci ont-lineprofile-id 200 
+ont-srvprofile-id 199 desc "2074 - 2074" 
+ ont add 7 40 sn-auth "54504C47897BC210" omci ont-lineprofile-id 200 
+ont-srvprofile-id 200 desc "7655 - 7655" 
+ ont add 7 41 sn-auth "54504C47D1900108" omci ont-lineprofile-id 200 
+ont-srvprofile-id 200 desc "7574 - 7574" 
+ ont add 7 42 sn-auth "5A5445479B0211BF" omci ont-lineprofile-id 200 
+ont-srvprofile-id 199 desc "1944 - antoniopereira" 
+ ont add 7 43 sn-auth "54504C476A5C2ACA" omci ont-lineprofile-id 200 
+ont-srvprofile-id 199 desc "2518 - mariajaniely" 
+ ont add 7 44 sn-auth "54504C474A482B5F" omci ont-lineprofile-id 200 
+ont-srvprofile-id 199 desc "2383 - 2383" 
+ ont add 7 45 sn-auth "49544253CF62062B" omci ont-lineprofile-id 200 
+ont-srvprofile-id 199 desc "865 - mariadefatimalp" 
+ ont add 7 46 sn-auth "54504C47D0475EFE" omci ont-lineprofile-id 200 
+ont-srvprofile-id 199 desc "857 - eduarda@lp" 
+ ont add 7 47 sn-auth "4954425332CBF570" omci ont-lineprofile-id 200 
+ont-srvprofile-id 199 desc "1004 - renatogaldino" 
+ ont add 7 48 sn-auth "49544253CFCBA326" omci ont-lineprofile-id 200 
+ont-srvprofile-id 199 desc "2141 - jaquelineamaro" 
+ ont add 14 0 sn-auth "54504C478E8FE2F0" omci ont-lineprofile-id 200 
+ont-srvprofile-id 200 desc "8715 - 8715" 
+ ont add 14 1 sn-auth "54504C478E8FE270" omci ont-lineprofile-id 200 
+ont-srvprofile-id 200 desc "8708 - 8708" 
+ ont add 14 2 sn-auth "54504C478E8FE230" omci ont-lineprofile-id 200 
+ont-srvprofile-id 200 desc "8726 - 8726" 
+ ont add 14 3 sn-auth "54504C478E8F6920" omci ont-lineprofile-id 200 
+ont-srvprofile-id 200 desc "8727 - kzkaks" 
+ ont add 14 4 sn-auth "54504C478E8FD488" omci ont-lineprofile-id 200 
+ont-srvprofile-id 200 desc "8725 - 8725" 
+ ont add 14 5 sn-auth "54504C478E8FDFF0" omci ont-lineprofile-id 200 
+ont-srvprofile-id 200 desc "8731 - 8731" 
+ ont add 14 6 sn-auth "54504C478E8F6838" omci ont-lineprofile-id 200 
+ont-srvprofile-id 200 desc "8728 - 8728" 
+ ont add 14 7 sn-auth "54504C478E8B2138" omci ont-lineprofile-id 200 
+ont-srvprofile-id 200 desc "8737 - 8737" 
+ ont add 14 8 sn-auth "54504C478E8C2290" omci ont-lineprofile-id 200 
+ont-srvprofile-id 200 desc "8738 - 8738" 
+ ont add 14 9 sn-auth "54504C478E8DA690" omci ont-lineprofile-id 200 
+ont-srvprofile-id 200 desc "8757 - 8757" 
+ ont add 14 10 sn-auth "54504C478E8DA5D0" omci ont-lineprofile-id 200 
+ont-srvprofile-id 200 desc "8756 - 8756" 
+ ont add 14 11 sn-auth "54504C478E8F9EB0" omci ont-lineprofile-id 200 
+ont-srvprofile-id 200 desc "8788 - 8788" 
+ ont add 14 12 sn-auth "54504C478E8E8060" omci ont-lineprofile-id 200 
+ont-srvprofile-id 200 desc "8789 - 8789" 
+ ont add 14 13 sn-auth "54504C478E8FBB40" omci ont-lineprofile-id 200 
+ont-srvprofile-id 200 desc "8818" 
+ ont add 14 14 sn-auth "414C434CFE1331C8" omci ont-lineprofile-id 200 
+ont-srvprofile-id 200 desc "8916 - 8916" 
+ ont add 15 0 sn-auth "414C434CFE13349C" omci ont-lineprofile-id 200 
+ont-srvprofile-id 200 desc "ONT no POP SOBRADO" 
+ ont add 15 1 sn-auth "414C434CFE13316D" omci ont-lineprofile-id 200 
+ont-srvprofile-id 200 desc "8695 - 8695" 
+ ont add 15 2 sn-auth "414C434CFE10D22A" omci ont-lineprofile-id 200 
+ont-srvprofile-id 200 desc "8697 - 8697" 
+ ont add 15 3 sn-auth "414C434CFCF55E26" omci ont-lineprofile-id 200 
+ont-srvprofile-id 200 desc "8701 - Mzmznzzm" 
+ ont add 15 4 sn-auth "414C434CFE10CF98" omci ont-lineprofile-id 200 
+ont-srvprofile-id 200 desc "8699 - 8699" 
+ ont add 15 5 sn-auth "414C434CFCF54E8F" omci ont-lineprofile-id 200 
+ont-srvprofile-id 200 desc "8700 - 8700" 
+ ont add 15 6 sn-auth "414C434CFE10C989" omci ont-lineprofile-id 200 
+ont-srvprofile-id 200 desc "8705 - 8705" 
+ ont add 15 7 sn-auth "414C434CFCF54DC6" omci ont-lineprofile-id 200 
+ont-srvprofile-id 200 desc "8704 - 8704" 
+ ont add 15 8 sn-auth "54504C478E8F5EB0" omci ont-lineprofile-id 200 
+ont-srvprofile-id 200 desc "8711 - 8711" 
+ ont add 15 9 sn-auth "54504C478E8F4BA8" omci ont-lineprofile-id 200 
+ont-srvprofile-id 200 desc "8710 - nznznn" 
+ ont add 15 10 sn-auth "54504C478E8FE238" omci ont-lineprofile-id 200 
+ont-srvprofile-id 200 desc "8703 - 8703" 
+ ont add 15 11 sn-auth "54504C478E8F4A70" omci ont-lineprofile-id 200 
+ont-srvprofile-id 200 desc "8716 - 8716" 
+ ont add 15 12 sn-auth "54504C478E8FE2B8" omci ont-lineprofile-id 200 
+ont-srvprofile-id 200 desc "8719 - 8719" 
+ ont add 15 14 sn-auth "54504C478E8FBD38" omci ont-lineprofile-id 200 
+ont-srvprofile-id 200 desc "8720 - 8720" 
+ ont add 15 15 sn-auth "54504C478E8F67B0" omci ont-lineprofile-id 200 
+ont-srvprofile-id 200 desc "8706 - 8706" 
+ ont add 15 16 sn-auth "54504C478E8F67A8" omci ont-lineprofile-id 200 
+ont-srvprofile-id 200 desc "8714 - 8714" 
+ ont add 15 17 sn-auth "54504C478E8FE290" omci ont-lineprofile-id 200 
+ont-srvprofile-id 200 desc "8713 - Nznznzzn" 
+ ont add 15 18 sn-auth "54504C478E8C2148" omci ont-lineprofile-id 200 
+ont-srvprofile-id 200 desc "8729 - 8729" 
+ ont add 15 19 sn-auth "54504C478E8C1D68" omci ont-lineprofile-id 200 
+ont-srvprofile-id 200 desc "8754 - 94h49cto" 
+ ont add 15 20 sn-auth "54504C478E8E2FD8" omci ont-lineprofile-id 200 
+ont-srvprofile-id 200 desc "8787 - 8787" 
+ ont add 15 21 sn-auth "54504C478E8ED440" omci ont-lineprofile-id 200 
+ont-srvprofile-id 200 desc "8786 - 8786" 
+ ont port native-vlan 0 2 eth 1 vlan 200 priority 0 
+ ont port native-vlan 0 5 eth 1 vlan 200 priority 0 
+ ont port native-vlan 1 0 eth 1 vlan 200 priority 0 
+ ont port native-vlan 1 1 eth 1 vlan 200 priority 0 
+ ont port native-vlan 1 3 eth 1 vlan 200 priority 0 
+ ont port native-vlan 1 4 eth 1 vlan 200 priority 0 
+ ont port native-vlan 1 7 eth 1 vlan 200 priority 0 
+ ont port native-vlan 1 9 eth 1 vlan 200 priority 0 
+ ont port native-vlan 1 10 eth 1 vlan 200 priority 0 
+ ont port native-vlan 1 12 eth 1 vlan 200 priority 0 
+ ont port native-vlan 1 13 eth 1 vlan 200 priority 0 
+ ont port native-vlan 1 14 eth 1 vlan 200 priority 0 
+ ont port native-vlan 1 15 eth 1 vlan 200 priority 0 
+ ont port native-vlan 1 16 eth 1 vlan 200 priority 0 
+ ont port native-vlan 1 17 eth 1 vlan 200 priority 0 
+ ont port native-vlan 1 18 eth 1 vlan 200 priority 0 
+ ont port native-vlan 1 19 eth 1 vlan 200 priority 0 
+ ont port native-vlan 1 20 eth 1 vlan 200 priority 0 
+ ont port native-vlan 1 21 eth 1 vlan 200 priority 0 
+ ont port native-vlan 1 22 eth 1 vlan 200 priority 0 
+ ont port native-vlan 1 23 eth 1 vlan 200 priority 0 
+ ont port native-vlan 1 24 eth 1 vlan 200 priority 0 
+ ont port native-vlan 1 25 eth 1 vlan 200 priority 0 
+ ont port native-vlan 1 31 eth 1 vlan 200 priority 0 
+ ont port native-vlan 1 33 eth 1 vlan 200 priority 0 
+ ont port native-vlan 1 34 eth 1 vlan 200 priority 0 
+ ont port native-vlan 1 35 eth 1 vlan 200 priority 0 
+ ont port native-vlan 1 37 eth 1 vlan 200 priority 0 
+ ont port native-vlan 1 38 eth 1 vlan 200 priority 0 
+ ont port native-vlan 1 45 eth 1 vlan 200 priority 0 
+ ont port native-vlan 1 48 eth 1 vlan 200 priority 0 
+ ont port native-vlan 2 0 eth 1 vlan 200 priority 0 
+ ont port native-vlan 2 1 eth 1 vlan 200 priority 0 
+ ont port native-vlan 2 5 eth 1 vlan 200 priority 0 
+ ont port native-vlan 2 8 eth 1 vlan 200 priority 0 
+ ont port native-vlan 2 11 eth 1 vlan 200 priority 0 
+ ont port native-vlan 2 13 eth 1 vlan 200 priority 0 
+ ont port native-vlan 2 14 eth 1 vlan 200 priority 0 
+ ont port native-vlan 2 16 eth 1 vlan 200 priority 0 
+ ont port native-vlan 2 18 eth 1 vlan 200 priority 0 
+ ont port native-vlan 2 23 eth 1 vlan 200 priority 0 
+ ont port native-vlan 2 24 eth 1 vlan 200 priority 0 
+ ont port native-vlan 3 0 eth 1 vlan 200 priority 0 
+ ont port native-vlan 3 1 eth 1 vlan 200 priority 0 
+ ont port native-vlan 3 2 eth 1 vlan 200 priority 0 
+ ont port native-vlan 3 4 eth 1 vlan 200 priority 0 
+ ont port native-vlan 3 5 eth 1 vlan 200 priority 0 
+ ont port native-vlan 3 6 eth 1 vlan 200 priority 0 
+ ont port native-vlan 3 7 eth 1 vlan 200 priority 0 
+ ont port native-vlan 3 9 eth 1 vlan 200 priority 0 
+ ont port native-vlan 3 10 eth 1 vlan 200 priority 0 
+ ont port native-vlan 3 12 eth 1 vlan 200 priority 0 
+ ont port native-vlan 3 14 eth 1 vlan 200 priority 0 
+ ont port native-vlan 3 17 eth 1 vlan 200 priority 0 
+ ont port native-vlan 3 18 eth 1 vlan 200 priority 0 
+ ont port native-vlan 3 20 eth 1 vlan 200 priority 0 
+ ont port native-vlan 3 21 eth 1 vlan 200 priority 0 
+ ont port native-vlan 3 22 eth 1 vlan 200 priority 0 
+ ont port native-vlan 3 26 eth 1 vlan 200 priority 0 
+ ont port native-vlan 3 27 eth 1 vlan 200 priority 0 
+ ont port native-vlan 3 30 eth 1 vlan 200 priority 0 
+ ont port native-vlan 3 39 eth 1 vlan 200 priority 0 
+ ont port native-vlan 3 40 eth 1 vlan 200 priority 0 
+ ont port native-vlan 3 42 eth 1 vlan 200 priority 0 
+ ont port native-vlan 3 43 eth 1 vlan 200 priority 0 
+ ont port native-vlan 3 58 eth 1 vlan 200 priority 0 
+ ont port native-vlan 4 0 eth 1 vlan 200 priority 0 
+ ont port native-vlan 4 2 eth 1 vlan 200 priority 0 
+ ont port native-vlan 4 3 eth 1 vlan 200 priority 0 
+ ont port native-vlan 4 5 eth 1 vlan 200 priority 0 
+ ont port native-vlan 4 6 eth 1 vlan 200 priority 0 
+ ont port native-vlan 4 7 eth 1 vlan 200 priority 0 
+ ont port native-vlan 4 8 eth 1 vlan 200 priority 0 
+ ont port native-vlan 4 9 eth 1 vlan 200 priority 0 
+ ont port native-vlan 4 11 eth 1 vlan 200 priority 0 
+ ont port native-vlan 4 13 eth 1 vlan 200 priority 0 
+ ont port native-vlan 4 14 eth 1 vlan 200 priority 0 
+ ont port native-vlan 4 15 eth 1 vlan 200 priority 0 
+ ont port native-vlan 4 16 eth 1 vlan 200 priority 0 
+ ont port native-vlan 4 18 eth 1 vlan 200 priority 0 
+ ont port native-vlan 4 19 eth 1 vlan 200 priority 0 
+ ont port native-vlan 4 20 eth 1 vlan 200 priority 0 
+ ont port native-vlan 4 21 eth 1 vlan 200 priority 0 
+ ont port native-vlan 4 22 eth 1 vlan 200 priority 0 
+ ont port native-vlan 5 1 eth 1 vlan 200 priority 0 
+ ont port native-vlan 5 3 eth 1 vlan 200 priority 0 
+ ont port native-vlan 5 7 eth 1 vlan 200 priority 0 
+ ont port native-vlan 5 8 eth 1 vlan 200 priority 0 
+ ont port native-vlan 5 9 eth 1 vlan 200 priority 0 
+ ont port native-vlan 5 12 eth 1 vlan 200 priority 0 
+ ont port native-vlan 5 14 eth 1 vlan 200 priority 0 
+ ont port native-vlan 5 16 eth 1 vlan 200 priority 0 
+ ont port native-vlan 5 17 eth 1 vlan 200 priority 0 
+ ont port native-vlan 5 19 eth 1 vlan 200 priority 0 
+ ont port native-vlan 5 20 eth 1 vlan 200 priority 0 
+ ont port native-vlan 5 21 eth 1 vlan 200 priority 0 
+ ont port native-vlan 5 23 eth 1 vlan 200 priority 0 
+ ont port native-vlan 5 25 eth 1 vlan 200 priority 0 
+ ont port native-vlan 5 28 eth 1 vlan 200 priority 0 
+ ont port native-vlan 5 31 eth 1 vlan 200 priority 0 
+ ont port native-vlan 5 32 eth 1 vlan 200 priority 0 
+ ont port native-vlan 6 0 eth 1 vlan 200 priority 0 
+ ont port native-vlan 6 1 eth 1 vlan 200 priority 0 
+ ont port native-vlan 6 3 eth 1 vlan 200 priority 0 
+ ont port native-vlan 6 5 eth 1 vlan 200 priority 0 
+ ont port native-vlan 6 6 eth 1 vlan 200 priority 0 
+ ont port native-vlan 6 7 eth 1 vlan 200 priority 0 
+ ont port native-vlan 6 8 eth 1 vlan 200 priority 0 
+ ont port native-vlan 6 9 eth 1 vlan 200 priority 0 
+ ont port native-vlan 6 11 eth 1 vlan 200 priority 0 
+ ont port native-vlan 6 12 eth 1 vlan 200 priority 0 
+ ont port native-vlan 6 13 eth 1 vlan 200 priority 0 
+ ont port native-vlan 6 18 eth 1 vlan 200 priority 0 
+ ont port native-vlan 6 19 eth 1 vlan 200 priority 0 
+ ont port native-vlan 6 21 eth 1 vlan 200 priority 0 
+ ont port native-vlan 6 22 eth 1 vlan 200 priority 0 
+ ont port native-vlan 6 23 eth 1 vlan 200 priority 0 
+ ont port native-vlan 6 27 eth 1 vlan 200 priority 0 
+ ont port native-vlan 6 28 eth 1 vlan 200 priority 0 
+ ont port native-vlan 6 31 eth 1 vlan 200 priority 0 
+ ont port native-vlan 6 33 eth 1 vlan 200 priority 0 
+ ont port native-vlan 6 39 eth 1 vlan 200 priority 0 
+ ont port native-vlan 6 40 eth 1 vlan 200 priority 0 
+ ont port native-vlan 6 42 eth 1 vlan 200 priority 0 
+ ont port native-vlan 6 43 eth 1 vlan 200 priority 0 
+ ont port native-vlan 6 44 eth 1 vlan 200 priority 0 
+ ont port native-vlan 7 0 eth 1 vlan 200 priority 0 
+ ont port native-vlan 7 1 eth 1 vlan 1208 priority 0 
+ ont port native-vlan 7 2 eth 1 vlan 200 priority 0 
+ ont port native-vlan 7 3 eth 1 vlan 200 priority 0 
+ ont port native-vlan 7 5 eth 1 vlan 200 priority 0 
+ ont port native-vlan 7 6 eth 1 vlan 200 priority 0 
+ ont port native-vlan 7 7 eth 1 vlan 200 priority 0 
+ ont port native-vlan 7 8 eth 1 vlan 200 priority 0 
+ ont port native-vlan 7 9 eth 1 vlan 200 priority 0 
+ ont port native-vlan 7 10 eth 1 vlan 200 priority 0 
+ ont port native-vlan 7 12 eth 1 vlan 200 priority 0 
+ ont port native-vlan 7 13 eth 1 vlan 200 priority 0 
+ ont port native-vlan 7 17 eth 1 vlan 200 priority 0 
+ ont port native-vlan 7 18 eth 1 vlan 200 priority 0 
+ ont port native-vlan 7 19 eth 1 vlan 200 priority 0 
+ ont port native-vlan 7 20 eth 1 vlan 200 priority 0 
+ ont port native-vlan 7 21 eth 1 vlan 200 priority 0 
+ ont port native-vlan 7 22 eth 1 vlan 200 priority 0 
+ ont port native-vlan 7 26 eth 1 vlan 200 priority 0 
+ ont port native-vlan 7 27 eth 1 vlan 200 priority 0 
+ ont port native-vlan 7 29 eth 1 vlan 200 priority 0 
+ ont port native-vlan 7 30 eth 1 vlan 200 priority 0 
+ ont port native-vlan 7 33 eth 1 vlan 200 priority 0 
+ ont port native-vlan 7 38 eth 1 vlan 200 priority 0 
+ ont port native-vlan 7 39 eth 1 vlan 200 priority 0 
+ ont port native-vlan 7 42 eth 1 vlan 200 priority 0 
+ ont port native-vlan 7 43 eth 1 vlan 200 priority 0 
+ ont port native-vlan 7 44 eth 1 vlan 200 priority 0 
+ ont port native-vlan 7 45 eth 1 vlan 200 priority 0 
+ ont port native-vlan 7 46 eth 1 vlan 200 priority 0 
+ ont port native-vlan 7 47 eth 1 vlan 200 priority 0 
+ ont port native-vlan 7 48 eth 1 vlan 200 priority 0 
+#
+[platform-config]
+  <platform-config>
+ autosave interval 120
+ autosave time 11:20:30
+ autosave interval configuration 60
+#
+[port-config]
+  <port-config>
+ port desc 0/1/0 description "1/0"
+ port desc 0/1/1 description "1/1"
+ port desc 0/1/2 description "1/2"
+ port desc 0/1/3 description "1/3"
+ port desc 0/1/4 description "1/4"
+ port desc 0/1/5 description "1/5"
+ port desc 0/1/6 description "1/6"
+ port desc 0/1/7 description "1/7"
+ port desc 0/1/8 description "1/8"
+ port desc 0/1/9 description "1/9"
+ port desc 0/1/10 description "1/10"
+ port desc 0/1/11 description "1/11"
+ port desc 0/1/12 description "1/12"
+ port desc 0/1/13 description "1/13"
+ port desc 0/1/14 description "1/14"
+ port desc 0/1/15 description "1/15"
+#
+[emu-config]
+  <emu-config>
+ emu add 0 fan 0 1  "H901FMSA"
+#
+[bbs-config]
+  <bbs-config>
+ service-port 0 vlan 1216 gpon 0/1/15 ont 0 gemport 200 multi-service user-vlan 200 tag-transform translate
+ service-port 3 vlan 1216 gpon 0/1/15 ont 1 gemport 200 multi-service user-vlan 200 tag-transform translate
+ service-port 4 vlan 1216 gpon 0/1/15 ont 2 gemport 200 multi-service user-vlan 200 tag-transform translate
+ service-port 5 vlan 1216 gpon 0/1/15 ont 3 gemport 200 multi-service user-vlan 200 tag-transform translate
+ service-port 6 vlan 1216 gpon 0/1/15 ont 4 gemport 200 multi-service user-vlan 200 tag-transform translate
+ service-port 7 vlan 1216 gpon 0/1/15 ont 5 gemport 200 multi-service user-vlan 200 tag-transform translate
+ service-port 8 vlan 1216 gpon 0/1/15 ont 6 gemport 200 multi-service user-vlan 200 tag-transform translate
+ service-port 9 vlan 1216 gpon 0/1/15 ont 7 gemport 200 multi-service user-vlan 200 tag-transform translate
+ service-port 10 vlan 1216 gpon 0/1/15 ont 8 gemport 200 multi-service user-vlan 200 tag-transform translate
+ service-port 11 vlan 1216 gpon 0/1/15 ont 9 gemport 200 multi-service user-vlan 200 tag-transform translate
+ service-port 12 vlan 1216 gpon 0/1/15 ont 10 gemport 200 multi-service 
+user-vlan 200 tag-transform translate
+ service-port 13 vlan 1215 gpon 0/1/14 ont 0 gemport 200 multi-service user-vlan 200 tag-transform translate
+ service-port 14 vlan 1216 gpon 0/1/15 ont 11 gemport 200 multi-service 
+user-vlan 200 tag-transform translate
+ service-port 15 vlan 1215 gpon 0/1/14 ont 1 gemport 200 multi-service user-vlan 200 tag-transform translate
+ service-port 16 vlan 1216 gpon 0/1/15 ont 12 gemport 200 multi-service 
+user-vlan 200 tag-transform translate
+ service-port 19 vlan 1216 gpon 0/1/15 ont 14 gemport 200 multi-service 
+user-vlan 200 tag-transform translate
+ service-port 20 vlan 1216 gpon 0/1/15 ont 15 gemport 200 multi-service 
+user-vlan 200 tag-transform translate
+ service-port 21 vlan 1216 gpon 0/1/15 ont 16 gemport 200 multi-service 
+user-vlan 200 tag-transform translate
+ service-port 22 vlan 1215 gpon 0/1/14 ont 2 gemport 200 multi-service user-vlan 200 tag-transform translate
+ service-port 23 vlan 1215 gpon 0/1/14 ont 3 gemport 200 multi-service user-vlan 200 tag-transform translate
+ service-port 24 vlan 1215 gpon 0/1/14 ont 4 gemport 200 multi-service user-vlan 200 tag-transform translate
+ service-port 25 vlan 1215 gpon 0/1/14 ont 5 gemport 200 multi-service user-vlan 200 tag-transform translate
+ service-port 26 vlan 1216 gpon 0/1/15 ont 17 gemport 200 multi-service 
+user-vlan 200 tag-transform translate
+ service-port 27 vlan 1215 gpon 0/1/14 ont 6 gemport 200 multi-service user-vlan 200 tag-transform translate
+ service-port 28 vlan 1216 gpon 0/1/15 ont 18 gemport 200 multi-service 
+user-vlan 200 tag-transform translate
+ service-port 29 vlan 1215 gpon 0/1/14 ont 7 gemport 200 multi-service user-vlan 200 tag-transform translate
+ service-port 30 vlan 1215 gpon 0/1/14 ont 8 gemport 200 multi-service user-vlan 200 tag-transform translate
+ service-port 31 vlan 1215 gpon 0/1/14 ont 9 gemport 200 multi-service user-vlan 200 tag-transform translate
+ service-port 32 vlan 1215 gpon 0/1/14 ont 10 gemport 200 multi-service 
+user-vlan 200 tag-transform translate
+ service-port 33 vlan 1216 gpon 0/1/15 ont 19 gemport 200 multi-service 
+user-vlan 200 tag-transform translate
+ service-port 34 vlan 1204 gpon 0/1/3 ont 0 gemport 200 multi-service user-vlan 200 tag-transform translate
+ service-port 35 vlan 1204 gpon 0/1/3 ont 1 gemport 200 multi-service user-vlan 200 tag-transform translate
+ service-port 36 vlan 1204 gpon 0/1/3 ont 2 gemport 200 multi-service user-vlan 200 tag-transform translate
+ service-port 37 vlan 1204 gpon 0/1/3 ont 3 gemport 200 multi-service user-vlan 200 tag-transform translate
+ service-port 38 vlan 1204 gpon 0/1/3 ont 4 gemport 200 multi-service user-vlan 200 tag-transform translate
+ service-port 39 vlan 1204 gpon 0/1/3 ont 5 gemport 200 multi-service user-vlan 200 tag-transform translate
+ service-port 40 vlan 1204 gpon 0/1/3 ont 6 gemport 200 multi-service user-vlan 200 tag-transform translate
+ service-port 41 vlan 1204 gpon 0/1/3 ont 7 gemport 200 multi-service user-vlan 200 tag-transform translate
+ service-port 44 vlan 1204 gpon 0/1/3 ont 10 gemport 200 multi-service user-vlan 200 tag-transform translate
+ service-port 46 vlan 1204 gpon 0/1/3 ont 12 gemport 200 multi-service user-vlan 200 tag-transform translate
+ service-port 47 vlan 1204 gpon 0/1/3 ont 13 gemport 200 multi-service user-vlan 200 tag-transform translate
+ service-port 48 vlan 1204 gpon 0/1/3 ont 14 gemport 200 multi-service user-vlan 200 tag-transform translate
+ service-port 50 vlan 1204 gpon 0/1/3 ont 16 gemport 200 multi-service user-vlan 200 tag-transform translate
+ service-port 51 vlan 1204 gpon 0/1/3 ont 17 gemport 200 multi-service user-vlan 200 tag-transform translate
+ service-port 52 vlan 1204 gpon 0/1/3 ont 18 gemport 200 multi-service user-vlan 200 tag-transform translate
+ service-port 53 vlan 1204 gpon 0/1/3 ont 19 gemport 200 multi-service user-vlan 200 tag-transform translate
+ service-port 54 vlan 1204 gpon 0/1/3 ont 20 gemport 200 multi-service user-vlan 200 tag-transform translate
+ service-port 55 vlan 1204 gpon 0/1/3 ont 21 gemport 200 multi-service user-vlan 200 tag-transform translate
+ service-port 56 vlan 1204 gpon 0/1/3 ont 22 gemport 200 multi-service user-vlan 200 tag-transform translate
+ service-port 58 vlan 1204 gpon 0/1/3 ont 27 gemport 200 multi-service user-vlan 200 tag-transform translate
+ service-port 59 vlan 1204 gpon 0/1/3 ont 28 gemport 200 multi-service user-vlan 200 tag-transform translate
+ service-port 60 vlan 1204 gpon 0/1/3 ont 29 gemport 200 multi-service user-vlan 200 tag-transform translate
+ service-port 61 vlan 1204 gpon 0/1/3 ont 30 gemport 200 multi-service user-vlan 200 tag-transform translate
+ service-port 62 vlan 1204 gpon 0/1/3 ont 31 gemport 200 multi-service user-vlan 200 tag-transform translate
+ service-port 63 vlan 1204 gpon 0/1/3 ont 24 gemport 200 multi-service user-vlan 200 tag-transform translate
+ service-port 65 vlan 1204 gpon 0/1/3 ont 33 gemport 200 multi-service user-vlan 200 tag-transform translate
+ service-port 66 vlan 1204 gpon 0/1/3 ont 26 gemport 200 multi-service user-vlan 200 tag-transform translate
+ service-port 67 vlan 1204 gpon 0/1/3 ont 34 gemport 200 multi-service user-vlan 200 tag-transform translate
+ service-port 68 vlan 1204 gpon 0/1/3 ont 35 gemport 200 multi-service user-vlan 200 tag-transform translate
+ service-port 69 vlan 1204 gpon 0/1/3 ont 36 gemport 200 multi-service user-vlan 200 tag-transform translate
+ service-port 70 vlan 1204 gpon 0/1/3 ont 37 gemport 200 multi-service user-vlan 200 tag-transform translate
+ service-port 71 vlan 1216 gpon 0/1/15 ont 20 gemport 200 multi-service 
+user-vlan 200 tag-transform translate
+ service-port 72 vlan 1204 gpon 0/1/3 ont 38 gemport 200 multi-service user-vlan 200 tag-transform translate
+ service-port 73 vlan 1204 gpon 0/1/3 ont 39 gemport 200 multi-service user-vlan 200 tag-transform translate
+ service-port 74 vlan 1204 gpon 0/1/3 ont 40 gemport 200 multi-service user-vlan 200 tag-transform translate
+ service-port 75 vlan 1204 gpon 0/1/3 ont 41 gemport 200 multi-service user-vlan 200 tag-transform translate
+ service-port 76 vlan 1204 gpon 0/1/3 ont 42 gemport 200 multi-service user-vlan 200 tag-transform translate
+ service-port 77 vlan 1204 gpon 0/1/3 ont 43 gemport 200 multi-service user-vlan 200 tag-transform translate
+ service-port 78 vlan 1204 gpon 0/1/3 ont 44 gemport 200 multi-service user-vlan 200 tag-transform translate
+ service-port 79 vlan 1216 gpon 0/1/15 ont 21 gemport 200 multi-service 
+user-vlan 200 tag-transform translate
+ service-port 80 vlan 1204 gpon 0/1/3 ont 45 gemport 200 multi-service user-vlan 200 tag-transform translate
+ service-port 81 vlan 1215 gpon 0/1/14 ont 11 gemport 200 multi-service 
+user-vlan 200 tag-transform translate
+ service-port 82 vlan 1204 gpon 0/1/3 ont 46 gemport 200 multi-service user-vlan 200 tag-transform translate
+ service-port 83 vlan 1204 gpon 0/1/3 ont 47 gemport 200 multi-service user-vlan 200 tag-transform translate
+ service-port 84 vlan 1204 gpon 0/1/3 ont 48 gemport 200 multi-service user-vlan 200 tag-transform translate
+ service-port 85 vlan 1204 gpon 0/1/3 ont 49 gemport 200 multi-service user-vlan 200 tag-transform translate
+ service-port 86 vlan 1204 gpon 0/1/3 ont 50 gemport 200 multi-service user-vlan 200 tag-transform translate
+ service-port 87 vlan 1202 gpon 0/1/1 ont 0 gemport 200 multi-service user-vlan 200 tag-transform translate
+ service-port 88 vlan 1202 gpon 0/1/1 ont 1 gemport 200 multi-service user-vlan 200 tag-transform translate
+ service-port 89 vlan 1202 gpon 0/1/1 ont 3 gemport 200 multi-service user-vlan 200 tag-transform translate
+ service-port 90 vlan 1202 gpon 0/1/1 ont 4 gemport 200 multi-service user-vlan 200 tag-transform translate
+ service-port 91 vlan 1202 gpon 0/1/1 ont 6 gemport 200 multi-service user-vlan 200 tag-transform translate
+ service-port 92 vlan 1202 gpon 0/1/1 ont 7 gemport 200 multi-service user-vlan 200 tag-transform translate
+ service-port 95 vlan 1202 gpon 0/1/1 ont 10 gemport 200 multi-service user-vlan 200 tag-transform translate
+ service-port 96 vlan 1202 gpon 0/1/1 ont 12 gemport 200 multi-service user-vlan 200 tag-transform translate
+ service-port 97 vlan 1202 gpon 0/1/1 ont 13 gemport 200 multi-service user-vlan 200 tag-transform translate
+ service-port 98 vlan 1202 gpon 0/1/1 ont 14 gemport 200 multi-service user-vlan 200 tag-transform translate
+ service-port 99 vlan 1202 gpon 0/1/1 ont 16 gemport 200 multi-service user-vlan 200 tag-transform translate
+ service-port 100 vlan 1204 gpon 0/1/3 ont 51 gemport 200 multi-service 
+user-vlan 200 tag-transform translate
+ service-port 101 vlan 1202 gpon 0/1/1 ont 17 gemport 200 multi-service 
+user-vlan 200 tag-transform translate
+ service-port 103 vlan 1202 gpon 0/1/1 ont 19 gemport 200 multi-service 
+user-vlan 200 tag-transform translate
+ service-port 104 vlan 1202 gpon 0/1/1 ont 20 gemport 200 multi-service 
+user-vlan 200 tag-transform translate
+ service-port 105 vlan 1202 gpon 0/1/1 ont 21 gemport 200 multi-service 
+user-vlan 200 tag-transform translate
+ service-port 106 vlan 1202 gpon 0/1/1 ont 22 gemport 200 multi-service 
+user-vlan 200 tag-transform translate
+ service-port 107 vlan 1202 gpon 0/1/1 ont 23 gemport 200 multi-service 
+user-vlan 200 tag-transform translate
+ service-port 108 vlan 1202 gpon 0/1/1 ont 24 gemport 200 multi-service 
+user-vlan 200 tag-transform translate
+ service-port 111 vlan 1202 gpon 0/1/1 ont 28 gemport 200 multi-service 
+user-vlan 200 tag-transform translate
+ service-port 112 vlan 1202 gpon 0/1/1 ont 29 gemport 200 multi-service 
+user-vlan 200 tag-transform translate
+ service-port 113 vlan 1202 gpon 0/1/1 ont 30 gemport 200 multi-service 
+user-vlan 200 tag-transform translate
+ service-port 115 vlan 1202 gpon 0/1/1 ont 34 gemport 200 multi-service 
+user-vlan 200 tag-transform translate
+ service-port 116 vlan 1202 gpon 0/1/1 ont 36 gemport 200 multi-service 
+user-vlan 200 tag-transform translate
+ service-port 117 vlan 1202 gpon 0/1/1 ont 37 gemport 200 multi-service 
+user-vlan 200 tag-transform translate
+ service-port 118 vlan 1202 gpon 0/1/1 ont 32 gemport 200 multi-service 
+user-vlan 200 tag-transform translate
+ service-port 119 vlan 1202 gpon 0/1/1 ont 25 gemport 200 multi-service 
+user-vlan 200 tag-transform translate
+ service-port 120 vlan 1202 gpon 0/1/1 ont 38 gemport 200 multi-service 
+user-vlan 200 tag-transform translate
+ service-port 121 vlan 1202 gpon 0/1/1 ont 39 gemport 200 multi-service 
+user-vlan 200 tag-transform translate
+ service-port 123 vlan 1202 gpon 0/1/1 ont 41 gemport 200 multi-service 
+user-vlan 200 tag-transform translate
+ service-port 124 vlan 1202 gpon 0/1/1 ont 42 gemport 200 multi-service 
+user-vlan 200 tag-transform translate
+ service-port 125 vlan 1202 gpon 0/1/1 ont 15 gemport 200 multi-service 
+user-vlan 200 tag-transform translate
+ service-port 126 vlan 1202 gpon 0/1/1 ont 8 gemport 200 multi-service user-vlan 200 tag-transform translate
+ service-port 127 vlan 1202 gpon 0/1/1 ont 43 gemport 200 multi-service 
+user-vlan 200 tag-transform translate
+ service-port 128 vlan 1204 gpon 0/1/3 ont 9 gemport 200 multi-service user-vlan 200 tag-transform translate
+ service-port 129 vlan 1202 gpon 0/1/1 ont 5 gemport 200 multi-service user-vlan 200 tag-transform translate
+ service-port 130 vlan 1202 gpon 0/1/1 ont 33 gemport 200 multi-service 
+user-vlan 200 tag-transform translate
+ service-port 131 vlan 1202 gpon 0/1/1 ont 44 gemport 200 multi-service 
+user-vlan 200 tag-transform translate
+ service-port 132 vlan 1202 gpon 0/1/1 ont 26 gemport 200 multi-service 
+user-vlan 200 tag-transform translate
+ service-port 134 vlan 1202 gpon 0/1/1 ont 45 gemport 200 multi-service 
+user-vlan 200 tag-transform translate
+ service-port 135 vlan 1202 gpon 0/1/1 ont 40 gemport 200 multi-service 
+user-vlan 200 tag-transform translate
+ service-port 137 vlan 1202 gpon 0/1/1 ont 27 gemport 200 multi-service 
+user-vlan 200 tag-transform translate
+ service-port 139 vlan 1202 gpon 0/1/1 ont 46 gemport 200 multi-service 
+user-vlan 200 tag-transform translate
+ service-port 141 vlan 1204 gpon 0/1/3 ont 52 gemport 200 multi-service 
+user-vlan 200 tag-transform translate
+ service-port 142 vlan 1204 gpon 0/1/3 ont 53 gemport 200 multi-service 
+user-vlan 200 tag-transform translate
+ service-port 143 vlan 1203 gpon 0/1/2 ont 0 gemport 200 multi-service user-vlan 200 tag-transform translate
+ service-port 144 vlan 1203 gpon 0/1/2 ont 1 gemport 200 multi-service user-vlan 200 tag-transform translate
+ service-port 148 vlan 1203 gpon 0/1/2 ont 5 gemport 200 multi-service user-vlan 200 tag-transform translate
+ service-port 150 vlan 1203 gpon 0/1/2 ont 7 gemport 200 multi-service user-vlan 200 tag-transform translate
+ service-port 153 vlan 1203 gpon 0/1/2 ont 11 gemport 200 multi-service 
+user-vlan 200 tag-transform translate
+ service-port 154 vlan 1203 gpon 0/1/2 ont 12 gemport 200 multi-service 
+user-vlan 200 tag-transform translate
+ service-port 155 vlan 1203 gpon 0/1/2 ont 13 gemport 200 multi-service 
+user-vlan 200 tag-transform translate
+ service-port 156 vlan 1203 gpon 0/1/2 ont 14 gemport 200 multi-service 
+user-vlan 200 tag-transform translate
+ service-port 157 vlan 1203 gpon 0/1/2 ont 8 gemport 200 multi-service user-vlan 200 tag-transform translate
+ service-port 158 vlan 1203 gpon 0/1/2 ont 16 gemport 200 multi-service 
+user-vlan 200 tag-transform translate
+ service-port 159 vlan 1203 gpon 0/1/2 ont 18 gemport 200 multi-service 
+user-vlan 200 tag-transform translate
+ service-port 160 vlan 1203 gpon 0/1/2 ont 20 gemport 200 multi-service 
+user-vlan 200 tag-transform translate
+ service-port 161 vlan 1203 gpon 0/1/2 ont 21 gemport 200 multi-service 
+user-vlan 200 tag-transform translate
+ service-port 162 vlan 1203 gpon 0/1/2 ont 22 gemport 200 multi-service 
+user-vlan 200 tag-transform translate
+ service-port 163 vlan 1203 gpon 0/1/2 ont 23 gemport 200 multi-service 
+user-vlan 200 tag-transform translate
+ service-port 164 vlan 1203 gpon 0/1/2 ont 24 gemport 200 multi-service 
+user-vlan 200 tag-transform translate
+ service-port 165 vlan 1203 gpon 0/1/2 ont 25 gemport 200 multi-service 
+user-vlan 200 tag-transform translate
+ service-port 168 vlan 1203 gpon 0/1/2 ont 27 gemport 200 multi-service 
+user-vlan 200 tag-transform translate
+ service-port 170 vlan 1204 gpon 0/1/3 ont 54 gemport 200 multi-service 
+user-vlan 200 tag-transform translate
+ service-port 171 vlan 1204 gpon 0/1/3 ont 55 gemport 200 multi-service 
+user-vlan 200 tag-transform translate
+ service-port 172 vlan 1215 gpon 0/1/14 ont 12 gemport 200 multi-service 
+user-vlan 200 tag-transform translate
+ service-port 173 vlan 1204 gpon 0/1/3 ont 56 gemport 200 multi-service 
+user-vlan 200 tag-transform translate
+ service-port 174 vlan 1204 gpon 0/1/3 ont 57 gemport 200 multi-service 
+user-vlan 200 tag-transform translate
+ service-port 175 vlan 1203 gpon 0/1/2 ont 19 gemport 200 multi-service 
+user-vlan 200 tag-transform translate
+ service-port 177 vlan 1204 gpon 0/1/3 ont 8 gemport 200 multi-service user-vlan 200 tag-transform translate
+ service-port 178 vlan 1215 gpon 0/1/14 ont 13 gemport 200 multi-service 
+user-vlan 200 tag-transform translate
+ service-port 180 vlan 1201 gpon 0/1/0 ont 1 gemport 200 multi-service user-vlan 200 tag-transform translate
+ service-port 181 vlan 1201 gpon 0/1/0 ont 2 gemport 200 multi-service user-vlan 200 tag-transform translate
+ service-port 182 vlan 1201 gpon 0/1/0 ont 3 gemport 200 multi-service user-vlan 200 tag-transform translate
+ service-port 183 vlan 1201 gpon 0/1/0 ont 4 gemport 200 multi-service user-vlan 200 tag-transform translate
+ service-port 184 vlan 1201 gpon 0/1/0 ont 5 gemport 200 multi-service user-vlan 200 tag-transform translate
+ service-port 185 vlan 1203 gpon 0/1/2 ont 2 gemport 200 multi-service user-vlan 200 tag-transform translate
+ service-port 187 vlan 1201 gpon 0/1/0 ont 6 gemport 200 multi-service user-vlan 200 tag-transform translate
+ service-port 188 vlan 1204 gpon 0/1/3 ont 58 gemport 200 multi-service 
+user-vlan 200 tag-transform translate
+ service-port 189 vlan 1205 gpon 0/1/4 ont 0 gemport 200 multi-service user-vlan 200 tag-transform translate
+ service-port 191 vlan 1205 gpon 0/1/4 ont 2 gemport 200 multi-service user-vlan 200 tag-transform translate
+ service-port 192 vlan 1205 gpon 0/1/4 ont 3 gemport 200 multi-service user-vlan 200 tag-transform translate
+ service-port 193 vlan 1206 gpon 0/1/5 ont 0 gemport 200 multi-service user-vlan 200 tag-transform translate
+ service-port 194 vlan 1205 gpon 0/1/4 ont 4 gemport 200 multi-service user-vlan 200 tag-transform translate
+ service-port 195 vlan 1205 gpon 0/1/4 ont 5 gemport 200 multi-service user-vlan 200 tag-transform translate
+ service-port 196 vlan 1205 gpon 0/1/4 ont 6 gemport 200 multi-service user-vlan 200 tag-transform translate
+ service-port 197 vlan 1205 gpon 0/1/4 ont 7 gemport 200 multi-service user-vlan 200 tag-transform translate
+ service-port 198 vlan 1205 gpon 0/1/4 ont 8 gemport 200 multi-service user-vlan 200 tag-transform translate
+ service-port 199 vlan 1206 gpon 0/1/5 ont 2 gemport 200 multi-service user-vlan 200 tag-transform translate
+ service-port 200 vlan 1205 gpon 0/1/4 ont 10 gemport 200 multi-service 
+user-vlan 200 tag-transform translate
+ service-port 201 vlan 1205 gpon 0/1/4 ont 11 gemport 200 multi-service 
+user-vlan 200 tag-transform translate
+ service-port 202 vlan 1205 gpon 0/1/4 ont 13 gemport 200 multi-service 
+user-vlan 200 tag-transform translate
+ service-port 203 vlan 1205 gpon 0/1/4 ont 14 gemport 200 multi-service 
+user-vlan 200 tag-transform translate
+ service-port 204 vlan 1205 gpon 0/1/4 ont 15 gemport 200 multi-service 
+user-vlan 200 tag-transform translate
+ service-port 205 vlan 1205 gpon 0/1/4 ont 16 gemport 200 multi-service 
+user-vlan 200 tag-transform translate
+ service-port 207 vlan 1206 gpon 0/1/5 ont 4 gemport 200 multi-service user-vlan 200 tag-transform translate
+ service-port 208 vlan 1206 gpon 0/1/5 ont 5 gemport 200 multi-service user-vlan 200 tag-transform translate
+ service-port 209 vlan 1206 gpon 0/1/5 ont 6 gemport 200 multi-service user-vlan 200 tag-transform translate
+ service-port 210 vlan 1206 gpon 0/1/5 ont 7 gemport 200 multi-service user-vlan 200 tag-transform translate
+ service-port 211 vlan 1206 gpon 0/1/5 ont 8 gemport 200 multi-service user-vlan 200 tag-transform translate
+ service-port 212 vlan 1206 gpon 0/1/5 ont 10 gemport 200 multi-service 
+user-vlan 200 tag-transform translate
+ service-port 213 vlan 1206 gpon 0/1/5 ont 11 gemport 200 multi-service 
+user-vlan 200 tag-transform translate
+ service-port 214 vlan 1206 gpon 0/1/5 ont 13 gemport 200 multi-service 
+user-vlan 200 tag-transform translate
+ service-port 215 vlan 1206 gpon 0/1/5 ont 14 gemport 200 multi-service 
+user-vlan 200 tag-transform translate
+ service-port 216 vlan 1206 gpon 0/1/5 ont 16 gemport 200 multi-service 
+user-vlan 200 tag-transform translate
+ service-port 217 vlan 1206 gpon 0/1/5 ont 17 gemport 200 multi-service 
+user-vlan 200 tag-transform translate
+ service-port 218 vlan 1206 gpon 0/1/5 ont 18 gemport 200 multi-service 
+user-vlan 200 tag-transform translate
+ service-port 219 vlan 1206 gpon 0/1/5 ont 19 gemport 200 multi-service 
+user-vlan 200 tag-transform translate
+ service-port 220 vlan 1206 gpon 0/1/5 ont 20 gemport 200 multi-service 
+user-vlan 200 tag-transform translate
+ service-port 223 vlan 1206 gpon 0/1/5 ont 24 gemport 200 multi-service 
+user-vlan 200 tag-transform translate
+ service-port 224 vlan 1206 gpon 0/1/5 ont 26 gemport 200 multi-service 
+user-vlan 200 tag-transform translate
+ service-port 225 vlan 1206 gpon 0/1/5 ont 9 gemport 200 multi-service user-vlan 200 tag-transform translate
+ service-port 226 vlan 1206 gpon 0/1/5 ont 1 gemport 200 multi-service user-vlan 200 tag-transform translate
+ service-port 227 vlan 1206 gpon 0/1/5 ont 27 gemport 200 multi-service 
+user-vlan 200 tag-transform translate
+ service-port 228 vlan 1202 gpon 0/1/1 ont 35 gemport 200 multi-service 
+user-vlan 200 tag-transform translate
+ service-port 229 vlan 1205 gpon 0/1/4 ont 12 gemport 200 multi-service 
+user-vlan 200 tag-transform translate
+ service-port 230 vlan 1206 gpon 0/1/5 ont 3 gemport 200 multi-service user-vlan 200 tag-transform translate
+ service-port 231 vlan 1205 gpon 0/1/4 ont 18 gemport 200 multi-service 
+user-vlan 200 tag-transform translate
+ service-port 232 vlan 1205 gpon 0/1/4 ont 19 gemport 200 multi-service 
+user-vlan 200 tag-transform translate
+ service-port 233 vlan 1202 gpon 0/1/1 ont 9 gemport 200 multi-service user-vlan 200 tag-transform translate
+ service-port 234 vlan 1205 gpon 0/1/4 ont 20 gemport 200 multi-service 
+user-vlan 200 tag-transform translate
+ service-port 235 vlan 1206 gpon 0/1/5 ont 28 gemport 200 multi-service 
+user-vlan 200 tag-transform translate
+ service-port 236 vlan 1206 gpon 0/1/5 ont 23 gemport 200 multi-service 
+user-vlan 200 tag-transform translate
+ service-port 237 vlan 1206 gpon 0/1/5 ont 25 gemport 200 multi-service 
+user-vlan 200 tag-transform translate
+ service-port 238 vlan 1206 gpon 0/1/5 ont 21 gemport 200 multi-service 
+user-vlan 200 tag-transform translate
+ service-port 239 vlan 1206 gpon 0/1/5 ont 12 gemport 200 multi-service 
+user-vlan 200 tag-transform translate
+ service-port 240 vlan 1202 gpon 0/1/1 ont 31 gemport 200 multi-service 
+user-vlan 200 tag-transform translate
+ service-port 241 vlan 1206 gpon 0/1/5 ont 22 gemport 200 multi-service 
+user-vlan 200 tag-transform translate
+ service-port 242 vlan 1206 gpon 0/1/5 ont 29 gemport 200 multi-service 
+user-vlan 200 tag-transform translate
+ service-port 243 vlan 1206 gpon 0/1/5 ont 30 gemport 200 multi-service 
+user-vlan 200 tag-transform translate
+ service-port 244 vlan 1206 gpon 0/1/5 ont 15 gemport 200 multi-service 
+user-vlan 200 tag-transform translate
+ service-port 245 vlan 1206 gpon 0/1/5 ont 31 gemport 200 multi-service 
+user-vlan 200 tag-transform translate
+ service-port 246 vlan 1205 gpon 0/1/4 ont 21 gemport 200 multi-service 
+user-vlan 200 tag-transform translate
+ service-port 248 vlan 1205 gpon 0/1/4 ont 9 gemport 200 multi-service user-vlan 200 tag-transform translate
+ service-port 249 vlan 1205 gpon 0/1/4 ont 22 gemport 200 multi-service 
+user-vlan 200 tag-transform translate
+ service-port 250 vlan 1202 gpon 0/1/1 ont 47 gemport 200 multi-service 
+user-vlan 200 tag-transform translate
+ service-port 251 vlan 1206 gpon 0/1/5 ont 32 gemport 200 multi-service 
+user-vlan 200 tag-transform translate
+ service-port 253 vlan 1206 gpon 0/1/5 ont 33 gemport 200 multi-service 
+user-vlan 200 tag-transform translate
+ service-port 254 vlan 1205 gpon 0/1/4 ont 1 gemport 200 multi-service user-vlan 200 tag-transform translate
+ service-port 255 vlan 1207 gpon 0/1/6 ont 0 gemport 200 multi-service user-vlan 200 tag-transform translate
+ service-port 256 vlan 1207 gpon 0/1/6 ont 1 gemport 200 multi-service user-vlan 200 tag-transform translate
+ service-port 257 vlan 1207 gpon 0/1/6 ont 2 gemport 200 multi-service user-vlan 200 tag-transform translate
+ service-port 258 vlan 1207 gpon 0/1/6 ont 3 gemport 200 multi-service user-vlan 200 tag-transform translate
+ service-port 259 vlan 1207 gpon 0/1/6 ont 4 gemport 200 multi-service user-vlan 200 tag-transform translate
+ service-port 260 vlan 1207 gpon 0/1/6 ont 5 gemport 200 multi-service user-vlan 200 tag-transform translate
+ service-port 261 vlan 1207 gpon 0/1/6 ont 6 gemport 200 multi-service user-vlan 200 tag-transform translate
+ service-port 262 vlan 1207 gpon 0/1/6 ont 7 gemport 200 multi-service user-vlan 200 tag-transform translate
+ service-port 263 vlan 1207 gpon 0/1/6 ont 8 gemport 200 multi-service user-vlan 200 tag-transform translate
+ service-port 264 vlan 1207 gpon 0/1/6 ont 9 gemport 200 multi-service user-vlan 200 tag-transform translate
+ service-port 265 vlan 1207 gpon 0/1/6 ont 10 gemport 200 multi-service 
+user-vlan 200 tag-transform translate
+ service-port 270 vlan 1207 gpon 0/1/6 ont 15 gemport 200 multi-service 
+user-vlan 200 tag-transform translate
+ service-port 271 vlan 1207 gpon 0/1/6 ont 16 gemport 200 multi-service 
+user-vlan 200 tag-transform translate
+ service-port 273 vlan 1207 gpon 0/1/6 ont 18 gemport 200 multi-service 
+user-vlan 200 tag-transform translate
+ service-port 274 vlan 1208 gpon 0/1/7 ont 0 gemport 200 multi-service user-vlan 200 tag-transform translate
+ service-port 276 vlan 1208 gpon 0/1/7 ont 2 gemport 200 multi-service user-vlan 200 tag-transform translate
+ service-port 277 vlan 1207 gpon 0/1/6 ont 22 gemport 200 multi-service 
+user-vlan 200 tag-transform translate
+ service-port 278 vlan 1208 gpon 0/1/7 ont 4 gemport 200 multi-service user-vlan 200 tag-transform translate
+ service-port 279 vlan 1208 gpon 0/1/7 ont 6 gemport 200 multi-service user-vlan 200 tag-transform translate
+ service-port 280 vlan 1208 gpon 0/1/7 ont 10 gemport 200 multi-service 
+user-vlan 200 tag-transform translate
+ service-port 281 vlan 1207 gpon 0/1/6 ont 25 gemport 200 multi-service 
+user-vlan 200 tag-transform translate
+ service-port 283 vlan 1208 gpon 0/1/7 ont 13 gemport 200 multi-service 
+user-vlan 200 tag-transform translate
+ service-port 286 vlan 1208 gpon 0/1/7 ont 18 gemport 200 multi-service 
+user-vlan 200 tag-transform translate
+ service-port 288 vlan 1207 gpon 0/1/6 ont 30 gemport 200 multi-service 
+user-vlan 200 tag-transform translate
+ service-port 290 vlan 1208 gpon 0/1/7 ont 22 gemport 200 multi-service 
+user-vlan 200 tag-transform translate
+ service-port 296 vlan 1207 gpon 0/1/6 ont 38 gemport 200 multi-service 
+user-vlan 200 tag-transform translate
+ service-port 297 vlan 1207 gpon 0/1/6 ont 39 gemport 200 multi-service 
+user-vlan 200 tag-transform translate
+ service-port 298 vlan 1208 gpon 0/1/7 ont 30 gemport 200 multi-service 
+user-vlan 200 tag-transform translate
+ service-port 299 vlan 1208 gpon 0/1/7 ont 31 gemport 200 multi-service 
+user-vlan 200 tag-transform translate
+ service-port 302 vlan 1207 gpon 0/1/6 ont 40 gemport 200 multi-service 
+user-vlan 200 tag-transform translate
+ service-port 304 vlan 1204 gpon 0/1/3 ont 15 gemport 200 multi-service 
+user-vlan 200 tag-transform translate
+ service-port 306 vlan 1208 gpon 0/1/7 ont 32 gemport 200 multi-service 
+user-vlan 200 tag-transform translate
+ service-port 307 vlan 1208 gpon 0/1/7 ont 25 gemport 200 multi-service 
+user-vlan 200 tag-transform translate
+ service-port 308 vlan 1208 gpon 0/1/7 ont 11 gemport 200 multi-service 
+user-vlan 200 tag-transform translate
+ service-port 309 vlan 1208 gpon 0/1/7 ont 35 gemport 200 multi-service 
+user-vlan 200 tag-transform translate
+ service-port 310 vlan 1208 gpon 0/1/7 ont 19 gemport 200 multi-service 
+user-vlan 200 tag-transform translate
+ service-port 311 vlan 1207 gpon 0/1/6 ont 33 gemport 200 multi-service 
+user-vlan 200 tag-transform translate
+ service-port 312 vlan 1207 gpon 0/1/6 ont 41 gemport 200 multi-service 
+user-vlan 200 tag-transform translate
+ service-port 313 vlan 1207 gpon 0/1/6 ont 20 gemport 200 multi-service 
+user-vlan 200 tag-transform translate
+ service-port 314 vlan 1207 gpon 0/1/6 ont 19 gemport 200 multi-service 
+user-vlan 200 tag-transform translate
+ service-port 315 vlan 1207 gpon 0/1/6 ont 17 gemport 200 multi-service 
+user-vlan 200 tag-transform translate
+ service-port 316 vlan 1207 gpon 0/1/6 ont 31 gemport 200 multi-service 
+user-vlan 200 tag-transform translate
+ service-port 317 vlan 1207 gpon 0/1/6 ont 26 gemport 200 multi-service 
+user-vlan 200 tag-transform translate
+ service-port 318 vlan 1208 gpon 0/1/7 ont 36 gemport 200 multi-service 
+user-vlan 200 tag-transform translate
+ service-port 319 vlan 1208 gpon 0/1/7 ont 33 gemport 200 multi-service 
+user-vlan 200 tag-transform translate
+ service-port 320 vlan 1207 gpon 0/1/6 ont 32 gemport 200 multi-service 
+user-vlan 200 tag-transform translate
+ service-port 321 vlan 1207 gpon 0/1/6 ont 37 gemport 200 multi-service 
+user-vlan 200 tag-transform translate
+ service-port 322 vlan 1208 gpon 0/1/7 ont 1 gemport 200 multi-service user-vlan 200 tag-transform translate
+ service-port 323 vlan 1208 gpon 0/1/7 ont 40 gemport 200 multi-service 
+user-vlan 200 tag-transform translate
+ service-port 324 vlan 1208 gpon 0/1/7 ont 43 gemport 200 multi-service 
+user-vlan 200 tag-transform translate
+ service-port 325 vlan 1208 gpon 0/1/7 ont 20 gemport 200 multi-service 
+user-vlan 200 tag-transform translate
+ service-port 328 vlan 1208 gpon 0/1/7 ont 9 gemport 200 multi-service user-vlan 200 tag-transform translate
+ service-port 329 vlan 1208 gpon 0/1/7 ont 5 gemport 200 multi-service user-vlan 200 tag-transform translate
+ service-port 330 vlan 1208 gpon 0/1/7 ont 39 gemport 200 multi-service 
+user-vlan 200 tag-transform translate
+ service-port 331 vlan 1208 gpon 0/1/7 ont 26 gemport 200 multi-service 
+user-vlan 200 tag-transform translate
+ service-port 332 vlan 1208 gpon 0/1/7 ont 24 gemport 200 multi-service 
+user-vlan 200 tag-transform translate
+ service-port 333 vlan 1208 gpon 0/1/7 ont 44 gemport 200 multi-service 
+user-vlan 200 tag-transform translate
+ service-port 334 vlan 1208 gpon 0/1/7 ont 28 gemport 200 multi-service 
+user-vlan 200 tag-transform translate
+ service-port 335 vlan 1207 gpon 0/1/6 ont 21 gemport 200 multi-service 
+user-vlan 200 tag-transform translate
+ service-port 336 vlan 1208 gpon 0/1/7 ont 14 gemport 200 multi-service 
+user-vlan 200 tag-transform translate
+ service-port 337 vlan 1207 gpon 0/1/6 ont 36 gemport 200 multi-service 
+user-vlan 200 tag-transform translate
+ service-port 338 vlan 1208 gpon 0/1/7 ont 3 gemport 200 multi-service user-vlan 200 tag-transform translate
+ service-port 339 vlan 1208 gpon 0/1/7 ont 16 gemport 200 multi-service 
+user-vlan 200 tag-transform translate
+ service-port 340 vlan 1208 gpon 0/1/7 ont 37 gemport 200 multi-service 
+user-vlan 200 tag-transform translate
+ service-port 341 vlan 1208 gpon 0/1/7 ont 38 gemport 200 multi-service 
+user-vlan 200 tag-transform translate
+ service-port 343 vlan 1207 gpon 0/1/6 ont 28 gemport 200 multi-service 
+user-vlan 200 tag-transform translate
+ service-port 344 vlan 1208 gpon 0/1/7 ont 27 gemport 200 multi-service 
+user-vlan 200 tag-transform translate
+ service-port 345 vlan 1208 gpon 0/1/7 ont 7 gemport 200 multi-service user-vlan 200 tag-transform translate
+ service-port 346 vlan 1208 gpon 0/1/7 ont 45 gemport 200 multi-service 
+user-vlan 200 tag-transform translate
+ service-port 347 vlan 1208 gpon 0/1/7 ont 46 gemport 200 multi-service 
+user-vlan 200 tag-transform translate
+ service-port 348 vlan 1208 gpon 0/1/7 ont 17 gemport 200 multi-service 
+user-vlan 200 tag-transform translate
+ service-port 349 vlan 1208 gpon 0/1/7 ont 29 gemport 200 multi-service 
+user-vlan 200 tag-transform translate
+ service-port 350 vlan 1204 gpon 0/1/3 ont 25 gemport 200 multi-service 
+user-vlan 200 tag-transform translate
+ service-port 351 vlan 1207 gpon 0/1/6 ont 11 gemport 200 multi-service 
+user-vlan 200 tag-transform translate
+ service-port 352 vlan 1207 gpon 0/1/6 ont 42 gemport 200 multi-service 
+user-vlan 200 tag-transform translate
+ service-port 353 vlan 1208 gpon 0/1/7 ont 21 gemport 200 multi-service 
+user-vlan 200 tag-transform translate
+ service-port 354 vlan 1205 gpon 0/1/4 ont 17 gemport 200 multi-service 
+user-vlan 200 tag-transform translate
+ service-port 356 vlan 1207 gpon 0/1/6 ont 14 gemport 200 multi-service 
+user-vlan 200 tag-transform translate
+ service-port 357 vlan 1208 gpon 0/1/7 ont 15 gemport 200 multi-service 
+user-vlan 200 tag-transform translate
+ service-port 358 vlan 1207 gpon 0/1/6 ont 23 gemport 200 multi-service 
+user-vlan 200 tag-transform translate
+ service-port 359 vlan 1202 gpon 0/1/1 ont 18 gemport 200 multi-service 
+user-vlan 200 tag-transform translate
+ service-port 360 vlan 1208 gpon 0/1/7 ont 47 gemport 200 multi-service 
+user-vlan 200 tag-transform translate
+ service-port 361 vlan 1207 gpon 0/1/6 ont 24 gemport 200 multi-service 
+user-vlan 200 tag-transform translate
+ service-port 362 vlan 1207 gpon 0/1/6 ont 43 gemport 200 multi-service 
+user-vlan 200 tag-transform translate
+ service-port 363 vlan 1207 gpon 0/1/6 ont 27 gemport 200 multi-service 
+user-vlan 200 tag-transform translate
+ service-port 364 vlan 1208 gpon 0/1/7 ont 12 gemport 200 multi-service 
+user-vlan 200 tag-transform translate
+ service-port 366 vlan 1208 gpon 0/1/7 ont 34 gemport 200 multi-service 
+user-vlan 200 tag-transform translate
+ service-port 367 vlan 1208 gpon 0/1/7 ont 8 gemport 200 multi-service user-vlan 200 tag-transform translate
+ service-port 368 vlan 1207 gpon 0/1/6 ont 12 gemport 200 multi-service 
+user-vlan 200 tag-transform translate
+ service-port 369 vlan 1208 gpon 0/1/7 ont 23 gemport 200 multi-service 
+user-vlan 200 tag-transform translate
+ service-port 370 vlan 1208 gpon 0/1/7 ont 48 gemport 200 multi-service 
+user-vlan 200 tag-transform translate
+ service-port 371 vlan 1208 gpon 0/1/7 ont 42 gemport 200 multi-service 
+user-vlan 200 tag-transform translate
+ service-port 372 vlan 1207 gpon 0/1/6 ont 34 gemport 200 multi-service 
+user-vlan 200 tag-transform translate
+ service-port 373 vlan 1207 gpon 0/1/6 ont 29 gemport 200 multi-service 
+user-vlan 200 tag-transform translate
+ service-port 374 vlan 1207 gpon 0/1/6 ont 35 gemport 200 multi-service 
+user-vlan 200 tag-transform translate
+ service-port 375 vlan 1207 gpon 0/1/6 ont 13 gemport 200 multi-service 
+user-vlan 200 tag-transform translate
+ service-port 376 vlan 1202 gpon 0/1/1 ont 48 gemport 200 multi-service 
+user-vlan 200 tag-transform translate
+ service-port 377 vlan 1207 gpon 0/1/6 ont 44 gemport 200 multi-service 
+user-vlan 200 tag-transform translate
+ service-port 379 vlan 1215 gpon 0/1/14 ont 14 gemport 200 multi-service 
+user-vlan 200 tag-transform translate
+ service-port 380 vlan 1202 gpon 0/1/1 ont 11 gemport 200 multi-service 
+user-vlan 200 tag-transform translate
+ service-port 381 vlan 1202 gpon 0/1/1 ont 49 gemport 200 multi-service 
+user-vlan 200 tag-transform translate
+ service-port 382 vlan 1208 gpon 0/1/7 ont 41 gemport 200 multi-service 
+user-vlan 200 tag-transform translate
+ service-port 383 vlan 1203 gpon 0/1/2 ont 3 gemport 200 multi-service user-vlan 200 tag-transform translate
+ service-port 384 vlan 1207 gpon 0/1/6 ont 45 gemport 200 multi-service 
+user-vlan 200 tag-transform translate
+ monitor uplink-port non-unicast port 0/3/0
+ monitor uplink-port non-unicast port 0/3/1
+ monitor uplink-port non-unicast port 0/3/2
+ monitor uplink-port non-unicast port 0/3/3
+ monitor uplink-port non-unicast port 0/4/0
+ monitor uplink-port non-unicast port 0/4/1
+ monitor uplink-port non-unicast port 0/4/2
+ monitor uplink-port non-unicast port 0/4/3
+#
+[autobackup-config]
+  <autobackup-config>
+ file-server auto-backup configuration primary 10.125.50.14 FTP powercom *%$%#LY(!!!!!!!!!!!!MF!vWrTFi=F$3xUJQ=rGCyiwTPDti,UQraFy)sh"M({679J%F$UfgTSKtU*=8i6p;6(kSI&Bdf*rA|W42e3./UDKR/%$%#* path /OLT/OLT-X2-MONTE-ALEGRE
+ auto-backup period configuration interval 1 time 00:30 
+ auto-backup period configuration enable
+#
+[abs-config]
+  <abs-config>
+ monitor uplink-port pppoe port 0/3/0
+ monitor uplink-port pppoe port 0/3/1
+ monitor uplink-port pppoe port 0/3/2
+ monitor uplink-port pppoe port 0/3/3
+ monitor uplink-port pppoe port 0/4/0
+ monitor uplink-port pppoe port 0/4/1
+ monitor uplink-port pppoe port 0/4/2
+ monitor uplink-port pppoe port 0/4/3
+#
+[security-config]
+  <security-config>
+ security anti-illegal-hoplimit-nd disable
+#
+[config]
+  <config>
+ security anti-ipattack disable
+ security anti-icmpattack disable
+ security anti-ipv6attack disable
+ security anti-icmpv6attack disable
+#
+[ip-tunnel-profile]
+  <ip-tunnel-profile>
+ ip tunnel priority-profile gre index 0 name "default-profile-0" inbound 
+dscp-outer dscp-inner
+#
+set neid 0xA57A0B
+#
+[aaa]
+  <aaa>
+aaa
+ #
+ authentication-scheme "default"
+ #
+ authorization-scheme "default"
+ #
+ accounting-scheme "default"
+ #
+ domain "default"
+#
+[Interface]
+  <Vlanif91>
+interface Vlanif91
+ ip address 10.125.125.22 255.255.255.252
+#
+  <MEth0>
+interface MEth0
+ ip address 10.11.104.2 255.255.255.0
+#
+  <NULL0>
+interface NULL0
+#
+undo dcn
+#
+[route-static]
+  <route-static>
+ip route-static 0.0.0.0 0.0.0.0 10.125.125.21 preference 10
+#
+[snmp]
+  <snmp>
+snmp-agent local-engineid 800007DB0360D755A57A0C
+snmp-agent community read cipher "%@%##!!!!!!!!!"!!!!"!!!!(!!!!7LTnVOK_g:SEe'$-mr/PP%bt4;Z+H<ctWJV$FIa<!!!!!!!!!!1!!!!DvWeWl^bDRMwL1"Z]d[&%@%#"
+#
+snmp-agent sys-info version v2c
+#
+[post-system]
+  <post-system>
+ ssh user "oxidized" authentication-type password
+ ssh user "ppnetwork" authentication-type password
+ ssh user "root" authentication-type password
+ ssh user "sgpsgp" authentication-type password
+ ssh server cipher aes256_gcm aes128_gcm aes256_ctr aes192_ctr aes128_ctr
+ ssh server hmac sha2_512 sha2_256 sha1
+ ssh server key-exchange dh_group_exchange_sha256 dh_group_exchange_sha1 
+dh_group14_sha1
+ ssh server dh-exchange min-len 2048
+ ssh server publickey rsa x509v3-ssh-rsa rsa_sha2_256 rsa_sha2_512
+ ntp-service server disable
+ ntp-service ipv6 server disable
+ ntp-service server source-interface all disable
+ ntp-service ipv6 server source-interface all disable
+ ntp-service unicast-peer 45.171.228.20
+ ssh client publickey rsa rsa_sha2_256 rsa_sha2_512
+ ssh client cipher aes256_gcm aes128_gcm aes256_ctr aes192_ctr aes128_ctr
+ ssh client hmac sha2_512 sha2_256 sha1
+ ssh client key-exchange dh_group_exchange_sha256 dh_group_exchange_sha1 
+dh_group14_sha1
+#
+[source-interface]
+  <source-interface>
+ sysman server source ssh any-interface
+ sysman server source snmp any-interface
+#
+return
+
