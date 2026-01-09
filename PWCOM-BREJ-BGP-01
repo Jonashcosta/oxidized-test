@@ -1,0 +1,1069 @@
+# Huawei Versatile Routing Platform Software
+# VRP (R) software, Version 8.200 (NetEngine 8000 V800R012C10SPC300)
+# Copyright (C) 2012-2020 Huawei Technologies Co., Ltd.
+# NetEngine 8000 M8's Device status:
+# -------------------------------------------------------------------------------
+# Slot #   Type    Online     Register     Status     Role   LsId   Primary      
+# -------------------------------------------------------------------------------
+# 1        PIC     Present    Registered   Normal     OTHER  0      NA           
+# 9        IPU     Present    Registered   Normal     MMB    0      Master       
+# 11       PWR     Present    Registered   Normal     OTHER  0      NA           
+# 12       PWR     Present    Registered   Normal     OTHER  0      NA           
+# 13       FAN     Present    Registered   Normal     OTHER  0      NA           
+# 14       CLK     Present    Registered   Normal     OTHER  0      Master       
+# -------------------------------------------------------------------------------
+!Software Version V800R012C10SPC300
+!Last configuration was updated at 2026-01-07 08:28:56-03:00 by oxidized
+!Last configuration was saved at 2026-01-07 08:33:57-03:00
+#
+sysname PWCOM-BREJ-BGP-01
+#
+undo FTP server-source all-interface
+undo FTP ipv6 server-source all-interface
+#
+info-center channel 6 name logserver
+info-center source default channel 6 log level informational
+info-center loghost source LoopBack0
+info-center loghost 10.125.40.50 channel 6 facility local2 port 20001
+info-center loghost 10.125.50.14 channel 6 facility local2 port 55514
+#
+service-template template-default0
+#
+service-template template-default1
+#
+service-template template-default2
+#
+service-template template-default3
+#
+service-template template-default4
+#
+ecc peer-public-key 10.125.130.1
+ public-key-code begin
+  04014EA9 97B0009B 7825ECA9 C7F2D751 0D3B11A3 06FAECE9 B45986CC E1F5EBE6
+  10C72218 D79C7385 417A36E7 2C5CDBB9 3B566A3C 809FCFF9 5D6F2A11 FE3DB406
+  EB35AD01 E36EA8CB 4B0C2F36 6F6C6C36 291F4F28 41A63EEE 8D572E89 E104BCEF
+  D7BF409B 461429F5 E864E167 8ACD591E 4B7D9AF5 54FF3AB3 E7905696 DF91C43C
+  061C10EF 99
+ public-key-code end
+ peer-public-key end
+#
+ecc peer-public-key 10.125.130.2
+ public-key-code begin
+  040044B3 64FAFE66 FD513E5B 21C8C883 C7D4A8D8 340DC48E 731D2BCD 72176227
+  6D048415 93DA9595 637EC923 6A3F0488 1776550C CDA8EB52 4702DEF2 CE9A1F79
+  069C1B01 CCADD52B D9AE37A0 C16CFF04 B297E649 0747ADEE B2CBF85F AA3EA1AC
+  D655CA28 7E635AC5 622C48E4 0DC500AD CCC24408 24E3AE23 6F687C2F 7C4B4969
+  91B08C1A 77
+ public-key-code end
+ peer-public-key end
+#
+ecc peer-public-key 10.125.50.14
+ public-key-code begin
+  04ABEA6D D4C671A3 9F00D697 CF26F1F4 8FCF71CD CD6A3BE8 DAFA721A 490D0D29
+  9A84E0E5 CF96B182 896BFF01 FB6A0086 86B9DCE1 378CACCF 950DCF07 3B2D6E1A
+  FC
+ public-key-code end
+ peer-public-key end
+#
+ecc peer-public-key 172.16.251.2
+ public-key-code begin
+  04014EA9 97B0009B 7825ECA9 C7F2D751 0D3B11A3 06FAECE9 B45986CC E1F5EBE6
+  10C72218 D79C7385 417A36E7 2C5CDBB9 3B566A3C 809FCFF9 5D6F2A11 FE3DB406
+  EB35AD01 E36EA8CB 4B0C2F36 6F6C6C36 291F4F28 41A63EEE 8D572E89 E104BCEF
+  D7BF409B 461429F5 E864E167 8ACD591E 4B7D9AF5 54FF3AB3 E7905696 DF91C43C
+  061C10EF 99
+ public-key-code end
+ peer-public-key end
+#
+ecc peer-public-key 45.171.228.0
+ public-key-code begin
+  04000A4B 32DE2FD2 AC161DCE DCCC8DDA D4A22395 91B657AC D2E3B213 B6308CB5
+  0A7A8442 F2A4FB7D E64CBB8E 4F8A4302 AED794B5 7F3F0361 A04CB3C5 2927EF8E
+  6DB2BA01 B9545BB5 B49DE275 B0B23F20 99B8A4D6 D22D0C2C 586A858B AEFBB39C
+  D7637C10 3603276D 10E9FC07 4F5636F7 2D49A049 F2A5E8E8 0D9EECA3 D455CA1B
+  F1C64E35 EE
+ public-key-code end
+ peer-public-key end
+#
+ecc peer-public-key 45.171.228.1
+ public-key-code begin
+  04014EA9 97B0009B 7825ECA9 C7F2D751 0D3B11A3 06FAECE9 B45986CC E1F5EBE6
+  10C72218 D79C7385 417A36E7 2C5CDBB9 3B566A3C 809FCFF9 5D6F2A11 FE3DB406
+  EB35AD01 E36EA8CB 4B0C2F36 6F6C6C36 291F4F28 41A63EEE 8D572E89 E104BCEF
+  D7BF409B 461429F5 E864E167 8ACD591E 4B7D9AF5 54FF3AB3 E7905696 DF91C43C
+  061C10EF 99
+ public-key-code end
+ peer-public-key end
+#
+ecc peer-public-key 10.253.252.19
+ public-key-code begin
+  047A0EFD DDD84F42 86D976E2 B583AE39 F8140498 7E9BD99F E869BFC8 D4895DFE
+  CB0940AA 2EAF53FB 9A5B1E40 9EF26F15 56C6B52C 3EECFA0F 3FA38F3D A1A0AC3A
+  4B
+ public-key-code end
+ peer-public-key end
+#
+ecc peer-public-key 45.171.228.20
+ public-key-code begin
+  0400D55A 3374FF15 711789EF 129896A1 88B5376A 1A248C43 F8555D85 16D1B5B0
+  62D3AB9A 701E8EB2 51DF670D E1F24C26 892158A5 9E48B38C A6DBB698 1C601A45
+  12
+ public-key-code end
+ peer-public-key end
+#
+ecc peer-public-key 45.171.228.254
+ public-key-code begin
+  04014EA9 97B0009B 7825ECA9 C7F2D751 0D3B11A3 06FAECE9 B45986CC E1F5EBE6
+  10C72218 D79C7385 417A36E7 2C5CDBB9 3B566A3C 809FCFF9 5D6F2A11 FE3DB406
+  EB35AD01 E36EA8CB 4B0C2F36 6F6C6C36 291F4F28 41A63EEE 8D572E89 E104BCEF
+  D7BF409B 461429F5 E864E167 8ACD591E 4B7D9AF5 54FF3AB3 E7905696 DF91C43C
+  061C10EF 99
+ public-key-code end
+ peer-public-key end
+#
+undo icmp name timestamp-reply send
+#
+as-notation plain
+#
+ip netstream as-mode 32
+ip netstream timeout active 1
+ip netstream timeout inactive 15
+ip netstream tcp-flag enable
+ip netstream export version 9 origin-as bgp-nexthop ttl
+ip netstream export template sequence-number fixed
+ip netstream export index-switch 32
+ip netstream export template timeout-rate 1
+ip netstream sampler fix-packets 1024 inbound
+ip netstream sampler fix-packets 1024 outbound
+ip netstream export source 45.171.228.0
+ip netstream export host 45.171.228.91 52055
+ip netstream export host 37.60.245.54 3888
+ip netstream export host 10.125.50.254 52055
+ip netstream export host 172.16.200.2 52055
+ip netstream export template option sampler
+ip netstream export template option timeout-rate 1
+ip netstream export template option application-label
+#
+ipv6 netstream as-mode 32
+ipv6 netstream timeout active 1
+ipv6 netstream timeout inactive 15
+ipv6 netstream tcp-flag enable
+ipv6 netstream export version 9 origin-as
+ipv6 netstream export template sequence-number fixed
+ipv6 netstream export index-switch 32
+ipv6 netstream export template timeout-rate 1
+ipv6 netstream sampler fix-packets 1024 inbound
+ipv6 netstream sampler fix-packets 1024 outbound
+ipv6 netstream export source 45.171.228.0
+ipv6 netstream export host 172.16.200.2 52055
+ipv6 netstream export host 45.171.228.91 52055
+ipv6 netstream export host 37.60.245.54 3888
+ipv6 netstream export host 10.125.50.254 52055
+ipv6 netstream export template option sampler
+ipv6 netstream export template option timeout-rate 1
+#
+set save-configuration interval 3600
+set save-configuration backup-to-server server 45.171.228.20 transport-type sftp user BNG-BJ password %^%#WJ{YUjOjO;*GMOBGU//OXi9DK@6<!Zb'Hs"N~QOH%^%# path /upload
+set save-configuration backup-to-server server 10.125.50.14 transport-type ftp port 21 user powercom password %^%#-PxoT5T=~!,)}^1r5=\GF,hT2y$)>Gx3N:4maku.%^%# path /Ne8k/BGP
+#
+undo telnet server-source all-interface
+undo telnet ipv6 server-source all-interface
+#
+bridge-domain 88
+#
+dhcp server request-packet all-interface disable
+#
+acl name LIBERADOS-SNMP basic
+ rule 5 permit source 172.16.200.10 0
+ rule 6 permit source 45.171.228.21 0
+ rule 7 permit source 45.171.228.91 0
+ rule 8 permit source 144.217.42.201 0
+ rule 15 permit source 172.16.200.51 0
+ rule 20 permit source 172.16.200.40 0
+ rule 21 permit source 172.16.200.2 0
+ rule 22 permit source 45.171.228.26 0
+ rule 25 permit source 10.125.50.0 0.0.0.255
+ rule 30 permit source 37.60.245.54 0
+ rule 35 permit source 45.171.228.24 0
+ rule 40 permit source 10.125.50.102 0
+ rule 99 deny
+#
+aaa
+ local-user ppnetwork password irreversible-cipher $1c$=%B+!]l|f.$L{9[RdGR.Ajh}=5fL0OByN&4A~j48896o|1fA@j4$
+ local-user ppnetwork service-type telnet ssh
+ local-user ppnetwork level 3
+ local-user ppnetwork state block fail-times 3 interval 5
+ local-user pwcomadmin password irreversible-cipher $1c$vf/kSV:01M$')%bI9n3g*qQ14@7xLB"Qe}1B@L):!yTy]/|*A~#$
+ local-user pwcomadmin service-type telnet ssh
+ local-user pwcomadmin level 3
+ local-user pwcomadmin state block fail-times 3 interval 5
+ local-user pp-csc password irreversible-cipher $1c$r>a@::_a]"$lQJ@Qc'TCQ\m8M>!%.b4_TM/I]-]m>+R"M@d0yBX$
+ local-user pp-csc service-type ssh
+ local-user pp-csc level 3
+ local-user pp-csc state block fail-times 3 interval 5
+ local-user oxidized password irreversible-cipher $1c$Q'A18/LX->$B@oTU@%^W4oNYb:w2cJV*M7>:CiW9LSy1bF9YF=%$
+ local-user oxidized service-type ssh
+ local-user oxidized level 1
+ local-user oxidized state block fail-times 3 interval 5
+ #
+ authentication-scheme default0
+ #
+ authentication-scheme default1
+ #
+ authentication-scheme default
+  authentication-mode local
+ #
+ authorization-scheme default
+ #
+ accounting-scheme default0
+ #
+ accounting-scheme default1
+ #
+ domain default0
+ #
+ domain default1
+ #
+ domain default_admin
+#
+ospfv3 1
+ router-id 10.254.253.2
+ import-route direct
+ import-route static
+ import-route unr
+ default-route-advertise
+ area 0.0.0.0
+#
+interface Eth-Trunk0.70
+ vlan-type dot1q 70
+ description CONCENTRADOR-MANEL-PAZ
+ ipv6 enable
+ ip address 10.188.188.13 255.255.255.252
+ ipv6 address 2804:5A10:EFF:0:10:188:188:13A/126
+ ipv6 address auto link-local
+ statistic enable
+ ospfv3 1 area 0.0.0.0
+ ospfv3 network-type p2p
+ ospf network-type p2p
+ ospf enable 1 area 0.0.0.0
+#
+interface Eth-Trunk0.90
+ vlan-type dot1q 90
+ description SIMET
+ ipv6 enable
+ ip address 45.171.228.13 255.255.255.252
+ ipv6 address 2804:5A10:EF0:E::1/64
+#
+interface Eth-Trunk0.99
+ vlan-type dot1q 99
+ description APPLIANCE-WEDEV
+ ipv6 enable
+ ip address 45.171.229.12 255.255.255.254
+ ipv6 address 2804:5A10:701::1/64
+ statistic enable
+#
+interface Eth-Trunk0.101
+ vlan-type dot1q 101
+ description CGNAT
+ ipv6 enable
+ ip address 172.16.254.1 255.255.255.252
+ statistic enable
+ ospf network-type p2p
+ ospf enable 1 area 0.0.0.0
+#
+interface Eth-Trunk0.103
+ vlan-type dot1q 103
+ description IPV6-CGNAT
+ ipv6 enable
+ ipv6 address 2804:5A10:EFF:0:172:16:254:5E/126
+ statistic enable
+#
+interface Eth-Trunk0.104
+ vlan-type dot1q 104
+ description ITTV-CDN
+ ip address 45.171.228.45 255.255.255.252
+ statistic enable
+#
+interface Eth-Trunk0.105
+ vlan-type dot1q 105
+ description made4flow
+ ipv6 enable
+ ip address 10.125.50.101 255.255.255.252
+ ipv6 address 2804:5A10:EF0:B::1/64
+ statistic enable
+#
+interface Eth-Trunk0.130
+ vlan-type dot1q 130
+ description ADTELECOM-CDN
+ ipv6 enable
+ ip address 172.31.250.70 255.255.255.252
+ ipv6 address 2804:3278:3FF:FFF:172:31:250:6E/126
+ statistic enable
+ ip netstream inbound
+ ip netstream outbound
+ ipv6 netstream inbound
+ ipv6 netstream outbound
+#
+interface Eth-Trunk0.201
+ vlan-type dot1q 201
+ description ESPIRITO-SANTO
+ ip address 172.30.2.49 255.255.255.252
+ statistic enable
+ ospf network-type p2p
+ ospf enable 1 area 0.0.0.0
+#
+interface Eth-Trunk0.568
+ vlan-type dot1q 568
+ description description A10-OUTSIDE
+ ip address 172.30.10.5 255.255.255.252
+ statistic enable
+#
+interface Eth-Trunk0.605
+ vlan-type dot1q 605
+ description LINK-LINK-ADTELECOM-VIA-ESP
+ ipv6 enable
+ ip address 172.20.0.6 255.255.255.252
+ ipv6 address FEC0:172:20::6/126
+ statistic enable
+ ip netstream inbound
+ ip netstream outbound
+ ipv6 netstream inbound
+ ipv6 netstream outbound
+#
+interface Eth-Trunk0.725
+ vlan-type dot1q 725
+ ipv6 enable
+ statistic enable
+#
+interface Eth-Trunk0.727
+ vlan-type dot1q 727
+ ipv6 enable
+ statistic enable
+ ip netstream inbound
+ ip netstream outbound
+ ipv6 netstream inbound
+ ipv6 netstream outbound
+#
+interface Eth-Trunk0.728
+ vlan-type dot1q 728
+ ipv6 enable
+ statistic enable
+ ip netstream inbound
+ ip netstream outbound
+ ipv6 netstream inbound
+ ipv6 netstream outbound
+#
+interface Eth-Trunk0.870
+ vlan-type dot1q 870
+ description ADTELECOM
+ ipv6 enable
+ ip address 172.24.10.206 255.255.255.252
+ ipv6 address 2804:3278:3FF:FFF:172:30:10:226/126
+ statistic enable
+ ip netstream inbound
+ ip netstream outbound
+ ipv6 netstream inbound
+ ipv6 netstream outbound
+#
+interface Eth-Trunk0.871
+ vlan-type dot1q 871
+ description LINK-ADTELECOM-LINKIP-IPv6
+ ipv6 enable
+ ipv6 address 2804:3278:3FF:FFF:172:24:10:25A/126
+ ipv6 address 2804:3278:3FF:FFF:172:31:250:E/126
+ statistic enable
+ ip netstream inbound
+ ip netstream outbound
+ ipv6 netstream inbound
+ ipv6 netstream outbound
+ binding tunnel gre
+#
+interface Eth-Trunk0.1015
+ vlan-type dot1q 1015
+ description LINK-ADTELECOM
+ ipv6 enable
+ ip address 10.58.90.2 255.255.255.252
+ ipv6 address 2804:3278:3FF:FFF:172:24:10:21A/126
+ statistic enable
+ ip netstream inbound
+ ip netstream outbound
+ ipv6 netstream inbound
+ ipv6 netstream outbound
+#
+interface Eth-Trunk0.1065
+ vlan-type dot1q 1065
+ description PEER-V4-MOBWIRE-GIGA+
+ ip address 172.31.18.178 255.255.255.252
+ statistic enable
+ ip netstream inbound
+ ip netstream outbound
+ ipv6 netstream inbound
+ ipv6 netstream outbound
+#
+interface Eth-Trunk0.1066
+ vlan-type dot1q 1066
+ description PEER-V6-MOBWIRE-GIGA+
+ ipv6 enable
+ ipv6 address 2804:1A04:401::7A/126
+ statistic enable
+ ip netstream inbound
+ ip netstream outbound
+ ipv6 netstream inbound
+ ipv6 netstream outbound
+#
+interface Eth-Trunk0.1820
+ vlan-type dot1q 1820
+ bandwidth 10000
+ description LINK-IP-GIGA+
+ ipv6 enable
+ ip address 172.31.255.30 255.255.255.252
+ ipv6 address FEC0:FFFF::2E/126
+ statistic enable
+ ip netstream inbound
+ ip netstream outbound
+ ipv6 netstream inbound
+ ipv6 netstream outbound
+#
+interface Eth-Trunk0.1821
+ vlan-type dot1q 1821
+ description AGRESTE-CDNs-ASN-267619
+ ipv6 enable
+ ip address 10.254.10.2 255.255.255.252
+ ipv6 address FEC0::10:254:10:2/126
+ statistic enable
+ ip netstream inbound
+ ip netstream outbound
+ ipv6 netstream inbound
+ ipv6 netstream outbound
+#
+interface Ethernet0/0/0
+ undo shutdown
+#
+interface LoopBack0
+ ip address 45.171.228.0 255.255.255.255
+#
+interface LoopBack4
+ ipv6 enable
+#
+interface Virtual-Ethernet0/2/21.1014
+ vlan-type dot1q 1014
+ description COMUNICACAO-BNG
+ ipv6 enable
+ ip address 172.16.251.1 255.255.255.252
+ ipv6 address 2804:5A10:EFF:0:172:16:251:1A/126
+ ipv6 address auto link-local
+ ospfv3 1 area 0.0.0.0
+ ospfv3 network-type p2p
+ ospf network-type p2p
+ ospf enable 1 area 0.0.0.0
+#
+interface Tunnel10
+ description COMUNICACAO-WEDEV
+ ip address 198.19.127.130 255.255.255.252
+ tunnel-protocol gre ipv6
+ source 2804:3278:3FF:FFF:172:24:10:25A
+ destination 2804:574:8:1::186
+#
+interface NULL0
+#
+bgp 268746
+ peer 10.0.0.125 as-number 61832
+ peer 10.0.0.125 description GIGA+-AS61832-V4-FULL-ROUTE
+ peer 10.0.0.125 ebgp-max-hop 100
+ peer 10.58.90.1 as-number 265080
+ peer 10.254.10.1 as-number 267619
+ peer 10.254.10.1 description LINK-AGRESTE-267619-CDN-V4
+ peer 45.171.228.24 as-number 268746
+ peer 45.171.228.24 description MADA4FLOW-DDOS
+ peer 45.171.228.24 connect-interface 45.171.228.0
+ peer 45.171.228.46 as-number 270907
+ peer 45.171.228.46 description IT-TV-CDN
+ peer 45.171.228.46 connect-interface 45.171.228.45
+ peer 45.171.229.13 as-number 65000
+ peer 45.171.229.13 fake-as 65000
+ peer 45.171.229.13 description APPLIANCEWEDEV-V4
+ peer 45.171.229.13 connect-interface 45.171.229.12
+ peer 45.171.229.13 bfd enable
+ peer 172.20.0.5 as-number 265080
+ peer 172.20.0.5 description LINK-ADTELECOM-VIA-ESP-LINKIP-V4
+ peer 172.30.10.6 as-number 65001
+ peer 172.30.10.6 description A10TH1030S-DDOS
+ peer 172.30.10.6 connect-interface 172.30.10.5
+ peer 172.31.18.177 as-number 61832
+ peer 172.31.18.177 description GIGA+-AS61832-V4
+ peer 172.31.250.69 as-number 265080
+ peer 172.31.250.69 description LINK-ADTELECOM-CDN-LINKIP-V4
+ peer 172.31.255.29 as-number 267619
+ peer 172.31.255.29 description AGRESTE-AS267619-V4
+ peer 2804:1A04:0:1::3 as-number 61832
+ peer 2804:1A04:0:1::3 description GIGA+-AS61832-V6-FULL-ROUTE
+ peer 2804:1A04:0:1::3 ebgp-max-hop 100
+ peer 2804:1A04:401::79 as-number 61832
+ peer 2804:1A04:401::79 description GIGA+-AS61832-V6
+ peer 2804:3278:3FF:FFF:172:24:10:219 as-number 265080
+ peer 2804:3278:3FF:FFF:172:24:10:219 description ADTELECOM-LINKIP-V6
+ peer 2804:3278:3FF:FFF:172:24:10:259 as-number 265080
+ peer 2804:3278:3FF:FFF:172:24:10:259 description ADTELECOM-LINKIP-V6
+ peer 2804:3278:3FF:FFF:172:31:250:6D as-number 265080
+ peer 2804:3278:3FF:FFF:172:31:250:6D description LINK-ADTELECOM-CDN-LINKIP-V6
+ peer 2804:5A10:701::2 as-number 65000
+ peer 2804:5A10:701::2 fake-as 65000
+ peer 2804:5A10:701::2 description APPLIANCEWEDEV-V6
+ peer 2804:5A10:701::2 connect-interface 2804:5A10:701::1
+ peer 2804:5A10:701::2 bfd enable
+ peer FEC0::10:254:10:1 as-number 267619
+ peer FEC0::10:254:10:1 description LINK-AGRESTE-267619-CDN-V6
+ peer FEC0:172:20::5 as-number 265080
+ peer FEC0:172:20::5 description LINK-ADTELECOM-VIA-ESP-LINKIP-V6
+ peer FEC0:FFFF::2D as-number 267619
+ peer FEC0:FFFF::2D description AGRESTE-AS267619-V6
+ #
+ ipv4-family unicast
+  undo synchronization
+  network 45.171.228.0 255.255.254.0
+  network 45.171.228.0 255.255.255.0
+  network 45.171.229.0 255.255.255.0
+  ext-community-change enable
+  peer 10.0.0.125 enable
+  peer 10.0.0.125 route-policy GIGA-LINK-IP-V4-FULL-ROUTE-IN import
+  peer 10.0.0.125 route-policy GIGA-LINK-IP-V4-FULL-ROUTE-OUT export
+  peer 10.58.90.1 enable
+  peer 10.58.90.1 route-policy ADTELECOM-V4-IN import
+  peer 10.58.90.1 route-policy ADTELECOM-V4-OUT export
+  peer 10.58.90.1 next-hop-local
+  peer 10.58.90.1 advertise-community
+  peer 10.58.90.1 advertise-ext-community
+  peer 10.254.10.1 enable
+  peer 10.254.10.1 route-policy AGRESTE-CDN-V4-IN import
+  peer 10.254.10.1 route-policy AGRESTE-CDN-V4-OUT export
+  peer 45.171.228.24 enable
+  peer 45.171.228.24 route-policy MADA4FLOW-DDOS-IN import
+  peer 45.171.228.24 route-policy MADA4FLOW-DDOS-OUT export
+  peer 45.171.228.46 enable
+  peer 45.171.228.46 route-policy IT-TV-CDN-IN import
+  peer 45.171.228.46 route-policy IT-TV-CDN-OUT export
+  peer 45.171.229.13 enable
+  peer 45.171.229.13 route-policy APPLIANCEWEDEV-V4-IN import
+  peer 45.171.229.13 route-policy APPLIANCEWEDEV-V4-OUT export
+  peer 172.20.0.5 enable
+  peer 172.20.0.5 route-policy LINK-ADTELECOM-VIA-ESP-V4-IN import
+  peer 172.20.0.5 route-policy LINK-ADTELECOM-VIA-ESP-V4-OUT export
+  peer 172.20.0.5 next-hop-local
+  peer 172.20.0.5 advertise-community
+  peer 172.20.0.5 advertise-ext-community
+  peer 172.30.10.6 enable
+  peer 172.30.10.6 route-policy A10TH1030S-IN import
+  peer 172.30.10.6 route-policy A10TH1030S-OUT export
+  peer 172.31.18.177 enable
+  peer 172.31.18.177 route-policy GIGA-LINK-IP-V4-IN import
+  peer 172.31.18.177 route-policy GIGA-LINK-IP-V4-OUT export
+  peer 172.31.250.69 enable
+  peer 172.31.250.69 route-policy ADTELECOM-CDN-V4-IN import
+  peer 172.31.250.69 route-policy ADTELECOM-CDN-V4-OUT export
+  peer 172.31.250.69 next-hop-local
+  peer 172.31.250.69 advertise-community
+  peer 172.31.250.69 advertise-ext-community
+  peer 172.31.255.29 enable
+  peer 172.31.255.29 route-policy AGRESTE-LINK-IP-V4-IN import
+  peer 172.31.255.29 route-policy AGRESTE-LINK-IP-V4-OUT export
+ #
+ ipv6-family unicast
+  undo synchronization
+  network 2804:5A10:: 32
+  network 2804:5A10:: 33
+  network 2804:5A10:: 34
+  network 2804:5A10:4000:: 34
+  network 2804:5A10:8000:: 33
+  network 2804:5A10:8000:: 34
+  network 2804:5A10:9000:: 36
+  network 2804:5A10:A000:: 36
+  peer 2804:1A04:0:1::3 enable
+  peer 2804:1A04:0:1::3 route-policy GIGA-LINK-IP-V6-FULL-ROUTE-IN import
+  peer 2804:1A04:0:1::3 route-policy GIGA-LINK-IP-V6-FULL-ROUTE-OUT export
+  peer 2804:1A04:401::79 enable
+  peer 2804:1A04:401::79 route-policy GIGA-LINK-IP-V6-IN import
+  peer 2804:1A04:401::79 route-policy GIGA-LINK-IP-V6-OUT export
+  peer 2804:3278:3FF:FFF:172:24:10:219 enable
+  peer 2804:3278:3FF:FFF:172:24:10:219 route-policy ADTELECOM-V6-IN import
+  peer 2804:3278:3FF:FFF:172:24:10:219 route-policy ADTELECOM-V6-OUT export
+  peer 2804:3278:3FF:FFF:172:24:10:259 enable
+  peer 2804:3278:3FF:FFF:172:24:10:259 route-policy ADTELECOM-LINKIP-V6-IN import
+  peer 2804:3278:3FF:FFF:172:24:10:259 route-policy ADTELECOM-LINKIP-V6-OUT export
+  peer 2804:3278:3FF:FFF:172:31:250:6D enable
+  peer 2804:3278:3FF:FFF:172:31:250:6D route-policy ADTELECOM-CDN-V6-IN import
+  peer 2804:3278:3FF:FFF:172:31:250:6D route-policy ADTELECOM-CDN-V6-OUT export
+  peer 2804:3278:3FF:FFF:172:31:250:6D next-hop-local
+  peer 2804:3278:3FF:FFF:172:31:250:6D advertise-community
+  peer 2804:3278:3FF:FFF:172:31:250:6D advertise-ext-community
+  peer 2804:5A10:701::2 enable
+  peer 2804:5A10:701::2 route-policy APPLIANCEWEDEV-V6-IN import
+  peer 2804:5A10:701::2 route-policy APPLIANCEWEDEV-V6-OUT export
+  peer FEC0::10:254:10:1 enable
+  peer FEC0::10:254:10:1 route-policy AGRESTE-CDN-V6-IN import
+  peer FEC0::10:254:10:1 route-policy AGRESTE-CDN-V6-OUT export
+  peer FEC0:172:20::5 enable
+  peer FEC0:172:20::5 route-policy LINK-ADTELECOM-VIA-ESP-V6-IN import
+  peer FEC0:172:20::5 route-policy LINK-ADTELECOM-VIA-ESP-V6-OUT export
+  peer FEC0:172:20::5 next-hop-local
+  peer FEC0:172:20::5 advertise-community
+  peer FEC0:172:20::5 advertise-ext-community
+  peer FEC0:FFFF::2D enable
+  peer FEC0:FFFF::2D route-policy AGRESTE-LINK-IP-V6-IN import
+  peer FEC0:FFFF::2D route-policy AGRESTE-LINK-IP-V6-OUT export
+#
+ospf 1 router-id 10.254.253.2
+ default-route-advertise always
+ import-route direct
+ import-route static
+ import-route unr
+ area 0.0.0.0
+  network 10.188.188.12 0.0.0.3
+  network 10.254.253.2 0.0.0.0
+#
+route-policy A10TH1030S-IN deny node 1
+#
+route-policy A10TH1030S-OUT deny node 1
+#
+route-policy A10TH1030S-OUT permit node 90
+ if-match community-filter EXPORT-A10TH1030S
+#
+route-policy ADTELECOM-CDN-V4-IN permit node 20
+#
+route-policy ADTELECOM-CDN-V4-OUT permit node 40
+ if-match ip-prefix ANUNCIOS-ADTELECOM-CDN-V4
+#
+route-policy ADTELECOM-CDN-V4-OUT deny node 99
+#
+route-policy ADTELECOM-CDN-V6-IN permit node 20
+#
+route-policy ADTELECOM-CDN-V6-OUT permit node 40
+ if-match ipv6 address prefix-list ANUNCIOS-ADTELECOM-CDN-V6
+#
+route-policy ADTELECOM-CDN-V6-OUT deny node 99
+#
+route-policy ADTELECOM-LINKIP-V6-IN deny node 5
+ if-match as-path-filter NEGA-ADTELECOM-LINKIP
+#
+route-policy ADTELECOM-LINKIP-V6-IN permit node 10
+ if-match as-path-filter ADTELECOM-LINKIP-PRIORIZA-PREFIXOS
+ apply local-preference 250
+#
+route-policy ADTELECOM-LINKIP-V6-IN permit node 20
+ apply local-preference 175
+#
+route-policy ADTELECOM-LINKIP-V6-OUT permit node 40
+ if-match ipv6 address prefix-list ANUNCIOS-ADTELECOM-LINKIP-V6
+#
+route-policy ADTELECOM-LINKIP-V6-OUT deny node 99
+#
+route-policy ADTELECOM-V4-IN deny node 1
+ if-match ip-prefix ROUTE_BOGONS_V4
+#
+route-policy ADTELECOM-V4-IN deny node 5
+ if-match as-path-filter NEGA-ADTELECOM
+#
+route-policy ADTELECOM-V4-IN permit node 10
+ if-match as-path-filter ADTELECOM-PRIORIZA-PREFIXOS
+ apply local-preference 250
+#
+route-policy ADTELECOM-V4-IN permit node 11
+ if-match ip-prefix ROTA-DEFAULT-V4
+#
+route-policy ADTELECOM-V4-IN permit node 20
+ apply local-preference 175
+#
+route-policy ADTELECOM-V4-OUT permit node 40
+ if-match ip-prefix ANUNCIOS-ADTELECOM-V4
+#
+route-policy ADTELECOM-V4-OUT deny node 99
+#
+route-policy ADTELECOM-V6-IN deny node 5
+ if-match as-path-filter NEGA-ADTELECOM
+#
+route-policy ADTELECOM-V6-IN permit node 10
+ if-match as-path-filter ADTELECOM-PRIORIZA-PREFIXOS
+ apply local-preference 250
+#
+route-policy ADTELECOM-V6-IN permit node 20
+#
+route-policy ADTELECOM-V6-OUT permit node 40
+ if-match ipv6 address prefix-list ANUNCIOS-ADTELECOM-V6
+#
+route-policy ADTELECOM-V6-OUT deny node 99
+#
+route-policy AGRESTE-CDN-V4-IN permit node 20
+#
+route-policy AGRESTE-CDN-V4-OUT permit node 40
+ if-match ip-prefix ANUNCIOS-AGRESTE-CDN-V4
+#
+route-policy AGRESTE-CDN-V4-OUT deny node 99
+#
+route-policy AGRESTE-CDN-V6-IN permit node 20
+#
+route-policy AGRESTE-CDN-V6-OUT permit node 40
+ if-match ipv6 address prefix-list ANUNCIOS-AGRESTE-CDN-V6
+#
+route-policy AGRESTE-CDN-V6-OUT deny node 99
+#
+route-policy AGRESTE-LINK-IP-V4-IN deny node 10
+ if-match ip-prefix ROUTE_BOGONS_V4
+#
+route-policy AGRESTE-LINK-IP-V4-IN deny node 20
+ if-match as-path-filter AGRESTE-LINK-IP-AS267619-NEGA
+#
+route-policy AGRESTE-LINK-IP-V4-IN permit node 30
+ if-match as-path-filter AGRESTE-LINK-IP-AS267619-PRIORIZA-PREFIXOS
+ apply local-preference 250
+#
+route-policy AGRESTE-LINK-IP-V4-IN permit node 40
+ if-match ip-prefix ROTA-DEFAULT-V4
+ apply local-preference 150
+#
+route-policy AGRESTE-LINK-IP-V4-IN deny node 100
+#
+route-policy AGRESTE-LINK-IP-V4-OUT permit node 10
+ if-match ip-prefix ANUNCIOS-AGRESTE-LINK-IP-V4-AS267619
+#
+route-policy AGRESTE-LINK-IP-V4-OUT deny node 100
+#
+route-policy AGRESTE-LINK-IP-V6-IN deny node 10
+ if-match as-path-filter AGRESTE-LINK-IP-AS267619-NEGA
+#
+route-policy AGRESTE-LINK-IP-V6-IN permit node 20
+ if-match as-path-filter AGRESTE-LINK-IP-AS267619-PRIORIZA-PREFIXOS
+ apply local-preference 250
+#
+route-policy AGRESTE-LINK-IP-V6-IN permit node 30
+ if-match ipv6 address prefix-list ROTA-DEFAULT-V6
+ apply local-preference 150
+#
+route-policy AGRESTE-LINK-IP-V6-IN deny node 40
+#
+route-policy AGRESTE-LINK-IP-V6-OUT permit node 10
+ if-match ipv6 address prefix-list ANUNCIOS-AGRESTE-LINK-IP-V6-AS267619
+#
+route-policy AGRESTE-LINK-IP-V6-OUT deny node 100
+#
+route-policy APPLIANCEWEDEV-V4-IN permit node 50
+ if-match ip-prefix ANUNCIOS-APPLIANCEWEDEV-V4
+#
+route-policy APPLIANCEWEDEV-V4-IN deny node 99
+#
+route-policy APPLIANCEWEDEV-V4-OUT deny node 99
+#
+route-policy APPLIANCEWEDEV-V6-IN permit node 50
+ if-match ipv6 address prefix-list ANUNCIOS-APPLIANCEWEDEV-V6
+#
+route-policy APPLIANCEWEDEV-V6-IN deny node 99
+#
+route-policy APPLIANCEWEDEV-V6-OUT deny node 99
+#
+route-policy GIGA-LINK-IP-V4-FULL-ROUTE-IN deny node 10
+ if-match ip-prefix ROUTE_BOGONS_V4
+#
+route-policy GIGA-LINK-IP-V4-FULL-ROUTE-IN deny node 20
+ if-match as-path-filter GIGA-LINK-IP-NEGA
+#
+route-policy GIGA-LINK-IP-V4-FULL-ROUTE-IN permit node 40
+ apply local-preference 175
+#
+route-policy GIGA-LINK-IP-V4-FULL-ROUTE-OUT deny node 100
+#
+route-policy GIGA-LINK-IP-V4-IN deny node 10
+ if-match ip-prefix ROUTE_BOGONS_V4
+#
+route-policy GIGA-LINK-IP-V4-IN deny node 20
+ if-match as-path-filter GIGA-LINK-IP-NEGA
+#
+route-policy GIGA-LINK-IP-V4-IN permit node 30
+ if-match as-path-filter GIGA-LINK-IP-PRIORIZA-PREFIXOS
+ apply local-preference 250
+#
+route-policy GIGA-LINK-IP-V4-IN permit node 40
+ apply local-preference 175
+#
+route-policy GIGA-LINK-IP-V4-OUT permit node 10
+ if-match ip-prefix ANUNCIOS-GIGA-LINK-IP-V4
+#
+route-policy GIGA-LINK-IP-V4-OUT deny node 100
+#
+route-policy GIGA-LINK-IP-V6-FULL-ROUTE-IN deny node 20
+ if-match as-path-filter GIGA-LINK-IP-NEGA
+#
+route-policy GIGA-LINK-IP-V6-FULL-ROUTE-IN permit node 30
+ apply local-preference 175
+#
+route-policy GIGA-LINK-IP-V6-FULL-ROUTE-OUT deny node 100
+#
+route-policy GIGA-LINK-IP-V6-IN deny node 10
+ if-match as-path-filter GIGA-LINK-IP-NEGA
+#
+route-policy GIGA-LINK-IP-V6-IN permit node 20
+ if-match as-path-filter GIGA-LINK-IP-PRIORIZA-PREFIXOS
+ apply local-preference 250
+#
+route-policy GIGA-LINK-IP-V6-IN permit node 30
+ apply local-preference 175
+#
+route-policy GIGA-LINK-IP-V6-OUT permit node 10
+ if-match ipv6 address prefix-list ANUNCIOS-GIGA-LINK-IP-V6
+#
+route-policy GIGA-LINK-IP-V6-OUT deny node 100
+#
+route-policy IT-TV-CDN-IN permit node 10
+ if-match ip-prefix PREFIX_IT-TV-CDN-V4
+#
+route-policy IT-TV-CDN-OUT deny node 1
+#
+route-policy LINK-ADTELECOM-VIA-ESP-V4-IN deny node 1
+ if-match ip-prefix ROUTE_BOGONS_V4
+#
+route-policy LINK-ADTELECOM-VIA-ESP-V4-IN deny node 5
+ if-match as-path-filter NEGA-LINK-ADTELECOM-VIA-ESP-LINKIP
+#
+route-policy LINK-ADTELECOM-VIA-ESP-V4-IN permit node 10
+ if-match as-path-filter LINK-ADTELECOM-VIA-ESP-LINKIP-PRIORIZA-PREFIXOS
+ apply local-preference 250
+#
+route-policy LINK-ADTELECOM-VIA-ESP-V4-IN permit node 11
+ if-match ip-prefix ROTA-DEFAULT-V4
+#
+route-policy LINK-ADTELECOM-VIA-ESP-V4-IN permit node 20
+ apply local-preference 10
+#
+route-policy LINK-ADTELECOM-VIA-ESP-V4-OUT permit node 40
+ if-match ip-prefix ANUNCIOS-LINK-ADTELECOM-VIA-ESP-V4
+#
+route-policy LINK-ADTELECOM-VIA-ESP-V4-OUT deny node 99
+#
+route-policy LINK-ADTELECOM-VIA-ESP-V6-IN deny node 5
+ if-match as-path-filter NEGA-LINK-ADTELECOM-VIA-ESP-LINKIP
+#
+route-policy LINK-ADTELECOM-VIA-ESP-V6-IN permit node 10
+ if-match as-path-filter LINK-ADTELECOM-VIA-ESP-LINKIP-PRIORIZA-PREFIXOS
+ apply local-preference 10
+#
+route-policy LINK-ADTELECOM-VIA-ESP-V6-IN permit node 20
+#
+route-policy LINK-ADTELECOM-VIA-ESP-V6-OUT permit node 40
+ if-match ipv6 address prefix-list ANUNCIOS-LINK-ADTELECOM-VIA-ESP-LINKIP-V6
+#
+route-policy LINK-ADTELECOM-VIA-ESP-V6-OUT deny node 99
+#
+route-policy MADA4FLOW-DDOS-IN deny node 1
+#
+route-policy MADA4FLOW-DDOS-IN permit node 10
+ if-match community-filter BLACKHOLE
+ apply community 65177:666 65001:841
+#
+route-policy MADA4FLOW-DDOS-IN permit node 20
+ if-match community-filter EXPORT-A10TH1030S
+ apply community 65001:841
+#
+route-policy MADA4FLOW-DDOS-IN deny node 100
+#
+route-policy MADA4FLOW-DDOS-OUT deny node 1
+#
+ip ip-prefix ANUNCIOS-ADTELECOM-CDN-V4 index 15 permit 45.171.228.0 24
+ip ip-prefix ANUNCIOS-ADTELECOM-CDN-V4 index 20 permit 45.171.229.0 24
+ip ip-prefix ANUNCIOS-ADTELECOM-V4 index 10 permit 45.171.228.0 23
+ip ip-prefix ANUNCIOS-ADTELECOM-V4 index 15 deny 45.171.228.0 24
+ip ip-prefix ANUNCIOS-ADTELECOM-V4 index 20 deny 45.171.229.0 24
+ip ip-prefix ANUNCIOS-AGRESTE-CDN-V4 index 15 deny 45.171.228.0 24
+ip ip-prefix ANUNCIOS-AGRESTE-CDN-V4 index 20 deny 45.171.229.0 24
+ip ip-prefix ANUNCIOS-AGRESTE-LINK-IP-V4-AS267619 index 10 permit 45.171.228.0 23
+ip ip-prefix ANUNCIOS-AGRESTE-LINK-IP-V4-AS267619 index 20 deny 45.171.228.0 24
+ip ip-prefix ANUNCIOS-AGRESTE-LINK-IP-V4-AS267619 index 30 deny 45.171.229.0 24
+ip ip-prefix ANUNCIOS-APPLIANCEWEDEV-V4 index 10 permit 45.171.229.12 30 greater-equal 30 less-equal 32
+ip ip-prefix ANUNCIOS-GIGA-LINK-IP-V4 index 10 permit 45.171.228.0 23
+ip ip-prefix ANUNCIOS-GIGA-LINK-IP-V4 index 20 permit 45.171.228.0 24
+ip ip-prefix ANUNCIOS-GIGA-LINK-IP-V4 index 30 permit 45.171.229.0 24
+ip ip-prefix ANUNCIOS-LINK-ADTELECOM-VIA-ESP-V4 index 10 permit 45.171.228.0 23
+ip ip-prefix ANUNCIOS-LINK-ADTELECOM-VIA-ESP-V4 index 15 deny 45.171.228.0 24
+ip ip-prefix ANUNCIOS-LINK-ADTELECOM-VIA-ESP-V4 index 20 deny 45.171.229.0 24
+ip ip-prefix BOGONS-V4 index 30 permit 10.0.0.0 8 greater-equal 8 less-equal 32
+ip ip-prefix BOGONS-V4 index 40 permit 100.64.0.0 10 greater-equal 10 less-equal 32
+ip ip-prefix BOGONS-V4 index 50 permit 127.0.0.0 8 greater-equal 8 less-equal 32
+ip ip-prefix BOGONS-V4 index 60 permit 169.254.0.0 16 greater-equal 16 less-equal 32
+ip ip-prefix BOGONS-V4 index 70 permit 172.16.0.0 12 greater-equal 12 less-equal 32
+ip ip-prefix BOGONS-V4 index 80 permit 192.0.0.0 24 greater-equal 24 less-equal 32
+ip ip-prefix BOGONS-V4 index 90 permit 192.0.2.0 24 greater-equal 24 less-equal 32
+ip ip-prefix BOGONS-V4 index 100 permit 192.88.99.0 24 greater-equal 24 less-equal 32
+ip ip-prefix BOGONS-V4 index 110 permit 192.168.0.0 16 greater-equal 16 less-equal 32
+ip ip-prefix BOGONS-V4 index 120 permit 198.18.0.0 15 greater-equal 15 less-equal 32
+ip ip-prefix BOGONS-V4 index 130 permit 198.51.100.0 24 greater-equal 24 less-equal 32
+ip ip-prefix BOGONS-V4 index 140 permit 203.0.113.0 24 greater-equal 24 less-equal 32
+ip ip-prefix BOGONS-V4 index 150 permit 224.0.0.0 4 greater-equal 4 less-equal 32
+ip ip-prefix BOGONS-V4 index 160 permit 240.0.0.0 4 greater-equal 4 less-equal 32
+ip ip-prefix BOGONS-V4 index 170 permit 45.171.228.0 22 greater-equal 22 less-equal 32
+ip ip-prefix PREFIX_IT-TV-CDN-V4 index 10 permit 189.50.59.0 24 greater-equal 24 less-equal 32
+ip ip-prefix ROTA-DEFAULT-V4 index 10 permit 0.0.0.0 0
+ip ip-prefix ROUTE_BOGONS_V4 index 10 permit 10.0.0.0 8 greater-equal 8 less-equal 32
+ip ip-prefix ROUTE_BOGONS_V4 index 20 permit 203.0.113.0 24 greater-equal 24 less-equal 32
+ip ip-prefix ROUTE_BOGONS_V4 index 30 permit 127.0.0.0 8 greater-equal 8 less-equal 32
+ip ip-prefix ROUTE_BOGONS_V4 index 40 permit 169.254.0.0 16 greater-equal 16 less-equal 32
+ip ip-prefix ROUTE_BOGONS_V4 index 50 permit 172.16.0.0 12 greater-equal 12 less-equal 32
+ip ip-prefix ROUTE_BOGONS_V4 index 60 permit 192.0.2.0 24 greater-equal 24 less-equal 32
+ip ip-prefix ROUTE_BOGONS_V4 index 70 permit 192.168.0.0 16 greater-equal 16 less-equal 32
+ip ip-prefix ROUTE_BOGONS_V4 index 80 permit 224.0.0.0 4 greater-equal 4 less-equal 32
+ip ip-prefix ROUTE_BOGONS_V4 index 90 permit 0.0.0.0 8 match-network
+ip ip-prefix ROUTE_BOGONS_V4 index 100 permit 192.0.0.0 24 greater-equal 24 less-equal 32
+ip ip-prefix ROUTE_BOGONS_V4 index 110 permit 240.0.0.0 4 greater-equal 4 less-equal 32
+ip ip-prefix ROUTE_BOGONS_V4 index 120 permit 192.88.99.0 24 greater-equal 24 less-equal 32
+ip ip-prefix ROUTE_BOGONS_V4 index 130 permit 192.18.0.0 15 greater-equal 15 less-equal 32
+ip ip-prefix ROUTE_BOGONS_V4 index 140 permit 198.51.100.0 24 greater-equal 24 less-equal 32
+ip ip-prefix ROUTE_BOGONS_V4 index 150 permit 255.255.255.255 32
+ip ip-prefix ROUTE_BOGONS_V4 index 160 permit 0.0.0.0 25 greater-equal 25 less-equal 32
+ip as-path-filter ADTELECOM-2-2-PRIORIZA-PREFIXOS index 10 permit _65535$
+ip as-path-filter ADTELECOM-2-PRIORIZA-PREFIXOS index 10 permit _65535$
+ip as-path-filter ADTELECOM-LINKIP-PRIORIZA-PREFIXOS index 10 permit _65535$
+ip as-path-filter ADTELECOM-PRIORIZA-PREFIXOS index 10 permit _65535$
+ip as-path-filter ADTELECOM-PRIORIZA-PREFIXOS index 20 permit _58521$
+ip as-path-filter AGRESTE-LINK-IP-AS267619-NEGA index 10 permit _65535$
+ip as-path-filter AGRESTE-LINK-IP-AS267619-PRIORIZA-PREFIXOS index 10 permit _65535$
+ip as-path-filter GIGA-LINK-IP-NEGA index 10 permit _65535$
+ip as-path-filter GIGA-LINK-IP-PRIORIZA-PREFIXOS index 10 permit _65535$
+ip as-path-filter LINK-ADTELECOM-VIA-ESP-LINKIP-PRIORIZA-PREFIXOS index 10 permit _65535$
+ip as-path-filter NEGA-ADTELECOM index 10 permit _263940$
+ip as-path-filter NEGA-ADTELECOM index 20 permit _262288$
+ip as-path-filter NEGA-ADTELECOM-2 index 10 permit _263940$
+ip as-path-filter NEGA-ADTELECOM-LINKIP index 10 permit _263940$
+ip as-path-filter NEGA-LINK-ADTELECOM-VIA-ESP-LINKIP index 10 permit _263940$
+ip community-filter basic BLACKHOLE index 10 permit 65177:666
+ip community-filter basic EXPORT-A10TH1030S index 10 permit 65001:841
+ip community-filter basic EXPORT-ADTELECOM index 10 permit 65000:41
+ip community-filter basic EXPORT-ADTELECOM-X2 index 10 permit 65000:42
+ip community-filter basic EXPORT-ADTELECOM-X3 index 10 permit 65000:43
+ip community-filter basic EXPORT-ADTELECOM-X4 index 10 permit 65000:44
+ip community-filter basic EXPORT-GIGA+ index 10 permit 65000:31
+ip community-filter basic EXPORT-GIGA+-X2 index 10 permit 65000:32
+ip community-filter basic EXPORT-GIGA+-X3 index 10 permit 65000:33
+ip community-filter basic EXPORT-GIGA+-X4 index 10 permit 65000:34
+ip community-filter basic NO-EXPORT-ADTELECOM index 10 permit 65000:40
+ip community-filter basic NO-EXPORT-GIGA+ index 10 permit 65000:30
+#
+ip route-static 10.0.0.125 255.255.255.255 Eth-Trunk0.1065 172.31.18.177 description RR-GIGA+
+ip route-static 45.165.128.201 255.255.255.255 172.30.10.6 description IP-AD-A10
+ip route-static 45.171.228.0 255.255.254.0 NULL0
+ip route-static 45.171.228.0 255.255.255.0 NULL0
+ip route-static 45.171.228.3 255.255.255.255 172.30.10.6 description IP-Public-A10
+ip route-static 45.171.228.24 255.255.255.255 10.125.50.102 description made4flow
+ip route-static 45.171.228.35 255.255.255.255 172.30.10.6 description DEST-NAT-A10
+ip route-static 45.171.228.36 255.255.255.255 172.30.10.6 description DESC-NAT-A10
+ip route-static 45.171.228.48 255.255.255.240 172.30.10.6 description CGNAT-A10
+ip route-static 45.171.228.128 255.255.255.128 172.30.10.6 description CGNAT-A10
+ip route-static 45.171.229.0 255.255.255.0 NULL0
+ip route-static 45.171.229.128 255.255.255.128 172.30.10.6 description CGNAT-A10
+ip route-static 198.51.100.2 255.255.255.255 198.19.127.129 description WEDEV-BACKUP-SERVER
+#
+ipv6 route-static 2804:1A04:0:1::3 128 Eth-Trunk0.1066 2804:1A04:401::79 description RR-GIGA+
+ipv6 route-static 2804:1A04:0:1::3 128 2804:1A04:401::79 description RR-GIGA+
+ipv6 route-static 2804:5A10:: 32 NULL0
+ipv6 route-static 2804:5A10:: 33 NULL0
+ipv6 route-static 2804:5A10:: 34 NULL0
+ipv6 route-static 2804:5A10:701:1:: 64 2804:5A10:701::2 description APPLIANCE-WE
+ipv6 route-static 2804:5A10:EF8:: 48 2804:5A10:EFF:0:172:16:254:5D description RB-CGNAT-IPV6
+ipv6 route-static 2804:5A10:EFF:: 64 2804:5A10:EFF:0:172:16:254:5D description CGNAT-IPV6
+ipv6 route-static 2804:5A10:4000:: 34 NULL0
+ipv6 route-static 2804:5A10:8000:: 33 NULL0
+ipv6 route-static 2804:5A10:8000:: 34 NULL0
+ipv6 route-static 2804:5A10:B000:: 36 2804:3278:3FF:FFF:172:24:10:259
+#
+ip ipv6-prefix ANUNCIOS-ADTELECOM-CDN-V6 index 30 permit 2804:5A10:: 34
+ip ipv6-prefix ANUNCIOS-ADTELECOM-CDN-V6 index 40 permit 2804:5A10:4000:: 34
+ip ipv6-prefix ANUNCIOS-ADTELECOM-CDN-V6 index 50 permit 2804:5A10:8000:: 34
+ip ipv6-prefix ANUNCIOS-ADTELECOM-LINKIP-V6 index 20 permit 2804:5A10:: 32
+ip ipv6-prefix ANUNCIOS-ADTELECOM-LINKIP-V6 index 30 deny 2804:5A10:: 34
+ip ipv6-prefix ANUNCIOS-ADTELECOM-LINKIP-V6 index 40 deny 2804:5A10:4000:: 34
+ip ipv6-prefix ANUNCIOS-ADTELECOM-LINKIP-V6 index 50 deny 2804:5A10:8000:: 34
+ip ipv6-prefix ANUNCIOS-ADTELECOM-V6 index 20 deny 2804:5A10:: 32
+ip ipv6-prefix ANUNCIOS-ADTELECOM-V6 index 30 deny 2804:5A10:: 34
+ip ipv6-prefix ANUNCIOS-ADTELECOM-V6 index 40 deny 2804:5A10:4000:: 34
+ip ipv6-prefix ANUNCIOS-ADTELECOM-V6 index 50 deny 2804:5A10:8000:: 34
+ip ipv6-prefix ANUNCIOS-AGRESTE-CDN-V6 index 30 deny 2804:5A10:: 34
+ip ipv6-prefix ANUNCIOS-AGRESTE-CDN-V6 index 40 deny 2804:5A10:4000:: 34
+ip ipv6-prefix ANUNCIOS-AGRESTE-CDN-V6 index 50 deny 2804:5A10:8000:: 34
+ip ipv6-prefix ANUNCIOS-AGRESTE-LINK-IP-V6-AS267619 index 10 permit 2804:5A10:: 32
+ip ipv6-prefix ANUNCIOS-AGRESTE-LINK-IP-V6-AS267619 index 20 deny 2804:5A10:: 34
+ip ipv6-prefix ANUNCIOS-AGRESTE-LINK-IP-V6-AS267619 index 30 deny 2804:5A10:4000:: 34
+ip ipv6-prefix ANUNCIOS-AGRESTE-LINK-IP-V6-AS267619 index 40 deny 2804:5A10:8000:: 34
+ip ipv6-prefix ANUNCIOS-APPLIANCEWEDEV-V6 index 10 permit 2804:5A10:701:: 64
+ip ipv6-prefix ANUNCIOS-GIGA-LINK-IP-V6 index 10 permit 2804:5A10:: 32
+ip ipv6-prefix ANUNCIOS-GIGA-LINK-IP-V6 index 20 permit 2804:5A10:: 34
+ip ipv6-prefix ANUNCIOS-GIGA-LINK-IP-V6 index 30 permit 2804:5A10:4000:: 34
+ip ipv6-prefix ANUNCIOS-GIGA-LINK-IP-V6 index 40 permit 2804:5A10:8000:: 34
+ip ipv6-prefix ANUNCIOS-LINK-ADTELECOM-VIA-ESP-LINKIP-V6 index 20 permit 2804:5A10:: 32
+ip ipv6-prefix ANUNCIOS-LINK-ADTELECOM-VIA-ESP-LINKIP-V6 index 30 deny 2804:5A10:: 34
+ip ipv6-prefix ANUNCIOS-LINK-ADTELECOM-VIA-ESP-LINKIP-V6 index 40 deny 2804:5A10:4000:: 34
+ip ipv6-prefix ANUNCIOS-LINK-ADTELECOM-VIA-ESP-LINKIP-V6 index 50 deny 2804:5A10:8000:: 34
+ip ipv6-prefix ROTA-DEFAULT-V6 index 10 permit :: 0
+#
+snmp-agent
+snmp-agent acl LIBERADOS-SNMP
+snmp-agent local-engineid 800007DB052102353A3A101B00017201
+snmp-agent community read cipher %^%#gH(2VV@lV,Q{ZF*n{y*$*(_]Gj-&_E+L):T`f4j:J)5e.=FQK3+^(ERgTv_GYzBR!c\5nM=_pj$qeFf2%^%# alias __CommunityAliasName_01_36449
+snmp-agent community read cipher %^%#2_EH403M*2Q@@f;zNg=3@10Y9(~eu7n)`AEJ!\B*e@t"J2lDkLc%+p'z+au2O-cj+|m`ICOb}#Ae&e&!%^%# alias __CommunityAliasName_02_13481
+#
+snmp-agent sys-info version v2c v3
+#
+snmp-agent udp-port 55001
+#
+snmp-agent protocol source-status all-interface
+undo snmp-agent protocol source-status ipv6 all-interface
+#
+undo snmp-agent proxy protocol source-status all-interface
+undo snmp-agent proxy protocol source-status ipv6 all-interface
+#
+stelnet server enable
+snetconf server enable
+ssh ipv4 server port 55220
+ssh user oxidized
+ssh user oxidized authentication-type password
+ssh user oxidized service-type all
+ssh user pp-csc
+ssh user pp-csc authentication-type all
+ssh user pp-csc service-type all
+ssh user ppnetwork
+ssh user ppnetwork authentication-type password
+ssh user ppnetwork service-type all
+ssh server-source all-interface
+undo ssh ipv6 server-source all-interface
+ssh authorization-type default aaa
+#
+ssh server cipher aes256_gcm aes128_gcm aes256_ctr aes192_ctr aes128_ctr
+ssh server hmac sha2_512 sha2_256
+ssh server key-exchange dh_group_exchange_sha256 dh_group_exchange_sha1 dh_group14_sha1 ecdh_sha2_nistp256 ecdh_sha2_nistp384 ecdh_sha2_nistp521
+#
+ssh server publickey ecc rsa
+#
+ssh server dh-exchange min-len 2048
+#
+ssh client first-time enable
+ssh client peer 10.125.130.1 assign ecc-key 10.125.130.1
+ssh client peer 10.125.130.2 assign ecc-key 10.125.130.2
+ssh client peer 10.125.50.14 assign ecc-key 10.125.50.14
+ssh client peer 10.253.252.19 assign ecc-key 10.253.252.19
+ssh client peer 172.16.251.2 assign ecc-key 172.16.251.2
+ssh client peer 45.171.228.0 assign ecc-key 45.171.228.0
+ssh client peer 45.171.228.1 assign ecc-key 45.171.228.1
+ssh client peer 45.171.228.20 assign ecc-key 45.171.228.20
+ssh client peer 45.171.228.254 assign ecc-key 45.171.228.254
+#
+ssh client publickey ecc rsa
+#
+ssh client cipher aes256_gcm aes128_gcm aes256_ctr aes192_ctr aes128_ctr
+ssh client hmac sha2_512 sha2_256
+ssh client key-exchange dh_group_exchange_sha256 dh_group_exchange_sha1 dh_group14_sha1 ecdh_sha2_nistp256 ecdh_sha2_nistp384 ecdh_sha2_nistp521
+#
+command-privilege level 1 view global display current-configuration all
+command-privilege level 1 view shell screen-length
+#
+user-interface maximum-vty 21
+#
+user-interface vty 0 4
+ authentication-mode aaa
+ user privilege level 3
+ protocol inbound ssh
+#
+local-aaa-server
+#
+return
