@@ -11,6 +11,8 @@
 # Flags: U - undoable, R - redoable, F - floating-undo
 #   ACTION                                   BY               POLICY
 # U ip service changed                       pwcomadmin       write
+# U ppp secret <powercom> changed            pwcomadmin       write
+# U ppp secret <powercom> changed            pwcomadmin       write
 # 
 # software id = RR06-YDKP
 #
@@ -130,7 +132,7 @@ add address=10.15.0.1/24 interface=VLAN-149-UPLINK-OLT-STAFE network=10.15.0.0
 add address=10.123.123.1/29 disabled=yes interface=ether7 network=10.123.123.0
 add address=10.110.11.1/30 interface=ether7 network=10.110.11.0
 add address=192.168.88.2/24 disabled=yes interface=ether9 network=192.168.88.0
-add address=192.168.1.1/24 comment="MNG OLT" interface=ether1 network=192.168.1.0
+add address=192.168.1.1/24 comment="MNG OLT" disabled=yes interface=ether1 network=192.168.1.0
 add address=10.101.101.129/27 interface=VLAN-145 network=10.101.101.128
 add address=10.0.7.1/24 comment="antena ubsolf vaquejada" disabled=yes interface=ether9 network=10.0.7.0
 add address=10.100.1.33/29 interface=ether3 network=10.100.1.32
@@ -211,7 +213,7 @@ add distance=1 dst-address=100.64.56.0/23 type=blackhole
 set telnet disabled=yes
 set ftp disabled=yes
 set www disabled=yes
-set ssh address=45.171.228.0/23,177.52.37.142/32,10.244.0.0/24,10.125.50.0/24 port=2221
+set ssh address="45.171.228.0/23,177.52.37.142/32,10.244.0.0/24,10.125.50.0/24,172.16.200.0/26" port=2221
 /ipv6 address
 add address=2804:5a10:eff:0:172:30:2:1b/126 advertise=no interface=VLAN-66-BGP
 /ipv6 route
@@ -227,7 +229,7 @@ add name=byjonas@adm password=Pw@11223344 profile=PPPoE.SANTA-FE service=pppoe
 add disabled=yes name=eduardo20 password=11223344 profile=PPPoE.SANTA-FE service=pppoe
 add name=fabio password=11223344 profile=PPPoE.SANTA-FE service=pppoe
 add local-address=45.171.229.10 name=temp password=temp remote-address=10.10.10.10 service=pppoe
-add name=powercom password=44332211 profile=PPPoE.SANTA-FE service=pppoe
+add local-address=45.171.229.10 name=powercom password=44332211 profile=PPPoE.SANTA-FE remote-address=45.171.228.107 service=pppoe
 /radius
 add address=45.171.228.19 comment="RADIUS SGP" disabled=yes secret=123456 service=ppp src-address=45.171.229.10 timeout=3s
 add accounting-port=3513 address=177.52.37.142 authentication-port=3512 comment="RADIUS SGP - POWERCOM (CLOUD)" disabled=yes secret=123456 service=ppp src-address=45.171.229.10 timeout=3s
