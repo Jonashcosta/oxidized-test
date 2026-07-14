@@ -1,0 +1,481 @@
+# Huawei Versatile Routing Platform Software
+# VRP (R) software, Version 5.170 (S6730 V200R022C00SPC500)
+# Copyright (C) 2000-2022 HUAWEI TECH Co., Ltd.
+# 
+# DDR             Memory Size : 4096  M bytes
+# FLASH Total     Memory Size : 2048  M bytes
+# FLASH Available Memory Size : 1654  M bytes
+# Pcb           Version   : VER.A
+# MAB           Version   : 8
+# BootROM       Version   : 0000.0528
+# BootLoad      Version   : 0216.0000
+# CPLD          Version   : 0107 
+# Software      Version   : VRP (R) Software, Version 5.170 (V200R022C00SPC500)
+# FLASH         Version   : 0000.0000
+# PWR1 information
+# Pcb           Version   : PWR VER.B
+# FAN1 information
+# Pcb           Version   : NA
+# FAN2 information
+# Pcb           Version   : NA
+# FAN3 information
+# Pcb           Version   : NA
+# FAN4 information
+# Pcb           Version   : NA
+# S6730-H24X6C's Device status:
+# Slot Sub  Type                   Online    Power    Register     Status   Role  
+# --------------------------------------------------------------------------------------
+# 0    -    S6730-H24X6C           Present   PowerOn  Registered   Normal   Master
+#      PWR1 POWER                  Present   PowerOn  Registered   Normal   NA    
+#      FAN1 FAN                    Present   PowerOn  Registered   Normal   NA    
+#      FAN2 FAN                    Present   PowerOn  Registered   Normal   NA    
+#      FAN3 FAN                    Present   PowerOn  Registered   Normal   NA    
+#      FAN4 FAN                    Present   PowerOn  Registered   Normal   NA    
+!Software Version V200R022C00SPC500
+#
+sysname SW-HUAWEI-6730-H24X6C-POP-SOBRADO
+#
+info-center loghost source LoopBack0
+info-center loghost 10.125.40.50 channel 6 port 20003 security-log operation-log
+#
+ipv6
+#
+vlan batch 51 to 52 55 1000 to 1014 1066 2000 to 2002 3210 to 3217 3220
+#
+lnp disable
+#
+authentication-profile name default_authen_profile
+authentication-profile name dot1x_authen_profile
+authentication-profile name dot1xmac_authen_profile
+authentication-profile name mac_authen_profile
+authentication-profile name multi_authen_profile
+authentication-profile name portal_authen_profile
+#
+set save-configuration interval 3600
+set save-configuration backup-to-server server 10.125.50.14 transport-type ftp user powercom password ****** path /SWiTH/SW-HUAWEI-6730-H24X6C-POP-SOBRADO
+#
+http server-source -i MEth0/0/1
+#
+dhcp enable
+#
+diffserv domain default
+#
+radius-server template default
+#
+mpls lsr-id 10.255.255.5
+mpls
+ mpls te
+ mpls rsvp-te
+ mpls te cspf
+#
+mpls l2vpn
+#
+vsi 2000
+ description CLIENTES-OLT-LD-to-BNG
+ pwsignal ldp
+  vsi-id 2000
+  peer 10.255.255.4
+ mtu 1600
+#
+vsi 2001
+ description CLIENTES-OLT-SOBRADO-to-BNG
+ pwsignal ldp
+  vsi-id 2001
+  peer 10.255.255.4
+ mtu 1600
+#
+mpls ldp
+#
+#
+mpls ldp remote-peer 10.125.130.2
+#
+rsa peer-public-key 10.125.125.2
+ public-key-code begin
+  30820109
+    02820100
+      E36E90AD 85BA7B81 2AA7C908 44A5A2CE 913C1111 734FB289 6B1D6D70 3AD76730
+      AC34A6B7 613ECB96 C527E8BC 00D98546 CD6A9272 84E41DBC 9119750E 0523ED5C
+      6DB9A7F3 060A821E F1183C46 A71BC8A4 9409F313 DB0A7AB8 315BAAD6 F1C80D1F
+      2DFDBDBE 847B055C 5D6278C7 02245E8C E07EE421 756AC37D E442BE79 53894965
+      333203BA 834211D1 1AD30DCE C98FC373 DC35F004 3F2F2D81 24342591 4569357D
+      9DF1F326 880DA452 FC0479B4 32BF1CC5 2B964DD5 96977824 D089B7D7 522BD0E5
+      ED418EEB F32485BA CACD2E5E 1B7E308E 4289B706 AF7C906D 8336959C 797259B4
+      55AC9097 18B6D065 D279BE19 0F9A4A73 D72D9133 E42D911A A0813195 BB0B61C7
+    0203
+      010001
+ public-key-code end
+peer-public-key end
+#
+rsa peer-public-key 10.125.125.22
+ public-key-code begin
+  30820109
+    02820100
+      E36E90AD 85BA7B81 2AA7C908 44A5A2CE 913C1111 734FB289 6B1D6D70 3AD76730
+      AC34A6B7 613ECB96 C527E8BC 00D98546 CD6A9272 84E41DBC 9119750E 0523ED5C
+      6DB9A7F3 060A821E F1183C46 A71BC8A4 9409F313 DB0A7AB8 315BAAD6 F1C80D1F
+      2DFDBDBE 847B055C 5D6278C7 02245E8C E07EE421 756AC37D E442BE79 53894965
+      333203BA 834211D1 1AD30DCE C98FC373 DC35F004 3F2F2D81 24342591 4569357D
+      9DF1F326 880DA452 FC0479B4 32BF1CC5 2B964DD5 96977824 D089B7D7 522BD0E5
+      ED418EEB F32485BA CACD2E5E 1B7E308E 4289B706 AF7C906D 8336959C 797259B4
+      55AC9097 18B6D065 D279BE19 0F9A4A73 D72D9133 E42D911A A0813195 BB0B61C7
+    0203
+      010001
+ public-key-code end
+peer-public-key end
+#
+pki realm default
+ certificate-check none
+#
+acl name LIBERADOS-SNMP 2999
+ rule 5 permit source 45.171.228.54 0
+ rule 6 permit source 172.16.200.10 0
+ rule 7 permit source 45.171.228.254 0
+ rule 8 permit source 45.171.228.51 0
+ rule 15 permit source 172.16.200.51 0
+ rule 20 permit source 172.16.200.40 0
+ rule 25 permit source 10.125.50.0 0.0.0.255
+ rule 99 deny
+#
+free-rule-template name default_free_rule
+#
+portal-access-profile name portal_access_profile
+#
+drop-profile default
+#
+vlan 51
+ description description SW-HUAWEI-6730-H24X6C-POP-SOBRADO-TO-SW-HUAWEI-6730-POP-BREJ
+vlan 52
+ description SW-HUAWEI-6730-H24X6C-POP-SOBRADO-TO-OLT-MA5600-MONTE-ALEGRE
+vlan 55
+ description P2P-BREJINHO-S6730-VIA-MONTE-ALEGRE
+vlan 2000
+ description S-VLAN-OLT-LP
+vlan 2001
+ description OLT-SOBRADO
+vlan 2002
+ description OLT-MA5600-MONTE-ALEGRE
+#
+aaa
+ authentication-scheme default
+  authentication-mode local
+ authentication-scheme radius
+  authentication-mode radius
+ authorization-scheme default
+  authorization-mode local
+ accounting-scheme default
+  accounting-mode none
+ local-aaa-user password policy administrator
+  password history record number 0
+  password expire 0
+ domain default
+  authentication-scheme radius
+  accounting-scheme default
+  radius-server default
+ domain default_admin
+  authentication-scheme default
+  accounting-scheme default
+ local-user jonas password irreversible-cipher $1c$l_s&*h'"PT$Kz7BKM#!5CGrI.*s\!0SQ$!HCqu@>B(U3H<(W>nI$
+ local-user jonas privilege level 15
+ local-user jonas service-type telnet terminal ssh
+ local-user oxidized password irreversible-cipher $1c$@L$V"RdMVF$^w':;b~)hGuNY[-D[^~2imkLJ=Vai6ss%5Ro~D),$
+ local-user oxidized privilege level 1
+ local-user oxidized service-type terminal ssh
+ local-user ppnetwork password irreversible-cipher $1c$XGNfA0rs)I$SQcfALB]}<1t.%O/~}z:Y~E2Fyq;1<e(V>88Q2$+$
+ local-user ppnetwork privilege level 15
+ local-user ppnetwork service-type telnet terminal ssh
+ local-user pwcomadmin password irreversible-cipher $1c$dTG+Gg}R^>$qb[^~j-SU~R=|"#8^NO;\rTV3["8N+B>'XU69IC0$
+ local-user pwcomadmin privilege level 15
+ local-user pwcomadmin service-type ssh http
+#
+ospfv3 1
+ router-id 10.255.255.5
+ import-route direct
+ import-route static
+ import-route unr
+#
+interface Vlanif1
+ ip address dhcp-alloc
+#
+interface Vlanif51
+ description SW-HUAWEI-6730-H24X6C-POP-SOBRADO-TO-SW-HUAWEI-6730-POP-BREJ
+ ipv6 enable
+ ip address 10.125.130.6 255.255.255.252
+ ipv6 address FEC0:CAFE::10:125:130:6/126
+ ipv6 address auto link-local
+ ospfv3 1 area 0.0.0.0
+ ospfv3 network-type p2p
+ ospf network-type p2p
+ ospf ldp-sync
+ ospf enable 1 area 0.0.0.0
+ mpls
+ mpls te
+ mpls rsvp-te
+ mpls ldp
+ statistic enable both
+#
+interface Vlanif52
+ description SW-HUAWEI-6730-H24X6C-POP-SOBRADO-TO-OLT-MA5600-MONTE-ALEGRE
+ ip address 10.125.130.9 255.255.255.252
+ ospf cost 4000
+ ospf network-type p2p
+ ospf enable 1 area 0.0.0.0
+ statistic enable both
+#
+interface Vlanif55
+ description P2P-BREJINHO-S6730-VIA-MONTE-ALEGRE
+ ipv6 enable
+ ip address 10.125.130.13 255.255.255.252
+ ipv6 address auto link-local
+ ospf cost 50
+ ospf network-type p2p
+ ospf ldp-sync
+ ospf enable 1 area 0.0.0.0
+ mpls
+ mpls te
+ mpls rsvp-te
+ mpls ldp
+ statistic enable both
+#
+interface Vlanif1000
+ description CLIENTES-MONTE-ALEGRE-VIA-SOBRADO
+ mpls l2vc 10.255.255.4 3000 mtu 9198 control-word
+#
+interface Vlanif1001
+ description CLIENTES-MONTE-ALEGRE-VIA-SOBRADO
+ mpls l2vc 10.255.255.4 3001 mtu 9198 control-word
+#
+interface Vlanif1002
+ description CLIENTES-MONTE-ALEGRE-VIA-SOBRADO
+ mpls l2vc 10.255.255.4 3002 mtu 9198 control-word
+#
+interface Vlanif1003
+ description CLIENTES-MONTE-ALEGRE-VIA-SOBRADO
+ mpls l2vc 10.255.255.4 3003 mtu 9198 control-word
+#
+interface Vlanif1004
+ description CLIENTES-MONTE-ALEGRE-VIA-SOBRADO
+ mpls l2vc 10.255.255.4 3004 mtu 9198 control-word
+#
+interface Vlanif1005
+ description CLIENTES-MONTE-ALEGRE-VIA-SOBRADO
+ mpls l2vc 10.255.255.4 3005 mtu 9198 control-word
+#
+interface Vlanif1006
+ description CLIENTES-MONTE-ALEGRE-VIA-SOBRADO
+ mpls l2vc 10.255.255.4 3006 mtu 9198 control-word
+#
+interface Vlanif1007
+ description CLIENTES-MONTE-ALEGRE-VIA-SOBRADO
+ mpls l2vc 10.255.255.4 3007 mtu 9198 control-word
+#
+interface Vlanif1008
+ description CLIENTES-MONTE-ALEGRE-VIA-SOBRADO
+ mpls l2vc 10.255.255.4 3008 mtu 9198 control-word
+#
+interface Vlanif1009
+ description CLIENTES-MONTE-ALEGRE-VIA-SOBRADO
+ mpls l2vc 10.255.255.4 3009 mtu 9198 control-word
+#
+interface Vlanif1010
+ description CLIENTES-MONTE-ALEGRE-VIA-SOBRADO
+ mpls l2vc 10.255.255.4 3010 mtu 9198 control-word
+#
+interface Vlanif1011
+ description CLIENTES-MONTE-ALEGRE-VIA-SOBRADO
+ mpls l2vc 10.255.255.4 3011 mtu 9198 control-word
+#
+interface Vlanif1012
+ description CLIENTES-MONTE-ALEGRE-VIA-SOBRADO
+ mpls l2vc 10.255.255.4 3012 mtu 9198 control-word
+#
+interface Vlanif1013
+ description CLIENTES-MONTE-ALEGRE-VIA-SOBRADO
+ mpls l2vc 10.255.255.4 3013 mtu 9198 control-word
+#
+interface Vlanif1014
+ description CLIENTES-MONTE-ALEGRE-VIA-SOBRADO
+ mpls l2vc 10.255.255.4 3014 mtu 9198 control-word
+#
+interface Vlanif1066
+ description CLIENTES-MONTE-ALEGRE-VIA-SOBRADO-AD
+ mpls l2vc 10.255.255.4 3200 mtu 9198 control-word
+#
+interface Vlanif2000
+ description CLIENTES-OLT-LP-to-BNG
+ mtu 1600
+ l2 binding vsi 2000
+#
+interface Vlanif2001
+ description CLIENTES-OLT-SOBRADO-to-BNG
+ l2 binding vsi 2001
+#
+interface MEth0/0/1
+ ip address 192.168.1.253 255.255.255.0
+#
+interface Eth-Trunk10
+ description SW-HUAWEI-6730-H24X6C-POP-SOBRADO-TO-SW-HUAWEI-6730-POP-BREJ-ETH-TRUNK10
+ bandwidth 10000
+ port link-type hybrid
+ port hybrid tagged vlan 51 65 67 to 68 89 1660 2002
+ stp disable
+#
+interface Eth-Trunk11
+ description SW-HUAWEI-6730-H24X6C-POP-SOBRADO-TO-OLT-MA5600-MONTE-ALEGRE
+ bandwidth 10000
+ port link-type trunk
+ undo port trunk allow-pass vlan 1
+ port trunk allow-pass vlan 52 55 1000 to 1014 1066
+#
+interface XGigabitEthernet0/0/1
+ description OLT-LD
+ port link-type dot1q-tunnel
+ port default vlan 2000
+#
+interface XGigabitEthernet0/0/2
+#
+interface XGigabitEthernet0/0/3
+#
+interface XGigabitEthernet0/0/4
+ description OLT-MA5800-X2-SOBRADO
+ port link-type dot1q-tunnel
+ port default vlan 2001
+#
+interface XGigabitEthernet0/0/5
+#
+interface XGigabitEthernet0/0/6
+#
+interface XGigabitEthernet0/0/7
+#
+interface XGigabitEthernet0/0/8
+#
+interface XGigabitEthernet0/0/9
+#
+interface XGigabitEthernet0/0/10
+#
+interface XGigabitEthernet0/0/11
+#
+interface XGigabitEthernet0/0/12
+#
+interface XGigabitEthernet0/0/13
+#
+interface XGigabitEthernet0/0/14
+#
+interface XGigabitEthernet0/0/15
+#
+interface XGigabitEthernet0/0/16
+#
+interface XGigabitEthernet0/0/17
+#
+interface XGigabitEthernet0/0/18
+#
+interface XGigabitEthernet0/0/19
+#
+interface XGigabitEthernet0/0/20
+#
+interface XGigabitEthernet0/0/21
+#
+interface XGigabitEthernet0/0/22
+ description SW-HUAWEI-6730-H24X6C-POP-SOBRADO-TO-OLT-MA5600-MONTE-ALEGRE-0/0/3
+ eth-trunk 11
+#
+interface XGigabitEthernet0/0/23
+#
+interface XGigabitEthernet0/0/24
+ description SW-HUAWEI-6730-H24X6C-POP-SOBRADO-TO-SW-HUAWEI-6730-POP-BREJ-XG0/0/32
+ eth-trunk 10
+#
+interface 40GE0/0/1
+#
+interface 40GE0/0/2
+#
+interface 40GE0/0/3
+#
+interface 40GE0/0/4
+#
+interface 40GE0/0/5
+#
+interface 40GE0/0/6
+#
+interface NULL0
+#
+interface LoopBack0
+ ip address 10.255.255.5 255.255.255.255
+#
+ospf 1 router-id 10.255.255.5
+ import-route direct
+ import-route static
+ import-route unr
+ area 0.0.0.0
+#
+undo icmp name timestamp-request receive
+#
+snmp-agent
+snmp-agent acl LIBERADOS-SNMP
+snmp-agent local-engineid 800007DB03949010B958E0
+snmp-agent community read cipher ******
+snmp-agent sys-info version v2c v3
+snmp-agent protocol source-status all-interface
+undo snmp-agent protocol source-status ipv6 all-interface
+#
+stelnet server enable
+ssh user jonas
+ssh user jonas authentication-type all
+ssh user jonas service-type all
+ssh user ppnetwork
+ssh user ppnetwork authentication-type password
+ssh user ppnetwork service-type all
+ssh client first-time enable
+ssh client 10.125.125.2 assign rsa-key 10.125.125.2
+ssh client 10.125.125.22 assign rsa-key 10.125.125.22
+ssh server-source all-interface
+ssh server cipher aes256_ctr aes128_ctr
+ssh server hmac sha2_256
+ssh server key-exchange dh_group16_sha512 dh_group15_sha512 dh_group14_sha256 dh_group_exchange_sha256
+ssh client cipher aes256_ctr aes128_ctr
+ssh client hmac sha2_256
+ssh client key-exchange dh_group16_sha512 dh_group15_sha512 dh_group14_sha256 dh_group_exchange_sha256
+ssh server dh-exchange min-len 2048
+ssh server publickey rsa_sha2_512 rsa_sha2_256
+#
+command-privilege level 1 view shell display current-configuration all
+#
+user-interface con 0
+ authentication-mode password
+ set authentication password cipher $1c$fw7&'}w,G4$jZgW&lV;`-9Q/0#R[}D;c%19+W1n1Px3LzLZ3E62$
+user-interface vty 0 4
+ authentication-mode aaa
+user-interface vty 16 20
+#
+wlan
+ traffic-profile name default
+ security-profile name default
+ security-profile name default-wds
+ security-profile name default-mesh
+ ssid-profile name default
+ vap-profile name default
+ wds-profile name default
+ mesh-handover-profile name default
+ mesh-profile name default
+ regulatory-domain-profile name default
+ air-scan-profile name default
+ rrm-profile name default
+ radio-2g-profile name default
+ radio-5g-profile name default
+ wids-spoof-profile name default
+ wids-whitelist-profile name default
+ wids-profile name default
+ ap-system-profile name default
+ port-link-profile name default
+ wired-port-profile name default
+ ap-group name default
+ provision-ap
+#
+dot1x-access-profile name dot1x_access_profile
+#
+mac-access-profile name mac_access_profile
+#
+ops
+#
+remote-unit
+#
+return
