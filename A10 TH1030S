@@ -1,0 +1,374 @@
+! partition: shared! ! COMMAND: show version
+! Thunder Series Unified Application Service Gateway TH1030S
+!   Copyright 2007-2023 by A10 Networks, Inc.  All A10 Networks products are
+!   protected by one or more of the following US patents:
+!   10749904, 10742559, 10735267, 10708150, 10686683, 10659354, 10637717
+!   10630784, 0623992,  RE47924,  10601788, 10599680, 10594600, 10581976
+!   10581907, 10554517, 10536517, 10536481, 10530847, 10523748, 10516730
+!   10516577, 10505984, 10505964, 10491523, 10484465, 10469594, 10454844
+!   10447775, 10411956, 10397270, 10389835, 10389538, 10382562, 10360365
+!   10348631, 10341427, 10341335, 10341118, 10334030, 10318288, 10305904
+!   10305859, 10298457, 10268467, 10257101, 10250629, 10250475, 10243791
+!   RE47296,  10230770, 10187423, 10187377, 10178165, 10158627, 10129122
+!   10116634, 10110429, 10091237, 10069946, 10063591, 10044582, 10038693
+!   10027761, 10021174, 10020979, 10002141, 9992229,  9992107,  9986061
+!   9979801, 9979665, 9961136, 9961135, 9961130, 9960967, 9954899, 9954868
+!   9942162, 9942152, 9912555, 9912538, 9906591, 9906422, 9900343, 9900252
+!   9860271, 9848013, 9843599, 9843521, 9843484, 9838472, 9838425, 9838423
+!   9825943, 9806943, 9787581, 9756071, 9742879, 9722918, 9712493, 9705800
+!   9661026, 9621575, 9609052, 9602442, 9596286, 9596134, 9584318, 9544364
+!   9537886, 9531846, 9497201, 9477563, 9398011, 9386088, 9356910, 9350744
+!   9344456, 9344421, 9338225, 9294503, 9294467, 9270774, 9270705, 9258332
+!   9253152, 9231915, 9219751, 9215275, 9154584, 9154577, 9124550, 9122853
+!   9118620, 9118618, 9106561, 9094364, 9060003, 9032502, 8977749, 8943577
+!   8918857, 8914871, 8904512, 8897154, 8868765, 8849938, 8826372, 8813180
+!   8782751, 8782221, RE44701, 8595819, 8595791, 8595383, 8584199, 8464333
+!   8423676, 8387128, 8332925, 8312507, 8291487, 8266235, 8151322, 8079077
+!   7979585, 7804956, 7716378, 7665138, 7675854, 7647635, 7627672, 7596695
+!   7577833, 7552126, 7392241, 7236491, 7139267, 6748084, 6658114, 6535516
+!   6363075, 6324286, 8392563, 8103770, 7831712, 7606912, 7346695, 7287084
+!   6970933, 6473802, 6374300
+! 
+!           64-bit Advanced Core OS (ACOS) version 4.1.4-GR1-P13, build 44 (Oct-16-2023,01:24)
+!           Booted from Hard Disk primary image
+!           Number of control CPUs is set to 1
+!           Serial Number: TH10B43317311016
+!           aFleX version: 2.0.0
+!           GUI primary image (default) version 4_1_4-GR1-P13-4_1_4-GR1-P13-6
+!           GUI secondary image version 2_7_1-GR1-P1-2_7_1-GR1-P1-142
+!           aXAPI version: 3.0
+!           Cylance version: N/A
+!           Hard Disk primary image (default) version 4.1.4-GR1-P13, build 44
+!           Hard Disk secondary image version 2.7.1-GR1-P1, build 142
+!           Last configuration saved at <removed>
+!           Hardware: 8 CPUs(Stepping 9), Single 74G drive, Free storage is <removed>
+!           Total System Memory <removed>
+!           Hardware Manufacturing Code: 173111
+!           Current time is <removed>
+!           The system has been up <removed>
+! ! COMMAND: show bootimage
+!                       (* = Default)
+!                           Version
+! -----------------------------------------------
+! Hard Disk primary         4.1.4-GR1-P13.44 (*)
+! Hard Disk secondary       2.7.1-GR1-P1.142
+! ! COMMAND: show license
+! Host ID: 51AD2A1BDFD95B9B8DE9F48C3A9F7A096CC1B4F1
+! COMMAND: show partition-config all
+!Current configuration <removed>
+!Configuration last updated at <removed>
+!Configuration last saved at <removed>
+!64-bit Advanced Core OS (ACOS) version 4.1.4-GR1-P13, build 44 (Oct-16-2023,01:24)
+!
+multi-config enable 
+!
+system resource-usage nat-pool-addr-count 2000 
+!
+terminal idle-timeout 0 
+!
+ip access-list PERMITIDO 
+  permit ip host 45.171.228.91 any 
+  permit ip host 45.171.229.6 any 
+  permit ip 45.178.100.0 0.0.3.255 any 
+  permit ip 45.185.96.0 0.0.1.255 any 
+  deny ip any any 
+!
+ip access-list srcnat 
+  permit ip 192.168.11.10 0.0.0.0 any 
+!
+ip nat-global reset-idle-tcp-conn 
+!
+vlan 567 
+  tagged trunk 10
+  router-interface ve 567 
+  name Vlan-Outside 
+!
+vlan 568 
+  tagged trunk 10
+  router-interface ve 568 
+  name Vlan-Inside 
+!
+lacp system-priority 10 
+!
+ve-stats enable 
+!
+lldp system-name cgnat_a10 
+lldp enable rx tx 
+lldp notification interval 30 
+!
+hostname PWCOM-A10-CGN-TH1030S 
+!
+timezone America/Buenos_Aires 
+!
+ntp server 200.160.0.8 
+  prefer 
+!
+ntp server c.ntp.br 
+!
+ntp server 200.20.186.76 
+  prefer 
+!
+ntp server 200.189.40.8 
+  prefer 
+!
+interface management 
+  ip address 172.31.31.31 255.255.255.0 
+  ip default-gateway 172.31.31.1 
+!
+interface ethernet 1 
+  enable 
+!
+interface ethernet 2 
+  enable 
+!
+interface ethernet 3 
+  enable 
+!
+interface ethernet 4 
+  enable 
+!
+interface ethernet 5 
+  enable 
+!
+interface ethernet 6 
+  enable 
+!
+interface ethernet 7 
+  enable 
+!
+interface ethernet 8 
+  enable 
+!
+interface ethernet 9 
+  name lacp 
+  enable 
+  trunk-group 10 lacp 
+!
+interface ethernet 10 
+  name lacp 
+  enable 
+  trunk-group 10 lacp 
+!
+interface trunk 10 
+!
+interface ve 567 
+  name Traffic-Inside 
+  ip address 172.30.10.2 255.255.255.252 
+  ip nat inside 
+!
+interface ve 568 
+  name Traffic-Outside 
+  ip address 172.30.10.6 255.255.255.252 
+  ip nat outside 
+!
+interface loopback 0 
+  ip address 45.171.228.3 255.255.255.255 
+!
+interface loopback 2 
+  ip address 45.171.228.36 255.255.255.255 
+!
+!
+ip nat alg pptp enable 
+!
+class-list Customer 
+  100.64.0.0/16 lsn-lid 1 
+  100.67.0.0/22 lsn-lid 1 
+!
+enable-management service ssh 
+  ve 567 to 568 
+!
+enable-management service http 
+  ve 567 to 568 
+!
+enable-management service https 
+  ve 567 to 568 
+!
+enable-management service snmp 
+  ve 567 to 568 
+!
+ip mgmt-traffic ntp source-interface loopback 0 
+!
+ip route 0.0.0.0 /0 172.30.10.5 
+!
+ip route 10.125.40.0 /24 172.30.10.1 
+!
+ip route 45.171.228.26 /32 172.30.10.1 
+!
+ip route 100.64.0.0 /10 172.30.10.1 
+!
+slb resource-usage nat-pool-addr-count 2000 
+slb resource-usage real-port-count 4096 
+slb resource-usage real-server-count 2048 
+slb resource-usage service-group-count 4096 
+slb resource-usage virtual-port-count 2048 
+slb resource-usage virtual-server-count 1024 
+slb resource-usage health-monitor-count 512 
+!
+ip-list POOL-INSIDE-01 
+  100.66.0.0 to 100.66.1.255 
+!
+ip-list POOL-OUTSIDE-01 
+  45.171.228.48 to 45.171.228.63 
+!
+cgnv6 server graylog 10.125.40.50 
+  health-check-disable 
+  port 55514 udp 
+    health-check-disable 
+!
+cgnv6 server syslog 10.125.50.106 
+  port 55514 udp 
+    health-check-disable 
+!
+cgnv6 service-group syslog udp 
+  traffic-replication-type mirror-ip-repl 
+  member graylog 55514 
+  member syslog 55514 
+!
+cgnv6 template logging lsn_logging 
+  log port-overloading 
+  log user-data 
+  severity informational 
+  format rfc5424 
+  service-group syslog 
+  disable-log-by-destination 
+    icmp 
+!
+cgnv6 ddos-protection disable-nat-ip-by-bgp zone DDOS 
+!
+cgnv6 lsn alg esp enable 
+!
+cgnv6 lsn alg pptp enable 
+!
+cgnv6 lsn alg rtsp enable 
+!
+cgnv6 lsn alg sip enable 
+!
+cgnv6 lsn alg mgcp enable 
+!
+cgnv6 lsn alg h323 enable 
+!
+cgnv6 lsn alg tftp enable 
+!
+cgnv6 lsn endpoint-independent-mapping tcp 
+  port 1 to 65535 
+!
+cgnv6 lsn endpoint-independent-mapping udp 
+  port 1 to 65535 
+!
+cgnv6 lsn endpoint-independent-filtering tcp 
+  port 1 to 65535 
+!
+cgnv6 lsn endpoint-independent-filtering udp 
+  port 1 to 65535 
+!
+cgnv6 lsn inside source class-list Customer 
+!
+cgnv6 nat pool IPV4-DEST-NAT-228.35 45.171.228.35 45.171.228.35 netmask /32 
+!
+cgnv6 nat pool POOL-PUBLIC-32 45.165.128.201 45.165.128.201 netmask /32 max-users-per-ip 128 port-batch-v2-size 128 simultaneous-batch-allocation per-batch-port-usage-warning-threshold 128 usable-nat-ports 1024 65535 
+!
+cgnv6 nat pool lsn-1 45.171.228.128 45.171.228.255 netmask /25 port-batch-v2-size 1024 simultaneous-batch-allocation 
+!
+cgnv6 nat pool lsn-2 45.171.229.128 45.171.229.255 netmask /25 port-batch-v2-size 1024 simultaneous-batch-allocation 
+!
+cgnv6 lsn ip-selection round-robin 
+cgnv6 lsn logging default-template lsn_logging 
+!
+cgnv6 nat icmp always-source-nat-errors 
+!
+cgnv6 nat pool-group IP-AD 
+  member POOL-PUBLIC-32 
+!
+cgnv6 nat pool-group IPV4-DEST-NAT 
+  member IPV4-DEST-NAT-228.35 
+!
+cgnv6 nat pool-group TEMP_NAT 
+  member lsn-1 
+  member lsn-2 
+!
+cgnv6 resource-usage lsn-nat-addr-count 2000 
+!
+cgnv6 lsn-rule-list DESTINOS-NAT-01 
+  ip 177.20.150.228/32 
+    tcp port 0 action snat pool POOL-PUBLIC-32 
+    udp port 0 action snat pool POOL-PUBLIC-32 
+    icmp action snat pool POOL-PUBLIC-32 
+!
+cgnv6 lsn-rule-list DESTINOS-NAT-02 
+  domain-name webmail-seguro.com.br 
+    tcp port 0 action snat pool POOL-PUBLIC-32 
+    udp port 0 action snat pool POOL-PUBLIC-32 
+    icmp action snat pool POOL-PUBLIC-32 
+!
+cgnv6 lsn-lid 1 
+  name LSN-1 
+  respond-to-user-mac 
+  lsn-rule-list destination DESTINOS-NAT-01 
+  source-nat-pool TEMP_NAT 
+!
+cgnv6 lsn-lid 2 
+  name SERVIDORES 
+  respond-to-user-mac 
+  source-nat-pool IPV4-DEST-NAT-228.35 
+!
+cgnv6 lsn port-reservation inside 10.125.40.22 3000 3000 nat 45.171.228.35 3001 3001 
+!
+cgnv6 fixed-nat create-port-mapping-file 
+cgnv6 fixed-nat port-mapping-files-count 10 
+!
+cgnv6 fixed-nat inside ip-list POOL-INSIDE-01 nat ip-list POOL-OUTSIDE-01 method use-all-nat-ips offset 0 respond-to-user-mac session-quota 1600 
+!
+cgnv6 logging sampling-enable tcp-port-allocated 
+cgnv6 logging sampling-enable udp-port-allocated 
+cgnv6 logging sampling-enable udp-port-batch-allocated 
+cgnv6 logging sampling-enable tcp-port-batch-allocated 
+cgnv6 logging sampling-enable udp-session-created 
+cgnv6 logging sampling-enable tcp-session-created 
+cgnv6 logging sampling-enable tcp-session-deleted 
+cgnv6 logging sampling-enable udp-session-deleted 
+!
+cgnv6 logging nat-resource-exhausted level warning 
+!
+logging monitor alert 
+!
+logging console emergency 
+!
+logging buffered 10000 
+logging buffered disable 
+!
+bgp extended-asn-cap 
+!
+router bgp 65001 
+  bgp router-id 45.171.228.3 
+  neighbor 172.30.10.5 remote-as 268746 
+  neighbor 172.30.10.5 acos-application-only 
+  neighbor 172.30.10.5 ebgp-multihop 255 
+  neighbor 172.30.10.5 enforce-multihop 
+  neighbor 172.30.10.5 route-map DENY-ALL out 
+  neighbor 172.30.10.5 route-map DDOS in 
+  neighbor 172.30.10.5 update-source 172.30.10.6 
+!
+route-map DDOS permit 10 
+  set ddos zone DDOS 
+!
+route-map DENY-ALL deny 99 
+!
+sflow setting local-collection 
+!
+sflow collector ip 127.0.0.1 6343 
+!
+snmp-server SNMPv1-v2c user a10 
+  community read encrypted 4ko7ggXZfQH7y2EcVA0OR3+2sLZG9rimegzUu0PSsR488UABSEHruH4+H5rPTbdH 
+!
+snmp-server enable service 
+!
+!
+end
+!Current config commit point for partition 0 is 0 & config mode is classical-mode
+! COMMAND: show running-config all-partitions
+                                             ^
+% Unrecognized command.Invalid input detected at '^' marker.
+
+! ! COMMAND: show aflex all-partitions
+! partition: shared
+! No aFleX is found in current partition.
