@@ -358,7 +358,7 @@ sflow setting local-collection
 sflow collector ip 127.0.0.1 6343 
 !
 snmp-server SNMPv1-v2c user a10 
-  community read encrypted 4ko7ggXZfQHSPiWqUnsgCsYb1jDnCf/QO2XCjWTpbOKZWGa/8j75w+s0tlIj7prf 
+  community read encrypted 4ko7ggXZfQHbVh2N5yf8z8YhG8WTa15u4wJttqS317H2C3fdg7VztPqwWglbD9g0 
 !
 snmp-server enable service 
 !
