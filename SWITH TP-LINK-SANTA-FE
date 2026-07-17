@@ -1,18 +1,21 @@
-!  Device Name          - T1700G-28TQ
-!  Device Location      - SHENZHEN
-!  Contact Information  - www.tp-link.com
-!  MAC                  - 50-D4-F7-75-CE-17
-!  System Time          - <stripped>
-! Device Info
-! Unit 1
-!  Unit State                 - Ready
-!  Hardware Version           - T1700G-28TQ 3.0
-!  Firmware Version           - 3.0.0 Build 20190108 Rel.62365(s)
-!  Bootloader Version         - TP-LINK  BOOTUTIL(v1.0.0)
-!  Serial Number              - 2197823000114
-!  Running Time               - <stripped>
-!  Power Supply Module        - Operational
-!  Redundant Power Supply     - Not Support
+! T1700G-28TQ# Master Unit ID       - 1
+ System Description   - JetStream 24-Port Gigabit Stackable Smart Switch with 4 10GE SFP+ Slots
+ Device Name          - T1700G-28TQ
+ Device Location      - SHENZHEN
+ Contact Information  - www.tp-link.com
+ MAC                  - 50-D4-F7-75-CE-17
+ System Time          - 2006-02-21 08:12:38
+Device Info
+Unit 1
+ Unit State                 - Ready
+ Hardware Version           - T1700G-28TQ 3.0
+ Firmware Version           - 3.0.0 Build 20190108 Rel.62365(s)
+ Bootloader Version         - TP-LINK  BOOTUTIL(v1.0.0)
+ Serial Number              - 2197823000114
+ Running Time               - 51 day - 0 hour - 13 min - 43 sec
+ Power Supply Module        - Operational
+ Redundant Power Supply     - Not Support
+T1700G-28TQ#show running-config
 !T1700G-28TQRev3
  vlan 66
  name "LINK-SANTA-FEp20"
@@ -141,5 +144,4 @@ interface ten-gigabitEthernet 1/0/27
 interface ten-gigabitEthernet 1/0/28
  description "P2P-BREJ-S6730"
  switchport general allowed vlan 66,96,112,145-149,605,1100-1115 tagged
-T1700G-28TQ# 
-[1
+T1700G-28TQ#
