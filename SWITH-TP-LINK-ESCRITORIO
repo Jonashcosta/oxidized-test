@@ -1,12 +1,9 @@
-! T1700G-28TQ#show system-info
-!  Master Unit ID       - 1
-!  System Description   - JetStream 24-Port Gigabit Stackable Smart Switch with 4 10GE SFP+ Slots
 !  Device Name          - T1700G-28TQ
 !  Device Location      - SHENZHEN
 !  Contact Information  - www.tp-link.com
 !  MAC                  - 50-C7-BF-14-3B-1D
 !  System Time          - <stripped>
-!  Running Time:        - 2 day - 3 hour - 36 min - 18 sec
+!  Running Time:        - 2 day - 4 hour - 36 min - 21 sec
 ! Device Info
 ! Unit 1
 !  Unit State                 - Ready
@@ -123,7 +120,3 @@ interface ten-gigabitEthernet 1/0/28
  interface vlan 1
    ipv6 enable
 T1700G-28TQ#
-T1700G-28TQ#  
-[2D
-T1700G-28TQ# 
-[1
