@@ -1100,6 +1100,8 @@ ont-srvprofile-id 200 desc "9604 - 9604"
 ont-srvprofile-id 200 desc "9620 - 9620" 
  ont add 6 49 sn-auth "414C434CFE10D55F" omci ont-lineprofile-id 200 
 ont-srvprofile-id 200 desc "9640 - 9640" 
+ ont add 6 50 sn-auth "54504C47B5353478" omci ont-lineprofile-id 200 
+ont-srvprofile-id 199 desc "Vaquejada" 
  ont add 7 0 sn-auth "54504C47B52398F1" omci ont-lineprofile-id 200 
 ont-srvprofile-id 199 desc "5848" 
  ont add 7 1 sn-auth "46485454FE27E9AC" omci ont-lineprofile-id 200 
@@ -1877,8 +1879,6 @@ ont-srvprofile-id 199 desc "24867 - alistamento"
 ont-srvprofile-id 199 desc "24864 - anexoadm" 
  ont add 14 22 sn-auth "495442530A481E23" omci ont-lineprofile-id 200 
 ont-srvprofile-id 199 desc "7055" 
- ont add 14 24 sn-auth "464854546A0EDAB0" omci ont-lineprofile-id 200 
-ont-srvprofile-id 199 desc "24937 - montecreas" 
  ont add 14 25 sn-auth "495442535F6BE2DA" omci ont-lineprofile-id 200 
 ont-srvprofile-id 199 desc "celiomario2@mact" 
  ont add 14 26 sn-auth "495442535F7E2229" omci ont-lineprofile-id 200 
@@ -2266,6 +2266,7 @@ ont-srvprofile-id 200 desc "9257 - 9257"
  ont port native-vlan 6 33 eth 1 vlan 200 priority 0 
  ont port native-vlan 6 35 eth 1 vlan 200 priority 0 
  ont port native-vlan 6 41 eth 1 vlan 200 priority 0 
+ ont port native-vlan 6 50 eth 1 vlan 200 priority 0 
  ont port native-vlan 7 0 eth 1 vlan 200 priority 0 
  ont port native-vlan 7 2 eth 1 vlan 200 priority 0 
  ont port native-vlan 7 5 eth 1 vlan 200 priority 0 
@@ -2444,7 +2445,6 @@ ont-srvprofile-id 200 desc "9257 - 9257"
  ont port native-vlan 14 20 eth 1 vlan 200 priority 0 
  ont port native-vlan 14 21 eth 1 vlan 200 priority 0 
  ont port native-vlan 14 22 eth 1 vlan 200 priority 0 
- ont port native-vlan 14 24 eth 1 vlan 200 priority 0 
  ont port native-vlan 14 25 eth 1 vlan 200 priority 0 
  ont port native-vlan 14 26 eth 1 vlan 200 priority 0 
  ont port native-vlan 14 27 eth 1 vlan 200 priority 0 
@@ -2842,8 +2842,6 @@ user-vlan 200 tag-transform translate
  service-port 255 vlan 1006 gpon 0/1/6 ont 24 gemport 200 multi-service 
 user-vlan 200 tag-transform translate
  service-port 256 vlan 1014 gpon 0/1/14 ont 32 gemport 200 multi-service 
-user-vlan 200 tag-transform translate
- service-port 257 vlan 1660 gpon 0/1/14 ont 24 gemport 200 multi-service 
 user-vlan 200 tag-transform translate
  service-port 259 vlan 1010 gpon 0/1/10 ont 4 gemport 200 multi-service 
 user-vlan 200 tag-transform translate
@@ -4116,6 +4114,8 @@ user-vlan 200 tag-transform translate
  service-port 1100 vlan 1010 gpon 0/1/10 ont 3 gemport 200 multi-service 
 user-vlan 200 tag-transform translate
  service-port 1101 vlan 1008 gpon 0/1/8 ont 60 gemport 200 multi-service 
+user-vlan 200 tag-transform translate
+ service-port 1102 vlan 1006 gpon 0/1/6 ont 50 gemport 200 multi-service 
 user-vlan 200 tag-transform translate
 #
 [autobackup-config]
