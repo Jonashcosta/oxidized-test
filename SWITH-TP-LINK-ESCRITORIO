@@ -1,22 +1,18 @@
-! terminal length 0
-! ------------^
-! Error: Bad command
-! T1700G-28TQ# Master Unit ID       - 1
- System Description   - JetStream 24-Port Gigabit Stackable Smart Switch with 4 10GE SFP+ Slots
- Device Name          - T1700G-28TQ
- Device Location      - SHENZHEN
- Contact Information  - www.tp-link.com
- MAC                  - 50-C7-BF-14-3B-1D
- System Time          - 2006-01-05 05:53:28
- Running Time:        - 3 day - 21 hour - 54 min - 30 sec
-Device Info
-Unit 1
- Unit State                 - Ready
- Hardware Version           - T1700G-28TQRev1
- Firmware Version           - 1.0.2 Build 20160108 Rel.59984(s)
- Power Supply Module        - Operational
- Redundant Power Supply     - Not Support
-T1700G-28TQ#show running-config
+! T1700G-28TQ#show system-info
+!  Master Unit ID       - 1
+!  System Description   - JetStream 24-Port Gigabit Stackable Smart Switch with 4 10GE SFP+ Slots
+!  Device Name          - T1700G-28TQ
+!  Device Location      - SHENZHEN
+!  Contact Information  - www.tp-link.com
+!  MAC                  - 50-C7-BF-14-3B-1D
+!  System Time          - <stripped>
+!  Running Time:        - 3 day - 22 hour - 54 min - 33 sec
+! Device Info
+! Unit 1
+!  Unit State                 - Ready
+!  Hardware Version           - T1700G-28TQRev1
+!  Firmware Version           - 1.0.2 Build 20160108 Rel.59984(s)
+!  Power Supply Module        - Operational
 !T1700G-28TQRev1
  vlan 9
  name "AGINET"
