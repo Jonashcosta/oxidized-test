@@ -297,14 +297,14 @@ ont-srvprofile-id 200 desc "9014 - 8493"
  ont add 0 1 sn-auth "ITBSE87CB86E" omci ont-lineprofile-id 200 
 ont-srvprofile-id 199 desc "3784 - franciscatorres@bjps" 
  ont ipconfig 0 1 pppoe vlan 200 priority 5 user-account username "eventoap" 
-password "%$%#cV(!!!!!!!!!!!!-4vq"bg\$>'K(z(oKyV+=f5V2V8!;M@@/T3Ht]o+@Xl*5tI%bXWxHK'P|}I7LV4R~&>pxI>%y=W:2|OFlRKrYFH{[E{ox5D-..+3i6C-VL%hAY%$%#"
+password "%$%#cV(!!!!!!!!!!!!lrOI<LZg5>sa`D6.MN#P5Y/9%DwA&IB>1<C.pm^Pr9*jK+xI[YH$Z9>k2o11;aN%IBr[MU$c}t"MI1b(cF|K8BC(PNSOl8U].*_"}i{F1Nrd$K%$%#"
  ont tr069-server-config 0 1 profile-id 1
  ont internet-config 0 1 ip-index 0
  ont wan-config 0 1 ip-index 0 profile-id 10
  ont add 0 2 sn-auth "HWTC3E9959AE" omci ont-lineprofile-id 500 
 ont-srvprofile-id 200 desc "7319 - 7319" 
  ont ipconfig 0 2 pppoe vlan 200 priority 5 user-account username "7319" 
-password "%$%#cV(!!!!!!!!!!!!UusPUPB"1Oe@)EUqZ_1S7W>*//8A^V@JAD2+n3}#.MY%N7|K!8!S7O7{+!s6MNaCGB"}j*#rSD4`tfn2ykby@#C7eCEAc,PUzYGPt6{p,;(pZE%$%#"
+password "%$%#cV(!!!!!!!!!!!!u)5wB}H5|&(9R`Sv;Hi%&mVzKr&Se$[Z*#:jJgfMmb.W=.(:$6}H5yDj\[M%bSLhR18KIPD-W^.ma\sRXQpf*T%'t@7J(9Cm>Vm1*uWmApqAR#%$%#"
  ont tr069-server-config 0 2 profile-id 2
  ont internet-config 0 2 ip-index 0
  ont wan-config 0 2 ip-index 0 profile-id 10
@@ -381,7 +381,7 @@ ont-srvprofile-id 200 desc "9371 - 9371"
  ont add 0 39 sn-auth "HWTCF30E4AA7" omci ont-lineprofile-id 500 
 ont-srvprofile-id 200 desc "5764 - 5764" 
  ont ipconfig 0 39 pppoe vlan 200 priority 5 user-account username "5764" 
-password "%$%#cV(!!!!!!!!!!!!9HOaNhF\U.k#o1~6<^[C9f"MB1SVhFR<D~2O8+>Bn^\l)R"@}&P7%:M&^T>T+rdhL]yyz0>n\PDGs.}@mt9-B_]HrS#;'T=i{3%1UbnX>>-:6~%$%#"
+password "%$%#cV(!!!!!!!!!!!!O*3AQdMOW%x_26B<DGn5{bKm1Tm1LS6(/5Szgns&4F'Z3)fq/!+L{GR'z(nW}(ArN\R.,3hJ<yAD})|=7QfQ&;TpxL:U[>M"P,X,n<i5AY7#.9%$%#"
  ont tr069-server-config 0 39 profile-id 1
  ont internet-config 0 39 ip-index 0
  ont wan-config 0 39 ip-index 0 profile-id 10
@@ -772,14 +772,14 @@ ont-srvprofile-id 200 desc "1175 - 1175"
  ont add 3 27 sn-auth "HWTCC9823CAF" omci ont-lineprofile-id 500 
 ont-srvprofile-id 200 desc "1298 - 1298" 
  ont ipconfig 3 27 pppoe vlan 200 priority 5 user-account username "1298" 
-password "%$%#cV(!!!!!!!!!!!!(flh0s`Tn@+OW@7`gt"X{+yN+>-CXDOp^v+{%&1=-O[zLW:IKD3h(A2]V_R9gcZHA97@=*!xzb0~`<PPK8~/<xsr,A:2U*YsN{k.K'1HTu(/*N%$%#"
+password "%$%#cV(!!!!!!!!!!!!"x6xY2$'OBC<Y%~EP"ZFVh<SK%U:g"\9I1J4|;)#0=yW>vx9%BCGa7*|u#^S:'aZFW11/'_Z\j(wxwH>>~8)K8N@BXa;(@'VXyG6'=JW@_YA0Z%$%#"
  ont tr069-server-config 3 27 profile-id 1
  ont internet-config 3 27 ip-index 0
  ont wan-config 3 27 ip-index 0 profile-id 10
  ont add 3 28 sn-auth "HWTCC2AB93AD" omci ont-lineprofile-id 500 
 ont-srvprofile-id 200 desc "696 - 696" 
  ont ipconfig 3 28 pppoe vlan 200 priority 5 user-account username "696" 
-password "%$%#cV(!!!!!!!!!!!!*QVD*0]5+8d<N`=~5Xq-w>@j149.r<g_GY~Zs0k;M!7`9R{i_"}du[FXyl_BjrciI1WSW*W|\NN&S^GTf$hz+U-TWSJ]R$RLz(@7qY"h!/Lv$U%$%#"
+password "%$%#cV(!!!!!!!!!!!!S/s0V9vd-WeI%A.te-`Sv>x.(ZX,;8kDVPJ.X5MX`a6"67wElTA,P#.\+)T,0)(YA^~$g9hL6\T)E|iTSaD!$A"{LS}Z1TT,1PD&P@0jNWBhT!%$%#"
  ont tr069-server-config 3 28 profile-id 1
  ont internet-config 3 28 ip-index 0
  ont wan-config 3 28 ip-index 0 profile-id 10
@@ -830,7 +830,7 @@ ont-srvprofile-id 200 desc "8356 - 8356"
  ont add 3 51 sn-auth "TPLG0D2F7230" omci ont-lineprofile-id 500 
 ont-srvprofile-id 200 desc "teste onu" 
  ont ipconfig 3 51 pppoe vlan 200 priority 5 user-account username "eventoap" 
-password "%$%#cV(!!!!!!!!!!!!:aVJSH(S>,TWS{/9|w:QSCQB6^tgFIm':#<;]W6IVF]:H]Oe&U]oK"*/VIs(N/8hXYCxU(RT,|(q8g-AUJuR&F`Ug;.x{2CX/0EY4;vQ.ZZ9kS%$%#"
+password "%$%#cV(!!!!!!!!!!!!N"-i':tCi#/*V!FJ`>J93J_p5&0*T2"p,%)S6-2@}Qp3<k^$lN(a,!Pk&#T9,')ZTNbiV@71jm/+)S6<^5rOKv=Rp<]FNq)U'd[%L)Fd<*,C;N%$%#"
  ont tr069-server-config 3 51 profile-id 1
  ont internet-config 3 51 ip-index 0
  ont wan-config 3 51 ip-index 0 profile-id 10
@@ -848,7 +848,7 @@ ont-srvprofile-id 200 desc "8652 - 8652"
 ont-srvprofile-id 200 desc "8400 - 8400" 
  ont add 4 0 sn-auth "HWTC9043BFA4" omci ont-lineprofile-id 500 
 ont-srvprofile-id 200 desc "185 - 185" 
- ont ipconfig 4 0 pppoe vlan 200 priority 5 user-account username "185" password "%$%#cV(!!!!!!!!!!!!NKA]1%UWh0T%f/,$MJ_.n!QR*>|r1=_!*r.vtr;NR=d{>Ft2b+b.jE@;$bfU{~M(,Qu;gBI|2})3,OIFA}I<Mp"a1>q3[d&A{%p(azc_JwJ,`&%$%#"
+ ont ipconfig 4 0 pppoe vlan 200 priority 5 user-account username "185" password "%$%#cV(!!!!!!!!!!!!paPi4JOm%WJY68,aNVOSpU|,M>c{:051uWQc<MD&~q.{CEAb-+(K/{%j(eD~x(TXAM2A0Y/^HjQVSF}Wz/U|Id/c$P/zu.QTpp#XmZ0&Ked#CV%$%#"
  ont tr069-server-config 4 0 profile-id 1
  ont internet-config 4 0 ip-index 0
  ont wan-config 4 0 ip-index 0 profile-id 10
@@ -937,7 +937,7 @@ ont-srvprofile-id 199 desc "cliente brejinho"
  ont add 4 42 sn-auth "HWTC518545AE" omci ont-lineprofile-id 500 
 ont-srvprofile-id 200 desc "2752 - 2752" 
  ont ipconfig 4 42 pppoe vlan 200 priority 5 user-account username "2752" 
-password "%$%#cV(!!!!!!!!!!!!Wy+fJ~Zh$/8~)b8#=f#<MXyB8#N"}2VGn&FPpP^TffWv#\U9m*r}7VBa,aNT}1}1SsjLj@6:&p.RV^I2!HIQ:F@VbO#Yy<Z8xKZCGLAwVRu/4%%$%#"
+password "%$%#cV(!!!!!!!!!!!!SDxnD6H]]&}o&]Rc#:1S^!*8E#wZt!JlMq,P,f9)GVT44TDzC2Py]f,'%YOJ~|z@.;)jVP$%\43%/*)38`~GXA6'z74[=8WoU*NVJ$Rb#sVux*%$%#"
  ont tr069-server-config 4 42 profile-id 1
  ont internet-config 4 42 ip-index 0
  ont wan-config 4 42 ip-index 0 profile-id 10
@@ -1040,14 +1040,14 @@ ont-srvprofile-id 199 desc "4590 - 4590"
  ont add 4 94 sn-auth "HWTCA19C22A4" omci ont-lineprofile-id 500 
 ont-srvprofile-id 200 desc "1460 - 1460" 
  ont ipconfig 4 94 pppoe vlan 200 priority 5 user-account username "1460" 
-password "%$%#cV(!!!!!!!!!!!!*<1%E=-[mD6)&82u0|g7**~kU#bfR2n[v83q`pzNLob_GXPVM5[6B]B&F[oE>Mm`54IgH=dC#`8MG'8<(8-QPtcjF$l~m(8v{k.0d-U+>=j:^%%$%#"
+password "%$%#cV(!!!!!!!!!!!!BsdPS"a{TEL]+i16xSp,VA1+)$U=MRo3N^>9{IrQKJ}uY42&jUa2/%P79iNUY2/%G!$a>.qFt=$FzgGH&WktG<c-WML8ChVB:uc:2]+;:H4d8F%$%#"
  ont tr069-server-config 4 94 profile-id 1
  ont internet-config 4 94 ip-index 0
  ont wan-config 4 94 ip-index 0 profile-id 10
  ont add 4 95 sn-auth "HWTCEC6DE0A6" omci ont-lineprofile-id 500 
 ont-srvprofile-id 200 desc "7758 - 7758" 
  ont ipconfig 4 95 pppoe vlan 200 priority 5 user-account username "7758" 
-password "%$%#cV(!!!!!!!!!!!!.\,/"=d+p#.#89S#DSyW_1A'Q6A*2C4~uo#au%c:|"AiNP2,CWW=r02>s`zF2rZh9kGdH==JJCY3<n%KSO=(#zZ/^)e%jt35\OO#NOxj8W$~Z<%$%#"
+password "%$%#cV(!!!!!!!!!!!!kZ6c.PJ^;MZt^W7J@@/%2uc//Pry%LNnRh(&xhT1e\HF;ol$5IWsGF;.CqB=0~v9#3A"|+d>*hO6H_}/xbZc=Tbo=TuXV6)q{lq&wDV(PK~@I:%$%#"
  ont tr069-server-config 4 95 profile-id 1
  ont internet-config 4 95 ip-index 0
  ont wan-config 4 95 ip-index 0 profile-id 10
@@ -1095,7 +1095,7 @@ ont-srvprofile-id 199 desc "cliente brejinho"
 ont-srvprofile-id 199 desc "cliente brejinho" 
  ont add 5 9 sn-auth "HWTCB6A632AF" omci ont-lineprofile-id 500 
 ont-srvprofile-id 200 desc "179 - 179" 
- ont ipconfig 5 9 pppoe vlan 200 priority 5 user-account username "179" password "%$%#cV(!!!!!!!!!!!!>CK{3pO%&G36:)/AeRV%Zb:WSSN#R*|eN"Ar)09MO@F3!wOQo"f,pO+jQ.q=tP{)EXBn2#0j8#:<Jo9-t7!v2\JeS9BfZ}C~>V4X:]A\%b4*iB%$%#"
+ ont ipconfig 5 9 pppoe vlan 200 priority 5 user-account username "179" password "%$%#cV(!!!!!!!!!!!!lA`uR!j5S4iMN8XS;5fMLDCPW8bj')e%*&A>J}[1ZUnD0THyr8kV#FVsYbS@b8H<QK4rkQB*KQ=7J,^X<Wz@Q%-EsAjdV`Aig^PO{g+[%Gd\O#%$%#"
  ont tr069-server-config 5 9 profile-id 1
  ont internet-config 5 9 ip-index 0
  ont wan-config 5 9 ip-index 0 profile-id 10
@@ -1188,7 +1188,7 @@ ont-srvprofile-id 199 desc "cliente brejinho"
  ont add 5 53 sn-auth "HWTCA5CB2AA4" omci ont-lineprofile-id 500 
 ont-srvprofile-id 200 desc "339 - 339" 
  ont ipconfig 5 53 pppoe vlan 200 priority 5 user-account username "339" 
-password "%$%#cV(!!!!!!!!!!!!cbj6%'LKV.{/y/Rjo([-k`!u=@cu{XLX]9657g\#gq.bU-*c5@U~!kV\~cP8TQ2GBoy4Q!F=$b<n)c`>Y0+Z8'W`H&{gfz>*h=}-J.+xS*G8s/%$%#"
+password "%$%#cV(!!!!!!!!!!!!CU/aDE!dRDzhMlJrj1kRX.1)=Zs&ZV;6!~,ynSiX`(Y@)D.i3!8aIJKzEr=2Q5isEjm1}F1|N*3A.<>"~9y0%m3rfR[MIj*S^T:>3KXCBl>]iA%$%#"
  ont tr069-server-config 5 53 profile-id 1
  ont internet-config 5 53 ip-index 0
  ont wan-config 5 53 ip-index 0 profile-id 10
@@ -1661,7 +1661,7 @@ ont-srvprofile-id 200 desc "9233 - 9233"
  ont add 8 60 sn-auth "HWTCAC0679AD" omci ont-lineprofile-id 500 
 ont-srvprofile-id 200 desc "8164 - 8164" 
  ont ipconfig 8 60 pppoe vlan 200 priority 5 user-account username "8164" 
-password "%$%#cV(!!!!!!!!!!!!|R-w$$>hG0'c}PHIPaZ~Zh[OU7BJ5#*2yh)BC9~~Q1:!"-XU6AgfMM@DP|!I&Tv^@([""H`DbPXAT'd8GX.0U^0"rJ`xT`Tf#ZJ-[>)'<\<D+N%$%#"
+password "%$%#cV(!!!!!!!!!!!!RjcG7lqt"~tGZ03M7.ST)LvyVj6XQ0z*P'N5;ByP@Ik~G/Z%$~=Fr}O1Fr35_NHXIat#~C1#q-~"vMhTeazLXw*\b,Z9s*>[>O%Z>A_f/!{Pz9%$%#"
  ont tr069-server-config 8 60 profile-id 1
  ont internet-config 8 60 ip-index 0
  ont wan-config 8 60 ip-index 0 profile-id 10
@@ -1744,7 +1744,7 @@ ont-srvprofile-id 199 desc "1751 - 1751"
  ont add 9 2 sn-auth "HWTC4F9445AE" omci ont-lineprofile-id 500 
 ont-srvprofile-id 200 desc "4632 - 4632" 
  ont ipconfig 9 2 pppoe vlan 200 priority 5 user-account username "4632" 
-password "%$%#cV(!!!!!!!!!!!!}|(2CURrOIefKlUP_y8,bW1*Wh88F+*E>KS_(b^~kSe0Kgr4N1|M$gY9P%^>NQ/a$B0[,02x<z#']w^/7KIy(Y;%3IBR<LXM,=&Rxdm8([@$=/%$%#"
+password "%$%#cV(!!!!!!!!!!!!j^FrYb^=s$f|n/K}=XP!8;u)EOX5YDxEb6@P4d~D*2{_4DURm2YD3MS="h!A/R'Z={%T8N+sE:BmazeR(cBk-*p<]W~so$DDEgb6lfSMVJ\PzK%$%#"
  ont tr069-server-config 9 2 profile-id 1
  ont internet-config 9 2 ip-index 0
  ont wan-config 9 2 ip-index 0 profile-id 10
@@ -1861,7 +1861,7 @@ ont-srvprofile-id 199 desc "8179 - 8179"
  ont add 9 58 sn-auth "HWTC0477C7A8" omci ont-lineprofile-id 500 
 ont-srvprofile-id 200 desc "7890 - 7890" 
  ont ipconfig 9 58 pppoe vlan 200 priority 5 user-account username "7890" 
-password "%$%#cV(!!!!!!!!!!!!W|&=!jWb5*r[i4RV),}J;vFYP+~|2JAlwf4yc]y0B-$#9Sw`^KI]$@AMyPz@r0q%'7-Eb3[@&=L,{<y=V#.J%}nMs>awS`!C9-5Z[i#p<_Cc$$%$%#"
+password "%$%#cV(!!!!!!!!!!!!xedZJPvpm#H*Kx(kE#PP<o;w,:A36~*r`M(.HtY++ydIGH>NMXvfSA@fbmADm#vA/qSjS$qw@}1<HJOF`$*Y5gM[H'o0WR.E*=nXrVH`NRl<0@%$%#"
  ont tr069-server-config 9 58 profile-id 1
  ont internet-config 9 58 ip-index 0
  ont wan-config 9 58 ip-index 0 profile-id 10
@@ -1912,7 +1912,7 @@ ont-srvprofile-id 200 desc "2581 - postolg"
  ont add 10 4 sn-auth "HWTCD5CBDFAD" omci ont-lineprofile-id 500 
 ont-srvprofile-id 200 desc "7377 - 7377" 
  ont ipconfig 10 4 pppoe vlan 200 priority 5 user-account username "7377" 
-password "%$%#cV(!!!!!!!!!!!!&$|>IdA@AEXKVK,,Oas:0GKmOpIIR>%K%H4B!~vM\R#DA,@NVRo4HX'ri*5:739o1Q!I/JWx>/N]}^]E%OqhUI])CKTd@+XfD*[=Bw6P(~MbY5%$%#"
+password "%$%#cV(!!!!!!!!!!!!_$lV-&rbp#!s']3/8*_UgtB1J1ROa>J~m"6-y[P">3NS$<+#Q5qlsr-&Pi!XCHJ)O~q14Q=*~_D%]@m1VKWQOS0(tUM$2}H'@o2)m0meG)Eyo&%$%#"
  ont tr069-server-config 10 4 profile-id 1
  ont internet-config 10 4 ip-index 0
  ont wan-config 10 4 ip-index 0 profile-id 10
@@ -2123,7 +2123,7 @@ ont-srvprofile-id 199 desc "3629 - 3629"
  ont add 12 7 sn-auth "HWTC8F2F0CA4" omci ont-lineprofile-id 500 
 ont-srvprofile-id 200 desc "4625 - 4625" 
  ont ipconfig 12 7 pppoe vlan 200 priority 5 user-account username "4625" 
-password "%$%#cV(!!!!!!!!!!!!<.wk&W})$8lKN]HIZ(k);Jg10gR<cC~iUuR5R\-EN$!i@kgX+S}dT&(;dO[=6Tk1#U!=-UCeCl%w,E_1]KP,DW0mu"6ndJX+bT|4UA!-~9_2%'%$%#"
+password "%$%#cV(!!!!!!!!!!!!H:k["t#RZ5_N@#P&=NK3\tbV!Tci]:UMQt/Ku:{RDUmG!n09>8}95F=*X,[MH7dxSp0.7U<qpf%ZcXv:VZ-`E0e%wGF74KIXVa&*9cjhRM67ZG%$%#"
  ont tr069-server-config 12 7 profile-id 1
  ont internet-config 12 7 ip-index 0
  ont wan-config 12 7 ip-index 0 profile-id 10
@@ -2212,7 +2212,7 @@ ont-srvprofile-id 200 desc "7731 - 7731"
  ont add 12 51 sn-auth "HWTC13B67DA3" omci ont-lineprofile-id 500 
 ont-srvprofile-id 200 desc "7742 - 7742" 
  ont ipconfig 12 51 pppoe vlan 200 priority 5 user-account username "7742" 
-password "%$%#cV(!!!!!!!!!!!!}|c!*OtE(4X!D(G|WwuEI:n`DV].;A.lse0t"oFS.7C$1]'c.*HCSOWW2cg@))ye>CycB=-KxcXr^k`$il41Z&%;%W{eXWMx]L34.%O|Oa=/'G%$%#"
+password "%$%#cV(!!!!!!!!!!!!$Q)}050\uE&i\U)zd>jV^$Xo(]bh{K$+J75Z+v;$bx*W&vd!F9y9.m7IJI,~/qqk!]w":-`!X/U%cC5%vruR(9T*%3B7W"J{:oH)D1Sr~F5!80%$%#"
  ont tr069-server-config 12 51 profile-id 1
  ont internet-config 12 51 ip-index 0
  ont wan-config 12 51 ip-index 0 profile-id 10
@@ -2371,7 +2371,7 @@ ont-srvprofile-id 200 desc "7750 - 7750"
  ont add 13 63 sn-auth "HWTC90AD1AAC" omci ont-lineprofile-id 500 
 ont-srvprofile-id 200 desc "7757 - 7757" 
  ont ipconfig 13 63 pppoe vlan 200 priority 5 user-account username "7757" 
-password "%$%#cV(!!!!!!!!!!!![`'[%;NR-V{p:$UEr59&l/)>Kvn.^./<ZLGaw6n#6l)B~H;fU%74;;#~Z2"8Qv,)H.`WFYG{t,!7+s2)wL$>Or+ZK$aem82:H+^5|_8fL+h^3P%$%#"
+password "%$%#cV(!!!!!!!!!!!!-:3Y".Mwd=*TT`1MA^%~JMpPY&TguOfG4Y&9'{'TQ+dNT"=jB)/9`4WGaag$"D>@N@^Y.P[&@YPa6\rH_INb-.n#"13Ku!X9a&yJ&0>x:V=7wO%$%#"
  ont tr069-server-config 13 63 profile-id 1
  ont internet-config 13 63 ip-index 0
  ont wan-config 13 63 ip-index 0 profile-id 10
@@ -3358,7 +3358,7 @@ ont-srvprofile-id 199 desc "cliente brejinho"
  ont add 0 46 sn-auth "HWTCDB6CF2B0" omci ont-lineprofile-id 500 
 ont-srvprofile-id 200 desc "7962 - 7962" 
  ont ipconfig 0 46 pppoe vlan 200 priority 5 user-account username "7962" 
-password "%$%#cV(!!!!!!!!!!!!VxZRT7j3O~yu0~<vlm=I{7;/4CG1%Ga*)U;+6{dB*hm95a0CeJXEs+"VF/J&LsE|GN6A4HB})NA3v7T"l9`uVW~*$YhEt/J-%_/HNGeZY(715-%$%#"
+password "%$%#cV(!!!!!!!!!!!!m/wQ38{KG4kr"F~C>aX*ZOpk=*P52(>CAM"x@pCP[Hdg#9h)V6D_$\!>w)+#9u82V>4V{NbpQh%H`/[Yqe8SMu%7=)$XP6A\ED9P]ebt7(2;nK%$%#"
  ont tr069-server-config 0 46 profile-id 1
  ont internet-config 0 46 ip-index 0
  ont wan-config 0 46 ip-index 0 profile-id 10
@@ -3445,7 +3445,7 @@ ont-srvprofile-id 200 desc "4260 - 4260"
  ont add 1 17 sn-auth "HWTC4F8FBFAE" omci ont-lineprofile-id 500 
 ont-srvprofile-id 200 desc "6636 - 6636" 
  ont ipconfig 1 17 pppoe vlan 200 priority 5 user-account username "6636" 
-password "%$%#cV(!!!!!!!!!!!!R=51Q</I&04$QeQhH.]D!BMLA:@_)WIsuR(F62w$:H/m)$aWxNI;G;~!5+DJt|NMMu2^g4a=},$)^b*-A|kl.TYMrF6`IjH)+E#K%7r3/\tC|M%$%#"
+password "%$%#cV(!!!!!!!!!!!!=W|MV!\ge;p\K5.oHg%Ku{c,C>zN^&Kc;GX1+8YSAKOb@a!fVQ-}&6IyJp(IK418:1n*n!$c=!30'zg*Uc@W=@R>c<z9|z4!F>$3OqlI2}qq7T%$%#"
  ont tr069-server-config 1 17 profile-id 1
  ont internet-config 1 17 ip-index 0
  ont wan-config 1 17 ip-index 0 profile-id 10
@@ -3490,7 +3490,7 @@ ont-srvprofile-id 199 desc "cliente brejinho"
  ont add 1 37 sn-auth "HWTC4F934AAE" omci ont-lineprofile-id 500 
 ont-srvprofile-id 200 desc "224 - 224" 
  ont ipconfig 1 37 pppoe vlan 200 priority 5 user-account username "224" 
-password "%$%#cV(!!!!!!!!!!!!}Tip#~s5M*6.we,nzv-KpqUU7#<[$+hP2<1Gz/%NkiA+/<1HF++SjG<pQ"'P~3Z",NhUC~Y.IuY01/.$rm\_(=d6LT8LO&%>@k@UimgeTdxLRF%$%#"
+password "%$%#cV(!!!!!!!!!!!!Xn:%H(Jv]E5_QfB7<hU=@~3hS*zF\JEEN3"lkqTBAK+E$r(fO(=j`g"o[;7Ezo42'j\t!23&*L&Xdj`NezH*ZHRLaD,P"@~j8a:P/UimH&ph|"%$%#"
  ont tr069-server-config 1 37 profile-id 1
  ont internet-config 1 37 ip-index 0
  ont wan-config 1 37 ip-index 0 profile-id 10
@@ -3523,7 +3523,7 @@ ont-srvprofile-id 199 desc "cliente brejinho"
  ont add 1 51 sn-auth "HWTC108C0FAD" omci ont-lineprofile-id 500 
 ont-srvprofile-id 200 desc "1226 - 1226" 
  ont ipconfig 1 51 pppoe vlan 200 priority 5 user-account username "1226" 
-password "%$%#cV(!!!!!!!!!!!!R/!-P|*_5Q<*%}3Ht!q2ZAT=M6}'IOGH*';XD"v(A@t42}%[+O^HzPI$>G5Z<]db$N,D}Ie[g&.LdPLXS|QhSokn^7DeX##-9Lx7VQ`NKvcK58%$%#"
+password "%$%#cV(!!!!!!!!!!!!>](51^e.@9vS6E.fGawFd3=4$8Xw'N627F(hpYy!L>!--lN*<%PwJCUjjqaAQ,Y~Fr9'D$Cpo`27"Vt+_$e;'Y%puM5Um'<Uil>)NKQ,@[}ziK%$%#"
  ont tr069-server-config 1 51 profile-id 1
  ont internet-config 1 51 ip-index 0
  ont wan-config 1 51 ip-index 0 profile-id 10
@@ -3684,7 +3684,7 @@ ont-srvprofile-id 200 desc "8336 - 8336"
  ont add 2 44 sn-auth "HWTCB267D4A3" omci ont-lineprofile-id 500 
 ont-srvprofile-id 200 desc "991 - 991" 
  ont ipconfig 2 44 pppoe vlan 200 priority 5 user-account username "991" 
-password "%$%#cV(!!!!!!!!!!!!{qbC1JkYU4@V[UIQ{b88tlzuA7o4kUz}/j-8+Tn@qQ'(I./B*2kLI8H(5Ni;bc,1:!ql1=H>vI525;R=.+Q'TtIWiYpQeeC^&_lT9&}TYO<HS>%$%#"
+password "%$%#cV(!!!!!!!!!!!!q\y>=8Sq7Oc>jc:H1>4)Nka\FJV@1DU*KtSW;g!&=>f{S<*NJIe|0&'Ugu=Pn=Gs3o546DF6qoSprM!<@a,U*,<qfFox:<0j<UfAzn]gXDcgqO%$%#"
  ont tr069-server-config 2 44 profile-id 1
  ont internet-config 2 44 ip-index 0
  ont wan-config 2 44 ip-index 0 profile-id 10
@@ -3745,7 +3745,7 @@ ont-srvprofile-id 200 desc "9527 - 9527"
  ont add 2 72 sn-auth "HWTCA5CAA3A4" omci ont-lineprofile-id 500 
 ont-srvprofile-id 200 desc "1824 - 1824" 
  ont ipconfig 2 72 pppoe vlan 200 priority 5 user-account username "1824" 
-password "%$%#cV(!!!!!!!!!!!!XEetSSzv&Db]s8W+K8[FU0/<I39<j/8rLf%t24`)>>9+Ya3`\'0)8w/)m%)&l_0/*'+6z-$P;#>sQ=1!4So3$7~G=;*~|vS5vqD*"X%(0:AId$%$%#"
+password "%$%#cV(!!!!!!!!!!!!`y8'(KfOB:&#`w1"V%G.6a#5Iwl`=ICdC-Lxu1AT@7>GQf$hw=D+3IW#jFpEMJ$!6;kc_K!28^2MCi.23P-i%i~#)F1C))8nFKrQB$&m4uFIfU%$%#"
  ont tr069-server-config 2 72 profile-id 1
  ont internet-config 2 72 ip-index 0
  ont wan-config 2 72 ip-index 0 profile-id 10
@@ -3880,7 +3880,7 @@ ont-srvprofile-id 199 desc "onu radio avelino"
  ont add 3 38 sn-auth "HWTC9291F1AC" omci ont-lineprofile-id 500 
 ont-srvprofile-id 200 desc "7436 - 7436" 
  ont ipconfig 3 38 pppoe vlan 200 priority 5 user-account username "7436" 
-password "%$%#cV(!!!!!!!!!!!!<tt1P3QO5>Xuk<P$%%Z/M;4w.l;+$~yyb#2A7G>3P0\'=\R}oPjtF^D*;DV)|vu>U-qhJX_8)Y=Hz!.7gF7w18vyO>NdZn%{l"t;okT(MQi%2D%$%#"
+password "%$%#cV(!!!!!!!!!!!!'.U(S7JS#%0Pm7;qo~"'P|sPLbrac&4w_y9@#1B%7L:x$e`$I>Y/rfThZZm"vK:MHVeQbDl2O84hl}pJqB<1++Aa|:&<6f9HtyyT,'nJ"fFH>9%$%#"
  ont tr069-server-config 3 38 profile-id 1
  ont internet-config 3 38 ip-index 0
  ont wan-config 3 38 ip-index 0 profile-id 10
@@ -3895,7 +3895,7 @@ ont-srvprofile-id 200 desc "1797 - 1797"
  ont add 3 43 sn-auth "HWTCB6A874AF" omci ont-lineprofile-id 500 
 ont-srvprofile-id 200 desc "7704 - 7704" 
  ont ipconfig 3 43 pppoe vlan 200 priority 5 user-account username "7704" 
-password "%$%#cV(!!!!!!!!!!!!2h8i)/-TK1(qzuXNcRA-|OEFZJzem6i#$ZR;S'TU<|+3~BMUb3iS#!ZeWAw'YW/c1OhE9,5_nLGY~4B9>3[z2iU0\Kp=](Za4Sy$|Ue|G_tz'%%$%#"
+password "%$%#cV(!!!!!!!!!!!!:msBYHyZ73c@q&=BsAlBg+eBLQ;W_AW;bs9&b<-~A.^"#G0u=I*(VhCX!#9Rw`p=~N25PCZddu8ozxUDy!b>+de+'&iZJL%Q[({D$>Q}Q:K`PX%$%#"
  ont tr069-server-config 3 43 profile-id 1
  ont internet-config 3 43 ip-index 0
  ont wan-config 3 43 ip-index 0 profile-id 10
@@ -4032,7 +4032,7 @@ ont-srvprofile-id 200 desc "3506 - 3506"
  ont add 4 42 sn-auth "HWTCB184CDA3" omci ont-lineprofile-id 500 
 ont-srvprofile-id 200 desc "7885 - 7885" 
  ont ipconfig 4 42 pppoe vlan 200 priority 5 user-account username "7885" 
-password "%$%#cV(!!!!!!!!!!!!x[NX0mWjm.9HOA5$hP$4p2$n5rQ&~2=i{20${`K-GazLVCwWp0<#Q0>&O6,5M6Y<+}~5</+`SYXZ#ZH<cz3RXE&d&1aAZ'"JG~t:iM0FYG/g,N%$%#"
+password "%$%#cV(!!!!!!!!!!!!su"*E~d(7<Oi'O5BB/k#;n6=9]2KSV-7B'>}C-k",XGf>B]wkL-%@NIG^\|4Dl2y)O>ks<]i4oW%hXW%mZ@MC1{L=3v$]5B5B\f6cf!|PRB8+O%$%#"
  ont tr069-server-config 4 42 profile-id 1
  ont internet-config 4 42 ip-index 0
  ont wan-config 4 42 ip-index 0 profile-id 10
@@ -4125,7 +4125,7 @@ ont-srvprofile-id 200 desc "6064 - 6064"
  ont add 5 32 sn-auth "HWTCB3A00CAF" omci ont-lineprofile-id 500 
 ont-srvprofile-id 200 desc "6917 - 6917" 
  ont ipconfig 5 32 pppoe vlan 200 priority 5 user-account username "6917" 
-password "%$%#cV(!!!!!!!!!!!!5ILTIiFEK(\Sc[Vhbh5,,Z49BaJ#906#qo)t{('!^F=tKK(O;WPb+b4f4uk9qn}_OdMM<7`j\pIjkyB=M"]Z/w%U#M;&!.C@vf;Z_GaC4"0P[W%$%#"
+password "%$%#cV(!!!!!!!!!!!!ysD!L7rm'#x4EWI.8]"&%z*7>GF1^TFEdy#uTN];v{m!QhyHo&U-i2YO<rM,q1y!03-RN6L*{\ML$o`B~O7^-29y}<n!9GYo=:h;wbqyL7QYcC%$%#"
  ont tr069-server-config 5 32 profile-id 1
  ont internet-config 5 32 ip-index 0
  ont wan-config 5 32 ip-index 0 profile-id 10
@@ -4185,7 +4185,7 @@ ont-srvprofile-id 199 desc "cliente brejinho"
 ont-srvprofile-id 200 desc "1363 - 1363" 
  ont add 6 7 sn-auth "HWTCA85E70AF" omci ont-lineprofile-id 500 
 ont-srvprofile-id 200 desc "295 - 295" 
- ont ipconfig 6 7 pppoe vlan 200 priority 5 user-account username "295" password "%$%#cV(!!!!!!!!!!!!*eWU~xs:7V}m%}*u,04O{FZ\"Ff6^QyHIV:u)\d;]}}^9A])@/HPoOOn+^:9*1@#A='14+QEDFM}LV/L)EEyJm0W06LE)".C*-\RU.RG%a~BkM%$%#"
+ ont ipconfig 6 7 pppoe vlan 200 priority 5 user-account username "295" password "%$%#cV(!!!!!!!!!!!!ye9jVnenC*Iz\J~8!wk<^M_z7JBF=;>-yB-f%!BV7fk0=%:QK8G-ObI)#GE6-sU"T9*pg*8w-;Gfw2MDFB\;8ITwj4Br>ZNN|`xP;dJzC2&,5Q%$%#"
  ont tr069-server-config 6 7 profile-id 1
  ont internet-config 6 7 ip-index 0
  ont wan-config 6 7 ip-index 0 profile-id 10
@@ -4266,7 +4266,7 @@ ont-srvprofile-id 200 desc "5807 - 5807"
  ont add 6 46 sn-auth "HWTC6DD801AC" omci ont-lineprofile-id 500 
 ont-srvprofile-id 200 desc "6481 - 6481" 
  ont ipconfig 6 46 pppoe vlan 200 priority 5 user-account username "6481" 
-password "%$%#cV(!!!!!!!!!!!!3@0)JHQ{s@]\GYPyBO.@\v#b9GF(L7`2AU,8rHnL1+MA9}7Su<D0N&VvvkqTn[b~)u.)h'HKQI.XZzu,fZBt8qOcy:r9jSH^F'DEo{$E([*u8"%$%#"
+password "%$%#cV(!!!!!!!!!!!!7"{(5QqJ[Wg/[hKwPhSUHqd@Dm5}dVJkpVY\n>\1)..\M"6AFQwvvL(1{"\XmZD=*Zb;R93^FY.58.n;66$B5{vO,P_Uj~0D#I^Mi-\r5>VyL#%$%#"
  ont tr069-server-config 6 46 profile-id 1
  ont internet-config 6 46 ip-index 0
  ont wan-config 6 46 ip-index 0 profile-id 10
@@ -4343,7 +4343,7 @@ ont-srvprofile-id 199 desc "cliente brejinho"
  ont add 7 15 sn-auth "HWTC904387A4" omci ont-lineprofile-id 500 
 ont-srvprofile-id 200 desc "6648 - 6648" 
  ont ipconfig 7 15 pppoe vlan 200 priority 5 user-account username "6648" 
-password "%$%#cV(!!!!!!!!!!!!VKofE/1EHY~k$88.t_NQk#A*7C&8zOoE'w:o+hI@/(9uG1Fh>/5&er29ZG4'FuEi/gXN'!NfJVO&[!g,j\F@#mP/C@3(f{ORQ;>SahYm2i'W7W%$%#"
+password "%$%#cV(!!!!!!!!!!!!NWb*17jt6<At*;Ud7;k3u5qtEmkCdWUV8E-Y=[p@M%(\"%Nr#Z,C$:Co$Gw'Hc.1DRmH^~~cIX!4op#M`tdqA!/{K#{<m"7i1V~X7k(q7\4Q@S%$%#"
  ont tr069-server-config 7 15 profile-id 1
  ont internet-config 7 15 ip-index 0
  ont wan-config 7 15 ip-index 0 profile-id 10
@@ -4364,7 +4364,7 @@ ont-srvprofile-id 199 desc "228 - 228"
  ont add 7 23 sn-auth "HWTC5176B2AE" omci ont-lineprofile-id 500 
 ont-srvprofile-id 200 desc "612 - 612" 
  ont ipconfig 7 23 pppoe vlan 200 priority 5 user-account username "612" 
-password "%$%#cV(!!!!!!!!!!!!%](MXVl:BO`MMZHs$~pC3;<E6#sh<BXMtO8[ES4>'UB289y#2-X\xJWFYI:*A`ASEN\>x5M%`)~o34oCbq<vDGkCP=CcCD7SQaT-[iAG=XvK=V%$%#"
+password "%$%#cV(!!!!!!!!!!!!HOnR+61xt"Pd;kCbL=n>\f`3/Ey!TRc0cx'$v{vFklB[C$#P"KKJ6@&)].c5v^fE/X+3D!4!2~IKS|&WJ2,7~l{En2'%<Z'3Yv{A33]hFf<_]>%$%#"
  ont tr069-server-config 7 23 profile-id 1
  ont internet-config 7 23 ip-index 0
  ont wan-config 7 23 ip-index 0 profile-id 10
@@ -4451,7 +4451,7 @@ ont-srvprofile-id 200 desc "8659"
  ont add 7 65 sn-auth "HWTCA85062AF" omci ont-lineprofile-id 500 
 ont-srvprofile-id 200 desc "8667 - 8667" 
  ont ipconfig 7 65 pppoe vlan 200 priority 5 user-account username "8667" 
-password "%$%#cV(!!!!!!!!!!!!EGSPGwMYP=%Kq"/KWAc2m5#[&`y%rVQz7"V6DA}&[>2i<RWoe"EJQGYbr,pH%s~="H`X5*gSF"&jotf>R>K}@wcOO+&BULIDYRzJ](-F>Q.v=J%$%#"
+password "%$%#cV(!!!!!!!!!!!!5E"'ExC:f59&$^A#VDS!`X[(O8[j<"Zp%a0fBAk@`nE#AZYwr:X|L9OOu,[&Zji2@TMQ40~OcUG0ek>8et76)zP$aNQ%rf:A^0|!@~rjGZEin4%$%#"
  ont tr069-server-config 7 65 profile-id 2
  ont internet-config 7 65 ip-index 0
  ont wan-config 7 65 ip-index 0 profile-id 10
@@ -4475,7 +4475,7 @@ ont-srvprofile-id 200 desc "1433 - 1433"
 ont-srvprofile-id 200 desc "950 - 950" 
  ont add 8 7 sn-auth "HWTC13A611A3" omci ont-lineprofile-id 500 
 ont-srvprofile-id 200 desc "571 - 571" 
- ont ipconfig 8 7 pppoe vlan 200 priority 5 user-account username "571" password "%$%#cV(!!!!!!!!!!!!/^&c<3)\g@,s[Q18@\5)9nL\CACd-E'/#`A,PWFUlD!X;/j}CYwA|^W15b94QJ3HB2<C\Ii4t"0,rUDFc'&,FaLnIK2+_I=k23RMpZ;W*{Kl[)%$%#"
+ ont ipconfig 8 7 pppoe vlan 200 priority 5 user-account username "571" password "%$%#cV(!!!!!!!!!!!!zjEt6L{i)0;#A{&QPs!HoUP{,6I#.-[B6:!sZ!d9W)O@K@G<aNL5eN#w+{)Fqn[`+NuqR=zJdBC3NbfY\;32Fk,7#6!U^\CpX]*Eb.xc8sYKk5%$%#"
  ont tr069-server-config 8 7 profile-id 1
  ont internet-config 8 7 ip-index 0
  ont wan-config 8 7 ip-index 0 profile-id 10
@@ -4500,7 +4500,7 @@ ont-srvprofile-id 200 desc "219 - 219"
  ont add 8 17 sn-auth "HWTCCD69F9A3" omci ont-lineprofile-id 500 
 ont-srvprofile-id 200 desc "306 - 306" 
  ont ipconfig 8 17 pppoe vlan 200 priority 5 user-account username "306" 
-password "%$%#cV(!!!!!!!!!!!!$Du#$yzEzYlVp>Cf>>}-_j8UMh-#{9]s#mM\gL$J_4[#E=tfb&@7,1R4)Q,$KrXqD!Dr5#LE$r-;g}0'_^+rWKE)=Og>v^UkGeH/<8{aG>JB8Y%$%#"
+password "%$%#cV(!!!!!!!!!!!!,*LN(tAh<JYJldQ&v@Q~>sTLS[%=8X+<-gMIf{l$;P8!2^-v*Bt/W3SgwJ}@I/PH>I"+0=(wp'2~>!IKB't\)ExHl#S:;iI4g[P-ZQN<,Z.pwU%$%#"
  ont tr069-server-config 8 17 profile-id 1
  ont internet-config 8 17 ip-index 0
  ont wan-config 8 17 ip-index 0 profile-id 10
@@ -4583,7 +4583,7 @@ ont-srvprofile-id 200 desc "414 - 414"
  ont add 8 56 sn-auth "HWTCBA3913AA" omci ont-lineprofile-id 500 
 ont-srvprofile-id 200 desc "132 - 132" 
  ont ipconfig 8 56 pppoe vlan 200 priority 5 user-account username "132" 
-password "%$%#cV(!!!!!!!!!!!!<=rT;EHS[9Cqm8/H:by.<;|o<0ChESE8b#U~SBrA:j/OAvP&;7Qodt5;7;OGt-&AQQva^E=HEgK|^+DH#lP/6AQorEYU)FOn|wn,;nZV2W~*}H%$%#"
+password "%$%#cV(!!!!!!!!!!!!,A=}Di-nLW;1|iHc3>7=]q}<E>d3,9Ib#N'S;sb>tqk`J"aejAu_0|FD$g~V]~RRUjY7!A6XN*C]L.hJ9eJH(yU%'04v/5GuuQ4$S_\C=xt!o8%$%#"
  ont tr069-server-config 8 56 profile-id 1
  ont internet-config 8 56 ip-index 0
  ont wan-config 8 56 ip-index 0 profile-id 10
@@ -4634,7 +4634,7 @@ ont-srvprofile-id 200 desc "luizhg"
  ont add 9 8 sn-auth "HWTC3CB371AF" omci ont-lineprofile-id 500 
 ont-srvprofile-id 200 desc "5681 - 5681" 
  ont ipconfig 9 8 pppoe vlan 200 priority 5 user-account username "5681" 
-password "%$%#cV(!!!!!!!!!!!!-=4')@n/]IicaC!(e6%*Wl5F2(nm3.*2RI;dx6K1L3=-8(A%G1hk3v+4tFDWpA4c;a406@St5wGLJ<rP&We!._SQUYd3'w#-ZT*+WJB7=muVfB%$%#"
+password "%$%#cV(!!!!!!!!!!!!A7Qs~cQ'u1^M\a7I]b|<4rqh)VajG27fC!1D!}j2q.*Z/qTXbV*N|Q3t>(A-E+K'%$lLrXo*|!Zj&UO0Xms#XZ_`iGCwBrY'J~)K8)NC4PT>Z5%$%#"
  ont tr069-server-config 9 8 profile-id 1
  ont internet-config 9 8 ip-index 0
  ont wan-config 9 8 ip-index 0 profile-id 10
@@ -4677,7 +4677,7 @@ ont-srvprofile-id 199 desc "cliente brejinho"
  ont add 9 27 sn-auth "HWTC36E329AE" omci ont-lineprofile-id 500 
 ont-srvprofile-id 200 desc "7121 - 7121" 
  ont ipconfig 9 27 pppoe vlan 200 priority 5 user-account username "7121" 
-password "%$%#cV(!!!!!!!!!!!!XR_qR]\\`DLfW]JhUq1M0_*]Ff&xe4fZ]}7/!(=G+G=^QE!6T88eMpQ::CZCEW*Y#E%9M.,"0HH;PYB5[QjN)@7HZHI^"DPC&$t<mLOAWu(.~-%$%#"
+password "%$%#cV(!!!!!!!!!!!!37,JSxDx\Rb/BGHYAPS'r4j"'GvwZ)(Tv>3~"l=5AsX_/s(/YL6SYaPYz9<'DPrtCQvxH9|GPT$;Cx)Zv=mBHg_:S+i3hl>`$yQSKjA;3FC9kD%$%#"
  ont tr069-server-config 9 27 profile-id 1
  ont internet-config 9 27 ip-index 0
  ont wan-config 9 27 ip-index 0 profile-id 10
@@ -4714,7 +4714,7 @@ ont-srvprofile-id 199 desc "mariasocorro"
  ont add 9 43 sn-auth "HWTC1A5FC1A4" omci ont-lineprofile-id 500 
 ont-srvprofile-id 200 desc "1360 - 1360" 
  ont ipconfig 9 43 pppoe vlan 200 priority 5 user-account username "1360" 
-password "%$%#cV(!!!!!!!!!!!!P]vH8:%aZ*#ty6R/'=J#rB<(TwE6PC]-E3W.Hj2@ypGjO$QjuI2&a#H}eD'NC8\@3m>@@Ohi'^Ng!guLhX^mRZFs+U#v<E!E.%oNYOa*1O)X%2%$%#"
+password "%$%#cV(!!!!!!!!!!!!>F"M(ohMm@''U(Flr_zV!i$B/q)Oi+`x({K6j5&P+k7tUPL>rP[c_'&#\/wMlSNu4<FDM@1F&-9jm3'1+RrpCWP{I9&oat9OFJ2D_p(:A&-nd#%$%#"
  ont tr069-server-config 9 43 profile-id 1
  ont internet-config 9 43 ip-index 0
  ont wan-config 9 43 ip-index 0 profile-id 10
@@ -4739,7 +4739,7 @@ ont-srvprofile-id 200 desc "124 - 124"
  ont add 9 53 sn-auth "HWTC7665059B" omci ont-lineprofile-id 500 
 ont-srvprofile-id 200 desc "2764 - divaldo" 
  ont ipconfig 9 53 pppoe vlan 200 priority 5 user-account username "divaldo" 
-password "%$%#cV(!!!!!!!!!!!!gPk[Yc0i!6mXe4R}`~0J5_L)Hu{m2B@`I_2TWNB>uBvo6!bO+3{SG[4/lMCCE3pjPzUz]4rMZ~R=e'>5++MU&.VGN3Fin%9whgc<)3=/3ap1n*%$%#"
+password "%$%#cV(!!!!!!!!!!!!`h!g5z-@a2J9:]<AFpk>})kA=,zil*66^>H'Nid<Z9@DX}qWJ5hPEI$*zQ`$C9!gE)zU=M]EKr5`@^75l#Vd"Gu63:AIBmQGt0*2**Tk!c\^15%$%#"
  ont tr069-server-config 9 53 profile-id 1
  ont internet-config 9 53 ip-index 0
  ont wan-config 9 53 ip-index 0 profile-id 10
@@ -4766,7 +4766,7 @@ ont-srvprofile-id 200 desc "7786 - 7786"
  ont add 9 64 sn-auth "HWTCF8DCA9A3" omci ont-lineprofile-id 500 
 ont-srvprofile-id 200 desc "6886 - 6886" 
  ont ipconfig 9 64 pppoe vlan 200 priority 5 user-account username "6886" 
-password "%$%#cV(!!!!!!!!!!!!5HV+Ck}CbXU~sHBf`,PJp`{0DgM[&2O<M5H`x-wE8@|W""wbm-h;ujScPUd5L<*~6=]i$O#>9zYa5;R6C#Y]!&o"/&v)P,6`fm{:2<roIY`~~>%$%#"
+password "%$%#cV(!!!!!!!!!!!!x>I@E(s#5PqoGw:RXnUJeJw*#gA!]$XOt&,"!b9<'NUA3/QkA/>{FMT%GYR'KuM)WqqL-O/G/f;`u\2G5QA;Jx'a.>HY/)H2T2=A;04148S-m1%$%#"
  ont tr069-server-config 9 64 profile-id 1
  ont internet-config 9 64 ip-index 0
  ont wan-config 9 64 ip-index 0 profile-id 10
@@ -4810,7 +4810,7 @@ ont-srvprofile-id 199 desc "327 - 327"
 ont-srvprofile-id 200 desc "4377 - 4377" 
  ont add 10 6 sn-auth "HWTC36E707AE" omci ont-lineprofile-id 500 
 ont-srvprofile-id 200 desc "6117 - gefsoncasa" 
- ont ipconfig 10 6 pppoe vlan 200 priority 5 user-account username "gefsoncasa" password "%$%#cV(!!!!!!!!!!!!i9avV9nH13unG@Y(vS*R:>.E/AxN!++oG&RYwrW3Qi!_T[R^vIoM\A+!/^qHQqQz)x_==B=tvFSez{z+Ib{AF7y-FSDKsx/j+4|6sLZ611TK5V%$%#"
+ ont ipconfig 10 6 pppoe vlan 200 priority 5 user-account username "gefsoncasa" password "%$%#cV(!!!!!!!!!!!!P(W9!jYaB0reTY=.TE#$%(}R.$rh[IZ&B(I!}-N#jYl{GPS)z+u"Sw4/$+|'}hM'%h_1+Rn2^wRnb8mQ,w-|!Bf9@U<AMmKhu+l8^~HHO5*I./%$%#"
  ont tr069-server-config 10 6 profile-id 1
  ont internet-config 10 6 ip-index 0
  ont wan-config 10 6 ip-index 0 profile-id 10
@@ -4833,7 +4833,7 @@ ont-srvprofile-id 200 desc "2342 - 2342"
  ont add 10 15 sn-auth "HWTC5173F6AE" omci ont-lineprofile-id 500 
 ont-srvprofile-id 200 desc "7353 - 7353" 
  ont ipconfig 10 15 pppoe vlan 200 priority 5 user-account username "7353" 
-password "%$%#cV(!!!!!!!!!!!!erhuQDVb0K^+jb61hS;#=d"kUTZ`yD/wv("bRizB#U{/([;x;<*d2PNJG}`2~G'qYkGUzLm*[u*!8O>#M|kI$;c"K&\Rs3(Kj*N<S63x3yg#+O%$%#"
+password "%$%#cV(!!!!!!!!!!!!o|NvPG4t\!~hm-%bK{*B4dv5)m)X_F@/xh<x,0G7Reuo.tf}fKrA3j:26X)Ny]D6/i:Jl>v~2u9,md!9>^~Y)oId</2>GH5`:X1'a>,kUs)e8~%$%#"
  ont tr069-server-config 10 15 profile-id 1
  ont internet-config 10 15 ip-index 0
  ont wan-config 10 15 ip-index 0 profile-id 10
@@ -5016,7 +5016,7 @@ ont-srvprofile-id 199 desc "cliente brejinho"
  ont add 11 38 sn-auth "HWTCB6A35CAF" omci ont-lineprofile-id 500 
 ont-srvprofile-id 200 desc "3934 - 3934" 
  ont ipconfig 11 38 pppoe vlan 200 priority 5 user-account username "3934" 
-password "%$%#cV(!!!!!!!!!!!!$a"UKiqq_2]=%8PZOP>I'&]k$B\w;%f!8#F)W5*Ian:|:1$j#9P)lZN|W.!Vzl]$=+.aq--YxEWT|T"-fr],K<)j2+ZR<`.GySDGiv~+.yE/i8%$%#"
+password "%$%#cV(!!!!!!!!!!!!zP'k(G<hT0LYOQL4<|<Kznva<=9k-Bp@RY>,N{@Z~,L289=TuU"'>CQl+{:7p`W8~5^CETkU}P:eqXdB~8-K>qI6A.d01;%InYL;w8lg.F\(32%$%#"
  ont tr069-server-config 11 38 profile-id 2
  ont internet-config 11 38 ip-index 0
  ont wan-config 11 38 ip-index 0 profile-id 10
@@ -5099,7 +5099,7 @@ ont-srvprofile-id 199 desc "cliente brejinho"
  ont add 11 78 sn-auth "HWTC32DB72AE" omci ont-lineprofile-id 500 
 ont-srvprofile-id 200 desc "2811 - 2811" 
  ont ipconfig 11 78 pppoe vlan 200 priority 5 user-account username "2811" 
-password "%$%#cV(!!!!!!!!!!!!]FTW(/L_&B:B6c.gcJ.S<j!G4v"X4!}1:P=S,zNVe9!o5P`L)P)<{U#~Wq7,1*5pE28Gg,^S%wGQT%~Zbn>XIF&H[.AHml$J>`YWbwP|/<mKaT%$%#"
+password "%$%#cV(!!!!!!!!!!!!Hs~4CS^PoVw9EoJwDC^.(u51CJIcG6[q@B=cQEa8O6g9<^UU\7Et<@Rs(~HJBd]$NF+gYX+F#US{7.mD=zl/)Q9>c@*%Kg5,5p[*Q4w414Cq|U%$%#"
  ont tr069-server-config 11 78 profile-id 1
  ont internet-config 11 78 ip-index 0
  ont wan-config 11 78 ip-index 0 profile-id 10
@@ -5216,7 +5216,7 @@ ont-srvprofile-id 199 desc "cliente brejinho"
  ont add 12 25 sn-auth "HWTC4F93EDAE" omci ont-lineprofile-id 500 
 ont-srvprofile-id 200 desc "434 - 434" 
  ont ipconfig 12 25 pppoe vlan 200 priority 5 user-account username "434" 
-password "%$%#cV(!!!!!!!!!!!!RJ"UOhhwVB1_+561P+=G:!*dX+$Cb>8Uus,he/3Yw4!aOiBZN$MA"Y(OM,HJ`QpN'~UI6UY9;!7rx>)LrMdlVwjn]L(k^,"fac,Io1KJV4l'(-%$%#"
+password "%$%#cV(!!!!!!!!!!!!N>!VE\bQg#Gjv(PQ.DA#VA>Z#T[q5ZZ,tO,(6.]@3bn1#]RDn#o4]W(M/QlHznr'@tp6;LBX'L)gf9o7|sIsV`S0pHz7%P9o|Rc~E&7g.\>]:9%$%#"
  ont tr069-server-config 12 25 profile-id 1
  ont internet-config 12 25 ip-index 0
  ont wan-config 12 25 ip-index 0 profile-id 10
@@ -5435,7 +5435,7 @@ ont-srvprofile-id 200 desc "7794 - dfadf"
  ont add 13 54 sn-auth "HWTC3CA555AF" omci ont-lineprofile-id 500 
 ont-srvprofile-id 200 desc "6271 - 6271" 
  ont ipconfig 13 54 pppoe vlan 200 priority 5 user-account username "6271" 
-password "%$%#cV(!!!!!!!!!!!!s&D0&;#PK;_OG.4z39)5%')"/65XTBdT!5%%Q!]%c2s.#0k^SP15z'R8;5rTH+M<9}Nys~B>-jGOKu"5Z}{a2}_5u0".j+42<.%MPd_r9p!YME%$%#"
+password "%$%#cV(!!!!!!!!!!!!G|pO:gYu;O=.NmXN`IjX&O_H!cKvT4=1PB.lG7"Q2f{gSb*19*.|b<)Gv~YTgF920S6"X&IS_1!R;Z-<<wCdSd=V9XBuO).%|AH~WgI%Us>N<~%$%#"
  ont tr069-server-config 13 54 profile-id 1
  ont internet-config 13 54 ip-index 0
  ont wan-config 13 54 ip-index 0 profile-id 10
@@ -5484,7 +5484,7 @@ ont-srvprofile-id 200 desc "3709 - 3709"
  ont add 14 14 sn-auth "HWTCB6A17EAF" omci ont-lineprofile-id 500 
 ont-srvprofile-id 200 desc "7662 - 7662" 
  ont ipconfig 14 14 pppoe vlan 200 priority 5 user-account username "7662" 
-password "%$%#cV(!!!!!!!!!!!!le1{M=PaU~qZ~{Y75;!Kk|JY~+muE/j_)d.7CDc0N%Y3@<;^)"2]j10;q(_3KLKbMIBjEB}|x2*^1~<8(F:3~:DHxKhCDO0+Nyq/8&pqD+006$%$%#"
+password "%$%#cV(!!!!!!!!!!!!.N&I)XJnP/8i!tN%n+^6oOKi!tP^SXtR2g!nsOw@a<3OYf1iGA0KR>MKE:8:8ALP)~J@^%HSmR7smg_Ha^2w4+~vg7XCL`0|Oiv;=nqW/8k$!Q%$%#"
  ont tr069-server-config 14 14 profile-id 1
  ont internet-config 14 14 ip-index 0
  ont wan-config 14 14 ip-index 0 profile-id 10
@@ -5625,7 +5625,7 @@ ont-srvprofile-id 200 desc "8192 - 8192"
  ont add 15 61 sn-auth "HWTCD6B1189F" omci ont-lineprofile-id 500 
 ont-srvprofile-id 200 desc "7116 - 7116" 
  ont ipconfig 15 61 pppoe vlan 200 priority 5 user-account username "7116" 
-password "%$%#cV(!!!!!!!!!!!!^rs"@I67J9:N2@T$U}{V.rKw>!-|xQDl!~A$M+'+$%G685DwJBZT!aI_jES$nF:/&{Y@N*L'd0.7-F0%j=Wg87|-G~MKV2N~sH4L.6a.29xRWN%$%#"
+password "%$%#cV(!!!!!!!!!!!!<mp#3Tw,X;3~Dp1DnM#!+#<4>B[spT|&t=PS!'e=yb:AIPp:L~Mrx.&'b%#+_4ulUd]l-Y<'3]$Hoj1DYzUnUP6hO-Aifr.Ys=[:\a'1MdH[29%$%#"
  ont tr069-server-config 15 61 profile-id 1
  ont internet-config 15 61 ip-index 0
  ont wan-config 15 61 ip-index 0 profile-id 10
@@ -6443,7 +6443,7 @@ ont-srvprofile-id 200 desc "teste onu"
  ont add 0 3 sn-auth "HWTC1A73B0A4" omci ont-lineprofile-id 500 
 ont-srvprofile-id 200 desc "teste onu" 
  ont ipconfig 0 3 pppoe vlan 200 priority 5 user-account username "eventoap" 
-password "%$%#cV(!!!!!!!!!!!!xS6);$ge:Vt&-~Cf&QkFh1V7NeKyMIz<JN0*~.RF|W'lNZ3*,Ip)=,Unp&HE,7s:I_2*p0Z)_}WR;Vk/O=H~Oab"$Wrn}aDi5Tn&|Q;gO\U1tV%$%#"
+password "%$%#cV(!!!!!!!!!!!!cL8A=df>0Ey0dQUkep)BPonA*L3!H3VIbcUv~{qI/\/1-Y@-}WS]h8A@0:d-1Y@)JaJ8|A%DfU#>#Y_NNx)yE3NX+ZusPg9rXNl<zO$<RF<Ee*%$%#"
  ont tr069-server-config 0 3 profile-id 1
  ont internet-config 0 3 ip-index 0
  ont wan-config 0 3 ip-index 0 profile-id 10
@@ -6452,41 +6452,41 @@ ont-srvprofile-id 200 desc "teste onu"
  ont add 0 5 sn-auth "HWTCDC49C1A2" omci ont-lineprofile-id 500 
 ont-srvprofile-id 200 desc "teste onu" 
  ont ipconfig 0 5 pppoe vlan 200 priority 5 user-account username "eventoap" 
-password "%$%#cV(!!!!!!!!!!!!"\(]P|o>l,RVV=.0]n$DJoJW&~G!#.K!6ZJ\@MlD@Ad{(]yaEE~asF+P*RpE/h}wU=AP['("p.@X&|+5P,M=APp|H=.Ox3QQ'kx76Wo23qi:sG%$%#"
+password "%$%#cV(!!!!!!!!!!!!!xEuAN=nwGY$omCqL@X%hN3s/]GAxOn"m9$WqX+AS)(:34}oJSi+6C-WC6N<gZko6yi}kY0-#@Cn--|D"=*!;X07a&hF/%3PEQ<6Js|I,5#q;#%$%#"
  ont tr069-server-config 0 5 profile-id 1
  ont internet-config 0 5 ip-index 0
  ont wan-config 0 5 ip-index 0 profile-id 10
  ont add 0 6 sn-auth "HWTCF30DC6A7" omci ont-lineprofile-id 500 
 ont-srvprofile-id 200 desc "teste onu" 
  ont ipconfig 0 6 pppoe vlan 200 priority 5 user-account username "eventoap" 
-password "%$%#cV(!!!!!!!!!!!!o{Gz$(pCPC|r!;MFO|6(NYSDPq5w4+k&m`Qkl3UDcfV+Yw38LGL'y1YZs.5-E+)k@MKk11cNSgXtei{%LPR:*<{e*Ds_T"VcW&eY!7F"FT~q(0%$%#"
+password "%$%#cV(!!!!!!!!!!!!I3CaD-!q}G!Zy$$_$'K+v^4@2=gM"Z^^ogQdxspL=VkNYBMq~:c\uZT]iy84!q]j6v3}3,v~9!IZyQ3-zn>KRQ%eV($=TWPp-ZUC@3!#+OIgi.%$%#"
  ont tr069-server-config 0 6 profile-id 1
  ont internet-config 0 6 ip-index 0
  ont wan-config 0 6 ip-index 0 profile-id 10
  ont add 0 7 sn-auth "HWTCEB4191A7" omci ont-lineprofile-id 500 
 ont-srvprofile-id 200 desc "teste onu" 
  ont ipconfig 0 7 pppoe vlan 200 priority 5 user-account username "eventoap" 
-password "%$%#cV(!!!!!!!!!!!!{eZ#J(/b("Ai65@F"(4(N1@~O.oR}FTPf7L:4m"8m69rCQqhU9~)d:*Y31U7Fg:<9O76sK1+Oy&C</`6iX$IRk.ro&7SE#%OG,*4|9#!@0k>NF%$%#"
+password "%$%#cV(!!!!!!!!!!!!2_oDFp|f8OoEoaPJX<^D06eGMD_jPKa]0JIxRD9/w$M9(A{+,G}QN740<T_8aIn2Tj]O|;uCM:6K.]APu\ng,IPCeJvUX5-m&*PM*{v;~:eY$O%$%#"
  ont tr069-server-config 0 7 profile-id 1
  ont internet-config 0 7 ip-index 0
  ont wan-config 0 7 ip-index 0 profile-id 10
  ont add 0 8 sn-auth "HWTCE0E242A6" omci ont-lineprofile-id 500 
 ont-srvprofile-id 200 desc "teste onu" 
  ont ipconfig 0 8 pppoe vlan 200 priority 5 user-account username "eventoap" 
-password "%$%#cV(!!!!!!!!!!!!*$8+.Vjs,SAMe+KdK\1X[m6EP$,9u&EU%$Ffr^{4u,TW%giJWIp.vS3BE@rUKsr;+UfLV>%hJnPFrVFY;kZ'P[9*=:DC&I8+L/GWE,7Q6Cr..%%$%#"
+password "%$%#cV(!!!!!!!!!!!!|<S)KsGZe3W,J:/TwLC2,GCd#BB,8#T~NvJ/[7|S![,RP$sC]Vsi+r~L.'0TliR2@anukUO\wj4+*nJ"([ed$,9Ok8Xwt=#QmI]";aD\2G_^lE%$%#"
  ont tr069-server-config 0 8 profile-id 1
  ont internet-config 0 8 ip-index 0
  ont wan-config 0 8 ip-index 0 profile-id 10
  ont add 0 9 sn-auth "HWTC2C7BC5A4" omci ont-lineprofile-id 500 
 ont-srvprofile-id 200 desc "teste onu" 
- ont ipconfig 0 9 pppoe vlan 200 priority 5 user-account username "sgp" password "%$%#cV(!!!!!!!!!!!!@o%nHjd8JC"I{FRLa%9(5irB%tW!@5fEj;QsqaYR0r_$M&$fbYnq9@%#v6/.,!w`Ryp1dL]qn;M#"ZHB%p`3+5OilJs0R)RNM<V&DRJA7m5vRF%$%#"
+ ont ipconfig 0 9 pppoe vlan 200 priority 5 user-account username "sgp" password "%$%#cV(!!!!!!!!!!!!]n>5Y9T`S4<U;dUqXP)(;mX*(35T]Crc*TWer@yKLit+ZP!\Z&4=B%1!+k{4&VdU'j-rL8DR>/As3x^4+;qwGTA<@X.*M+DWJRw%lU32(x5;kW%$%#"
  ont tr069-server-config 0 9 profile-id 1
  ont internet-config 0 9 ip-index 0
  ont wan-config 0 9 ip-index 0 profile-id 10
  ont add 0 10 sn-auth "HWTC283E29A3" omci ont-lineprofile-id 500 
 ont-srvprofile-id 200 desc "teste onu" 
  ont ipconfig 0 10 pppoe vlan 200 priority 5 user-account username "eventoap" 
-password "%$%#cV(!!!!!!!!!!!!Xfy<HRC1p2Q2;l%fv1OI{9P}7R_D7$<'|S7/U<A-*BG$2@sF1.B'[C!r7y:;agTfHo+~.+Z>2zKm%8j8Zkn+M2ugM+G&&cF0|NdQC+CyD`GZFT%$%#"
+password "%$%#cV(!!!!!!!!!!!!7L_297vxiDE8(OTK)]1(r1]o%_RRiUP~SbEFNbKQ[rz~DUO)w;#WI^#k|XDBHC`u&}9:%7`KWW"{}uG,\k4a3{g@i(83Ln$j8!lRg%jx18TTt!%$%#"
  ont tr069-server-config 0 10 profile-id 1
  ont internet-config 0 10 ip-index 0
  ont wan-config 0 10 ip-index 0 profile-id 10
@@ -6495,7 +6495,7 @@ ont-srvprofile-id 200 desc "teste tr069"
  ont add 0 12 sn-auth "HWTC46B70F9D" omci ont-lineprofile-id 500 
 ont-srvprofile-id 200 desc "teste onu" 
  ont ipconfig 0 12 pppoe vlan 200 priority 5 user-account username "eventoap" 
-password "%$%#cV(!!!!!!!!!!!!~Y=N~w*q8T:^X4VB2mGLVOa@VPg+j;lF~y(XA6q+9c[@&+%CzK<G:.~Fs`.9dBQy!K2r!IejRpGb^|x~GQ(q6R<WR1_*]y%-d)wAnlZh;P|8N!%$%#"
+password "%$%#cV(!!!!!!!!!!!!$9p2)dLygS/st<U6odw1qKH1#M@R(~wCW@3jaPn*[DucQdwan<c'%|Vt~O2IN^`A(Kk%^!G3Sb$Km[uC/F=.Ds$#I8%pM7/_lX7Q)JoEM\}x09%$%#"
  ont tr069-server-config 0 12 profile-id 1
  ont internet-config 0 12 ip-index 0
  ont wan-config 0 12 ip-index 0 profile-id 10
@@ -6504,14 +6504,14 @@ ont-srvprofile-id 199 desc "solar"
  ont add 0 14 sn-auth "HWTCA17559A4" omci ont-lineprofile-id 500 
 ont-srvprofile-id 200 desc "teste onu" 
  ont ipconfig 0 14 pppoe vlan 200 priority 5 user-account username "eventoap" 
-password "%$%#cV(!!!!!!!!!!!!dLvy6l'k7/>>X$Q`m0S6S()[KbYF:5Z8IV)s:"^!emaK9d[o/)!Um=#3_/fF45p];G\,$A&>8*&'MckY'=hp'3!z)8(v|oLtIERGf/_$Lcn+t=%$%#"
+password "%$%#cV(!!!!!!!!!!!!8"H|F)!Q>9\f:HI5xm~+cChhD/:bk64zX@!^b0[*bm>3JRa\dCKe_RTIP^ITxp]i2C"0D.l$9I1]})0"s08{;H6-<!v,;H#)WsL;I/RjQTSxmP%$%#"
  ont tr069-server-config 0 14 profile-id 1
  ont internet-config 0 14 ip-index 0
  ont wan-config 0 14 ip-index 0 profile-id 10
  ont add 0 15 sn-auth "HWTCE0DAD4A6" omci ont-lineprofile-id 500 
 ont-srvprofile-id 200 desc "teste onu" 
  ont ipconfig 0 15 pppoe vlan 200 priority 5 user-account username "eventoap" 
-password "%$%#cV(!!!!!!!!!!!!F3},Po'ewP@V)MXY}AUJQIIX(!@=B.QA*^(H"44.!l4]&ee/B4{R<fOHU,2P|qT/"aV28:m8:Y2.$^sPK/zY8[FUm$e:@"DbJ<2:6LC-3'U)g+%$%#"
+password "%$%#cV(!!!!!!!!!!!!)+\}Llrr=Kh#}`)JAX7XT[2JQ9]=mXr8TT*.;LCI2P69$x\qy7%Rgi>"|L;>~(#;FEy{M<=M4Z#FxJ]-&:=.Bkf}'%-'Io:nTV*DZdJ|C9q[{N%$%#"
  ont tr069-server-config 0 15 profile-id 1
  ont internet-config 0 15 ip-index 0
  ont wan-config 0 15 ip-index 0 profile-id 10
@@ -6900,7 +6900,7 @@ ont-srvprofile-id 200 desc "7638 - 7638"
  ont add 4 13 sn-auth "HWTC4F9185AE" omci ont-lineprofile-id 500 
 ont-srvprofile-id 200 desc "7470 - 7470" 
  ont ipconfig 4 13 pppoe vlan 200 priority 5 user-account username "7470" 
-password "%$%#cV(!!!!!!!!!!!!rl.28kWwyS;X_lRR3H":%%Uu5PReF)c8nK:$,q(NkiG&Y"j=@'n>[mY7arB5I}$e6BSW@~[+_9);-Nb4.;L!J^a6I'+)dq"fUV/MI'"\><17dF%$%#"
+password "%$%#cV(!!!!!!!!!!!!pe8:E!Xc$<OS1S4JV.'*0D/MTGaRD,On];&9"GXDtbOL+CEkXXJR|:'r'OX<Nl8'"PTRtUyl,!T'O]..tsXaXI/^dF/sm]1Mt$'0<DCkPQWbpX%$%#"
  ont tr069-server-config 4 13 profile-id 1
  ont internet-config 4 13 ip-index 0
  ont wan-config 4 13 ip-index 0 profile-id 10
@@ -7067,7 +7067,7 @@ ont-srvprofile-id 200 desc "8078 - ccss"
  ont add 7 11 sn-auth "HWTC7F1AE29D" omci ont-lineprofile-id 500 
 ont-srvprofile-id 200 desc "5311 - 5311" 
  ont ipconfig 7 11 pppoe vlan 200 priority 5 user-account username "5311" 
-password "%$%#cV(!!!!!!!!!!!!er,%W{r<"DZjAz2xew6~1kqzQCx8U'J7MZ#dH0W~o4P;UcwOg$5L+W*#Z1r0g+Kn=_OH"WJM|%Yyr|#%N(>=9xE*+OU"i`)Xw188+^}YUjqC0&%$%#"
+password "%$%#cV(!!!!!!!!!!!!18+fL1nNE1*N,UTwGfkDoyMn>.@0qSr}ZuR|$D"KlAs!46bCA;V#eSB28W+B!{w`Qh[v)H%~Le0Oeln$Je}QV=y-&Wo2B}KCX"L~u,Qt:ZS&d,%$%#"
  ont tr069-server-config 7 11 profile-id 1
  ont internet-config 7 11 ip-index 0
  ont wan-config 7 11 ip-index 0 profile-id 10
@@ -7424,7 +7424,7 @@ ont-srvprofile-id 200 desc "7796 - 7796"
  ont add 11 16 sn-auth "HWTC455040A7" omci ont-lineprofile-id 500 
 ont-srvprofile-id 200 desc "1616 - 1616" 
  ont ipconfig 11 16 pppoe vlan 200 priority 5 user-account username "1616" 
-password "%$%#cV(!!!!!!!!!!!!2R@pD;6SgXN1"~DI/KIC6+)OHV+}*YrFPT.+x]<QG)L,F5,'>$#\!(8HC@T%tGymTfc3W0$@|$.HyWn0%x>WIW#|=~Zk@z>)ex42|u9r>Pgi<0%$%#"
+password "%$%#cV(!!!!!!!!!!!!zZbQ7{t@52DJQRJGoRS+Lt+;*!i4MI!0d$1Td[}9!%/3FX{>nG\Y|pOhj6&XkEPt*hKdM*_>Me!:]|!W8J})15!rLID-42,Ij1g'%o$tY83o6G%$%#"
  ont tr069-server-config 11 16 profile-id 2
  ont internet-config 11 16 ip-index 0
  ont wan-config 11 16 ip-index 0 profile-id 10
@@ -7437,7 +7437,7 @@ ont-srvprofile-id 199 desc "7835 - 7835"
  ont add 11 20 sn-auth "HWTCA81A40A5" omci ont-lineprofile-id 500 
 ont-srvprofile-id 200 desc "7906 - 7906" 
  ont ipconfig 11 20 pppoe vlan 200 priority 5 user-account username "7906" 
-password "%$%#cV(!!!!!!!!!!!!.")9<R0Vb'(}0/<zm$o#7gPhT4&RW!15er*I;X],0@h^MnJ'C~G0V]:=u"eL|Y`VJ]<&q"dN1qJb3H#;H4~m-<Z{4NX``"T{}#F,Kr41=$>+g'%$%#"
+password "%$%#cV(!!!!!!!!!!!!`JHmSKm5}H3/J&Yf<V(;6@}[CCBK1'"<aF4a/5*.SgJX);9B^3d(3qYSrC{P@^xgKk}i#EebJ^NYsD_Qx>$Z!9YaV/Dk!MT'NHw>b9GCA;=Lv)%$%#"
  ont tr069-server-config 11 20 profile-id 1
  ont internet-config 11 20 ip-index 0
  ont wan-config 11 20 ip-index 0 profile-id 10
@@ -7504,7 +7504,7 @@ ont-srvprofile-id 199 desc "4335 - moises2@malm"
  ont add 12 24 sn-auth "HWTC23E33BA3" omci ont-lineprofile-id 500 
 ont-srvprofile-id 200 desc "5912 - 5912" 
  ont ipconfig 12 24 pppoe vlan 200 priority 5 user-account username "5912" 
-password "%$%#cV(!!!!!!!!!!!!+&UH0]Nr5EfleiYzs#z+mw.x"7E:XGyaGv.Y$QWDN7gFMDdh2,d0[V(-i3I@Xzy,/Yb%qJDG7D8Z0@CB-$My.N/d_1Za$mVdweB<O,@OLudV'I%$%#"
+password "%$%#cV(!!!!!!!!!!!!q0RE1[nUUMpMU@;Z;e,=lDNLCZ!2cMG<fW8Ixj/CX;8k0AR,3~mdBeC+>3vPQ(5!5`,I*5Z)GJ&mBln2pZ*J,7Er1WJF4RKy<4@Kt1^qFu%TSP%$%#"
  ont tr069-server-config 12 24 profile-id 2
  ont internet-config 12 24 ip-index 0
  ont wan-config 12 24 ip-index 0 profile-id 10
@@ -7545,7 +7545,7 @@ ont-srvprofile-id 200 desc "1449 - 1449"
  ont add 13 2 sn-auth "HWTC90BB91AC" omci ont-lineprofile-id 500 
 ont-srvprofile-id 200 desc "119 - 119" 
  ont ipconfig 13 2 pppoe vlan 200 priority 5 user-account username "119" 
-password "%$%#cV(!!!!!!!!!!!!1aK,;%ONeW!<QK(G7,sT,@cQY+|6Y'thxa#Zi&s>U9/,G^ZgzRG_3~Zb;Ds("k5;K&Dz<6cdz7$:~JQB[~[6WP-H0+:.J=G&%9nU-.,3%;J2f%%$%#"
+password "%$%#cV(!!!!!!!!!!!!D$H&Q+aXKYiy)`R65gQJ}C%MCndp/WX-~/;QK3h0$XtP5=[abBKmFI#'C>eT$T=SSO1fi%Z[|hR\%+SL).@"Uil4V)}~$}Rc'HD6XT_*JbB9/O%$%#"
  ont tr069-server-config 13 2 profile-id 1
  ont internet-config 13 2 ip-index 0
  ont wan-config 13 2 ip-index 0 profile-id 10
@@ -7608,7 +7608,7 @@ ont-srvprofile-id 200 desc "9159 - 9159"
  ont add 15 8 sn-auth "HWTC5266E1AD" omci ont-lineprofile-id 500 
 ont-srvprofile-id 200 desc "5802 - 5802" 
  ont ipconfig 15 8 pppoe vlan 200 priority 5 user-account username "5802" 
-password "%$%#cV(!!!!!!!!!!!!f"v/BY$8n)b"Z-'(m.i:]V]s@!OzS$Zk2sL7S.zS-!=a)|fvRRvX#38hZ%3=4$fqH#:xaQ&w5:+ZVo6OPMUV'm[)0Fh#htE}RsD$lc)v3q,~5K%$%#"
+password "%$%#cV(!!!!!!!!!!!!@Ln6*[jtEV@U<[*QV94;dp4C5VuU4(hMHNH{O|%7](q{7Df&]G;\.:"-b#r<DeP7'O(!tJ_qBI/LX9Q,zAhu,v6m})ZkEAO_vAXBg4JX96<'mJ%$%#"
  ont tr069-server-config 15 8 profile-id 2
  ont internet-config 15 8 ip-index 0
  ont wan-config 15 8 ip-index 0 profile-id 10
@@ -7619,7 +7619,7 @@ ont-srvprofile-id 200 desc "6134 - 6134"
  ont add 15 11 sn-auth "HWTCA95A499B" omci ont-lineprofile-id 500 
 ont-srvprofile-id 200 desc "4458 - erivanda@bjpb" 
  ont ipconfig 15 11 pppoe vlan 200 priority 5 user-account username 
-"erivanda@bjpb" password "%$%#cV(!!!!!!!!!!!!G*Q@MJI06WazUe%ZbRR5lyvX.hXZ\*L$'SCcSkb(ymu&9;wm#&xMvxCaX8VD:H+uW+Jb*4<%xu/M@n}C'1'KH`cMyHEt`o~N1Zz>,Gz/Q>LOC:%$%#"
+"erivanda@bjpb" password "%$%#cV(!!!!!!!!!!!!B`B<H92g*M|[Jr#_w4^7'RC6@Y{9'T.Sm[8U[9R/K~ip$$cR%$x^T0Q*g7YCF+(A=%#WER]2h}P[=Pi*/2t7$""j-)Ith`#3l;.O%G!K+4,#D!%$%#"
  ont tr069-server-config 15 11 profile-id 1
  ont internet-config 15 11 ip-index 0
  ont wan-config 15 11 ip-index 0 profile-id 10
