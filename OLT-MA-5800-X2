@@ -1851,6 +1851,8 @@ ont-srvprofile-id 200 desc "5280 - 5280"
 ont-srvprofile-id 199 desc "mariasuely@mact" 
  ont add 14 3 sn-auth "44443732B3DE2DBB" omci ont-lineprofile-id 200 
 ont-srvprofile-id 199 desc "28741 - ambientemonte" 
+ ont add 14 4 sn-auth "54504C47F116B6C0" omci ont-lineprofile-id 200 
+ont-srvprofile-id 200 desc "9708 - 9708" 
  ont add 14 5 sn-auth "48575443DA887FA3" omci ont-lineprofile-id 200 
 ont-srvprofile-id 200 desc "MARIA ALVES OLIVEIRA " 
  ont add 14 6 sn-auth "54504C47842F5F8A" omci ont-lineprofile-id 200 
@@ -1863,8 +1865,6 @@ ont-srvprofile-id 199 desc "24882 - guardamunicipal"
 ont-srvprofile-id 199 desc "darcylucio@mact" 
  ont add 14 10 sn-auth "54504C4784239C38" omci ont-lineprofile-id 200 
 ont-srvprofile-id 200 desc "4684 - 4684" 
- ont add 14 11 sn-auth "464854546A0EDCBB" omci ont-lineprofile-id 200 
-ont-srvprofile-id 199 desc "24929 - crasmonte" 
  ont add 14 12 sn-auth "414C434CFE132B5F" omci ont-lineprofile-id 200 
 ont-srvprofile-id 200 desc "4672 - 4672" 
  ont add 14 13 sn-auth "48575443F2269AA7" omci ont-lineprofile-id 200 
@@ -2443,41 +2443,6 @@ ont-srvprofile-id 200 desc "9257 - 9257"
  ont port native-vlan 14 6 eth 1 vlan 200 priority 0 
  ont port native-vlan 14 8 eth 1 vlan 200 priority 0 
  ont port native-vlan 14 9 eth 1 vlan 200 priority 0 
- ont port native-vlan 14 11 eth 1 vlan 200 priority 0 
- ont port native-vlan 14 14 eth 1 vlan 200 priority 0 
- ont port native-vlan 14 17 eth 1 vlan 200 priority 0 
- ont port native-vlan 14 20 eth 1 vlan 200 priority 0 
- ont port native-vlan 14 21 eth 1 vlan 200 priority 0 
- ont port native-vlan 14 22 eth 1 vlan 200 priority 0 
- ont port native-vlan 14 25 eth 1 vlan 200 priority 0 
- ont port native-vlan 14 26 eth 1 vlan 200 priority 0 
- ont port native-vlan 14 27 eth 1 vlan 200 priority 0 
- ont port native-vlan 14 29 eth 1 vlan 200 priority 0 
- ont port native-vlan 14 30 eth 1 vlan 200 priority 0 
- ont port native-vlan 14 32 eth 1 vlan 200 priority 0 
- ont port native-vlan 14 33 eth 1 vlan 200 priority 0 
- ont port native-vlan 14 34 eth 1 vlan 200 priority 0 
- ont port native-vlan 14 35 eth 1 vlan 200 priority 0 
- ont port native-vlan 14 36 eth 1 vlan 200 priority 0 
- ont port native-vlan 14 37 eth 1 vlan 200 priority 0 
- ont port native-vlan 14 38 eth 1 vlan 200 priority 0 
- ont port route 14 39 eth 1 enable
- ont port route 14 39 eth 2 enable
- ont port route 14 39 eth 3 enable
- ont port route 14 39 eth 4 enable
- ont port native-vlan 14 42 eth 1 vlan 200 priority 0 
- ont port route 14 43 eth 1 enable
- ont port route 14 43 eth 2 enable
- ont port route 14 43 eth 3 enable
- ont port route 14 43 eth 4 enable
- ont port route 14 44 eth 1 enable
- ont port route 14 44 eth 2 enable
- ont port route 14 44 eth 3 enable
- ont port route 14 44 eth 4 enable
- ont port native-vlan 14 50 eth 1 vlan 200 priority 0 
- ont port native-vlan 14 52 eth 1 vlan 200 priority 0 
- ont port native-vlan 14 60 eth 1 vlan 200 priority 0 
- ont port native-vlan 14 61 eth 1 vlan 200 priority 0 
  ont port native-vlan 15 2 eth 1 vlan 200 priority 0 
  ont port native-vlan 15 3 eth 1 vlan 200 priority 0 
  ont port native-vlan 15 5 eth 1 vlan 200 priority 0 
@@ -2604,8 +2569,6 @@ user-vlan 200 tag-transform translate
  service-port 45 vlan 1007 gpon 0/1/7 ont 3 gemport 200 multi-service user-vlan 200 tag-transform translate
  service-port 46 vlan 1008 gpon 0/1/8 ont 27 gemport 200 multi-service user-vlan 200 tag-transform translate
  service-port 47 vlan 1009 gpon 0/1/9 ont 19 gemport 200 multi-service user-vlan 200 tag-transform translate
- service-port 48 vlan 1660 gpon 0/1/14 ont 11 gemport 200 multi-service 
-user-vlan 200 tag-transform translate
  service-port 49 vlan 1005 gpon 0/1/5 ont 15 gemport 200 multi-service user-vlan 200 tag-transform translate
  service-port 50 vlan 1009 gpon 0/1/9 ont 0 gemport 200 multi-service user-vlan 200 tag-transform translate
  service-port 51 vlan 1011 gpon 0/1/11 ont 0 gemport 200 multi-service user-vlan 200 tag-transform translate
@@ -4125,6 +4088,8 @@ user-vlan 200 tag-transform translate
  service-port 1104 vlan 1009 gpon 0/1/9 ont 7 gemport 200 multi-service 
 user-vlan 200 tag-transform translate
  service-port 1105 vlan 1003 gpon 0/1/3 ont 26 gemport 200 multi-service 
+user-vlan 200 tag-transform translate
+ service-port 1106 vlan 1014 gpon 0/1/14 ont 4 gemport 200 multi-service 
 user-vlan 200 tag-transform translate
 #
 [autobackup-config]
