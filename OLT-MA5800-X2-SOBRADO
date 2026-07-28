@@ -205,8 +205,8 @@ ont-srvprofile-id 199 desc "CLIENTE LP"
 ont-srvprofile-id 199 desc "3754 - marleide@lp" 
  ont add 1 16 sn-auth "53553130B203827D" omci ont-lineprofile-id 200 
 ont-srvprofile-id 199 desc "CLIENTE LP" 
- ont add 1 17 sn-auth "54504C4700C515C4" omci ont-lineprofile-id 200 
-ont-srvprofile-id 199 desc "7887 - 7887" 
+ ont add 1 17 sn-auth "54504C478E8F9EE0" omci ont-lineprofile-id 200 
+ont-srvprofile-id 200 desc "7887 - 7887" 
  ont add 1 18 sn-auth "54504C4700C513D4" omci ont-lineprofile-id 200 
 ont-srvprofile-id 199 desc "6435 - 6435" 
  ont add 1 19 sn-auth "53554D43B29F368C" omci ont-lineprofile-id 200 
@@ -493,6 +493,8 @@ ont-srvprofile-id 199 desc "6902 - 6902"
 ont-srvprofile-id 200 desc "9256 - 08673" 
  ont add 4 26 sn-auth "54504C47B36C3260" omci ont-lineprofile-id 200 
 ont-srvprofile-id 200 desc "861 - 861" 
+ ont add 4 27 sn-auth "54504C478474BA5C" omci ont-lineprofile-id 200 
+ont-srvprofile-id 199 desc "9430 - kjmhng" 
  ont add 5 0 sn-auth "54504C478E8EB228" omci ont-lineprofile-id 200 
 ont-srvprofile-id 200 desc "CLIENTE LP" 
  ont add 5 1 sn-auth "54504C47D220CF58" omci ont-lineprofile-id 200 
@@ -677,6 +679,8 @@ ont-srvprofile-id 200 desc "9213 - 9213"
 ont-srvprofile-id 200 desc "2426 - 2426" 
  ont add 6 50 sn-auth "48575443454C35A7" omci ont-lineprofile-id 200 
 ont-srvprofile-id 200 desc "9595 - 9595" 
+ ont add 6 51 sn-auth "54504C474FCDDE10" omci ont-lineprofile-id 200 
+ont-srvprofile-id 200 desc "897 - 897" 
  ont add 7 0 sn-auth "4954425332CB5F5E" omci ont-lineprofile-id 200 
 ont-srvprofile-id 199 desc "CLIENTE LP" 
  ont add 7 1 sn-auth "54504C47F116B0B8" omci ont-lineprofile-id 200 
@@ -861,7 +865,6 @@ ont-srvprofile-id 200 desc "9522 - 9522"
  ont port native-vlan 1 14 eth 1 vlan 200 priority 0 
  ont port native-vlan 1 15 eth 1 vlan 200 priority 0 
  ont port native-vlan 1 16 eth 1 vlan 200 priority 0 
- ont port native-vlan 1 17 eth 1 vlan 200 priority 0 
  ont port native-vlan 1 18 eth 1 vlan 200 priority 0 
  ont port native-vlan 1 19 eth 1 vlan 200 priority 0 
  ont port native-vlan 1 20 eth 1 vlan 200 priority 0 
@@ -932,6 +935,7 @@ ont-srvprofile-id 200 desc "9522 - 9522"
  ont port native-vlan 4 21 eth 1 vlan 200 priority 0 
  ont port native-vlan 4 22 eth 1 vlan 200 priority 0 
  ont port native-vlan 4 24 eth 1 vlan 200 priority 0 
+ ont port native-vlan 4 27 eth 1 vlan 200 priority 0 
  ont port native-vlan 5 1 eth 1 vlan 200 priority 0 
  ont port native-vlan 5 3 eth 1 vlan 200 priority 0 
  ont port native-vlan 5 7 eth 1 vlan 200 priority 0 
@@ -1131,8 +1135,6 @@ user-vlan 200 tag-transform translate
  service-port 98 vlan 1202 gpon 0/1/1 ont 14 gemport 200 multi-service user-vlan 200 tag-transform translate
  service-port 99 vlan 1202 gpon 0/1/1 ont 16 gemport 200 multi-service user-vlan 200 tag-transform translate
  service-port 100 vlan 1204 gpon 0/1/3 ont 51 gemport 200 multi-service 
-user-vlan 200 tag-transform translate
- service-port 101 vlan 1202 gpon 0/1/1 ont 17 gemport 200 multi-service 
 user-vlan 200 tag-transform translate
  service-port 103 vlan 1202 gpon 0/1/1 ont 19 gemport 200 multi-service 
 user-vlan 200 tag-transform translate
@@ -1592,6 +1594,12 @@ user-vlan 200 tag-transform translate
  service-port 445 vlan 1208 gpon 0/1/7 ont 7 gemport 200 multi-service user-vlan 200 tag-transform translate
  service-port 446 vlan 1201 gpon 0/1/0 ont 8 gemport 200 multi-service user-vlan 200 tag-transform translate
  service-port 447 vlan 1204 gpon 0/1/3 ont 11 gemport 200 multi-service 
+user-vlan 200 tag-transform translate
+ service-port 448 vlan 1205 gpon 0/1/4 ont 27 gemport 200 multi-service 
+user-vlan 200 tag-transform translate
+ service-port 449 vlan 1207 gpon 0/1/6 ont 51 gemport 200 multi-service 
+user-vlan 200 tag-transform translate
+ service-port 450 vlan 1202 gpon 0/1/1 ont 17 gemport 200 multi-service 
 user-vlan 200 tag-transform translate
  monitor uplink-port non-unicast port 0/3/0
  monitor uplink-port non-unicast port 0/3/1
