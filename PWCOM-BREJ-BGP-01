@@ -14,8 +14,8 @@
 # 14       CLK     Present    Registered   Normal     OTHER  0      Master       
 # -------------------------------------------------------------------------------
 !Software Version V800R023C10SPC500
-!Last configuration was updated at 2026-07-09 19:45:35-03:00 by ppnetwork
-!Last configuration was saved at 2026-07-09 19:50:36-03:00
+!Last configuration was updated at 2026-08-10 18:15:06-03:00 by pwcomadmin
+!Last configuration was saved at 2026-08-10 18:20:07-03:00
 !kms_feature --
 #
 sysname PWCOM-BREJ-BGP-01
@@ -606,7 +606,7 @@ bgp 268746
 #
 bmp
  #
- bmp-session 45.5.145.34
+ bmp-session 45.5.145.32
   tcp connect port 10179
   connect-interface 45.171.228.0
   #
@@ -825,12 +825,16 @@ route-policy ADTELECOM-V6-OUT permit node 40
 #
 route-policy ADTELECOM-V6-OUT deny node 99
 #
+route-policy AGRESTE-CDN-V4-IN deny node 1
+#
 route-policy AGRESTE-CDN-V4-IN permit node 20
 #
 route-policy AGRESTE-CDN-V4-OUT permit node 40
  if-match ip-prefix ANUNCIOS-AGRESTE-CDN-V4
 #
 route-policy AGRESTE-CDN-V4-OUT deny node 99
+#
+route-policy AGRESTE-CDN-V6-IN deny node 1
 #
 route-policy AGRESTE-CDN-V6-IN permit node 20
 #
