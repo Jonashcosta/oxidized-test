@@ -297,21 +297,19 @@ ont-srvprofile-id 200 desc "9014 - 8493"
  ont add 0 1 sn-auth "ITBSE87CB86E" omci ont-lineprofile-id 200 
 ont-srvprofile-id 199 desc "3784 - franciscatorres@bjps" 
  ont ipconfig 0 1 pppoe vlan 200 priority 5 user-account username "eventoap" 
-password "%$%#cV(!!!!!!!!!!!!HB9{&/ssA*[<ZW4'>l0WPCfO~c1Wq"5cbL20"323~2g&1}2Q#3R8zqC))=K-:=QI$y-+GKAkB`Y:D4#VIa'^IbWuB=GC96FheN>J{!]ANXRT+6%$%#"
+password "%$%#cV(!!!!!!!!!!!!Ue`m9:c'u/tgE.4I$}@6w'p`;-C[SW.@~)Ar}/xAjY9+K|!L}*NQD[.D"]s@!"}v1kt5*!y>&S'*{](T:u6D#45qr:@UHAP<%\lOgAKgBlgp15%$%#"
  ont tr069-server-config 0 1 profile-id 1
  ont internet-config 0 1 ip-index 0
  ont wan-config 0 1 ip-index 0 profile-id 10
  ont add 0 2 sn-auth "HWTC3E9959AE" omci ont-lineprofile-id 500 
 ont-srvprofile-id 200 desc "7319 - 7319" 
  ont ipconfig 0 2 pppoe vlan 200 priority 5 user-account username "7319" 
-password "%$%#cV(!!!!!!!!!!!!kW`"2{m,.1@Nv`MW.f_0jxK6F-L~z+wPIL;iB/<W/y(pMQ;y:%vJ}!DzfcxNz$wJ-.T7f=<e{%UJlgC*3CGjSw,1vYaFu>V5^))'D|}kT@pmNL%$%#"
+password "%$%#cV(!!!!!!!!!!!!\R{L7)_*k'@]sIOc]Wp4S9wSY3}(b!=trD~O<JQ,kIjg>Sk`rBcPl4"nwj}$fQ7lWU[86XhgeW'M6V8P_)D65{rN;OtPj'@n9.6S#"S=M&VT]!%$%#"
  ont tr069-server-config 0 2 profile-id 2
  ont internet-config 0 2 ip-index 0
  ont wan-config 0 2 ip-index 0 profile-id 10
  ont add 0 3 sn-auth "TPLGBDC6A978" omci ont-lineprofile-id 200 
 ont-srvprofile-id 200 desc "8353 - 8353" 
- ont add 0 4 sn-auth "MKPGB46417C0" omci ont-lineprofile-id 200 
-ont-srvprofile-id 199 desc "3679 - gedeon@bjps" 
  ont add 0 5 sn-auth "TPLG00C515C2" omci ont-lineprofile-id 200 
 ont-srvprofile-id 199 desc "6546 - 6546" 
  ont add 0 6 sn-auth "NBELB2143DD1" omci ont-lineprofile-id 200 
@@ -381,7 +379,7 @@ ont-srvprofile-id 200 desc "9371 - 9371"
  ont add 0 39 sn-auth "HWTCF30E4AA7" omci ont-lineprofile-id 500 
 ont-srvprofile-id 200 desc "5764 - 5764" 
  ont ipconfig 0 39 pppoe vlan 200 priority 5 user-account username "5764" 
-password "%$%#cV(!!!!!!!!!!!!dB<y$@E)+S}lQNUIyIl<,0eXCkHQz3.$WQ!|Z4[HSfXR$h*X1Ky3PsD=&#dW'S9^/sK9zH2)nA+XGFo~X@ot;|CZ.ReK2u;*gDl*=i[tUurS:%%$%#"
+password "%$%#cV(!!!!!!!!!!!!e`TyWd0XGH@RhO(;ru:(djO*AY<wy:P^mjQ*<H\L\|,sEdI[rNE#b15R\n^!K>oX6CpPx)Dnr$1#;x97v,LL@:`@j0-j1%"CRX!Z;C/WTRX_(.%$%#"
  ont tr069-server-config 0 39 profile-id 1
  ont internet-config 0 39 ip-index 0
  ont wan-config 0 39 ip-index 0 profile-id 10
@@ -511,8 +509,8 @@ ont-srvprofile-id 200 desc "9521 - 9521"
 ont-srvprofile-id 200 desc "9621 - 9621" 
  ont add 2 0 sn-auth "BTPTDD17A67D" omci ont-lineprofile-id 200 
 ont-srvprofile-id 199 desc "cliente brejinho" 
- ont add 2 1 sn-auth "BTPTDD22D13A" omci ont-lineprofile-id 200 
-ont-srvprofile-id 199 desc "cliente brejinho" 
+ ont add 2 1 sn-auth "TPLG5DDB7020" omci ont-lineprofile-id 200 
+ont-srvprofile-id 200 desc "3163 - 3163" 
  ont add 2 2 sn-auth "TPLGB5354646" omci ont-lineprofile-id 200 
 ont-srvprofile-id 199 desc "7309 - 7309" 
  ont add 2 3 sn-auth "D0116A93F6B8" omci ont-lineprofile-id 200 
@@ -725,8 +723,8 @@ ont-srvprofile-id 200 desc "2771 - 2771"
 ont-srvprofile-id 199 desc "cliente brejinho" 
  ont add 3 3 sn-auth "DD16B3C7D860" omci ont-lineprofile-id 200 
 ont-srvprofile-id 199 desc "cliente brejinho" 
- ont add 3 4 sn-auth "ALCLFE00CDD9" omci ont-lineprofile-id 200 
-ont-srvprofile-id 200 desc "6909" 
+ ont add 3 4 sn-auth "TPLG5DDB6898" omci ont-lineprofile-id 200 
+ont-srvprofile-id 200 desc "564 - 564" 
  ont add 3 5 sn-auth "ITBS32CBD94C" omci ont-lineprofile-id 200 
 ont-srvprofile-id 199 desc "7046" 
  ont add 3 6 sn-auth "TPLG79BE0E60" omci ont-lineprofile-id 200 
@@ -774,14 +772,14 @@ ont-srvprofile-id 200 desc "1175 - 1175"
  ont add 3 27 sn-auth "HWTCC9823CAF" omci ont-lineprofile-id 500 
 ont-srvprofile-id 200 desc "1298 - 1298" 
  ont ipconfig 3 27 pppoe vlan 200 priority 5 user-account username "1298" 
-password "%$%#cV(!!!!!!!!!!!!SGmRD$)Cm3K\UH#_+jnJ(C=cJ|a)+5Z|2oYQ6:t&uyDgD-r.|J+y5c$kAV=0RSHNKe`6<,&f~A9[Fe+6YOtn7SeQ3Qp@B`+yWWv63[|*Qf[I^@%$%#"
+password "%$%#cV(!!!!!!!!!!!!h{WB*<.#AK%\[MF`$.VN`*@g@<L>u#tsRw7)"9w3BO6^BHKQzClaIATOB;_Y3~TwD;02m!Kz,3I6G&4Xy]:PDz.V6JWO]oFq`<j4ZTOQ.g_/w~%$%#"
  ont tr069-server-config 3 27 profile-id 1
  ont internet-config 3 27 ip-index 0
  ont wan-config 3 27 ip-index 0 profile-id 10
  ont add 3 28 sn-auth "HWTCC2AB93AD" omci ont-lineprofile-id 500 
 ont-srvprofile-id 200 desc "696 - 696" 
  ont ipconfig 3 28 pppoe vlan 200 priority 5 user-account username "696" 
-password "%$%#cV(!!!!!!!!!!!!Yy8{2$(2Q=w>B$0q%i7K9gL|N/9N2V;SCUS>|RdJ<MC3MJ^10KD:Xt$R;aM-S|t|,+!A@Np_3)Iu#8_=t)-N3:>hi)u8b2Qf9:QT(6Lw@WLF[,%$%#"
+password "%$%#cV(!!!!!!!!!!!![>]q;T4}3SSVNm'RcEH)wO(G;h4Pm4G`UM''%fv3b0e;S-E{CHPR&[Hiy#*46<.cNmAK64K;CK@I]Ai*/,*W7*#Y(92MZ#9C|(:5_cGh'f:9(S%$%#"
  ont tr069-server-config 3 28 profile-id 1
  ont internet-config 3 28 ip-index 0
  ont wan-config 3 28 ip-index 0 profile-id 10
@@ -832,7 +830,7 @@ ont-srvprofile-id 200 desc "8356 - 8356"
  ont add 3 51 sn-auth "TPLG0D2F7230" omci ont-lineprofile-id 500 
 ont-srvprofile-id 200 desc "teste onu" 
  ont ipconfig 3 51 pppoe vlan 200 priority 5 user-account username "eventoap" 
-password "%$%#cV(!!!!!!!!!!!!z9q)+'IQ-&z=^"V{ZqzA%*[;I8+dC05a>y/R[Gu1GVfMY<EL#W)7-"%lsMF,`8*PANH_O1S4w|BPEN:Q#$Tc1^du]"0~*:HY/{/L(I^9;D!8VO%$%#"
+password "%$%#cV(!!!!!!!!!!!!]>fDQi+V"CMdc~P7yF9QX#,H"e623Sp1(6@3~(UKB-Ce:]w>FKESYyH-'*!;_#.)Zv~g*Qy9B3$9D7oNUw4vF[)U4"rzz31Y5)S~>La/"m5XtX%$%#"
  ont tr069-server-config 3 51 profile-id 1
  ont internet-config 3 51 ip-index 0
  ont wan-config 3 51 ip-index 0 profile-id 10
@@ -850,7 +848,7 @@ ont-srvprofile-id 200 desc "8652 - 8652"
 ont-srvprofile-id 200 desc "8400 - 8400" 
  ont add 4 0 sn-auth "HWTC9043BFA4" omci ont-lineprofile-id 500 
 ont-srvprofile-id 200 desc "185 - 185" 
- ont ipconfig 4 0 pppoe vlan 200 priority 5 user-account username "185" password "%$%#cV(!!!!!!!!!!!!(.|wPJ#J^T*-.0SggqM$hJ,+-!Sv"OPsh!E@.Yo'+.Ao/+/}XEh:jjPAT"BJi`CNGa|h[V_52FYT(x_29&2.F,#2<Ebu*Z***Q|2-g@5@nc>QJ%$%#"
+ ont ipconfig 4 0 pppoe vlan 200 priority 5 user-account username "185" password "%$%#cV(!!!!!!!!!!!!~q$5FI~JlSQ&Lr8Xo9NGFEbxONJC0B-nJu>X<*HBE>n_>+$vU6rz&QW%(E|J4#i)7f(/b44N_l:_O)J=6sXJ4[mW8*""!hMj6*W%pSGiCYIv|C%$%#"
  ont tr069-server-config 4 0 profile-id 1
  ont internet-config 4 0 ip-index 0
  ont wan-config 4 0 ip-index 0 profile-id 10
@@ -939,7 +937,7 @@ ont-srvprofile-id 199 desc "cliente brejinho"
  ont add 4 42 sn-auth "HWTC518545AE" omci ont-lineprofile-id 500 
 ont-srvprofile-id 200 desc "2752 - 2752" 
  ont ipconfig 4 42 pppoe vlan 200 priority 5 user-account username "2752" 
-password "%$%#cV(!!!!!!!!!!!!m8'CCf;bTT+v;J;kqzPOS{58XSH)fGh:|96kLbk!/^_cI/|)9"P7#5VWi[q'}szJ6+dyt;Ek&D'U{$.VI2G,)|DyB+vrc3Kl|"4#ujjJUH:FCM%$%#"
+password "%$%#cV(!!!!!!!!!!!!N$\}TBw&YG@#r#W}kiPG05L66OXhL1ZEC_SE&\`A#'I41A}>1;XZHEX#Q=kT*HQ'ZWN*HCL_V^J@C.@Ix8%PTN&f',msL\'CQRzWEIdP7:dg`W%$%#"
  ont tr069-server-config 4 42 profile-id 1
  ont internet-config 4 42 ip-index 0
  ont wan-config 4 42 ip-index 0 profile-id 10
@@ -1042,14 +1040,14 @@ ont-srvprofile-id 199 desc "4590 - 4590"
  ont add 4 94 sn-auth "HWTCA19C22A4" omci ont-lineprofile-id 500 
 ont-srvprofile-id 200 desc "1460 - 1460" 
  ont ipconfig 4 94 pppoe vlan 200 priority 5 user-account username "1460" 
-password "%$%#cV(!!!!!!!!!!!!5nt"G$o$r8QWA'/vl']#[AP;K%McXI&Yo)D)hcKSQPOPH2,vJ3=m)<I\Lhq(d,)5.\n$VEAKF$~YZCXR4N'[V!E8z;kC'GS7PnlOCL\.I>WE")%$%#"
+password "%$%#cV(!!!!!!!!!!!!/[{dV_._(U%"._%OKBk.pw|jW'aO#%7RCn-tNb[HlNx}'8e]H(0#0h20^|:'&+{8609Ew2unO{6p#jA6LY,_3Pd;!1a\tzU%RVl!`.-g8BcX/7%$%#"
  ont tr069-server-config 4 94 profile-id 1
  ont internet-config 4 94 ip-index 0
  ont wan-config 4 94 ip-index 0 profile-id 10
  ont add 4 95 sn-auth "HWTCEC6DE0A6" omci ont-lineprofile-id 500 
 ont-srvprofile-id 200 desc "7758 - 7758" 
  ont ipconfig 4 95 pppoe vlan 200 priority 5 user-account username "7758" 
-password "%$%#cV(!!!!!!!!!!!!0&h-ANkO8HR>$A!(1#rT`q/.!qT8P!e`_["gqCH7dW&dL\e0U7#SSKH0P2V6bRRg+tw=uANPzuLl1vl=&#,)$9^>g!c%su<@-919~y0~A1$Wi$%$%#"
+password "%$%#cV(!!!!!!!!!!!!Y_aIDrTu~L9Bmc'Kge],u}y%SJjX1Vzm]JD\pPu&}\CbOG>]J*Z=F(~FrIi$Ryaw8W0DK.yTA,-$kWG6eNHr))/MX7tEw&Qzzr\REm.(>,`ud$%$%#"
  ont tr069-server-config 4 95 profile-id 1
  ont internet-config 4 95 ip-index 0
  ont wan-config 4 95 ip-index 0 profile-id 10
@@ -1097,7 +1095,7 @@ ont-srvprofile-id 199 desc "cliente brejinho"
 ont-srvprofile-id 199 desc "cliente brejinho" 
  ont add 5 9 sn-auth "HWTCB6A632AF" omci ont-lineprofile-id 500 
 ont-srvprofile-id 200 desc "179 - 179" 
- ont ipconfig 5 9 pppoe vlan 200 priority 5 user-account username "179" password "%$%#cV(!!!!!!!!!!!!257t9ME[|L7Pl!<Zo%/#}kFPNi3gw<JZB4D0DR~Ghn/Y&.Sw$FE+0|1&vHC"@%6qEcEzh:UxarG]U\I=99A4/aVhI5;N<#XCKTq*IG#HV8Aw-)%$%#"
+ ont ipconfig 5 9 pppoe vlan 200 priority 5 user-account username "179" password "%$%#cV(!!!!!!!!!!!!WA3xMoF<I(bxY]"d+./=A/%JFBMG9@^COqQ:&=5TTEF]W|Dr9@{g-'Qenw-5{rRI~m\;-ZG\F_S'PE5+Dk(4S~"tKI(;05OL7>|~,7&;'%0S^.%$%#"
  ont tr069-server-config 5 9 profile-id 1
  ont internet-config 5 9 ip-index 0
  ont wan-config 5 9 ip-index 0 profile-id 10
@@ -1190,7 +1188,7 @@ ont-srvprofile-id 199 desc "cliente brejinho"
  ont add 5 53 sn-auth "HWTCA5CB2AA4" omci ont-lineprofile-id 500 
 ont-srvprofile-id 200 desc "339 - 339" 
  ont ipconfig 5 53 pppoe vlan 200 priority 5 user-account username "339" 
-password "%$%#cV(!!!!!!!!!!!!(qYFGde-f"7M(qI8NntJ$/_+9&.DR<kD(4Z(S'OSIU]!@#VNLC@}DU8dI708u]_GI{h|<4pk@f=:5rkV2(7VVDzf!>`m@:-C{Ym,YXsf1cUTB/%$%#"
+password "%$%#cV(!!!!!!!!!!!!(fVZ83d8e2DKxJ+nH)xC<`//VdCl/NkJ7A%H#&d@'^5YDQ~awD[tXQBSc|n@t59QDj9|e-pys,=Iu8./X<AxJr*6e0J7C"-H+9YYUQ8>>ip-=4%$%#"
  ont tr069-server-config 5 53 profile-id 1
  ont internet-config 5 53 ip-index 0
  ont wan-config 5 53 ip-index 0 profile-id 10
@@ -1198,7 +1196,7 @@ password "%$%#cV(!!!!!!!!!!!!(qYFGde-f"7M(qI8NntJ$/_+9&.DR<kD(4Z(S'OSIU]!@#VNLC@
 ont-srvprofile-id 200 desc "9370 - 9370" 
  ont add 5 55 sn-auth "TPLG7E94CB38" omci ont-lineprofile-id 200 
 ont-srvprofile-id 200 desc "303 - 303" 
- ont add 5 56 sn-auth "ITBS5F1587C8" omci ont-lineprofile-id 200 
+ ont add 5 56 sn-auth "TPLG5DDB8580" omci ont-lineprofile-id 200 
 ont-srvprofile-id 200 desc "6442 - 6442" 
  ont add 5 57 sn-auth "MONU00AF3F11" omci ont-lineprofile-id 200 
 ont-srvprofile-id 199 desc "cliente brejinho" 
@@ -1282,6 +1280,8 @@ ont-srvprofile-id 200 desc "3154 - torre1"
 ont-srvprofile-id 200 desc "3166 - 3166" 
  ont add 5 97 sn-auth "TPLGF1C16CC0" omci ont-lineprofile-id 200 
 ont-srvprofile-id 200 desc "9666 - 9666" 
+ ont add 5 98 sn-auth "FHTTFE262317" omci ont-lineprofile-id 200 
+ont-srvprofile-id 200 desc "9067 - 9067" 
  ont add 6 0 sn-auth "HWTC6FC1F01C" omci ont-lineprofile-id 200 
 ont-srvprofile-id 199 desc "bueira poste" 
  ont add 6 1 sn-auth "TPLGCEAFBA38" omci ont-lineprofile-id 200 
@@ -1381,7 +1381,7 @@ ont-srvprofile-id 3791 desc "7109 - 7109"
  ont add 6 48 sn-auth "TPLGCEAFD310" omci ont-lineprofile-id 200 
 ont-srvprofile-id 200 desc "196 - 196" 
  ont add 6 49 sn-auth "TPLGCE605F88" omci ont-lineprofile-id 200 
-ont-srvprofile-id 200 desc "7621 - 7621" 
+ont-srvprofile-id 200 desc "9792 - 9792" 
  ont add 6 50 sn-auth "TPLG84C734C0" omci ont-lineprofile-id 200 
 ont-srvprofile-id 199 desc "3638 - fkn1" 
  ont add 6 51 sn-auth "SU10B2025BE7" omci ont-lineprofile-id 200 
@@ -1394,14 +1394,18 @@ ont-srvprofile-id 200 desc "415 - 415"
 ont-srvprofile-id 200 desc "8981 - 8981" 
  ont add 6 55 sn-auth "TPLGBDC6B580" omci ont-lineprofile-id 200 
 ont-srvprofile-id 200 desc "8054 - 8054" 
- ont add 6 56 sn-auth "FHTTFE262317" omci ont-lineprofile-id 200 
-ont-srvprofile-id 200 desc "9067 - 9067" 
+ ont add 6 56 sn-auth "TPLG5DDB8500" omci ont-lineprofile-id 200 
+ont-srvprofile-id 200 desc "9779 - 9779" 
  ont add 6 57 sn-auth "TPLG8E8CC300" omci ont-lineprofile-id 200 
 ont-srvprofile-id 200 desc "8769 - 8769" 
  ont add 6 58 sn-auth "ITBS3287E69E" omci ont-lineprofile-id 200 
 ont-srvprofile-id 199 desc "9214 - 9214" 
  ont add 6 59 sn-auth "SHLN20F8EECC" omci ont-lineprofile-id 200 
 ont-srvprofile-id 200 desc "9222 - 9222" 
+ ont add 6 60 sn-auth "TPLG5DDA6290" omci ont-lineprofile-id 200 
+ont-srvprofile-id 200 desc "9733 - 9733" 
+ ont add 6 61 sn-auth "TPLG5DDB7AD8" omci ont-lineprofile-id 200 
+ont-srvprofile-id 200 desc "9761 - 9761" 
  ont add 7 0 sn-auth "TPLG4A48367A" omci ont-lineprofile-id 200 
 ont-srvprofile-id 199 desc "8064 - 8064" 
  ont add 7 1 sn-auth "TPLGCE600328" omci ont-lineprofile-id 200 
@@ -1450,6 +1454,8 @@ ont-srvprofile-id 199 desc "cliente brejinho"
 ont-srvprofile-id 199 desc "cliente brejinho" 
  ont add 7 23 sn-auth "ITBS8BA2D2CA" omci ont-lineprofile-id 200 
 ont-srvprofile-id 199 desc "cliente brejinho" 
+ ont add 7 24 sn-auth "ITBS0A949EFE" omci ont-lineprofile-id 200 
+ont-srvprofile-id 200 desc "8210 - 8210" 
  ont add 7 25 sn-auth "TPLG84237628" omci ont-lineprofile-id 200 
 ont-srvprofile-id 200 desc "718 - 718" 
  ont add 7 26 sn-auth "ITBSCF8C3629" omci ont-lineprofile-id 200 
@@ -1663,7 +1669,7 @@ ont-srvprofile-id 200 desc "9233 - 9233"
  ont add 8 60 sn-auth "HWTCAC0679AD" omci ont-lineprofile-id 500 
 ont-srvprofile-id 200 desc "8164 - 8164" 
  ont ipconfig 8 60 pppoe vlan 200 priority 5 user-account username "8164" 
-password "%$%#cV(!!!!!!!!!!!!k_#[UG]03QC),lA$j\>;'d'cRs/b58l/*^P|R$%&k`PGKPuL;A=e:<KMs]q=Mw7%N9M}U!VyKXFANkfXo=fK=s@Ob/w5(N$M*L2Q5B\s(<#aHF%$%#"
+password "%$%#cV(!!!!!!!!!!!!(+4o1:mn'PC4|P(E3em)=MpG!SqQL@BZ<=No1pWC]R}\0}nUt=D-"Q,4`7.O<rn.1GFgaD_}{l@.8I\2,2H})eni2BL/Yr%lF2qPpC*.ITTF'H%$%#"
  ont tr069-server-config 8 60 profile-id 1
  ont internet-config 8 60 ip-index 0
  ont wan-config 8 60 ip-index 0 profile-id 10
@@ -1746,7 +1752,7 @@ ont-srvprofile-id 199 desc "1751 - 1751"
  ont add 9 2 sn-auth "HWTC4F9445AE" omci ont-lineprofile-id 500 
 ont-srvprofile-id 200 desc "4632 - 4632" 
  ont ipconfig 9 2 pppoe vlan 200 priority 5 user-account username "4632" 
-password "%$%#cV(!!!!!!!!!!!!Ex7y-i24n1PI{i;[OmJBS_!>P0h>jR]wVPI\m;~)P=lAHVdT<F+eG^7':lYE"Y.uIP-7,KH:9>QdT'z"n#-[!JC;n4t\|~91[R>F{Wr~'AktRD%$%#"
+password "%$%#cV(!!!!!!!!!!!!G7cI&6~i/<]<L>:LDFFM%nSRD\j6zXn|9.!Um!I9H}2o~<lqm$UN8@F:n.,Z^@i3I=X"_VgX$U#xJ-9Dwt+Q*U3rSH[H=B-0-=X'D;}{AWTf~'%$%#"
  ont tr069-server-config 9 2 profile-id 1
  ont internet-config 9 2 ip-index 0
  ont wan-config 9 2 ip-index 0 profile-id 10
@@ -1863,7 +1869,7 @@ ont-srvprofile-id 199 desc "8179 - 8179"
  ont add 9 58 sn-auth "HWTC0477C7A8" omci ont-lineprofile-id 500 
 ont-srvprofile-id 200 desc "7890 - 7890" 
  ont ipconfig 9 58 pppoe vlan 200 priority 5 user-account username "7890" 
-password "%$%#cV(!!!!!!!!!!!!K2bA/!jaQO+e(g<GC[|=^4422R*af'Z0VvP!G,qGywGQU~En'IT*5\!/nCz#m>D/Wf#TJPH)/xW(/4O~_`be.6nmfM.<N!ZK5oYGjcOvAI)xd:%$%#"
+password "%$%#cV(!!!!!!!!!!!!}1N_/9kYZ:V\ZuG}rcD1X_w[MEn&LDDK"5Pa%m5N%IozXA-'r2eGz=Y!aA+'=Kn!3[d3\A=\*N.3]08/pGPS(i</|3OPn[U5]kM3;Mi|V@a"51%$%#"
  ont tr069-server-config 9 58 profile-id 1
  ont internet-config 9 58 ip-index 0
  ont wan-config 9 58 ip-index 0 profile-id 10
@@ -1918,7 +1924,7 @@ ont-srvprofile-id 200 desc "2581 - postolg"
  ont add 10 4 sn-auth "HWTCD5CBDFAD" omci ont-lineprofile-id 500 
 ont-srvprofile-id 200 desc "7377 - 7377" 
  ont ipconfig 10 4 pppoe vlan 200 priority 5 user-account username "7377" 
-password "%$%#cV(!!!!!!!!!!!!Xmty*NxOj<!lPbOy;-MRAWoN0hoa#JHj=k$\kKP0RpdyW*/IKI@tWGR)4]m6bJIe6]aY{KVfGm<PNPp6t1DG,$G%q@/GmX..!6"5_o_DC*<T_V%$%#"
+password "%$%#cV(!!!!!!!!!!!!&S*G7.[V90%+P{ON:vhGvTtlW!<j8,`WH^(y]/X+ZE:9AgwZXOj(*f'^sWLAZ@RU#U46~%ONUHAY_&AJ]RZlHI3`>,9}A9D16|bCarC]9'(/KG%$%#"
  ont tr069-server-config 10 4 profile-id 1
  ont internet-config 10 4 ip-index 0
  ont wan-config 10 4 ip-index 0 profile-id 10
@@ -1948,8 +1954,8 @@ ont-srvprofile-id 199 desc "3015 - 3015"
 ont-srvprofile-id 199 desc "cliente brejinho" 
  ont add 10 17 sn-auth "ITBS32CBF5A6" omci ont-lineprofile-id 200 
 ont-srvprofile-id 199 desc "cliente brejinho" 
- ont add 10 18 sn-auth "ITBS32CC80D8" omci ont-lineprofile-id 200 
-ont-srvprofile-id 199 desc "cliente brejinho" 
+ ont add 10 18 sn-auth "TPLG5DDA6058" omci ont-lineprofile-id 200 
+ont-srvprofile-id 200 desc "9756 - 9756" 
  ont add 10 19 sn-auth "TPLGD1A49E38" omci ont-lineprofile-id 200 
 ont-srvprofile-id 200 desc "9450 - 9450" 
  ont add 10 20 sn-auth "TPLGB5353478" omci ont-lineprofile-id 200 
@@ -2018,8 +2024,6 @@ ont-srvprofile-id 200 desc "6756"
 ont-srvprofile-id 200 desc "6975 - 6975" 
  ont add 10 71 sn-auth "TPLG897C0330" omci ont-lineprofile-id 200 
 ont-srvprofile-id 200 desc "7119 - 7119" 
- ont add 10 72 sn-auth "TPLG7E95B5B8" omci ont-lineprofile-id 200 
-ont-srvprofile-id 200 desc "7899 - 7899" 
  ont add 10 74 sn-auth "TPLG00E1BFB8" omci ont-lineprofile-id 200 
 ont-srvprofile-id 199 desc "8031" 
  ont add 10 75 sn-auth "ALCLFE00C607" omci ont-lineprofile-id 200 
@@ -2129,7 +2133,7 @@ ont-srvprofile-id 199 desc "3629 - 3629"
  ont add 12 7 sn-auth "HWTC8F2F0CA4" omci ont-lineprofile-id 500 
 ont-srvprofile-id 200 desc "4625 - 4625" 
  ont ipconfig 12 7 pppoe vlan 200 priority 5 user-account username "4625" 
-password "%$%#cV(!!!!!!!!!!!!0{hi+hGeDJF9*2>qO\Q,VcL+;%Q8aRFY_p2D%Q>NmwA')/h2g;z6=U=*r(VSpXc~@vRt!6VoZ~."B[.6z)^BY)TVJ/$Z\tVy/OxLPSdIX{]$g'%$%#"
+password "%$%#cV(!!!!!!!!!!!!q<d\Qq]A{7`\-53$4SW0MUZW/%2/#Awby(>UYEa1eE0;RCzI"SP1{t=|8k22bSs[Y0F7Z32\HY+/:saW,$.@5xew0SXJ;u;Ori@2asWw0}=|1/%$%#"
  ont tr069-server-config 12 7 profile-id 1
  ont internet-config 12 7 ip-index 0
  ont wan-config 12 7 ip-index 0 profile-id 10
@@ -2183,6 +2187,8 @@ ont-srvprofile-id 199 desc "cliente brejinho"
 ont-srvprofile-id 199 desc "cliente brejinho" 
  ont add 12 32 sn-auth "TPLGB5353FBC" omci ont-lineprofile-id 200 
 ont-srvprofile-id 199 desc "cliente brejinho" 
+ ont add 12 33 sn-auth "ALCLFCF5510B" omci ont-lineprofile-id 200 
+ont-srvprofile-id 200 desc "9736 - 9736" 
  ont add 12 34 sn-auth "TPLGB523950D" omci ont-lineprofile-id 200 
 ont-srvprofile-id 199 desc "5610 - 5610" 
  ont add 12 35 sn-auth "TPLGBDC6AB10" omci ont-lineprofile-id 200 
@@ -2218,7 +2224,7 @@ ont-srvprofile-id 200 desc "7731 - 7731"
  ont add 12 51 sn-auth "HWTC13B67DA3" omci ont-lineprofile-id 500 
 ont-srvprofile-id 200 desc "7742 - 7742" 
  ont ipconfig 12 51 pppoe vlan 200 priority 5 user-account username "7742" 
-password "%$%#cV(!!!!!!!!!!!!0era,{3kQSc@b:C8h2RW9(BU@ik=K8uZyM~>,HNS|[Mu18'~NUuY]D,vJfEEe[)MSK'q@NJEvx#uS<0)46)y'.MTaDMo&zL*8&i3k|BrN9l+[,%$%#"
+password "%$%#cV(!!!!!!!!!!!!4rP.1Hnj4#&bXH,a(7b0T@k#+GLT<R!S5fFOl<('lYh\Wbw_@Z)AI><d/3}H2\>!"LWPa#3>}JJ'%;xLK,PaUCMMrR]'>q/fiM62;4JxX3Jmz:%$%#"
  ont tr069-server-config 12 51 profile-id 1
  ont internet-config 12 51 ip-index 0
  ont wan-config 12 51 ip-index 0 profile-id 10
@@ -2379,7 +2385,7 @@ ont-srvprofile-id 200 desc "7750 - 7750"
  ont add 13 63 sn-auth "HWTC90AD1AAC" omci ont-lineprofile-id 500 
 ont-srvprofile-id 200 desc "7757 - 7757" 
  ont ipconfig 13 63 pppoe vlan 200 priority 5 user-account username "7757" 
-password "%$%#cV(!!!!!!!!!!!!}7E#ZHmkEVv8is;1<oQ7_D$01gDv&!"zBU2<'~ZDvHI0:Ifj'W(KOSNiz%E%N-C[LIk(%%=GI+.w_F~+Fi94S,XJ#WYOGxA{IE\3QB/n16v27J%$%#"
+password "%$%#cV(!!!!!!!!!!!!=Y5r<ovnGDeR/6Sf9=gKg:UKQOJ7_OU'^cCq>wb"3V`*2chc+EmQ~3FE]];>OnS[@oHD#P,+Pe8oh#7=gYRzKcxOp4":,2-ZupA+Q=`t/8$]$A%$%#"
  ont tr069-server-config 13 63 profile-id 1
  ont internet-config 13 63 ip-index 0
  ont wan-config 13 63 ip-index 0 profile-id 10
@@ -2423,6 +2429,10 @@ ont-srvprofile-id 200 desc "9593 - 9593"
 ont-srvprofile-id 200 desc "9639 - 9639" 
  ont add 13 83 sn-auth "TPLGF11697B8" omci ont-lineprofile-id 200 
 ont-srvprofile-id 200 desc "7656 - 7656" 
+ ont add 13 84 sn-auth "ALCLFE132BF0" omci ont-lineprofile-id 200 
+ont-srvprofile-id 200 desc "9719 - 9719" 
+ ont add 13 85 sn-auth "TPLG5DDB8688" omci ont-lineprofile-id 200 
+ont-srvprofile-id 200 desc "9743 - 9743" 
  ont add 14 0 sn-auth "ITBS0ACDC014" omci ont-lineprofile-id 200 
 ont-srvprofile-id 200 desc "6299 - 6299" 
  ont add 14 1 sn-auth "TPLG00C521B4" omci ont-lineprofile-id 200 
@@ -2501,10 +2511,10 @@ ont-srvprofile-id 200 desc "8385 - 8385"
 ont-srvprofile-id 199 desc "8444 - 8444" 
  ont add 14 38 sn-auth "ALCLFE00CDC5" omci ont-lineprofile-id 200 
 ont-srvprofile-id 200 desc "8473 - 8473" 
- ont add 14 39 sn-auth "TPLGF1C178A8" omci ont-lineprofile-id 200 
-ont-srvprofile-id 200 desc "9687 - 9687" 
  ont add 14 40 sn-auth "TPLGB36E0F00" omci ont-lineprofile-id 200 
 ont-srvprofile-id 200 desc "9356 - 9356" 
+ ont add 14 41 sn-auth "ALCLFE132EE3" omci ont-lineprofile-id 200 
+ont-srvprofile-id 200 desc "8982 - 8982" 
  ont add 14 42 sn-auth "TPLG8E8FA8A0" omci ont-lineprofile-id 200 
 ont-srvprofile-id 200 desc "8775 - 8775" 
  ont add 15 0 sn-auth "ITBS5F85802C" omci ont-lineprofile-id 200 
@@ -2592,7 +2602,6 @@ ont-srvprofile-id 199 desc "9499 - 9499"
  ont port route 0 2 eth 2 enable
  ont port route 0 2 eth 3 enable
  ont port route 0 2 eth 4 enable
- ont port native-vlan 0 4 eth 1 vlan 200 priority 0 
  ont port native-vlan 0 5 eth 1 vlan 200 priority 0 
  ont port native-vlan 0 6 eth 1 vlan 200 priority 0 
  ont port native-vlan 0 8 eth 1 vlan 200 priority 0 
@@ -2643,7 +2652,6 @@ ont-srvprofile-id 199 desc "9499 - 9499"
  ont port native-vlan 1 26 eth 1 vlan 200 priority 0 
  ont port native-vlan 1 30 eth 1 vlan 200 priority 0 
  ont port native-vlan 2 0 eth 1 vlan 200 priority 0 
- ont port native-vlan 2 1 eth 1 vlan 3790 priority 0 
  ont port native-vlan 2 2 eth 1 vlan 200 priority 0 
  ont port native-vlan 2 3 eth 1 vlan 200 priority 0 
  ont port native-vlan 2 5 eth 1 vlan 200 priority 0 
@@ -3081,7 +3089,6 @@ ont-srvprofile-id 199 desc "9499 - 9499"
  ont port native-vlan 10 15 eth 1 vlan 200 priority 0 
  ont port native-vlan 10 16 eth 1 vlan 200 priority 0 
  ont port native-vlan 10 17 eth 1 vlan 200 priority 0 
- ont port native-vlan 10 18 eth 1 vlan 200 priority 0 
  ont port native-vlan 10 20 eth 1 vlan 200 priority 0 
  ont port native-vlan 10 21 eth 1 vlan 200 priority 0 
  ont port native-vlan 10 22 eth 1 vlan 200 priority 0 
@@ -3365,7 +3372,7 @@ ont-srvprofile-id 199 desc "cliente brejinho"
  ont add 0 46 sn-auth "HWTCDB6CF2B0" omci ont-lineprofile-id 500 
 ont-srvprofile-id 200 desc "7962 - 7962" 
  ont ipconfig 0 46 pppoe vlan 200 priority 5 user-account username "7962" 
-password "%$%#cV(!!!!!!!!!!!!-PbM@"mrm#m8N-;>:v0#oK6EOF&j58l)i$/Fv++(j'D5Ld@=G'M+q4!*cwH3at`{:BnG6>,@.M%|dV<$;Z<$HC>l>Jz/s1$/&)QGgr]o*T5}i<%$%#"
+password "%$%#cV(!!!!!!!!!!!!Dp]N$)QjTPWe!H#eQerUm`5v<BXB]4XJErXyNC3GQJJs:EPSb(qR8sX!0Zw(jjQB0R@_'OVNx2!96|<4vat>:9tJPB[m~L!_H['1>XSM5M2%3*%$%#"
  ont tr069-server-config 0 46 profile-id 1
  ont internet-config 0 46 ip-index 0
  ont wan-config 0 46 ip-index 0 profile-id 10
@@ -3392,7 +3399,7 @@ ont-srvprofile-id 200 desc "5019 - 5019"
  ont add 0 57 sn-auth "TPLG316D04C8" omci ont-lineprofile-id 200 
 ont-srvprofile-id 200 desc "1329 - 1329" 
  ont add 0 58 sn-auth "TPLG8E8F29F8" omci ont-lineprofile-id 200 
-ont-srvprofile-id 200 desc "8778 - 8778" 
+ont-srvprofile-id 200 desc "9821 - 9821" 
  ont add 0 59 sn-auth "ITBS5F6BF580" omci ont-lineprofile-id 200 
 ont-srvprofile-id 199 desc "3801 - aldair@bjsr" 
  ont add 0 60 sn-auth "TPLGD18E2010" omci ont-lineprofile-id 200 
@@ -3413,6 +3420,8 @@ ont-srvprofile-id 200 desc "9481 - 9481"
 ont-srvprofile-id 200 desc "3575 - 3575" 
  ont add 0 68 sn-auth "TPLG8E8FE290" omci ont-lineprofile-id 200 
 ont-srvprofile-id 200 desc "416 - 416" 
+ ont add 0 69 sn-auth "TPLG5DDB6B48" omci ont-lineprofile-id 200 
+ont-srvprofile-id 200 desc "9767 - 9767" 
  ont add 0 71 sn-auth "TPLG4A48364B" omci ont-lineprofile-id 200 
 ont-srvprofile-id 199 desc "1864" 
  ont add 1 0 sn-auth "ZNTS2C55A769" omci ont-lineprofile-id 200 
@@ -3452,7 +3461,7 @@ ont-srvprofile-id 200 desc "4260 - 4260"
  ont add 1 17 sn-auth "HWTC4F8FBFAE" omci ont-lineprofile-id 500 
 ont-srvprofile-id 200 desc "6636 - 6636" 
  ont ipconfig 1 17 pppoe vlan 200 priority 5 user-account username "6636" 
-password "%$%#cV(!!!!!!!!!!!!M_#%$K~TsWI/']$={+S,f)LaViCy}0B@m'2vx[u8%{&)Cc(PI#l\gr%G;!5IoHpt+]z${IInXw-Cxxg/6-(&4U1D{BfdhLH/qVG~Ee,CS54ew~%$%#"
+password "%$%#cV(!!!!!!!!!!!!"w$DL%%4g=cgt=QO#1.VQoAgCp9)O/]->$HOiK{AxduY;fHlO9Q]:f%n@>~!U=je(YH/hF;f{Q+yD{<P`r|N5{y{w:pv{]H9&<_N]g1W(j-'Y5%$%#"
  ont tr069-server-config 1 17 profile-id 1
  ont internet-config 1 17 ip-index 0
  ont wan-config 1 17 ip-index 0 profile-id 10
@@ -3497,12 +3506,12 @@ ont-srvprofile-id 199 desc "cliente brejinho"
  ont add 1 37 sn-auth "HWTC4F934AAE" omci ont-lineprofile-id 500 
 ont-srvprofile-id 200 desc "224 - 224" 
  ont ipconfig 1 37 pppoe vlan 200 priority 5 user-account username "224" 
-password "%$%#cV(!!!!!!!!!!!!B=(](#=mZLP`~1@|in!DBN8#$5Sq\NTyEn)2\TWT@Sp_/|Uow"}1/,ZTd!t&Z^Yl~yf{B;tJYeP2Ny%P.*y;/l]lQ:wu5.S:U16V%7>V.:&YjK%$%#"
+password "%$%#cV(!!!!!!!!!!!!,gdn&'hy@C_qetH&xi-G>P&:+VOC.,BUcl4JsF|9_.tJLPDWA&Kb3MOH]a{!PctEKPt2q4=/d;0C"4]OJfivJ+sYdRV3Du']pSg!xpT2$((*+H%$%#"
  ont tr069-server-config 1 37 profile-id 1
  ont internet-config 1 37 ip-index 0
  ont wan-config 1 37 ip-index 0 profile-id 10
- ont add 1 38 sn-auth "TPLG8E8C28A8" omci ont-lineprofile-id 200 
-ont-srvprofile-id 200 desc "8764 - 8764" 
+ ont add 1 38 sn-auth "TPLGBDC6A8D8" omci ont-lineprofile-id 200 
+ont-srvprofile-id 200 desc "7090 - 7090" 
  ont add 1 39 sn-auth "MKPGB44B5664" omci ont-lineprofile-id 200 
 ont-srvprofile-id 199 desc "cliente brejinho" 
  ont add 1 40 sn-auth "MKPGB4640640" omci ont-lineprofile-id 200 
@@ -3519,8 +3528,6 @@ ont-srvprofile-id 200 desc "1634 - 1634"
 ont-srvprofile-id 199 desc "cliente brejinho" 
  ont add 1 46 sn-auth "TPLGD2214C50" omci ont-lineprofile-id 200 
 ont-srvprofile-id 200 desc "5902 - 5902" 
- ont add 1 47 sn-auth "FHTTC030FFB8" omci ont-lineprofile-id 200 
-ont-srvprofile-id 200 desc "596 - 596" 
  ont add 1 48 sn-auth "MKPGC65C2DC7" omci ont-lineprofile-id 200 
 ont-srvprofile-id 199 desc "cliente brejinho" 
  ont add 1 49 sn-auth "MKPGC65CDBC1" omci ont-lineprofile-id 200 
@@ -3530,7 +3537,7 @@ ont-srvprofile-id 199 desc "cliente brejinho"
  ont add 1 51 sn-auth "HWTC108C0FAD" omci ont-lineprofile-id 500 
 ont-srvprofile-id 200 desc "1226 - 1226" 
  ont ipconfig 1 51 pppoe vlan 200 priority 5 user-account username "1226" 
-password "%$%#cV(!!!!!!!!!!!!y~ab<k<7Q*.S,iXhybr5iTi]0s\XeST}h<W$pp;7|(AsLn17r@%zZV/XZfDXOw;AO3V\OYZi(5K'D;74"Wl_;FMIRXW~JH:^Il;K]``6Ew7=aJ%$%#"
+password "%$%#cV(!!!!!!!!!!!!h\2Y!x[P_L(H=nH`y(@V%[;"4$1D60\~WQTH(2kDA6{K~!{8bNV3_NDP{79C>C*;~Q&UyEPEMn/[7r=R'{|JHo;#y;^DG+Zn2g"N"or98{9O]J%$%#"
  ont tr069-server-config 1 51 profile-id 1
  ont internet-config 1 51 ip-index 0
  ont wan-config 1 51 ip-index 0 profile-id 10
@@ -3691,7 +3698,7 @@ ont-srvprofile-id 200 desc "8336 - 8336"
  ont add 2 44 sn-auth "HWTCB267D4A3" omci ont-lineprofile-id 500 
 ont-srvprofile-id 200 desc "991 - 991" 
  ont ipconfig 2 44 pppoe vlan 200 priority 5 user-account username "991" 
-password "%$%#cV(!!!!!!!!!!!!}At+Y_`cL#d!F@$f*G'$%r&<MIWH:(9uGEGhXC1~b:2F7>Vc/"R<VQS1*BhUUB/-(!HpgVEP:{$W{p(#{X}R4Yc.)4"+[\/qbCX$Sb_TKxk<14%$%#"
+password "%$%#cV(!!!!!!!!!!!!2Tpp-8YO}!XpjD+>njaNM:4,-~$y}<UKI6MTD$/1_D_XYI2aJ9^L*&QtoaoFgq\R0HMNoURzulQzASvG!GrE>Hx]<4>Ll4T0xUC50F5.:hoQiT%$%#"
  ont tr069-server-config 2 44 profile-id 1
  ont internet-config 2 44 ip-index 0
  ont wan-config 2 44 ip-index 0 profile-id 10
@@ -3752,7 +3759,7 @@ ont-srvprofile-id 200 desc "9527 - 9527"
  ont add 2 72 sn-auth "HWTCA5CAA3A4" omci ont-lineprofile-id 500 
 ont-srvprofile-id 200 desc "1824 - 1824" 
  ont ipconfig 2 72 pppoe vlan 200 priority 5 user-account username "1824" 
-password "%$%#cV(!!!!!!!!!!!!F~f;;wC{MMu:*JMi}o/YFKVkMN[j^P$^:q"]tbFRm:bpG5bzN>JhK/D\bXW:dJoG+VWDgFldBbX0~8$1Z@u*1gC#/RVpj./}w0[@JbTt90WcCG%$%#"
+password "%$%#cV(!!!!!!!!!!!!."1[3q"&*,h;#=/w,H=44Y%ZA[JtZNwu"hJYO2C.U|t'J9j&W'}6A;*{S!*,h}XF2^3hr@g{`B7M~^.<2{Ej3c/E"D!dYAH`:4`5e`-V'v0*<C%$%#"
  ont tr069-server-config 2 72 profile-id 1
  ont internet-config 2 72 ip-index 0
  ont wan-config 2 72 ip-index 0 profile-id 10
@@ -3808,6 +3815,8 @@ ont-srvprofile-id 200 desc "7429 - 7429"
 ont-srvprofile-id 200 desc "maycon" 
  ont add 2 98 sn-auth "TPLGCE8749F6" omci ont-lineprofile-id 200 
 ont-srvprofile-id 199 desc "7829 - 7829" 
+ ont add 2 99 sn-auth "TPLG5DDB8530" omci ont-lineprofile-id 200 
+ont-srvprofile-id 200 desc "9773 - 9773" 
  ont add 3 0 sn-auth "TPLGD18BDE88" omci ont-lineprofile-id 200 
 ont-srvprofile-id 200 desc "567 - 567" 
  ont add 3 1 sn-auth "D0116A94044E" omci ont-lineprofile-id 200 
@@ -3836,8 +3845,8 @@ ont-srvprofile-id 200 desc "8145 - 8145"
 ont-srvprofile-id 199 desc "cliente brejinho" 
  ont add 3 13 sn-auth "ITBS5F6CF8B8" omci ont-lineprofile-id 200 
 ont-srvprofile-id 199 desc "cliente brejinho" 
- ont add 3 14 sn-auth "TPLGCEAEBA70" omci ont-lineprofile-id 200 
-ont-srvprofile-id 200 desc "5223 - 5223" 
+ ont add 3 14 sn-auth "TPLG5DDA5068" omci ont-lineprofile-id 200 
+ont-srvprofile-id 200 desc "9753 - 9753" 
  ont add 3 15 sn-auth "TPLG7E94CB30" omci ont-lineprofile-id 200 
 ont-srvprofile-id 200 desc "1995 - 1995" 
  ont add 3 16 sn-auth "TPLGD2F17AC0" omci ont-lineprofile-id 200 
@@ -3887,7 +3896,7 @@ ont-srvprofile-id 199 desc "onu radio avelino"
  ont add 3 38 sn-auth "HWTC9291F1AC" omci ont-lineprofile-id 500 
 ont-srvprofile-id 200 desc "7436 - 7436" 
  ont ipconfig 3 38 pppoe vlan 200 priority 5 user-account username "7436" 
-password "%$%#cV(!!!!!!!!!!!!#`ak=t+=V1yY:EY[,,fS23Cf:*zC^/^Vj7!wq"dYl.f/&VZ<kN8qu#=0)XC:x}}3/~WYzGN!_xPb}xA'de{N:Y)/X9l=9=RE-WZ8<FWdUzB~l'%$%#"
+password "%$%#cV(!!!!!!!!!!!!lmv`K#RJ_/8D:&C`u6p:v1P:VbkELXPiBWUsG{l(>\@F-qy"FP3=_")fw_(>,ek)+kt#O2v^1^%HT"h$\*ft&+j{lQanOd,\{=hVs^M|GsYT=3%$%#"
  ont tr069-server-config 3 38 profile-id 1
  ont internet-config 3 38 ip-index 0
  ont wan-config 3 38 ip-index 0 profile-id 10
@@ -3902,7 +3911,7 @@ ont-srvprofile-id 200 desc "1797 - 1797"
  ont add 3 43 sn-auth "HWTCB6A874AF" omci ont-lineprofile-id 500 
 ont-srvprofile-id 200 desc "7704 - 7704" 
  ont ipconfig 3 43 pppoe vlan 200 priority 5 user-account username "7704" 
-password "%$%#cV(!!!!!!!!!!!!FjToJ)f"S/P$EP2O;*E;8Y5F;eWK(9,J14<LcNM06/^v/{4.qE/}V[N'5.m(^2%3$.5EYNt4"h=b1~"Lwxvz.)h&j1/n\Q:3'qu=a(xu1u*q%I%$%#"
+password "%$%#cV(!!!!!!!!!!!!-aN`#JsMN(WzsF#/lIFXpgQ1<v$pOP}SE3YN/3FOQCtw7F|SjPmY#7<K62mCNZL~/=6"B<P7^2CTSED+7uCBONexIHaHuUUdHga$ZJc7)bI',;%$%#"
  ont tr069-server-config 3 43 profile-id 1
  ont internet-config 3 43 ip-index 0
  ont wan-config 3 43 ip-index 0 profile-id 10
@@ -3978,8 +3987,8 @@ ont-srvprofile-id 199 desc "cliente brejinho"
 ont-srvprofile-id 199 desc "cliente brejinho" 
  ont add 4 10 sn-auth "HWTC51ACD343" omci ont-lineprofile-id 200 
 ont-srvprofile-id 199 desc "cliente brejinho" 
- ont add 4 11 sn-auth "ITBS0A949EFE" omci ont-lineprofile-id 200 
-ont-srvprofile-id 200 desc "8210 - 8210" 
+ ont add 4 11 sn-auth "TPLG5DDB82A8" omci ont-lineprofile-id 200 
+ont-srvprofile-id 200 desc "1749 - 1749" 
  ont add 4 12 sn-auth "TPLGB52393F2" omci ont-lineprofile-id 200 
 ont-srvprofile-id 199 desc "6184" 
  ont add 4 13 sn-auth "HWTCA403E543" omci ont-lineprofile-id 200 
@@ -4026,8 +4035,6 @@ ont-srvprofile-id 200 desc "1821 - 1821"
 ont-srvprofile-id 200 desc "6125 - 6125" 
  ont add 4 35 sn-auth "ZNTS037B3E1B" omci ont-lineprofile-id 200 
 ont-srvprofile-id 199 desc "cliente brejinho" 
- ont add 4 36 sn-auth "ZTEGC68B863E" omci ont-lineprofile-id 200 
-ont-srvprofile-id 199 desc "1749 - flaviane@brejinho" 
  ont add 4 37 sn-auth "ZTEGC68F9FA7" omci ont-lineprofile-id 200 
 ont-srvprofile-id 199 desc "cliente brejinho" 
  ont add 4 38 sn-auth "ZTEGC68FA02F" omci ont-lineprofile-id 200 
@@ -4041,7 +4048,7 @@ ont-srvprofile-id 200 desc "3506 - 3506"
  ont add 4 42 sn-auth "HWTCB184CDA3" omci ont-lineprofile-id 500 
 ont-srvprofile-id 200 desc "7885 - 7885" 
  ont ipconfig 4 42 pppoe vlan 200 priority 5 user-account username "7885" 
-password "%$%#cV(!!!!!!!!!!!!qF20>Gy!t.rZ0uOEtE*.k%]mNx4X(.'.tZK3Z\CIv&QbQ[gCSOXN+`6\qY^1KYkg<Kla+!r>+/LSgBtOv"3c=GY}-8x|=aG46PH%ivaFYOi^7O%$%#"
+password "%$%#cV(!!!!!!!!!!!!F8]"L1%}T"7Uv6:f~#L5Vj[x;KJ*2(}CfIDA.0Q8PKbD50I)BBnnD_7Sz`gA\_dTX2+)lTUPe5BYy<0JbI(Q7w-;M#h.ucQ5O@"$'@c`Yhfd3!%$%#"
  ont tr069-server-config 4 42 profile-id 1
  ont internet-config 4 42 ip-index 0
  ont wan-config 4 42 ip-index 0 profile-id 10
@@ -4134,7 +4141,7 @@ ont-srvprofile-id 200 desc "6064 - 6064"
  ont add 5 32 sn-auth "HWTCB3A00CAF" omci ont-lineprofile-id 500 
 ont-srvprofile-id 200 desc "6917 - 6917" 
  ont ipconfig 5 32 pppoe vlan 200 priority 5 user-account username "6917" 
-password "%$%#cV(!!!!!!!!!!!!lC"c,gT_)J@atH*</Ht73,C=9],@=CWz[7V/DU/F_uUyP~qzL75Hlh-8w\*)HI0B+wb8,&AHYK+qDR7SJN[[Sy=7UKIqY$(BWR[-"*-5Z~JB|&%$%#"
+password "%$%#cV(!!!!!!!!!!!!Puro2HJv~7~Z)x7Kbw0=~}%}F,kMV02bD0M8<Qn-q"pO2]zTn#0+Kz8@c*A-cbK1RX%QxObQq4=fL0UV#4s4-6(`n<=f>CE^Bfo"p)4LCuH3NV%$%#"
  ont tr069-server-config 5 32 profile-id 1
  ont internet-config 5 32 ip-index 0
  ont wan-config 5 32 ip-index 0 profile-id 10
@@ -4194,7 +4201,7 @@ ont-srvprofile-id 199 desc "cliente brejinho"
 ont-srvprofile-id 200 desc "1363 - 1363" 
  ont add 6 7 sn-auth "HWTCA85E70AF" omci ont-lineprofile-id 500 
 ont-srvprofile-id 200 desc "295 - 295" 
- ont ipconfig 6 7 pppoe vlan 200 priority 5 user-account username "295" password "%$%#cV(!!!!!!!!!!!!O*<]/RB5n7`y@4GR>t)@7_RBF{B/$)29*JGLgE%IjdCJ.OZvb-y\gF)%{*Q4\3r5T\PB2CUAgwHKzBY--(V~#"Kdz/'^^L1y5GX88&8V$8ip)!%$%#"
+ ont ipconfig 6 7 pppoe vlan 200 priority 5 user-account username "295" password "%$%#cV(!!!!!!!!!!!!2X~U13|EzIUGpNNM;0[/-x}lN$02I.wUn.M<U7K=9lmgCi;ImV7V7o~`@E'*j$bURP908El},/+'BY~HI!LA9[Y0uV9mCdLzH|rThtI8)M>j]B%$%#"
  ont tr069-server-config 6 7 profile-id 1
  ont internet-config 6 7 ip-index 0
  ont wan-config 6 7 ip-index 0 profile-id 10
@@ -4262,6 +4269,8 @@ ont-srvprofile-id 200 desc "5315 - 5315"
 ont-srvprofile-id 199 desc "cliente brejinho" 
  ont add 6 39 sn-auth "ALCLFE00CE8D" omci ont-lineprofile-id 200 
 ont-srvprofile-id 200 desc "8090 - 8090" 
+ ont add 6 40 sn-auth "ITBS5F6CF8AA" omci ont-lineprofile-id 200 
+ont-srvprofile-id 199 desc "524 - silenays@bjct" 
  ont add 6 41 sn-auth "MKPGC65CE026" omci ont-lineprofile-id 200 
 ont-srvprofile-id 199 desc "cliente brejinho" 
  ont add 6 42 sn-auth "TPLGD18B8EB0" omci ont-lineprofile-id 200 
@@ -4275,7 +4284,7 @@ ont-srvprofile-id 200 desc "5807 - 5807"
  ont add 6 46 sn-auth "HWTC6DD801AC" omci ont-lineprofile-id 500 
 ont-srvprofile-id 200 desc "6481 - 6481" 
  ont ipconfig 6 46 pppoe vlan 200 priority 5 user-account username "6481" 
-password "%$%#cV(!!!!!!!!!!!!ruJ"#q+^fUT'*o"V{P{3AK^0J$[OI(>7E(>L{Q-T_cb2NQprX-sjJqDFz^9Ha'>R*;tHi1X3{l+"rrfQaN7UE7:6!OxNX2TaXX43PcNS%!z*JV%$%#"
+password "%$%#cV(!!!!!!!!!!!!01^$@_26nHR>M4%L3^*.0)nSD:nt>:]|CH46s-H!*+@%~=k=9ZloC0W{U82-'6nV/Adj^S|",-Eb9x6=Sbt-*D#Tu*-RhV**]2~#o;/9J4_NZ8%$%#"
  ont tr069-server-config 6 46 profile-id 1
  ont internet-config 6 46 ip-index 0
  ont wan-config 6 46 ip-index 0 profile-id 10
@@ -4352,7 +4361,7 @@ ont-srvprofile-id 199 desc "cliente brejinho"
  ont add 7 15 sn-auth "HWTC904387A4" omci ont-lineprofile-id 500 
 ont-srvprofile-id 200 desc "6648 - 6648" 
  ont ipconfig 7 15 pppoe vlan 200 priority 5 user-account username "6648" 
-password "%$%#cV(!!!!!!!!!!!!wV7y.f$5p3xfh-/IIF-G9SVE,&%b!WL3[QS8M)GVyy5PTfj8y4-^=96{j/fG`w7=&9/,sExqndH^RVzWg3EaTq'm~1;^AoH6!ySLMt"jH,~~6U%$%#"
+password "%$%#cV(!!!!!!!!!!!!4PF\R}W3t<8zvl$c+vl7u~M{BWHQ)+-K\1D^YYkHxnJLTa|0I5B$uG1]}cg'+*TqL"13iOc9I3K\}pd)/sp]2PAvS/`_fk9j]th%y];P$[[wD8%$%#"
  ont tr069-server-config 7 15 profile-id 1
  ont internet-config 7 15 ip-index 0
  ont wan-config 7 15 ip-index 0 profile-id 10
@@ -4373,7 +4382,7 @@ ont-srvprofile-id 199 desc "228 - 228"
  ont add 7 23 sn-auth "HWTC5176B2AE" omci ont-lineprofile-id 500 
 ont-srvprofile-id 200 desc "612 - 612" 
  ont ipconfig 7 23 pppoe vlan 200 priority 5 user-account username "612" 
-password "%$%#cV(!!!!!!!!!!!!)m{U0dIL.VG^`OAvM8rLP#`2,am_[V~}q=WM*@'5Z0$x6PENt9huytKe'Mr)Dm26FekbzYNr3,IK3iIT3OXE~{o1Z0U+mEAp(IeS*{eeT1RJ&F%$%#"
+password "%$%#cV(!!!!!!!!!!!!j4N=$x_kI1A>M3"u^*4~mkcB+<9}KV:[9^"u^i"B:$2z.z=A''amo_R][<)4xbq=4M8;nO]Ay>Wr]#YFw[//&BY#y'2D>]-O0&#OptSB=]T`y.%$%#"
  ont tr069-server-config 7 23 profile-id 1
  ont internet-config 7 23 ip-index 0
  ont wan-config 7 23 ip-index 0 profile-id 10
@@ -4397,6 +4406,8 @@ ont-srvprofile-id 199 desc "7035"
 ont-srvprofile-id 199 desc "1341 - andreluiz" 
  ont add 7 33 sn-auth "ZXIC00304529" omci ont-lineprofile-id 200 
 ont-srvprofile-id 200 desc "3237 - 3237" 
+ ont add 7 34 sn-auth "TPLG5DDB78C0" omci ont-lineprofile-id 200 
+ont-srvprofile-id 200 desc "317 - 317" 
  ont add 7 35 sn-auth "MKPGB44B55F4" omci ont-lineprofile-id 200 
 ont-srvprofile-id 199 desc "cliente brejinho" 
  ont add 7 36 sn-auth "TPLG7E75F318" omci ont-lineprofile-id 200 
@@ -4409,8 +4420,6 @@ ont-srvprofile-id 199 desc "cliente brejinho"
 ont-srvprofile-id 199 desc "cliente brejinho" 
  ont add 7 40 sn-auth "MKPGC65CD77A" omci ont-lineprofile-id 200 
 ont-srvprofile-id 199 desc "cliente brejinho" 
- ont add 7 41 sn-auth "MKPGC65C03AB" omci ont-lineprofile-id 200 
-ont-srvprofile-id 199 desc "317 - missilene" 
  ont add 7 42 sn-auth "TPLG79BE0BE0" omci ont-lineprofile-id 200 
 ont-srvprofile-id 200 desc "3103 - 3103" 
  ont add 7 43 sn-auth "MONU00AEF2D9" omci ont-lineprofile-id 200 
@@ -4460,7 +4469,7 @@ ont-srvprofile-id 200 desc "8659"
  ont add 7 65 sn-auth "HWTCA85062AF" omci ont-lineprofile-id 500 
 ont-srvprofile-id 200 desc "8667 - 8667" 
  ont ipconfig 7 65 pppoe vlan 200 priority 5 user-account username "8667" 
-password "%$%#cV(!!!!!!!!!!!!!4n,$qyrjEv"B%5i)[Q~cQQWS:3SsSF{M/~bQWP06=9fIEagW6.{IJ=%$@u+DbXL+H$lX1"K*RU/yyr2hVwn'Y\=0:tb&Z5tCX-<"}UXT`wGw!%$%#"
+password "%$%#cV(!!!!!!!!!!!!.OgMXTpKx#lbgP9*,]s0GC=qP|d11Gs@6bB)H`LI}-WG1m)]8XoVi3L3X|@F&V`$GEgm:LB2b6Y}FiO:Mrw-7Q+;c=}+8y.10]f:v2&iARzd_I%$%#"
  ont tr069-server-config 7 65 profile-id 2
  ont internet-config 7 65 ip-index 0
  ont wan-config 7 65 ip-index 0 profile-id 10
@@ -4484,7 +4493,7 @@ ont-srvprofile-id 200 desc "1433 - 1433"
 ont-srvprofile-id 200 desc "950 - 950" 
  ont add 8 7 sn-auth "HWTC13A611A3" omci ont-lineprofile-id 500 
 ont-srvprofile-id 200 desc "571 - 571" 
- ont ipconfig 8 7 pppoe vlan 200 priority 5 user-account username "571" password "%$%#cV(!!!!!!!!!!!!Cnb!LzxAXHA3DxYUs"d2'.=Y%t3$R'bBg*V~'U%5i*bd=]O;{<7w@B)e@KF+D#P(6S&@X1GPKG;x\ZT&&stk:$S_[>dEPd-ShK"F'rC1K3-S+@%$%#"
+ ont ipconfig 8 7 pppoe vlan 200 priority 5 user-account username "571" password "%$%#cV(!!!!!!!!!!!!$'D!ATtfCKRL;2@y^B)PS<2X&`MCj66KgD69|x6H17}*C9"N+Seb%T<q}w]Bl1{Z:<kSZI~;TSEU`f2!Ix1J)O{:Y.I>^G5jwW5"&6uM+0}e|G%$%#"
  ont tr069-server-config 8 7 profile-id 1
  ont internet-config 8 7 ip-index 0
  ont wan-config 8 7 ip-index 0 profile-id 10
@@ -4509,7 +4518,7 @@ ont-srvprofile-id 200 desc "219 - 219"
  ont add 8 17 sn-auth "HWTCCD69F9A3" omci ont-lineprofile-id 500 
 ont-srvprofile-id 200 desc "306 - 306" 
  ont ipconfig 8 17 pppoe vlan 200 priority 5 user-account username "306" 
-password "%$%#cV(!!!!!!!!!!!!7cC>-`Fo~#13w,S1{O|>%|&GR%lM[1z9P}TJfY;'|5Ed=UO9V<LSvYW1gDpQatJAEGjN!09h*J7/|;<N@!rs8kBaa'2%XiJZ+aP6:"unGN@4N5%$%#"
+password "%$%#cV(!!!!!!!!!!!!`.L#"[#:":|j>aT|t[KK\-`jQu(]m:#D8`Ur0_D#VG~x'1FEu;Z@~X3blo*1->vl-$o7]%2ih~9\W=F5qz$NCxMR)G&1Bf(-[{SSk`ma,4)D+T%$%#"
  ont tr069-server-config 8 17 profile-id 1
  ont internet-config 8 17 ip-index 0
  ont wan-config 8 17 ip-index 0 profile-id 10
@@ -4592,7 +4601,7 @@ ont-srvprofile-id 200 desc "414 - 414"
  ont add 8 56 sn-auth "HWTCBA3913AA" omci ont-lineprofile-id 500 
 ont-srvprofile-id 200 desc "132 - 132" 
  ont ipconfig 8 56 pppoe vlan 200 priority 5 user-account username "132" 
-password "%$%#cV(!!!!!!!!!!!!VJRa)TTt(*<_$<6cu|tGz'c_*[3(j,m/0FQ%js9X5j$<F7)IZ".<z_;[QMa',nc;Z'+.CP!DmJ"wg9L!P<$h.Ko+@-I7RN"*23oI+H\mEScC,*%$%#"
+password "%$%#cV(!!!!!!!!!!!!M)]HCsJ,#FGLg2>/]HI7JiRf*;]z5V:$wr0bQuZ!^^IxX8p!XU2}Nh"2jSYU&nC-2|o^)&l(A]!4cj><VD>{+|*%mKb/Bq8t:TXN0WGUI8eo30%$%#"
  ont tr069-server-config 8 56 profile-id 1
  ont internet-config 8 56 ip-index 0
  ont wan-config 8 56 ip-index 0 profile-id 10
@@ -4643,7 +4652,7 @@ ont-srvprofile-id 200 desc "luizhg"
  ont add 9 8 sn-auth "HWTC3CB371AF" omci ont-lineprofile-id 500 
 ont-srvprofile-id 200 desc "5681 - 5681" 
  ont ipconfig 9 8 pppoe vlan 200 priority 5 user-account username "5681" 
-password "%$%#cV(!!!!!!!!!!!!c,7g0a=;@9FVw|Yz%,_(4^,*KZB0q4RV)!0Ja!%D.z_p9I`jZ)RUU$D/g:;~B9i5~IeX(;EG#RS-_T+V0zWWL>*LEWRb0v*K7W*8^nF4GeSD.'%$%#"
+password "%$%#cV(!!!!!!!!!!!!~\n708m'w~j2;X*0`y198U'1Vd&]p203nh>p'*]VZ)pQ1<YK}%_sY5~$ed=I<m',!PA*iD0wyeL=tr]AyK3FY`libD.5i;!yosG*p*v}>nka+B%$%#"
  ont tr069-server-config 9 8 profile-id 1
  ont internet-config 9 8 ip-index 0
  ont wan-config 9 8 ip-index 0 profile-id 10
@@ -4686,7 +4695,7 @@ ont-srvprofile-id 199 desc "cliente brejinho"
  ont add 9 27 sn-auth "HWTC36E329AE" omci ont-lineprofile-id 500 
 ont-srvprofile-id 200 desc "7121 - 7121" 
  ont ipconfig 9 27 pppoe vlan 200 priority 5 user-account username "7121" 
-password "%$%#cV(!!!!!!!!!!!!PGAAG&ZKfXFUVgSywQ"!@U14LqKs=(3v7XLx7*;E^qF3D\5<;U3udc.8fqc~o[`.(#K4_TctTv5&@nF.I3@CRUG=`2~:[}-8cIjBC-5b*UEK,1%$%#"
+password "%$%#cV(!!!!!!!!!!!!($E^,Fs~q9RQ#4Bm}sXL'dKzW:+MbW`G<UA}#vs!`D#TC08nnGbOc1IYj:1O/lwq(DVT\05:.!$B[~PQ(L=g"z]iX9P#c"A"Nxt>>DB32`C6M0%$%#"
  ont tr069-server-config 9 27 profile-id 1
  ont internet-config 9 27 ip-index 0
  ont wan-config 9 27 ip-index 0 profile-id 10
@@ -4723,7 +4732,7 @@ ont-srvprofile-id 199 desc "mariasocorro"
  ont add 9 43 sn-auth "HWTC1A5FC1A4" omci ont-lineprofile-id 500 
 ont-srvprofile-id 200 desc "1360 - 1360" 
  ont ipconfig 9 43 pppoe vlan 200 priority 5 user-account username "1360" 
-password "%$%#cV(!!!!!!!!!!!!Pz:/OOXM-%%_/y:YR;FND_Lv;Bs6b6A"UaUa=DSRgM#0MvU8cNflszB!E7JWXE*<J.ZbLHopq[Y{~pP2T;fT:~c;_AL=leDU9f\$|fhNT39b+Z%$%#"
+password "%$%#cV(!!!!!!!!!!!!nPj;/S/_o8:HuJ;E;(*=%dTs1v{Jl)Gy<m;@O#cM4m7,;Bhyq;Qn4PHJr2=ExbK$0u^'7"jO|J-4rky#u(k12p\}i3_!~(MJ)So-ZT:5QxA.u.%$%#"
  ont tr069-server-config 9 43 profile-id 1
  ont internet-config 9 43 ip-index 0
  ont wan-config 9 43 ip-index 0 profile-id 10
@@ -4739,8 +4748,6 @@ ont-srvprofile-id 199 desc "6306"
 ont-srvprofile-id 199 desc "2817 - hugo123" 
  ont add 9 49 sn-auth "TPLGCE8748AE" omci ont-lineprofile-id 200 
 ont-srvprofile-id 199 desc "6974" 
- ont add 9 50 sn-auth "FHTTC030FF90" omci ont-lineprofile-id 200 
-ont-srvprofile-id 200 desc "7090 - 7090" 
  ont add 9 51 sn-auth "HWTC1AB36E43" omci ont-lineprofile-id 200 
 ont-srvprofile-id 199 desc "5900" 
  ont add 9 52 sn-auth "TPLGCE57AED0" omci ont-lineprofile-id 200 
@@ -4748,7 +4755,7 @@ ont-srvprofile-id 200 desc "124 - 124"
  ont add 9 53 sn-auth "HWTC7665059B" omci ont-lineprofile-id 500 
 ont-srvprofile-id 200 desc "2764 - divaldo" 
  ont ipconfig 9 53 pppoe vlan 200 priority 5 user-account username "divaldo" 
-password "%$%#cV(!!!!!!!!!!!!&{(C"\WD3;c+;"A~;<VG3=m'38^U;6:H9]X#:~H9u>]}-coV^)pwe':&n.G'Q6@L-83YOIS>bF.9;7BL:8uCO;93kE*Sgx+r"wlCfrI"N4WOV"%$%#"
+password "%$%#cV(!!!!!!!!!!!!fMM8Pmo6S>(q5c%Za(KClwWbWT\P'N{i};1`kWDMSdZ_+E=xaCj)<g1pFUg45IsAAKA#!"T6/|'cH>N+6&^PQW1;$B1g"k%D~VT:cI47~o6c!R%$%#"
  ont tr069-server-config 9 53 profile-id 1
  ont internet-config 9 53 ip-index 0
  ont wan-config 9 53 ip-index 0 profile-id 10
@@ -4775,7 +4782,7 @@ ont-srvprofile-id 200 desc "7786 - 7786"
  ont add 9 64 sn-auth "HWTCF8DCA9A3" omci ont-lineprofile-id 500 
 ont-srvprofile-id 200 desc "6886 - 6886" 
  ont ipconfig 9 64 pppoe vlan 200 priority 5 user-account username "6886" 
-password "%$%#cV(!!!!!!!!!!!!w:e.O`,c`Um]kR"mA6Y#}aa5JXX!CIBvb7MU%kLViZjuOEbbQ=<5qsA^z[K3EQWK1t:]hP\Z.e-qo|_$]~:d)V(;<>F-,YT[u]49[)(~QyChy#%$%#"
+password "%$%#cV(!!!!!!!!!!!!Mb0w:Lh/HU:8:5=8:2c3-os>&Pa9(LFynt:Z{+A+.*YR$ZL[<&{#gTLMwsK7.TAVNSFr!K[*&j0["DG4rud1/U2SD:]0.r"P0>:YlG%IX#{5!~%$%#"
  ont tr069-server-config 9 64 profile-id 1
  ont internet-config 9 64 ip-index 0
  ont wan-config 9 64 ip-index 0 profile-id 10
@@ -4805,12 +4812,16 @@ ont-srvprofile-id 200 desc "9259 - 9259"
 ont-srvprofile-id 200 desc "9077 - 9077" 
  ont add 9 77 sn-auth "TPLG4FCDD9D8" omci ont-lineprofile-id 200 
 ont-srvprofile-id 200 desc "9638 - 9638" 
+ ont add 9 78 sn-auth "TPLGF1C17D30" omci ont-lineprofile-id 200 
+ont-srvprofile-id 200 desc "9732 - 9732" 
+ ont add 9 79 sn-auth "TPLGCEAEA8E0" omci ont-lineprofile-id 200 
+ont-srvprofile-id 200 desc "596 - 596" 
  ont add 10 0 sn-auth "FHTTC0310036" omci ont-lineprofile-id 200 
 ont-srvprofile-id 200 desc "5322 - adoniasbento2@bjpm" 
  ont add 10 1 sn-auth "TPLG8474ABDF" omci ont-lineprofile-id 200 
 ont-srvprofile-id 199 desc "366 - 366" 
- ont add 10 2 sn-auth "MONU004CC5D9" omci ont-lineprofile-id 200 
-ont-srvprofile-id 199 desc "524 - silenays@bjct" 
+ ont add 10 2 sn-auth "TPLG5DDB7FA8" omci ont-lineprofile-id 200 
+ont-srvprofile-id 200 desc "2823 - 2823" 
  ont add 10 3 sn-auth "SHLN20F8EF9E" omci ont-lineprofile-id 200 
 ont-srvprofile-id 200 desc "2001 - 2001" 
  ont add 10 4 sn-auth "ITBS0A7145C4" omci ont-lineprofile-id 200 
@@ -4819,12 +4830,12 @@ ont-srvprofile-id 199 desc "327 - 327"
 ont-srvprofile-id 200 desc "4377 - 4377" 
  ont add 10 6 sn-auth "HWTC36E707AE" omci ont-lineprofile-id 500 
 ont-srvprofile-id 200 desc "6117 - gefsoncasa" 
- ont ipconfig 10 6 pppoe vlan 200 priority 5 user-account username "gefsoncasa" password "%$%#cV(!!!!!!!!!!!!Z7oI-/EFLX5R<#;pK\67R#kK9PufZ.E#Eo&xabd!OkVX.cg$s@$nO%V\iHR)748G-ww*LD>MMi(RH`cCB.zKH.n%yU\}k&%P..c:Qm@Z>6^:I8%$%#"
+ ont ipconfig 10 6 pppoe vlan 200 priority 5 user-account username "gefsoncasa" password "%$%#cV(!!!!!!!!!!!!y>dK'hYVAA,6DL%P*;_P4dL*Q}E}Y*[^s7*EA`(/|vh8~Gr|T,_B=t2d4QKO%&jW6R*ou0/YQ\P7c#g=k{~gX4`Na/h5Q1Q=QbS:#@q-%ofWzC%$%#"
  ont tr069-server-config 10 6 profile-id 1
  ont internet-config 10 6 ip-index 0
  ont wan-config 10 6 ip-index 0 profile-id 10
- ont add 10 7 sn-auth "TPLGD047570B" omci ont-lineprofile-id 200 
-ont-srvprofile-id 199 desc "5428 - wilismarbatista@bjpm" 
+ ont add 10 7 sn-auth "TPLG5DDB87B0" omci ont-lineprofile-id 200 
+ont-srvprofile-id 200 desc "5428 - 5428" 
  ont add 10 8 sn-auth "D0116A940ED4" omci ont-lineprofile-id 200 
 ont-srvprofile-id 199 desc "cliente brejinho" 
  ont add 10 9 sn-auth "DD18B3DA0105" omci ont-lineprofile-id 200 
@@ -4842,7 +4853,7 @@ ont-srvprofile-id 200 desc "2342 - 2342"
  ont add 10 15 sn-auth "HWTC5173F6AE" omci ont-lineprofile-id 500 
 ont-srvprofile-id 200 desc "7353 - 7353" 
  ont ipconfig 10 15 pppoe vlan 200 priority 5 user-account username "7353" 
-password "%$%#cV(!!!!!!!!!!!!;]ZiD_Z\Q5.`JmEo:W>SeQk4V6la55P15zTzJuq4tT]s4mlgGS7%nF3`j<JA]>hQ/Wu2c&&$MpY%[*W"Cu*lH8)1cLg8[C=!'q^XW~3xUm`2n.%$%#"
+password "%$%#cV(!!!!!!!!!!!!0Jr>6%eRbBT;@S+D=R\!{3nQSI@u%J,XU;P.rR')(xOq6e`[rW`j8k'3GOG<Z=KsBdOan-Nk8t.5s.5M9,IX0#JgB4z+,j40[_rCwscSBx4[T+%$%#"
  ont tr069-server-config 10 15 profile-id 1
  ont internet-config 10 15 ip-index 0
  ont wan-config 10 15 ip-index 0 profile-id 10
@@ -4850,6 +4861,8 @@ password "%$%#cV(!!!!!!!!!!!!;]ZiD_Z\Q5.`JmEo:W>SeQk4V6la55P15zTzJuq4tT]s4mlgGS7
 ont-srvprofile-id 200 desc "376 - 376" 
  ont add 10 17 sn-auth "ITBS2C9A5A01" omci ont-lineprofile-id 200 
 ont-srvprofile-id 199 desc "cliente brejinho" 
+ ont add 10 18 sn-auth "TPLG5DDB8B00" omci ont-lineprofile-id 200 
+ont-srvprofile-id 200 desc "3679 - 3679" 
  ont add 10 19 sn-auth "TPLG8423E5D8" omci ont-lineprofile-id 200 
 ont-srvprofile-id 200 desc "5588 - 5588" 
  ont add 10 20 sn-auth "TPLGD18BE338" omci ont-lineprofile-id 200 
@@ -4860,8 +4873,8 @@ ont-srvprofile-id 200 desc "239 - 239"
 ont-srvprofile-id 200 desc "730 - 730" 
  ont add 10 23 sn-auth "ITBS32CB5F70" omci ont-lineprofile-id 200 
 ont-srvprofile-id 199 desc "cliente brejinho" 
- ont add 10 24 sn-auth "TPLG4F13EB60" omci ont-lineprofile-id 200 
-ont-srvprofile-id 200 desc "470 - sergioanaize" 
+ ont add 10 24 sn-auth "TPLG5DDB85F0" omci ont-lineprofile-id 200 
+ont-srvprofile-id 200 desc "470 - 470" 
  ont add 10 25 sn-auth "ITBS4452999E" omci ont-lineprofile-id 200 
 ont-srvprofile-id 200 desc "258 - 258" 
  ont add 10 26 sn-auth "ALCLFE00C5C5" omci ont-lineprofile-id 200 
@@ -4869,8 +4882,6 @@ ont-srvprofile-id 200 desc "3938 - simonewillian@bjpm"
  ont add 10 27 sn-auth "ITBS32CC80BE" omci ont-lineprofile-id 200 
 ont-srvprofile-id 199 desc "cliente brejinho" 
  ont add 10 28 sn-auth "ITBS32FBB5C2" omci ont-lineprofile-id 200 
-ont-srvprofile-id 199 desc "cliente brejinho" 
- ont add 10 29 sn-auth "ITBS5F022A27" omci ont-lineprofile-id 200 
 ont-srvprofile-id 199 desc "cliente brejinho" 
  ont add 10 30 sn-auth "SHLN20F91FDC" omci ont-lineprofile-id 200 
 ont-srvprofile-id 200 desc "2265 - 2265" 
@@ -4986,6 +4997,8 @@ ont-srvprofile-id 199 desc "cliente brejinho"
 ont-srvprofile-id 199 desc "cliente brejinho" 
  ont add 11 19 sn-auth "TPLGF1C17130" omci ont-lineprofile-id 200 
 ont-srvprofile-id 200 desc "5927 - 5927" 
+ ont add 11 20 sn-auth "TPLG5DDA5ED8" omci ont-lineprofile-id 200 
+ont-srvprofile-id 200 desc "1786 - 1786" 
  ont add 11 21 sn-auth "HWTC827F19A6" omci ont-lineprofile-id 200 
 ont-srvprofile-id 199 desc "cliente brejinho" 
  ont add 11 22 sn-auth "ITBS0A779D17" omci ont-lineprofile-id 200 
@@ -4996,8 +5009,8 @@ ont-srvprofile-id 200 desc "1110 - 1110"
 ont-srvprofile-id 199 desc "cliente brejinho" 
  ont add 11 25 sn-auth "HWTCCDD88E1C" omci ont-lineprofile-id 200 
 ont-srvprofile-id 199 desc "cliente brejinho" 
- ont add 11 26 sn-auth "ITBS0DBA9EE2" omci ont-lineprofile-id 200 
-ont-srvprofile-id 199 desc "cliente brejinho" 
+ ont add 11 26 sn-auth "TPLG5DDB8598" omci ont-lineprofile-id 200 
+ont-srvprofile-id 200 desc "2811 - 2811" 
  ont add 11 27 sn-auth "TPLG4A480701" omci ont-lineprofile-id 200 
 ont-srvprofile-id 199 desc "187 - jorge2" 
  ont add 11 28 sn-auth "ITBS2C423864" omci ont-lineprofile-id 200 
@@ -5023,7 +5036,7 @@ ont-srvprofile-id 199 desc "cliente brejinho"
  ont add 11 38 sn-auth "HWTCB6A35CAF" omci ont-lineprofile-id 500 
 ont-srvprofile-id 200 desc "3934 - 3934" 
  ont ipconfig 11 38 pppoe vlan 200 priority 5 user-account username "3934" 
-password "%$%#cV(!!!!!!!!!!!!BD$sPIbnaF{6xMEO*u$:b]Fx<nH/z~mZx[87Te|Bwsj&*%o=/(/p:)R*fu|(IlF@Bn{:%5c&+XUSPW13>CN5XRN:[Y>KLDT5/0o!2.U}~)xvw#%$%#"
+password "%$%#cV(!!!!!!!!!!!!RgssV9K4s+h[Oj=6t]n8O3Q4:olujTG]\>NgD|D!Vn,8;]+N+L|-"FPK7c*A7$+/'],oS0mLsZMI)+%Hu*Q"B^Umx@l&-sR5F84&>~iMWe>{jQ%$%#"
  ont tr069-server-config 11 38 profile-id 2
  ont internet-config 11 38 ip-index 0
  ont wan-config 11 38 ip-index 0 profile-id 10
@@ -5103,13 +5116,6 @@ ont-srvprofile-id 199 desc "cliente brejinho"
 ont-srvprofile-id 199 desc "cliente brejinho" 
  ont add 11 77 sn-auth "TPLGB5239628" omci ont-lineprofile-id 200 
 ont-srvprofile-id 199 desc "cliente brejinho" 
- ont add 11 78 sn-auth "HWTC32DB72AE" omci ont-lineprofile-id 500 
-ont-srvprofile-id 200 desc "2811 - 2811" 
- ont ipconfig 11 78 pppoe vlan 200 priority 5 user-account username "2811" 
-password "%$%#cV(!!!!!!!!!!!!.iW{GIkbzI]}=5P[{ZwK&!h[(vx%eU>Azn+NO3W+}gL~(ao`-5(fk/T=]!'%3Ti=Z,VS}OKK(|!E\!}AfL3GWz,[9,Eb:j$3N/d8))iaDx>#\O%$%#"
- ont tr069-server-config 11 78 profile-id 1
- ont internet-config 11 78 ip-index 0
- ont wan-config 11 78 ip-index 0 profile-id 10
  ont add 11 79 sn-auth "TPLGB535411F" omci ont-lineprofile-id 200 
 ont-srvprofile-id 199 desc "cliente brejinho" 
  ont add 11 80 sn-auth "TPLGF73A66DB" omci ont-lineprofile-id 200 
@@ -5174,6 +5180,8 @@ ont-srvprofile-id 200 desc "7174 - 7174"
 ont-srvprofile-id 200 desc "1285 - 1285" 
  ont add 12 1 sn-auth "BTPTDD179899" omci ont-lineprofile-id 200 
 ont-srvprofile-id 199 desc "cliente brejinho" 
+ ont add 12 2 sn-auth "TPLG5DDB8028" omci ont-lineprofile-id 200 
+ont-srvprofile-id 200 desc "285 - 285" 
  ont add 12 3 sn-auth "D0116A93F62C" omci ont-lineprofile-id 200 
 ont-srvprofile-id 199 desc "cliente brejinho" 
  ont add 12 4 sn-auth "DD16B3C7C174" omci ont-lineprofile-id 200 
@@ -5198,8 +5206,6 @@ ont-srvprofile-id 200 desc "2132"
 ont-srvprofile-id 200 desc "5312 - 5312" 
  ont add 12 14 sn-auth "TPLG84235878" omci ont-lineprofile-id 200 
 ont-srvprofile-id 199 desc "7809 - 2oqb9fma" 
- ont add 12 15 sn-auth "ITBS0A48A1DE" omci ont-lineprofile-id 200 
-ont-srvprofile-id 199 desc "285 - 285" 
  ont add 12 16 sn-auth "D0116A93F64C" omci ont-lineprofile-id 200 
 ont-srvprofile-id 199 desc "8300 - 8300" 
  ont add 12 17 sn-auth "HWTC8C7E8543" omci ont-lineprofile-id 200 
@@ -5221,7 +5227,7 @@ ont-srvprofile-id 199 desc "cliente brejinho"
  ont add 12 25 sn-auth "HWTC4F93EDAE" omci ont-lineprofile-id 500 
 ont-srvprofile-id 200 desc "434 - 434" 
  ont ipconfig 12 25 pppoe vlan 200 priority 5 user-account username "434" 
-password "%$%#cV(!!!!!!!!!!!!7'+=~+"B}U^azD>w~FgG3<6mT<!gv')D6V)ep~9.|@_Y+burw-{kIX/>|fb2`-z[O^E}nAbJe7<:J@B.E8Sm~bFjL/b@OK#$l.j2#v"uW|>4o0%$%#"
+password "%$%#cV(!!!!!!!!!!!!c]55FnM2_DRg#F/.5>76PO6^:`/<M~F0.S,-xF\7;1;#+0~=9@!mStT(u&\<apn.1q4.6YK^%Q-iR>O5h8DG"BEX8-6&S)&[_WV5KOr6B((g]H%$%#"
  ont tr069-server-config 12 25 profile-id 1
  ont internet-config 12 25 ip-index 0
  ont wan-config 12 25 ip-index 0 profile-id 10
@@ -5425,8 +5431,8 @@ ont-srvprofile-id 199 desc "6732 - 6732"
 ont-srvprofile-id 199 desc "1233 - emersonchacon" 
  ont add 13 47 sn-auth "TPLG8423C6E0" omci ont-lineprofile-id 200 
 ont-srvprofile-id 200 desc "1438 - 1438" 
- ont add 13 48 sn-auth "MKPGB464200C" omci ont-lineprofile-id 200 
-ont-srvprofile-id 199 desc "kjhm" 
+ ont add 13 48 sn-auth "TPLG5DDB69C8" omci ont-lineprofile-id 200 
+ont-srvprofile-id 200 desc "7331 - 7331" 
  ont add 13 49 sn-auth "MKPGB4641E98" omci ont-lineprofile-id 200 
 ont-srvprofile-id 199 desc "7333 - 7333" 
  ont add 13 50 sn-auth "TPLG897BFE80" omci ont-lineprofile-id 200 
@@ -5440,7 +5446,7 @@ ont-srvprofile-id 200 desc "7794 - dfadf"
  ont add 13 54 sn-auth "HWTC3CA555AF" omci ont-lineprofile-id 500 
 ont-srvprofile-id 200 desc "6271 - 6271" 
  ont ipconfig 13 54 pppoe vlan 200 priority 5 user-account username "6271" 
-password "%$%#cV(!!!!!!!!!!!!^,<N=JuT$Eu,FEUWzhY0yr6FObN@|<c-ffM$vp&/n8.ANl0neJ4\{iCv#q2%foSME`G#E"tWE^Is3Lt~40_PRmrVyVD2H3LtHw|R*;'-G'A#K%%$%#"
+password "%$%#cV(!!!!!!!!!!!!vL$=H;j1KThe6UWJx\12qL1v0*Lr4X/}$%Ws=F,=Z{q6>&krH<CxWfPwk!:=uJ3i*h0Ot5Jo;&&lm{[/`lpn#nvvi$'Kp6NX-d_4GG.E8X_5QH%$%#"
  ont tr069-server-config 13 54 profile-id 1
  ont internet-config 13 54 ip-index 0
  ont wan-config 13 54 ip-index 0 profile-id 10
@@ -5460,6 +5466,8 @@ ont-srvprofile-id 200 desc "8371 - 8371"
 ont-srvprofile-id 200 desc "9688 - 9688" 
  ont add 13 62 sn-auth "TPLGF1C183C0" omci ont-lineprofile-id 200 
 ont-srvprofile-id 200 desc "1587 - 1587" 
+ ont add 13 63 sn-auth "TPLG5DDB8590" omci ont-lineprofile-id 200 
+ont-srvprofile-id 200 desc "9775 - 9775" 
  ont add 14 0 sn-auth "BTPTDD179897" omci ont-lineprofile-id 200 
 ont-srvprofile-id 199 desc "cliente brejinho" 
  ont add 14 1 sn-auth "FHTTC030FE01" omci ont-lineprofile-id 200 
@@ -5491,7 +5499,7 @@ ont-srvprofile-id 200 desc "3709 - 3709"
  ont add 14 14 sn-auth "HWTCB6A17EAF" omci ont-lineprofile-id 500 
 ont-srvprofile-id 200 desc "7662 - 7662" 
  ont ipconfig 14 14 pppoe vlan 200 priority 5 user-account username "7662" 
-password "%$%#cV(!!!!!!!!!!!!,(.c:]C@qPh8hS.ywh^@{%tgL.$f&6pz<>GaVwfE0h`hHB88|U{#JQYR1}j"^z_tK/=S|!l(4&YntlyA8C37J{cOD1%gS'ZO|O]<3[-MME/PrO%$%#"
+password "%$%#cV(!!!!!!!!!!!!{[TUT+NvX-izEE!DH,D,K&Vp9%sb(1&"HQSkZTw'Z6;pIteL%Aam{s,ZZ,r2|zxN6_qvBJrDsIS*52U5qIIe(yQU/Po"r(MLynt*sOpp~D|(=B%$%#"
  ont tr069-server-config 14 14 profile-id 1
  ont internet-config 14 14 ip-index 0
  ont wan-config 14 14 ip-index 0 profile-id 10
@@ -5632,7 +5640,7 @@ ont-srvprofile-id 200 desc "8192 - 8192"
  ont add 15 61 sn-auth "HWTCD6B1189F" omci ont-lineprofile-id 500 
 ont-srvprofile-id 200 desc "7116 - 7116" 
  ont ipconfig 15 61 pppoe vlan 200 priority 5 user-account username "7116" 
-password "%$%#cV(!!!!!!!!!!!!pO),D*Luq!1Lm)=v%q3EB|iQ1QTat0a\d#>289l7><_NM6M1RRC\a"3=2-Z>zC~62rO!e;Aq/ATWxQ=Hj47S=^X,^6Xv3X7jSou,QBDJ=p=Q#T%$%#"
+password "%$%#cV(!!!!!!!!!!!!z7nPJ(j()PHrrTJi+-CM%rU:Kr1+$ITuj\A!SK[RZ5HV/@v[2V9RS8+Q$QN$2)*GP+N[lG=BICJ)Nd<=yiTYXk(D9+V(3\"0}Z$6M8!Z9+w`FK%$%#"
  ont tr069-server-config 15 61 profile-id 1
  ont internet-config 15 61 ip-index 0
  ont wan-config 15 61 ip-index 0 profile-id 10
@@ -5668,8 +5676,8 @@ ont-srvprofile-id 200 desc "9212 - 9212"
 ont-srvprofile-id 200 desc "9217 - 9217" 
  ont add 15 77 sn-auth "TPLGD1992840" omci ont-lineprofile-id 200 
 ont-srvprofile-id 200 desc "9266 - 9266" 
- ont add 15 78 sn-auth "ALCLFE132EE3" omci ont-lineprofile-id 200 
-ont-srvprofile-id 200 desc "8982 - 8982" 
+ ont add 15 78 sn-auth "TPLGF1C178A8" omci ont-lineprofile-id 200 
+ont-srvprofile-id 200 desc "9687 - 9687" 
  ont add 15 79 sn-auth "TPLGBCC259A0" omci ont-lineprofile-id 200 
 ont-srvprofile-id 200 desc "9381 - 9381" 
  ont add 15 80 sn-auth "TPLG4F13EC20" omci ont-lineprofile-id 200 
@@ -5907,7 +5915,6 @@ ont-srvprofile-id 200 desc "9458 - 9458"
  ont port native-vlan 4 31 eth 1 vlan 200 priority 0 
  ont port native-vlan 4 32 eth 1 vlan 200 priority 0 
  ont port native-vlan 4 35 eth 1 vlan 200 priority 0 
- ont port native-vlan 4 36 eth 1 vlan 200 priority 0 
  ont port native-vlan 4 37 eth 1 vlan 200 priority 0 
  ont port native-vlan 4 38 eth 1 vlan 200 priority 0 
  ont port native-vlan 4 40 eth 1 vlan 200 priority 0 
@@ -5982,6 +5989,7 @@ ont-srvprofile-id 200 desc "9458 - 9458"
  ont port native-vlan 6 34 eth 1 vlan 200 priority 0 
  ont port native-vlan 6 35 eth 1 vlan 200 priority 0 
  ont port native-vlan 6 38 eth 1 vlan 200 priority 0 
+ ont port native-vlan 6 40 eth 1 vlan 200 priority 0 
  ont port native-vlan 6 41 eth 1 vlan 200 priority 0 
  ont port native-vlan 6 43 eth 1 vlan 200 priority 0 
  ont port route 6 46 eth 1 enable
@@ -6030,7 +6038,6 @@ ont-srvprofile-id 200 desc "9458 - 9458"
  ont port native-vlan 7 38 eth 1 vlan 200 priority 0 
  ont port native-vlan 7 39 eth 1 vlan 200 priority 0 
  ont port native-vlan 7 40 eth 1 vlan 200 priority 0 
- ont port native-vlan 7 41 eth 1 vlan 200 priority 0 
  ont port native-vlan 7 43 eth 1 vlan 200 priority 0 
  ont port native-vlan 7 44 eth 1 vlan 200 priority 0 
  ont port native-vlan 7 46 eth 1 vlan 200 priority 0 
@@ -6150,13 +6157,11 @@ ont-srvprofile-id 200 desc "9458 - 9458"
  ont port route 9 64 eth 4 enable
  ont port native-vlan 9 71 eth 1 vlan 200 priority 0 
  ont port native-vlan 10 1 eth 1 vlan 200 priority 0 
- ont port native-vlan 10 2 eth 1 vlan 200 priority 0 
  ont port native-vlan 10 4 eth 1 vlan 200 priority 0 
  ont port route 10 6 eth 1 enable
  ont port route 10 6 eth 2 enable
  ont port route 10 6 eth 3 enable
  ont port route 10 6 eth 4 enable
- ont port native-vlan 10 7 eth 1 vlan 200 priority 0 
  ont port native-vlan 10 8 eth 1 vlan 200 priority 0 
  ont port native-vlan 10 9 eth 1 vlan 200 priority 0 
  ont port native-vlan 10 10 eth 1 vlan 200 priority 0 
@@ -6169,7 +6174,6 @@ ont-srvprofile-id 200 desc "9458 - 9458"
  ont port native-vlan 10 23 eth 1 vlan 200 priority 0 
  ont port native-vlan 10 27 eth 1 vlan 200 priority 0 
  ont port native-vlan 10 28 eth 1 vlan 200 priority 0 
- ont port native-vlan 10 29 eth 1 vlan 200 priority 0 
  ont port native-vlan 10 35 eth 1 vlan 200 priority 0 
  ont port native-vlan 10 37 eth 1 vlan 200 priority 0 
  ont port native-vlan 10 42 eth 1 vlan 200 priority 0 
@@ -6205,7 +6209,6 @@ ont-srvprofile-id 200 desc "9458 - 9458"
  ont port native-vlan 11 22 eth 1 vlan 200 priority 0 
  ont port native-vlan 11 24 eth 1 vlan 200 priority 0 
  ont port native-vlan 11 25 eth 1 vlan 200 priority 0 
- ont port native-vlan 11 26 eth 1 vlan 200 priority 0 
  ont port native-vlan 11 27 eth 1 vlan 200 priority 0 
  ont port native-vlan 11 28 eth 1 vlan 200 priority 0 
  ont port native-vlan 11 30 eth 1 vlan 200 priority 0 
@@ -6246,10 +6249,6 @@ ont-srvprofile-id 200 desc "9458 - 9458"
  ont port native-vlan 11 75 eth 1 vlan 200 priority 0 
  ont port native-vlan 11 76 eth 1 vlan 200 priority 0 
  ont port native-vlan 11 77 eth 1 vlan 200 priority 0 
- ont port route 11 78 eth 1 enable
- ont port route 11 78 eth 2 enable
- ont port route 11 78 eth 3 enable
- ont port route 11 78 eth 4 enable
  ont port native-vlan 11 79 eth 1 vlan 200 priority 0 
  ont port native-vlan 11 80 eth 1 vlan 200 priority 0 
  ont port native-vlan 11 82 eth 1 vlan 200 priority 0 
@@ -6277,7 +6276,6 @@ ont-srvprofile-id 200 desc "9458 - 9458"
  ont port native-vlan 12 10 eth 1 vlan 200 priority 0 
  ont port native-vlan 12 11 eth 1 vlan 200 priority 0 
  ont port native-vlan 12 14 eth 1 vlan 200 priority 0 
- ont port native-vlan 12 15 eth 1 vlan 200 priority 0 
  ont port native-vlan 12 16 eth 1 vlan 200 priority 0 
  ont port native-vlan 12 17 eth 1 vlan 200 priority 0 
  ont port native-vlan 12 18 eth 1 vlan 200 priority 0 
@@ -6349,7 +6347,6 @@ ont-srvprofile-id 200 desc "9458 - 9458"
  ont port native-vlan 13 42 eth 1 vlan 200 priority 0 
  ont port native-vlan 13 45 eth 1 vlan 200 priority 0 
  ont port native-vlan 13 46 eth 1 vlan 200 priority 0 
- ont port native-vlan 13 48 eth 1 vlan 200 priority 0 
  ont port native-vlan 13 49 eth 1 vlan 200 priority 0 
  ont port route 13 54 eth 1 enable
  ont port route 13 54 eth 2 enable
@@ -6448,7 +6445,7 @@ ont-srvprofile-id 200 desc "teste onu"
  ont add 0 3 sn-auth "HWTC1A73B0A4" omci ont-lineprofile-id 500 
 ont-srvprofile-id 200 desc "teste onu" 
  ont ipconfig 0 3 pppoe vlan 200 priority 5 user-account username "eventoap" 
-password "%$%#cV(!!!!!!!!!!!!1%C')(<I<5;x8'"{i8zP$8bBGu17>Zn^5)3E'B4+.bMMVmZ";!%O#SNHG@!JVj**RKbBOO66a0,*"^J~]0u1'hi6gTJ3=^<m!u:5{=v9=ekNj5%$%#"
+password "%$%#cV(!!!!!!!!!!!!Xwat=^:Q'9]qzZHNY7oXL.N$>+__&+A-|UMdA:%*f;'6W)<L^Q5m4LSz-iB*Xr!/NOM476{N+v*LM&;W|pPu46q"g9/0`a;|Tt4==i(XNR^!F0%$%#"
  ont tr069-server-config 0 3 profile-id 1
  ont internet-config 0 3 ip-index 0
  ont wan-config 0 3 ip-index 0 profile-id 10
@@ -6457,41 +6454,41 @@ ont-srvprofile-id 200 desc "teste onu"
  ont add 0 5 sn-auth "HWTCDC49C1A2" omci ont-lineprofile-id 500 
 ont-srvprofile-id 200 desc "teste onu" 
  ont ipconfig 0 5 pppoe vlan 200 priority 5 user-account username "eventoap" 
-password "%$%#cV(!!!!!!!!!!!!g6xGV-xIVOB#E#Q&_}n%];]XPi1*e!tS3C"QF&7)h6;0$h'.3@\tq;5VX@[Q3dpLY>(B}6='o}V*l6L-Iq531;fqcF|{`f>AoS8:-)~H$PrBnW%$%#"
+password "%$%#cV(!!!!!!!!!!!!aoTBW{)o{0Oh,Z'1&yp7Zxnj-\|}S~SOiwU^r!BHrs%&2AYv~DmVQi!Y#VpQ)ybK2c+}d1{)h7>9"quO8e>&5`&cU(kAQdPU>^0XS6eEThb7OL%$%#"
  ont tr069-server-config 0 5 profile-id 1
  ont internet-config 0 5 ip-index 0
  ont wan-config 0 5 ip-index 0 profile-id 10
  ont add 0 6 sn-auth "HWTCF30DC6A7" omci ont-lineprofile-id 500 
 ont-srvprofile-id 200 desc "teste onu" 
  ont ipconfig 0 6 pppoe vlan 200 priority 5 user-account username "eventoap" 
-password "%$%#cV(!!!!!!!!!!!!/LhdV7C(V=9)-<8e6As6VkkY163x*WJ\_22af3^$&,~'&T(+yLf=OpPm>L\P!eJu:+%[t;@72=M4SX+Kne'v4>^j0@b.,JHN1\dDQ:y*Fm{rEL%$%#"
+password "%$%#cV(!!!!!!!!!!!!CVS!ZfO`+F*!9LH3GaDY1\$~@o8^9(+e,Q8!$"c5m,>-:b(-vLS%Fe/i;ycT"rHr@="f>W51KQ:k"`z2QTX\R3*NoA)Z+J)9Yj='w*V9GEOOB,%$%#"
  ont tr069-server-config 0 6 profile-id 1
  ont internet-config 0 6 ip-index 0
  ont wan-config 0 6 ip-index 0 profile-id 10
  ont add 0 7 sn-auth "HWTCEB4191A7" omci ont-lineprofile-id 500 
 ont-srvprofile-id 200 desc "teste onu" 
  ont ipconfig 0 7 pppoe vlan 200 priority 5 user-account username "eventoap" 
-password "%$%#cV(!!!!!!!!!!!!&>qI'@\hx-lN0q'`gt1AN`a5&XRn*)A>P"(>fR)LV),(H#a5wM1+)xBBI)[3TyqSA]!NH%DFI2B"CGw#2$S(6W#E3AUw`KJ.dln.x6|HRj-Ke9%$%#"
+password "%$%#cV(!!!!!!!!!!!!~2(RV#G|AMz9e#C)TxZ)uOUCA(CBDRDBN:'kN]NVkjyO5O(A'VJj%E,9P|0&@j&22L&3U/_%TZ4o:,R8mU+"P]f-pIE&qL+G5!e0$WuBK|\!g5%$%#"
  ont tr069-server-config 0 7 profile-id 1
  ont internet-config 0 7 ip-index 0
  ont wan-config 0 7 ip-index 0 profile-id 10
  ont add 0 8 sn-auth "HWTCE0E242A6" omci ont-lineprofile-id 500 
 ont-srvprofile-id 200 desc "teste onu" 
  ont ipconfig 0 8 pppoe vlan 200 priority 5 user-account username "eventoap" 
-password "%$%#cV(!!!!!!!!!!!!v~8h$/tHYNk}dY%;8{a+sGy3ACISp-iZ{4-\+rw+bwNc*,#mUCJN7sX^mi*BI+O>NmlQaC{@piN56S&QsT<2</}Qh78t4P.!Y;O)S+TtAfD6zI%$%#"
+password "%$%#cV(!!!!!!!!!!!!duvbT)o"mUIzR6U[}iv's+$qU`"./A^Q@78$z%=0Tnn%6T>!)X@QE}8m&;`4Q`id,{m@UMwp0c>o8u_XSCiM;Bg/z6j_GxQ)"%R+T~eG-KabdW%$%#"
  ont tr069-server-config 0 8 profile-id 1
  ont internet-config 0 8 ip-index 0
  ont wan-config 0 8 ip-index 0 profile-id 10
  ont add 0 9 sn-auth "HWTC2C7BC5A4" omci ont-lineprofile-id 500 
 ont-srvprofile-id 200 desc "teste onu" 
- ont ipconfig 0 9 pppoe vlan 200 priority 5 user-account username "sgp" password "%$%#cV(!!!!!!!!!!!!)F[sLD*_S.ZCWs37ERC2@zKhQZ"Uk&UY9')E3/i8st7#-+1_DHtNQ(+FyGx7-ZZ-NPK\%SWDG%'Bndc"PuH>2BlB60SWrBM1u\69nL2Z+qU]P(%$%#"
+ ont ipconfig 0 9 pppoe vlan 200 priority 5 user-account username "sgp" password "%$%#cV(!!!!!!!!!!!!+ZO^Xie![/Kgo~Shl:P:WE5M"U6Du%cA{QM_d}]+kRYH;;*'mFS":H5C5%GKum9^/daS{@gPi40SVf!HXn2d*o*)IB#zNg8K0F,Xy_|N5C$hiI%$%#"
  ont tr069-server-config 0 9 profile-id 1
  ont internet-config 0 9 ip-index 0
  ont wan-config 0 9 ip-index 0 profile-id 10
  ont add 0 10 sn-auth "HWTC283E29A3" omci ont-lineprofile-id 500 
 ont-srvprofile-id 200 desc "teste onu" 
  ont ipconfig 0 10 pppoe vlan 200 priority 5 user-account username "eventoap" 
-password "%$%#cV(!!!!!!!!!!!!+qm!@bwbs7"jIPD=M1|+_~z$H0p;D"_rM3JG9X$N<iENFm++1/LE$:P^^T6>3;22L#8qJ,nC!0Nq$O)S{,s"(cK@x7T}(1NW|91,rc01Raf`^:%$%#"
+password "%$%#cV(!!!!!!!!!!!!lEpHU.bUKIGCg-H'iT):8k5WK.'wAF=zn_J\gZ/FBp=}D6%i;)f$mH6:U(OSAs!DQ[2ys.[CTx6xBR+/05xFCQ`DYAapYp&"$8f!U+!y"0(n2>%$%#"
  ont tr069-server-config 0 10 profile-id 1
  ont internet-config 0 10 ip-index 0
  ont wan-config 0 10 ip-index 0 profile-id 10
@@ -6500,7 +6497,7 @@ ont-srvprofile-id 200 desc "teste tr069"
  ont add 0 12 sn-auth "HWTC46B70F9D" omci ont-lineprofile-id 500 
 ont-srvprofile-id 200 desc "teste onu" 
  ont ipconfig 0 12 pppoe vlan 200 priority 5 user-account username "eventoap" 
-password "%$%#cV(!!!!!!!!!!!!T9CL&WPhtJrLpoXKdTS@\terLiE8(3$/",M},V(~mnZF#3[DoP4&:fS!,A|StZO2%%Z_ULI@DnULER$IBCO%"UmHgNDJ[00@KYZW(@hXIj/hh3%$%#"
+password "%$%#cV(!!!!!!!!!!!!A4R5V+NNJ@J2DY#I3)nE=pk>:s/Ib!Y#C.75hWw=u$5c<lQT&6'O]iXAiiWCPC<w@0yk,4%li!<PALB7*;rV./z("!Gog.&p+b`(I2^H!`s.]H%$%#"
  ont tr069-server-config 0 12 profile-id 1
  ont internet-config 0 12 ip-index 0
  ont wan-config 0 12 ip-index 0 profile-id 10
@@ -6509,14 +6506,14 @@ ont-srvprofile-id 199 desc "solar"
  ont add 0 14 sn-auth "HWTCA17559A4" omci ont-lineprofile-id 500 
 ont-srvprofile-id 200 desc "teste onu" 
  ont ipconfig 0 14 pppoe vlan 200 priority 5 user-account username "eventoap" 
-password "%$%#cV(!!!!!!!!!!!!!0dg@IPk_$/zPQBTXIU+<lZE$[GP_UBu/b1'\]6L9"Lr-Gyxy6vxQ'PrhzOC:@ah)Ofv,.,TB\~OJqO@=Bj)Rn6cE)+jaeTZV16E[re>Y4*.+V%$%#"
+password "%$%#cV(!!!!!!!!!!!!RVnwU*pJ`**<8I6([/fEA6(K*K4ykBHL}I+uL3Z"[.$0X)7IcCp*MPY_{KL9m755Zh>Z1TR]D,C1"i+FbW+Q!b]]YF#E`=(P4_X:6zVr@Bsf<=%$%#"
  ont tr069-server-config 0 14 profile-id 1
  ont internet-config 0 14 ip-index 0
  ont wan-config 0 14 ip-index 0 profile-id 10
  ont add 0 15 sn-auth "HWTCE0DAD4A6" omci ont-lineprofile-id 500 
 ont-srvprofile-id 200 desc "teste onu" 
  ont ipconfig 0 15 pppoe vlan 200 priority 5 user-account username "eventoap" 
-password "%$%#cV(!!!!!!!!!!!!xKgfLkhX7+tHmRDjA(~%Xx!CNy8'5P/QeY-C$YP9UE+3D,d_"'p$z-Tygly7ROC`W4koNX3F2k%VFTg3scrIJS/UD7|JS[993@r5z32()(KxBJ%$%#"
+password "%$%#cV(!!!!!!!!!!!!j:kN";`fER(Uw#@tRsAKFVRCTDlQlJwM8BQl;f9@jg#a6[Ss".B9Ki0\VOY~iB2n@h:YQGzBJ1I|1AtFMgJ{G0%+l6v\ZPN+}2o8]llr<Fsc,&%$%#"
  ont tr069-server-config 0 15 profile-id 1
  ont internet-config 0 15 ip-index 0
  ont wan-config 0 15 ip-index 0 profile-id 10
@@ -6532,6 +6529,8 @@ ont-srvprofile-id 200 desc "4039 - 4039"
 ont-srvprofile-id 199 desc "2928 - ubs@remedio" 
  ont add 0 21 sn-auth "TPLGD18B5710" omci ont-lineprofile-id 200 
 ont-srvprofile-id 200 desc "8242 - 8242" 
+ ont add 0 22 sn-auth "TPLG5DDA70D0" omci ont-lineprofile-id 200 
+ont-srvprofile-id 200 desc "9814 - 9814" 
  ont add 0 23 sn-auth "ITBS5F6BDF5E" omci ont-lineprofile-id 200 
 ont-srvprofile-id 199 desc "2663 - edvaldo@bjsm" 
  ont add 0 24 sn-auth "FHTTFE2F4289" omci ont-lineprofile-id 200 
@@ -6606,8 +6605,6 @@ ont-srvprofile-id 199 desc "5232 - joaomaria2@malm"
 ont-srvprofile-id 200 desc "3029 - 3029" 
  ont add 1 32 sn-auth "TPLG7E961088" omci ont-lineprofile-id 200 
 ont-srvprofile-id 200 desc "6980 - 6980" 
- ont add 1 33 sn-auth "ITBSCF6589F1" omci ont-lineprofile-id 200 
-ont-srvprofile-id 199 desc "POSTE-LAGOA_ DO MATO" 
  ont add 1 34 sn-auth "TPLGD18E1DD8" omci ont-lineprofile-id 200 
 ont-srvprofile-id 200 desc "3069 - 3069" 
  ont add 1 35 sn-auth "ITBS0D2BCC57" omci ont-lineprofile-id 200 
@@ -6738,10 +6735,10 @@ ont-srvprofile-id 199 desc "3493 - 3493"
 ont-srvprofile-id 199 desc "3381 - 3381" 
  ont add 2 30 sn-auth "D0116A94044C" omci ont-lineprofile-id 200 
 ont-srvprofile-id 199 desc "1462 - 1462" 
- ont add 2 31 sn-auth "HWTCFA9D627A" omci ont-lineprofile-id 200 
-ont-srvprofile-id 199 desc "6921 - 6921" 
- ont add 2 32 sn-auth "D0116A940EDC" omci ont-lineprofile-id 200 
-ont-srvprofile-id 199 desc "1496 - raquelxavier@malm" 
+ ont add 2 31 sn-auth "TPLG5DDB83C0" omci ont-lineprofile-id 200 
+ont-srvprofile-id 200 desc "6921 - 6921" 
+ ont add 2 32 sn-auth "TPLG5DDB83B0" omci ont-lineprofile-id 200 
+ont-srvprofile-id 200 desc "1496 - 1496" 
  ont add 2 33 sn-auth "MKPGB43BF5B4" omci ont-lineprofile-id 200 
 ont-srvprofile-id 199 desc "6197 - ubslmato" 
  ont add 2 34 sn-auth "TPLGCE8749DF" omci ont-lineprofile-id 200 
@@ -6786,8 +6783,8 @@ ont-srvprofile-id 200 desc "5192 - 5192"
 ont-srvprofile-id 200 desc "1028 - 1028" 
  ont add 2 54 sn-auth "ITBSCF61CAB2" omci ont-lineprofile-id 200 
 ont-srvprofile-id 199 desc "3055 - luanasantos@lm" 
- ont add 2 55 sn-auth "SU10B2038269" omci ont-lineprofile-id 200 
-ont-srvprofile-id 199 desc "7869 - 7869" 
+ ont add 2 55 sn-auth "TPLG5DDB6C80" omci ont-lineprofile-id 200 
+ont-srvprofile-id 200 desc "9780 - 9780" 
  ont add 2 56 sn-auth "SUMCB29F3694" omci ont-lineprofile-id 200 
 ont-srvprofile-id 199 desc "3181 - moises@malm" 
  ont add 2 57 sn-auth "ITBS32CC804E" omci ont-lineprofile-id 200 
@@ -6848,6 +6845,8 @@ ont-srvprofile-id 200 desc "9647 - 9647"
 ont-srvprofile-id 200 desc "9630 - 9630" 
  ont add 2 85 sn-auth "TPLGF116BB38" omci ont-lineprofile-id 200 
 ont-srvprofile-id 200 desc "9669 - 9669" 
+ ont add 2 86 sn-auth "ALCLFE00C58D" omci ont-lineprofile-id 200 
+ont-srvprofile-id 200 desc "9726 - 9726" 
  ont add 3 0 sn-auth "ITBS0A934CC3" omci ont-lineprofile-id 200 
 ont-srvprofile-id 199 desc "7473 - 7473" 
  ont add 3 1 sn-auth "ITBS0AC1BA9D" omci ont-lineprofile-id 200 
@@ -6856,8 +6855,6 @@ ont-srvprofile-id 200 desc "7481 - 7481"
 ont-srvprofile-id 200 desc "7461 - 7461" 
  ont add 3 3 sn-auth "TPLG7E960530" omci ont-lineprofile-id 200 
 ont-srvprofile-id 200 desc "7486 - 7486" 
- ont add 3 4 sn-auth "TPLGCEB06FA0" omci ont-lineprofile-id 200 
-ont-srvprofile-id 200 desc "7639 - 7639" 
  ont add 3 5 sn-auth "TPLG8474A7B1" omci ont-lineprofile-id 200 
 ont-srvprofile-id 199 desc "7482 - 7482" 
  ont add 3 6 sn-auth "TPLG8474AA93" omci ont-lineprofile-id 200 
@@ -6904,12 +6901,10 @@ ont-srvprofile-id 200 desc "7495 - 7495"
 ont-srvprofile-id 200 desc "7460 - 7460" 
  ont add 4 11 sn-auth "ITBS0A94A294" omci ont-lineprofile-id 200 
 ont-srvprofile-id 200 desc "7487 - 7487" 
- ont add 4 12 sn-auth "TPLGCEAEA8E0" omci ont-lineprofile-id 200 
-ont-srvprofile-id 200 desc "7638 - 7638" 
  ont add 4 13 sn-auth "HWTC4F9185AE" omci ont-lineprofile-id 500 
 ont-srvprofile-id 200 desc "7470 - 7470" 
  ont ipconfig 4 13 pppoe vlan 200 priority 5 user-account username "7470" 
-password "%$%#cV(!!!!!!!!!!!!~VgH.rR$[>z$Y/NXv*QV~c}-6tl%,22A,8-XlvL#qM2.,u~}nIsu3s7,sJD~,x<7&Q5=3Uk'$SQV;M+@,(#_F\P2*"~]M"+L@NvXN7rH)7pD@Q%$%#"
+password "%$%#cV(!!!!!!!!!!!!6pKQKzmsK$9/\2,o/@#*1uy~(rB5$I,_-w6pwxPYHX4NFo>Zt**eT-0.f8hWul5nSZ[^c9jxzPQ%J>l.T]8mJ9f0\4,f1!Nq!5FLH0;-Pz'fs~%$%#"
  ont tr069-server-config 4 13 profile-id 1
  ont internet-config 4 13 ip-index 0
  ont wan-config 4 13 ip-index 0 profile-id 10
@@ -6987,8 +6982,8 @@ ont-srvprofile-id 200 desc "7950 - 7950"
 ont-srvprofile-id 199 desc "7842 - 7842" 
  ont add 5 20 sn-auth "TPLG84235110" omci ont-lineprofile-id 200 
 ont-srvprofile-id 200 desc "CLIENTE LARANJEIRAS" 
- ont add 5 21 sn-auth "TPLG4A482ABF" omci ont-lineprofile-id 200 
-ont-srvprofile-id 199 desc "8057 - 8057" 
+ ont add 5 21 sn-auth "TPLG5DDB8848" omci ont-lineprofile-id 200 
+ont-srvprofile-id 200 desc "8057 - 8057" 
  ont add 5 22 sn-auth "TPLGF116BE10" omci ont-lineprofile-id 200 
 ont-srvprofile-id 200 desc "9055 - 9055" 
  ont add 5 23 sn-auth "ITBS0A84A24D" omci ont-lineprofile-id 200 
@@ -7021,8 +7016,6 @@ ont-srvprofile-id 200 desc "7459 - 7459"
 ont-srvprofile-id 199 desc "CLIENTE LARANJEIRA" 
  ont add 6 5 sn-auth "HWTC4F9284AE" omci ont-lineprofile-id 200 
 ont-srvprofile-id 200 desc "CLIENTE LARANJEIRAS" 
- ont add 6 6 sn-auth "TPLG0D2FB4F8" omci ont-lineprofile-id 200 
-ont-srvprofile-id 200 desc "7468 - 7468" 
  ont add 6 7 sn-auth "TPLG79BFAAE8" omci ont-lineprofile-id 200 
 ont-srvprofile-id 200 desc "7453 - 7453" 
  ont add 6 8 sn-auth "TPLG8E8F3DB8" omci ont-lineprofile-id 200 
@@ -7076,7 +7069,7 @@ ont-srvprofile-id 200 desc "8078 - ccss"
  ont add 7 11 sn-auth "HWTC7F1AE29D" omci ont-lineprofile-id 500 
 ont-srvprofile-id 200 desc "5311 - 5311" 
  ont ipconfig 7 11 pppoe vlan 200 priority 5 user-account username "5311" 
-password "%$%#cV(!!!!!!!!!!!!&3ia~a9R"7qLO5Xf^xL($/J'UQ(Sw,TD~g8e-P%P{m9}*vM>dH-:~V'Q_V2OU-2a-YMH/8wH[]Eth0:<a;Ns*A3/fOq+},1R&IARxib=R5)3$J%$%#"
+password "%$%#cV(!!!!!!!!!!!!O,RKG*F4V't^kn24/1f-9P5.CE$fLNUq7TJ`bTB<n_lYS~g"o"S:]}Ih)`9B3B&h.>}QPB5fa#SX,E4;b@U9F>"RB6MrduUJqu7Iy/c1AD4B:0%$%#"
  ont tr069-server-config 7 11 profile-id 1
  ont internet-config 7 11 ip-index 0
  ont wan-config 7 11 ip-index 0 profile-id 10
@@ -7360,7 +7353,7 @@ ont-srvprofile-id 200 desc "6214 - 6214"
 ont-srvprofile-id 200 desc "9300 - 9300" 
  ont add 10 29 sn-auth "TPLGBDC6AD78" omci ont-lineprofile-id 200 
 ont-srvprofile-id 200 desc "9368 - 9368" 
- ont add 10 30 sn-auth "TPLG8423E640" omci ont-lineprofile-id 200 
+ ont add 10 30 sn-auth "TPLG5DDB87A0" omci ont-lineprofile-id 200 
 ont-srvprofile-id 200 desc "4420 - 4420" 
  ont add 10 31 sn-auth "SHLN20F8F192" omci ont-lineprofile-id 200 
 ont-srvprofile-id 200 desc "9386 - 9386" 
@@ -7390,6 +7383,8 @@ ont-srvprofile-id 200 desc "9623 - 9623"
 ont-srvprofile-id 200 desc "9673 - 9673" 
  ont add 10 44 sn-auth "TPLGE32F119F" omci ont-lineprofile-id 200 
 ont-srvprofile-id 199 desc "6631 - 6631" 
+ ont add 10 45 sn-auth "TPLG5DDB7368" omci ont-lineprofile-id 200 
+ont-srvprofile-id 200 desc "9788 - 9788" 
  ont add 10 47 sn-auth "ALCLFE00C62A" omci ont-lineprofile-id 200 
 ont-srvprofile-id 200 desc "3346 - 3346" 
  ont add 10 48 sn-auth "ALCLFCF54F1C" omci ont-lineprofile-id 200 
@@ -7426,6 +7421,8 @@ ont-srvprofile-id 199 desc "607 - 607"
 ont-srvprofile-id 200 desc "7738 - 7738" 
  ont add 11 12 sn-auth "TPLG84235930" omci ont-lineprofile-id 200 
 ont-srvprofile-id 200 desc "7772 - 7772" 
+ ont add 11 13 sn-auth "ALCLFE00CDD9" omci ont-lineprofile-id 200 
+ont-srvprofile-id 200 desc "6909 - 6909" 
  ont add 11 14 sn-auth "TPLG842358A8" omci ont-lineprofile-id 200 
 ont-srvprofile-id 200 desc "1247 - 1247" 
  ont add 11 15 sn-auth "TPLG8423B538" omci ont-lineprofile-id 200 
@@ -7433,7 +7430,7 @@ ont-srvprofile-id 200 desc "7796 - 7796"
  ont add 11 16 sn-auth "HWTC455040A7" omci ont-lineprofile-id 500 
 ont-srvprofile-id 200 desc "1616 - 1616" 
  ont ipconfig 11 16 pppoe vlan 200 priority 5 user-account username "1616" 
-password "%$%#cV(!!!!!!!!!!!!`cQz7%7tf$IPt]D5QlZQ#6ZvTOk=8~=UJU=(6kuUuy+fHcPtV./Xn`SEd4$@k^g_+lwZtItE))-ykUa#vLZ#Myz+59v}T7!6:c@C)O;PV64qSI%$%#"
+password "%$%#cV(!!!!!!!!!!!!I%TiYr*yO(-Bj0&TKF96`*U18X9q,Cdp(r.('Fv;`VM[~S6~6+wBeC:^^'O/O^i2O-9%BFe+th)KiQ@MnIb@<U!m>Ow2a@2kk0J5=H.]N,)o:1%$%#"
  ont tr069-server-config 11 16 profile-id 2
  ont internet-config 11 16 ip-index 0
  ont wan-config 11 16 ip-index 0 profile-id 10
@@ -7446,7 +7443,7 @@ ont-srvprofile-id 199 desc "7835 - 7835"
  ont add 11 20 sn-auth "HWTCA81A40A5" omci ont-lineprofile-id 500 
 ont-srvprofile-id 200 desc "7906 - 7906" 
  ont ipconfig 11 20 pppoe vlan 200 priority 5 user-account username "7906" 
-password "%$%#cV(!!!!!!!!!!!!Wo^\-jQu]!eB]@Oa-*`QIR!w!TL!+/#I*VRjki:J]NfyR-ygVVYJvf3Y*$:"m)$,NtKtbX~5+!.39cX"O^>tYOME{:IL}r<-RyBBigQIM![E}~%$%#"
+password "%$%#cV(!!!!!!!!!!!!|QHrMcW*rKSYgyCzd<>6uG>$!W%[-$JbKw4;Sz<'T,3[Nb1{I-z_@5R$4.0YQ,w:Hj0c7/'tNy41wWQ%*Y;:UznFl9^-FJ"xL})X5k|"+7OuS@%$%#"
  ont tr069-server-config 11 20 profile-id 1
  ont internet-config 11 20 ip-index 0
  ont wan-config 11 20 ip-index 0 profile-id 10
@@ -7462,6 +7459,8 @@ ont-srvprofile-id 200 desc "9380 - 9380"
 ont-srvprofile-id 199 desc "177 - tulio" 
  ont add 11 26 sn-auth "TPLGF1168408" omci ont-lineprofile-id 200 
 ont-srvprofile-id 200 desc "9650 - 9650" 
+ ont add 11 27 sn-auth "TPLG5DDB8450" omci ont-lineprofile-id 200 
+ont-srvprofile-id 200 desc "9749 - 9749" 
  ont add 12 0 sn-auth "ALCLFE00CDA7" omci ont-lineprofile-id 200 
 ont-srvprofile-id 200 desc "7714 - 7714" 
  ont add 12 1 sn-auth "TPLG0D2F6878" omci ont-lineprofile-id 200 
@@ -7513,7 +7512,7 @@ ont-srvprofile-id 199 desc "4335 - moises2@malm"
  ont add 12 24 sn-auth "HWTC23E33BA3" omci ont-lineprofile-id 500 
 ont-srvprofile-id 200 desc "5912 - 5912" 
  ont ipconfig 12 24 pppoe vlan 200 priority 5 user-account username "5912" 
-password "%$%#cV(!!!!!!!!!!!!cpMq:5S@+0_1PX2pno76S%2z$C/AQJukaCVJGnV*b`DaG@6/+GD$EHAZq<q8&]F4'S-tMK.P|1LWe6*F='\P=>oJ|8I]w<+6M/f+X[x/+oyM^!%$%#"
+password "%$%#cV(!!!!!!!!!!!!/`CSMh_`zCH^t4TK68bS\@=,"\SI\@`A"(>D{JpUuOm13/&URI0)&-EthFk0sDlGBP(g/7DdoFA*^Ll7&lEDBBqYE#9)mIQJ!KG#NU#6=2o``Y%$%#"
  ont tr069-server-config 12 24 profile-id 2
  ont internet-config 12 24 ip-index 0
  ont wan-config 12 24 ip-index 0 profile-id 10
@@ -7549,6 +7548,8 @@ ont-srvprofile-id 199 desc "7917 - 7917"
 ont-srvprofile-id 200 desc "9226 - 9226" 
  ont add 12 40 sn-auth "TPLGF11683A8" omci ont-lineprofile-id 200 
 ont-srvprofile-id 200 desc "9297 - 9297" 
+ ont add 12 41 sn-auth "TPLG5DDB8A38" omci ont-lineprofile-id 200 
+ont-srvprofile-id 200 desc "7869 - 7869" 
  ont add 13 0 sn-auth "ITBS8BA07FA0" omci ont-lineprofile-id 3791 
 ont-srvprofile-id 3791 desc "7614 - sp5ltetl" 
  ont add 13 1 sn-auth "TPLGF1C17AA8" omci ont-lineprofile-id 200 
@@ -7556,7 +7557,7 @@ ont-srvprofile-id 200 desc "1449 - 1449"
  ont add 13 2 sn-auth "HWTC90BB91AC" omci ont-lineprofile-id 500 
 ont-srvprofile-id 200 desc "119 - 119" 
  ont ipconfig 13 2 pppoe vlan 200 priority 5 user-account username "119" 
-password "%$%#cV(!!!!!!!!!!!!M4dfUMY[xSVr'BBRg:iIeqTP;VnlmF2(D-8|\(i8#E+D3wY4@5SM!MVMSnG'&WV,X3fvIA<[`'Z;%f-F[lf:D(=Yb!+YS3Tmws1WVHq.AdWdF.%$%#"
+password "%$%#cV(!!!!!!!!!!!!5)oSSu#HUXXqc.Q4y2X;P,sF6C)'4WI9FY6a-&;"jVkPDOzWi+&jH],Dh@`&3H\A>;b6=F2<ad('uX4,77gD.':2,9!4=3JU')AJg00^QObbp5%$%#"
  ont tr069-server-config 13 2 profile-id 1
  ont internet-config 13 2 ip-index 0
  ont wan-config 13 2 ip-index 0 profile-id 10
@@ -7580,6 +7581,8 @@ ont-srvprofile-id 200 desc "1647 - liviamorais"
 ont-srvprofile-id 200 desc "3271 - 3271" 
  ont add 13 12 sn-auth "FHTTFE18762E" omci ont-lineprofile-id 200 
 ont-srvprofile-id 200 desc "5418 - 5418" 
+ ont add 13 13 sn-auth "ALCLFE13327B" omci ont-lineprofile-id 200 
+ont-srvprofile-id 200 desc "9747 - 9747" 
  ont add 14 0 sn-auth "ITBSCF612F9A" omci ont-lineprofile-id 200 
 ont-srvprofile-id 199 desc "4505 - expeditoquirino@bjca" 
  ont add 14 1 sn-auth "ALCLFE00CC0A" omci ont-lineprofile-id 200 
@@ -7600,6 +7603,10 @@ ont-srvprofile-id 200 desc "8294 - 8294"
 ont-srvprofile-id 200 desc "9199 - 9199" 
  ont add 14 9 sn-auth "HWTCC9E1819F" omci ont-lineprofile-id 200 
 ont-srvprofile-id 200 desc "1487 - 1487" 
+ ont add 14 10 sn-auth "TPLG5DDB8428" omci ont-lineprofile-id 200 
+ont-srvprofile-id 200 desc "9759 - 9759" 
+ ont add 14 11 sn-auth "TPLG5DDB8610" omci ont-lineprofile-id 200 
+ont-srvprofile-id 200 desc "9816 - 9816" 
  ont add 15 0 sn-auth "D0116A93F68C" omci ont-lineprofile-id 200 
 ont-srvprofile-id 199 desc "7167 - 7167" 
  ont add 15 1 sn-auth "ALCLFE00C9FF" omci ont-lineprofile-id 200 
@@ -7619,7 +7626,7 @@ ont-srvprofile-id 200 desc "9159 - 9159"
  ont add 15 8 sn-auth "HWTC5266E1AD" omci ont-lineprofile-id 500 
 ont-srvprofile-id 200 desc "5802 - 5802" 
  ont ipconfig 15 8 pppoe vlan 200 priority 5 user-account username "5802" 
-password "%$%#cV(!!!!!!!!!!!!Wb6=IV#!OPB[q:Zc5teEm}},0jyC)M8!Lf,<d93@T8Oy(q[N#)o8w(SDPP!)PEjaFe~tDAa[=xY^Ms;,)-]7Z|g0t1--WL25-CN9DM5XA..nl2%$%#"
+password "%$%#cV(!!!!!!!!!!!!ZP`:"fAafMADTf.IzC8SSqQ7Afg\0J*>B{Ne')/X,X,U>wKx9&6<):&9O/76vjKVPu2'/::8_ZT2^;}Pe%ZO5r,TG#8,!n.{&d+.4Hwe$'y^XY%$%#"
  ont tr069-server-config 15 8 profile-id 2
  ont internet-config 15 8 ip-index 0
  ont wan-config 15 8 ip-index 0 profile-id 10
@@ -7630,16 +7637,16 @@ ont-srvprofile-id 200 desc "6134 - 6134"
  ont add 15 11 sn-auth "HWTCA95A499B" omci ont-lineprofile-id 500 
 ont-srvprofile-id 200 desc "4458 - erivanda@bjpb" 
  ont ipconfig 15 11 pppoe vlan 200 priority 5 user-account username 
-"erivanda@bjpb" password "%$%#cV(!!!!!!!!!!!!\R22~6"s6CcRaL=R"zUB`+[:~:mLx6uoyB9.<^A>aNN'BI*F_KSgm-2G&e9)ti@)Fmuq_5AXKhAYiw*D-"3)FhRfE.1A.$-Y4Zq@28W.'X3Ta7%$%#"
+"erivanda@bjpb" password "%$%#cV(!!!!!!!!!!!!n/C0&YS{tW.UV9N/xn!TQR`_Mv~6f9zAWULs4}WMJg+SFg;B`!HB<C%Ec\kP=BaVI)a9QYQ-sMT&(DdMK_`'BI<.13FXIP7V6hLJsDqk)6B'xT%$%#"
  ont tr069-server-config 15 11 profile-id 1
  ont internet-config 15 11 ip-index 0
  ont wan-config 15 11 ip-index 0 profile-id 10
- ont add 15 12 sn-auth "TPLGD18E11A0" omci ont-lineprofile-id 200 
+ ont add 15 12 sn-auth "TPLG5DDA5EC0" omci ont-lineprofile-id 200 
 ont-srvprofile-id 200 desc "1697 - 1697" 
  ont add 15 13 sn-auth "TPLGD18BC788" omci ont-lineprofile-id 200 
 ont-srvprofile-id 200 desc "8942 - 8942" 
- ont add 15 15 sn-auth "ALCLFE13327B" omci ont-lineprofile-id 200 
-ont-srvprofile-id 200 desc "8984 - 8984" 
+ ont add 15 14 sn-auth "TPLG5DDB7F28" omci ont-lineprofile-id 200 
+ont-srvprofile-id 200 desc "9793 - 9793" 
  ont add 15 16 sn-auth "TPLG8E576468" omci ont-lineprofile-id 200 
 ont-srvprofile-id 200 desc "9158 - 9158" 
  ont add 15 17 sn-auth "SHLN20F90A1A" omci ont-lineprofile-id 200 
@@ -7712,7 +7719,6 @@ ont-srvprofile-id 200 desc "9354 - 9354"
  ont port native-vlan 1 25 eth 1 vlan 200 priority 0 
  ont port native-vlan 1 27 eth 1 vlan 200 priority 0 
  ont port native-vlan 1 30 eth 1 vlan 200 priority 0 
- ont port native-vlan 1 33 eth 1 vlan 200 priority 0 
  ont port native-vlan 1 35 eth 1 vlan 200 priority 0 
  ont port native-vlan 1 36 eth 1 vlan 200 priority 0 
  ont port native-vlan 1 39 eth 1 vlan 200 priority 0 
@@ -7748,8 +7754,6 @@ ont-srvprofile-id 200 desc "9354 - 9354"
  ont port native-vlan 2 28 eth 1 vlan 200 priority 0 
  ont port native-vlan 2 29 eth 1 vlan 200 priority 0 
  ont port native-vlan 2 30 eth 1 vlan 200 priority 0 
- ont port native-vlan 2 31 eth 1 vlan 200 priority 0 
- ont port native-vlan 2 32 eth 1 vlan 200 priority 0 
  ont port native-vlan 2 33 eth 1 vlan 200 priority 0 
  ont port native-vlan 2 34 eth 1 vlan 200 priority 0 
  ont port native-vlan 2 36 eth 1 vlan 200 priority 0 
@@ -7764,7 +7768,6 @@ ont-srvprofile-id 200 desc "9354 - 9354"
  ont port native-vlan 2 49 eth 1 vlan 200 priority 0 
  ont port native-vlan 2 51 eth 1 vlan 200 priority 0 
  ont port native-vlan 2 54 eth 1 vlan 200 priority 0 
- ont port native-vlan 2 55 eth 1 vlan 200 priority 0 
  ont port native-vlan 2 56 eth 1 vlan 200 priority 0 
  ont port native-vlan 2 57 eth 1 vlan 200 priority 0 
  ont port native-vlan 2 58 eth 1 vlan 200 priority 0 
@@ -7790,7 +7793,6 @@ ont-srvprofile-id 200 desc "9354 - 9354"
  ont port native-vlan 5 7 eth 1 vlan 200 priority 0 
  ont port native-vlan 5 12 eth 1 vlan 200 priority 0 
  ont port native-vlan 5 19 eth 1 vlan 200 priority 0 
- ont port native-vlan 5 21 eth 1 vlan 200 priority 0 
  ont port native-vlan 5 25 eth 1 vlan 200 priority 0 
  ont port native-vlan 5 26 eth 1 vlan 200 priority 0 
  ont port native-vlan 6 0 eth 1 vlan 200 priority 0 
@@ -8031,6 +8033,8 @@ ont-srvprofile-id 199 desc "2136 - 2136"
 ont-srvprofile-id 200 desc "5523 - 5523" 
  ont add 0 28 sn-auth "TPLG00C52391" omci ont-lineprofile-id 200 
 ont-srvprofile-id 199 desc "7911 - 7911" 
+ ont add 0 29 sn-auth "TPLG0D2FB4F8" omci ont-lineprofile-id 200 
+ont-srvprofile-id 200 desc "9731 - 9731" 
  ont add 1 0 sn-auth "ALCLFE00CC64" omci ont-lineprofile-id 200 
 ont-srvprofile-id 200 desc "8351 - nxndd" 
  ont add 1 1 sn-auth "ALCLFE10D3CE" omci ont-lineprofile-id 200 
@@ -8059,8 +8063,6 @@ ont-srvprofile-id 200 desc "8381"
 ont-srvprofile-id 200 desc "8383 - bdbzs" 
  ont add 1 13 sn-auth "ALCLFE00C87C" omci ont-lineprofile-id 200 
 ont-srvprofile-id 200 desc "8388 - 8388" 
- ont add 1 14 sn-auth "ALCLFE00CD65" omci ont-lineprofile-id 200 
-ont-srvprofile-id 199 desc "8390 - ndnxnz" 
  ont add 1 15 sn-auth "ALCLFE00BEF7" omci ont-lineprofile-id 200 
 ont-srvprofile-id 200 desc "8386" 
  ont add 1 16 sn-auth "ALCLFE00CE64" omci ont-lineprofile-id 200 
@@ -8089,8 +8091,6 @@ ont-srvprofile-id 200 desc "8712 - 8712"
 ont-srvprofile-id 200 desc "8886 - 8886" 
  ont add 1 28 sn-auth "TPLGD18B9BB0" omci ont-lineprofile-id 200 
 ont-srvprofile-id 200 desc "8937 - 8937" 
- ont add 1 29 sn-auth "TPLGBDC6A8D8" omci ont-lineprofile-id 200 
-ont-srvprofile-id 200 desc "9387 - 9387" 
  ont add 1 30 sn-auth "FHTTFE261116" omci ont-lineprofile-id 200 
 ont-srvprofile-id 200 desc "9083 - 9083" 
  ont add 2 0 sn-auth "ALCLFCF54E95" omci ont-lineprofile-id 200 
@@ -8115,10 +8115,16 @@ ont-srvprofile-id 200 desc "8534 - 8534"
 ont-srvprofile-id 200 desc "8554 - 8554" 
  ont add 2 10 sn-auth "TPLGB3FE8EB8" omci ont-lineprofile-id 200 
 ont-srvprofile-id 200 desc "9514 - 9514" 
+ ont add 2 11 sn-auth "TPLG5DDB7980" omci ont-lineprofile-id 200 
+ont-srvprofile-id 200 desc "9800 - 9800" 
  ont add 4 0 sn-auth "ITBS0A7155EE" omci ont-lineprofile-id 200 
 ont-srvprofile-id 199 desc "teste onu" 
  ont add 8 0 sn-auth "ITBSCFCBA306" omci ont-lineprofile-id 300 
 ont-srvprofile-id 201 desc "FREE-WIFI-A306" 
+ ont add 8 1 sn-auth "ITBSCF67491F" omci ont-lineprofile-id 300 
+ont-srvprofile-id 201 desc "FREE-WIFI-491F" 
+ ont add 8 2 sn-auth "TPLG7E95B5B8" omci ont-lineprofile-id 200 
+ont-srvprofile-id 200 desc "TESTE ONT" 
  ont add 8 3 sn-auth "D0116A94014C" omci ont-lineprofile-id 200 
 ont-srvprofile-id 199 desc "teste rotoeadores" 
  ont add 8 4 sn-auth "TPLG6A5C2AB3" omci ont-lineprofile-id 200 
@@ -8144,10 +8150,10 @@ ont-srvprofile-id 200 desc "eventos"
  ont port native-vlan 0 26 eth 1 vlan 200 priority 0 
  ont port native-vlan 0 28 eth 1 vlan 200 priority 0 
  ont port native-vlan 1 3 eth 1 vlan 200 priority 0 
- ont port native-vlan 1 14 eth 1 vlan 200 priority 0 
  ont port native-vlan 1 22 eth 1 vlan 200 priority 0 
  ont port native-vlan 4 0 eth 1 vlan 200 priority 0 
  ont port native-vlan 8 0 eth 1 vlan 700 priority 0 
+ ont port native-vlan 8 1 eth 1 vlan 700 priority 0 
  ont port native-vlan 8 3 eth 1 vlan 200 priority 0 
  ont port native-vlan 8 4 eth 1 vlan 200 priority 0 
 #
@@ -8274,8 +8280,6 @@ ont-srvprofile-id 200 desc "eventos"
  service-port 31 vlan 900 gpon 0/1/0 ont 1 gemport 200 multi-service user-vlan 
 200 tag-transform translate
  service-port 32 vlan 927 gpon 0/2/11 ont 23 gemport 200 multi-service user-vlan 200 tag-transform translate
- service-port 34 vlan 900 gpon 0/1/0 ont 4 gemport 200 multi-service user-vlan 
-200 tag-transform translate
  service-port 35 vlan 900 gpon 0/1/0 ont 5 gemport 200 multi-service user-vlan 
 200 tag-transform translate
  service-port 36 vlan 900 gpon 0/1/0 ont 6 gemport 200 multi-service user-vlan 
@@ -8311,8 +8315,6 @@ ont-srvprofile-id 200 desc "eventos"
 200 tag-transform translate
  service-port 68 vlan 900 gpon 0/1/0 ont 42 gemport 200 multi-service user-vlan 200 tag-transform translate
  service-port 69 vlan 902 gpon 0/1/2 ont 0 gemport 200 multi-service user-vlan 
-200 tag-transform translate
- service-port 70 vlan 902 gpon 0/1/2 ont 1 gemport 200 multi-service user-vlan 
 200 tag-transform translate
  service-port 71 vlan 918 gpon 0/2/2 ont 43 gemport 200 multi-service user-vlan 200 tag-transform translate
  service-port 72 vlan 902 gpon 0/1/2 ont 3 gemport 200 multi-service user-vlan 
@@ -8855,8 +8857,6 @@ user-vlan 200 tag-transform translate
 user-vlan 200 tag-transform translate
  service-port 663 vlan 910 gpon 0/1/10 ont 17 gemport 200 multi-service 
 user-vlan 200 tag-transform translate
- service-port 664 vlan 910 gpon 0/1/10 ont 18 gemport 200 multi-service 
-user-vlan 200 tag-transform translate
  service-port 665 vlan 909 gpon 0/1/9 ont 43 gemport 200 multi-service user-vlan 200 tag-transform translate
  service-port 667 vlan 910 gpon 0/1/10 ont 21 gemport 200 multi-service 
 user-vlan 200 tag-transform translate
@@ -8867,7 +8867,6 @@ user-vlan 200 tag-transform translate
  service-port 673 vlan 904 gpon 0/1/4 ont 60 gemport 200 multi-service user-vlan 200 tag-transform translate
  service-port 675 vlan 910 gpon 0/1/10 ont 29 gemport 200 multi-service 
 user-vlan 200 tag-transform translate
- service-port 676 vlan 906 gpon 0/1/6 ont 56 gemport 200 multi-service user-vlan 200 tag-transform translate
  service-port 677 vlan 910 gpon 0/1/10 ont 31 gemport 200 multi-service 
 user-vlan 200 tag-transform translate
  service-port 678 vlan 910 gpon 0/1/10 ont 32 gemport 200 multi-service 
@@ -9011,7 +9010,6 @@ user-vlan 200 tag-transform translate
  service-port 807 vlan 943 gpon 0/3/11 ont 3 gemport 200 multi-service user-vlan 200 tag-transform translate
  service-port 808 vlan 916 gpon 0/2/0 ont 41 gemport 200 multi-service user-vlan 200 tag-transform translate
  service-port 809 vlan 916 gpon 0/2/0 ont 42 gemport 200 multi-service user-vlan 200 tag-transform translate
- service-port 811 vlan 919 gpon 0/2/3 ont 14 gemport 200 multi-service user-vlan 200 tag-transform translate
  service-port 812 vlan 916 gpon 0/2/0 ont 45 gemport 200 multi-service user-vlan 200 tag-transform translate
  service-port 813 vlan 924 gpon 0/2/8 ont 1 gemport 200 multi-service user-vlan 200 tag-transform translate
  service-port 814 vlan 938 gpon 0/3/6 ont 16 gemport 200 multi-service user-vlan 200 tag-transform translate
@@ -9071,7 +9069,6 @@ user-vlan 200 tag-transform translate
  service-port 870 vlan 917 gpon 0/2/1 ont 34 gemport 200 multi-service user-vlan 200 tag-transform translate
  service-port 871 vlan 917 gpon 0/2/1 ont 35 gemport 200 multi-service user-vlan 200 tag-transform translate
  service-port 872 vlan 917 gpon 0/2/1 ont 36 gemport 200 multi-service user-vlan 200 tag-transform translate
- service-port 873 vlan 906 gpon 0/1/6 ont 49 gemport 200 multi-service user-vlan 200 tag-transform translate
  service-port 874 vlan 948 gpon 0/4/0 ont 6 gemport 200 multi-service user-vlan 200 tag-transform translate
  service-port 875 vlan 917 gpon 0/2/1 ont 39 gemport 200 multi-service user-vlan 200 tag-transform translate
  service-port 876 vlan 917 gpon 0/2/1 ont 40 gemport 200 multi-service user-vlan 200 tag-transform translate
@@ -9382,8 +9379,6 @@ user-vlan 200 tag-transform translate
 user-vlan 200 tag-transform translate
  service-port 1114 vlan 922 gpon 0/2/6 ont 35 gemport 200 multi-service 
 user-vlan 200 tag-transform translate
- service-port 1115 vlan 917 gpon 0/2/1 ont 47 gemport 200 multi-service 
-user-vlan 200 tag-transform translate
  service-port 1117 vlan 922 gpon 0/2/6 ont 38 gemport 200 multi-service 
 user-vlan 200 tag-transform translate
  service-port 1118 vlan 944 gpon 0/3/12 ont 23 gemport 200 multi-service 
@@ -9401,8 +9396,6 @@ user-vlan 200 tag-transform translate
  service-port 1124 vlan 944 gpon 0/3/12 ont 29 gemport 200 multi-service 
 user-vlan 200 tag-transform translate
  service-port 1126 vlan 944 gpon 0/3/12 ont 30 gemport 200 multi-service 
-user-vlan 200 tag-transform translate
- service-port 1127 vlan 925 gpon 0/2/9 ont 50 gemport 200 multi-service 
 user-vlan 200 tag-transform translate
  service-port 1128 vlan 922 gpon 0/2/6 ont 49 gemport 200 multi-service 
 user-vlan 200 tag-transform translate
@@ -9662,8 +9655,6 @@ user-vlan 200 tag-transform translate
  service-port 1285 vlan 938 gpon 0/3/6 ont 17 gemport 200 multi-service 
 user-vlan 200 tag-transform translate
  service-port 1287 vlan 939 gpon 0/3/7 ont 5 gemport 200 multi-service user-vlan 200 tag-transform translate
- service-port 1288 vlan 947 gpon 0/3/15 ont 15 gemport 200 multi-service 
-user-vlan 200 tag-transform translate
  service-port 1289 vlan 927 gpon 0/2/11 ont 14 gemport 200 multi-service 
 user-vlan 200 tag-transform translate
  service-port 1291 vlan 927 gpon 0/2/11 ont 16 gemport 200 multi-service 
@@ -9681,8 +9672,6 @@ user-vlan 200 tag-transform translate
  service-port 1299 vlan 927 gpon 0/2/11 ont 24 gemport 200 multi-service 
 user-vlan 200 tag-transform translate
  service-port 1300 vlan 927 gpon 0/2/11 ont 25 gemport 200 multi-service 
-user-vlan 200 tag-transform translate
- service-port 1301 vlan 927 gpon 0/2/11 ont 26 gemport 200 multi-service 
 user-vlan 200 tag-transform translate
  service-port 1302 vlan 920 gpon 0/2/4 ont 47 gemport 200 multi-service 
 user-vlan 200 tag-transform translate
@@ -10149,8 +10138,6 @@ user-vlan 200 tag-transform translate
 user-vlan 200 tag-transform translate
  service-port 1556 vlan 926 gpon 0/2/10 ont 28 gemport 200 multi-service 
 user-vlan 200 tag-transform translate
- service-port 1557 vlan 926 gpon 0/2/10 ont 29 gemport 200 multi-service 
-user-vlan 200 tag-transform translate
  service-port 1558 vlan 940 gpon 0/3/8 ont 20 gemport 200 multi-service 
 user-vlan 200 tag-transform translate
  service-port 1559 vlan 942 gpon 0/3/10 ont 31 gemport 200 multi-service 
@@ -10173,8 +10160,6 @@ user-vlan 200 tag-transform translate
  service-port 1569 vlan 942 gpon 0/3/10 ont 37 gemport 200 multi-service 
 user-vlan 200 tag-transform translate
  service-port 1570 vlan 902 gpon 0/1/2 ont 9 gemport 200 multi-service user-vlan 200 tag-transform translate
- service-port 1571 vlan 931 gpon 0/2/15 ont 78 gemport 200 multi-service 
-user-vlan 200 tag-transform translate
  service-port 1572 vlan 911 gpon 0/1/11 ont 21 gemport 200 multi-service 
 user-vlan 200 tag-transform translate
  service-port 1573 vlan 926 gpon 0/2/10 ont 45 gemport 200 multi-service 
@@ -10209,8 +10194,6 @@ user-vlan 200 tag-transform translate
  service-port 1589 vlan 926 gpon 0/2/10 ont 61 gemport 200 multi-service 
 user-vlan 200 tag-transform translate
  service-port 1590 vlan 926 gpon 0/2/10 ont 62 gemport 200 multi-service 
-user-vlan 200 tag-transform translate
- service-port 1591 vlan 949 gpon 0/4/1 ont 29 gemport 200 multi-service 
 user-vlan 200 tag-transform translate
  service-port 1592 vlan 926 gpon 0/2/10 ont 64 gemport 200 multi-service 
 user-vlan 200 tag-transform translate
@@ -10379,8 +10362,6 @@ user-vlan 200 tag-transform translate
  service-port 1696 vlan 912 gpon 0/1/12 ont 5 gemport 200 multi-service 
 user-vlan 200 tag-transform translate
  service-port 1697 vlan 916 gpon 0/2/0 ont 52 gemport 200 multi-service 
-user-vlan 200 tag-transform translate
- service-port 1698 vlan 920 gpon 0/2/4 ont 36 gemport 200 multi-service 
 user-vlan 200 tag-transform translate
  service-port 1699 vlan 908 gpon 0/1/8 ont 37 gemport 200 multi-service 
 user-vlan 200 tag-transform translate
@@ -10640,8 +10621,6 @@ user-vlan 200 tag-transform translate
 user-vlan 200 tag-transform translate
  service-port 1841 vlan 931 gpon 0/2/15 ont 80 gemport 200 multi-service 
 user-vlan 200 tag-transform translate
- service-port 1842 vlan 926 gpon 0/2/10 ont 24 gemport 200 multi-service 
-user-vlan 200 tag-transform translate
  service-port 1843 vlan 913 gpon 0/1/13 ont 6 gemport 200 multi-service 
 user-vlan 200 tag-transform translate
  service-port 1844 vlan 913 gpon 0/1/13 ont 9 gemport 200 multi-service 
@@ -10767,8 +10746,6 @@ user-vlan 200 tag-transform translate
  service-port 1925 vlan 906 gpon 0/1/6 ont 50 gemport 200 multi-service 
 user-vlan 200 tag-transform translate
  service-port 1927 vlan 924 gpon 0/2/8 ont 39 gemport 200 multi-service 
-user-vlan 200 tag-transform translate
- service-port 1928 vlan 926 gpon 0/2/10 ont 2 gemport 200 multi-service 
 user-vlan 200 tag-transform translate
  service-port 1929 vlan 913 gpon 0/1/13 ont 23 gemport 200 multi-service 
 user-vlan 200 tag-transform translate
@@ -11057,8 +11034,6 @@ user-vlan 200 tag-transform translate
 user-vlan 200 tag-transform translate
  service-port 2106 vlan 939 gpon 0/3/7 ont 32 gemport 200 multi-service 
 user-vlan 200 tag-transform translate
- service-port 2107 vlan 914 gpon 0/1/14 ont 39 gemport 200 multi-service 
-user-vlan 200 tag-transform translate
  service-port 2108 vlan 939 gpon 0/3/7 ont 43 gemport 200 multi-service 
 user-vlan 200 tag-transform translate
  service-port 2109 vlan 939 gpon 0/3/7 ont 27 gemport 200 multi-service 
@@ -11093,8 +11068,6 @@ user-vlan 200 tag-transform translate
  service-port 2124 vlan 942 gpon 0/3/10 ont 44 gemport 200 multi-service 
 user-vlan 200 tag-transform translate
  service-port 2125 vlan 929 gpon 0/2/13 ont 61 gemport 200 multi-service 
-user-vlan 200 tag-transform translate
- service-port 2126 vlan 942 gpon 0/3/10 ont 30 gemport 200 multi-service 
 user-vlan 200 tag-transform translate
  service-port 2127 vlan 927 gpon 0/2/11 ont 12 gemport 200 multi-service 
 user-vlan 200 tag-transform translate
@@ -11155,8 +11128,6 @@ user-vlan 200 tag-transform translate
 user-vlan 200 tag-transform translate
  service-port 2162 vlan 931 gpon 0/2/15 ont 63 gemport 200 multi-service 
 user-vlan 200 tag-transform translate
- service-port 2163 vlan 928 gpon 0/2/12 ont 15 gemport 200 multi-service 
-user-vlan 200 tag-transform translate
  service-port 2165 vlan 907 gpon 0/1/7 ont 40 gemport 200 multi-service 
 user-vlan 200 tag-transform translate
  service-port 2166 vlan 904 gpon 0/1/4 ont 80 gemport 200 multi-service 
@@ -11177,8 +11148,6 @@ user-vlan 200 tag-transform translate
 user-vlan 200 tag-transform translate
  service-port 2175 vlan 918 gpon 0/2/2 ont 72 gemport 1 multi-service user-vlan 200 tag-transform translate
  service-port 2176 vlan 940 gpon 0/3/8 ont 3 gemport 200 multi-service user-vlan 200 tag-transform translate
- service-port 2177 vlan 947 gpon 0/3/15 ont 12 gemport 200 multi-service 
-user-vlan 200 tag-transform translate
  service-port 2178 vlan 940 gpon 0/3/8 ont 5 gemport 200 multi-service user-vlan 200 tag-transform translate
  service-port 2179 vlan 919 gpon 0/2/3 ont 62 gemport 200 multi-service 
 user-vlan 200 tag-transform translate
@@ -11200,21 +11169,36 @@ user-vlan 200 tag-transform translate
 user-vlan 200 tag-transform translate
  service-port 2189 vlan 917 gpon 0/2/1 ont 61 gemport 200 multi-service 
 user-vlan 200 tag-transform translate
+ service-port 2190 vlan 700 gpon 0/4/8 ont 1 gemport 1 multi-service user-vlan 
+700 tag-transform translate
  service-port 2191 vlan 913 gpon 0/1/13 ont 51 gemport 200 multi-service 
 user-vlan 200 tag-transform translate
  service-port 2192 vlan 940 gpon 0/3/8 ont 13 gemport 200 multi-service 
 user-vlan 200 tag-transform translate
+ service-port 2193 vlan 701 gpon 0/4/8 ont 1 gemport 2 multi-service user-vlan 
+701 tag-transform transparent
  service-port 2194 vlan 941 gpon 0/3/9 ont 5 gemport 200 multi-service user-vlan 200 tag-transform translate
+ service-port 2195 vlan 702 gpon 0/4/8 ont 1 gemport 3 multi-service user-vlan 
+702 tag-transform transparent
  service-port 2196 vlan 941 gpon 0/3/9 ont 4 gemport 200 multi-service user-vlan 200 tag-transform translate
+ service-port 2197 vlan 925 gpon 0/2/9 ont 78 gemport 200 multi-service 
+user-vlan 200 tag-transform translate
  service-port 2198 vlan 940 gpon 0/3/8 ont 4 gemport 200 multi-service user-vlan 200 tag-transform translate
+ service-port 2199 vlan 912 gpon 0/1/12 ont 33 gemport 200 multi-service 
+user-vlan 200 tag-transform translate
  service-port 2200 vlan 927 gpon 0/2/11 ont 29 gemport 200 multi-service 
 user-vlan 200 tag-transform translate
  service-port 2201 vlan 926 gpon 0/2/10 ont 6 gemport 1 multi-service user-vlan 200 tag-transform translate
  service-port 2203 vlan 805 gpon 0/1/5 ont 80 gemport 805 multi-service 
 user-vlan 805 tag-transform translate
+ service-port 2205 vlan 956 gpon 0/4/8 ont 2 gemport 200 multi-service user-vlan 200 tag-transform translate
  service-port 2207 vlan 940 gpon 0/3/8 ont 15 gemport 200 multi-service 
 user-vlan 200 tag-transform translate
  service-port 2208 vlan 901 gpon 0/1/1 ont 26 gemport 200 multi-service 
+user-vlan 200 tag-transform translate
+ service-port 2209 vlan 913 gpon 0/1/13 ont 84 gemport 200 multi-service 
+user-vlan 200 tag-transform translate
+ service-port 2210 vlan 948 gpon 0/4/0 ont 29 gemport 200 multi-service 
 user-vlan 200 tag-transform translate
  service-port 2212 vlan 913 gpon 0/1/13 ont 64 gemport 200 multi-service 
 user-vlan 200 tag-transform translate
@@ -11222,28 +11206,57 @@ user-vlan 200 tag-transform translate
 user-vlan 200 tag-transform translate
  service-port 2214 vlan 905 gpon 0/1/5 ont 35 gemport 200 multi-service 
 user-vlan 200 tag-transform translate
+ service-port 2215 vlan 943 gpon 0/3/11 ont 13 gemport 200 multi-service 
+user-vlan 200 tag-transform translate
+ service-port 2216 vlan 925 gpon 0/2/9 ont 79 gemport 200 multi-service 
+user-vlan 200 tag-transform translate
  service-port 2217 vlan 905 gpon 0/1/5 ont 33 gemport 200 multi-service 
 user-vlan 200 tag-transform translate
  service-port 2218 vlan 921 gpon 0/2/5 ont 39 gemport 200 multi-service 
+user-vlan 200 tag-transform translate
+ service-port 2219 vlan 945 gpon 0/3/13 ont 13 gemport 200 multi-service 
+user-vlan 200 tag-transform translate
+ service-port 2220 vlan 934 gpon 0/3/2 ont 86 gemport 200 multi-service 
+user-vlan 200 tag-transform translate
+ service-port 2221 vlan 907 gpon 0/1/7 ont 24 gemport 200 multi-service 
+user-vlan 200 tag-transform translate
+ service-port 2223 vlan 906 gpon 0/1/6 ont 60 gemport 200 multi-service 
 user-vlan 200 tag-transform translate
  service-port 2224 vlan 900 gpon 0/1/0 ont 60 gemport 200 multi-service 
 user-vlan 200 tag-transform translate
  service-port 2226 vlan 918 gpon 0/2/2 ont 14 gemport 200 multi-service 
 user-vlan 200 tag-transform translate
+ service-port 2227 vlan 943 gpon 0/3/11 ont 27 gemport 200 multi-service 
+user-vlan 200 tag-transform translate
  service-port 2228 vlan 931 gpon 0/2/15 ont 66 gemport 200 multi-service 
 user-vlan 200 tag-transform translate
  service-port 2229 vlan 900 gpon 0/1/0 ont 49 gemport 200 multi-service 
 user-vlan 200 tag-transform translate
+ service-port 2230 vlan 923 gpon 0/2/7 ont 34 gemport 200 multi-service 
+user-vlan 200 tag-transform translate
+ service-port 2231 vlan 926 gpon 0/2/10 ont 7 gemport 200 multi-service 
+user-vlan 200 tag-transform translate
+ service-port 2232 vlan 919 gpon 0/2/3 ont 14 gemport 200 multi-service 
+user-vlan 200 tag-transform translate
+ service-port 2233 vlan 937 gpon 0/3/5 ont 21 gemport 200 multi-service 
+user-vlan 200 tag-transform translate
  service-port 2234 vlan 903 gpon 0/1/3 ont 51 gemport 1 multi-service user-vlan 200 tag-transform translate
  service-port 2235 vlan 926 gpon 0/2/10 ont 4 gemport 200 multi-service 
+user-vlan 200 tag-transform translate
+ service-port 2236 vlan 927 gpon 0/2/11 ont 20 gemport 200 multi-service 
 user-vlan 200 tag-transform translate
  service-port 2237 vlan 908 gpon 0/1/8 ont 31 gemport 200 multi-service 
 user-vlan 200 tag-transform translate
  service-port 2238 vlan 900 gpon 0/1/4 ont 87 gemport 200 multi-service 
 user-vlan 200 tag-transform translate
+ service-port 2239 vlan 942 gpon 0/3/10 ont 30 gemport 200 multi-service 
+user-vlan 200 tag-transform translate
  service-port 2240 vlan 919 gpon 0/2/3 ont 26 gemport 200 multi-service 
 user-vlan 200 tag-transform translate
- service-port 2242 vlan 927 gpon 0/2/11 ont 78 gemport 1 multi-service user-vlan 200 tag-transform translate
+ service-port 2241 vlan 913 gpon 0/1/13 ont 85 gemport 200 multi-service 
+user-vlan 200 tag-transform translate
+ service-port 2243 vlan 946 gpon 0/3/14 ont 10 gemport 200 multi-service 
+user-vlan 200 tag-transform translate
  service-port 2244 vlan 922 gpon 0/2/6 ont 48 gemport 200 multi-service 
 user-vlan 200 tag-transform translate
  service-port 2245 vlan 910 gpon 0/1/10 ont 71 gemport 200 multi-service 
@@ -11251,14 +11264,22 @@ user-vlan 200 tag-transform translate
  service-port 2246 vlan 912 gpon 0/1/12 ont 34 gemport 200 multi-service 
 user-vlan 200 tag-transform translate
  service-port 2247 vlan 901 gpon 0/1/1 ont 4 gemport 200 multi-service user-vlan 200 tag-transform translate
+ service-port 2248 vlan 906 gpon 0/1/6 ont 61 gemport 200 multi-service 
+user-vlan 200 tag-transform translate
  service-port 2249 vlan 941 gpon 0/3/9 ont 8 gemport 200 multi-service user-vlan 200 tag-transform translate
  service-port 2250 vlan 916 gpon 0/2/0 ont 34 gemport 200 multi-service 
+user-vlan 200 tag-transform translate
+ service-port 2251 vlan 905 gpon 0/1/5 ont 56 gemport 200 multi-service 
 user-vlan 200 tag-transform translate
  service-port 2252 vlan 941 gpon 0/3/9 ont 10 gemport 200 multi-service 
 user-vlan 200 tag-transform translate
  service-port 2253 vlan 941 gpon 0/3/9 ont 11 gemport 200 multi-service 
 user-vlan 200 tag-transform translate
+ service-port 2255 vlan 917 gpon 0/2/1 ont 38 gemport 200 multi-service 
+user-vlan 200 tag-transform translate
  service-port 2256 vlan 3790 gpon 0/1/5 ont 81 gemport 1 multi-service user-vlan 3790 tag-transform translate
+ service-port 2257 vlan 914 gpon 0/1/14 ont 41 gemport 200 multi-service 
+user-vlan 200 tag-transform translate
  service-port 2258 vlan 941 gpon 0/3/9 ont 14 gemport 200 multi-service 
 user-vlan 200 tag-transform translate
  service-port 2259 vlan 941 gpon 0/3/9 ont 15 gemport 200 multi-service 
@@ -11266,6 +11287,8 @@ user-vlan 200 tag-transform translate
  service-port 2260 vlan 941 gpon 0/3/9 ont 16 gemport 200 multi-service 
 user-vlan 200 tag-transform translate
  service-port 2261 vlan 941 gpon 0/3/9 ont 17 gemport 200 multi-service 
+user-vlan 200 tag-transform translate
+ service-port 2262 vlan 931 gpon 0/2/15 ont 78 gemport 200 multi-service 
 user-vlan 200 tag-transform translate
  service-port 2263 vlan 941 gpon 0/3/9 ont 18 gemport 200 multi-service 
 user-vlan 200 tag-transform translate
@@ -11287,14 +11310,25 @@ user-vlan 200 tag-transform translate
 user-vlan 200 tag-transform translate
  service-port 2272 vlan 916 gpon 0/2/0 ont 25 gemport 200 multi-service 
 user-vlan 200 tag-transform translate
+ service-port 2273 vlan 916 gpon 0/2/0 ont 69 gemport 200 multi-service 
+user-vlan 200 tag-transform translate
+ service-port 2274 vlan 947 gpon 0/3/15 ont 12 gemport 200 multi-service 
+user-vlan 200 tag-transform translate
  service-port 2275 vlan 918 gpon 0/2/2 ont 67 gemport 200 multi-service 
 user-vlan 200 tag-transform translate
  service-port 2276 vlan 927 gpon 0/2/11 ont 9 gemport 200 multi-service 
 user-vlan 200 tag-transform translate
+ service-port 2277 vlan 944 gpon 0/3/12 ont 41 gemport 200 multi-service 
+user-vlan 200 tag-transform translate
  service-port 2278 vlan 925 gpon 0/2/9 ont 27 gemport 1 multi-service user-vlan 200 tag-transform translate
+ service-port 2279 vlan 903 gpon 0/1/3 ont 4 gemport 200 multi-service user-vlan 200 tag-transform translate
+ service-port 2280 vlan 934 gpon 0/3/2 ont 55 gemport 200 multi-service 
+user-vlan 200 tag-transform translate
  service-port 2281 vlan 911 gpon 0/1/11 ont 2 gemport 200 multi-service 
 user-vlan 200 tag-transform translate
  service-port 2282 vlan 940 gpon 0/3/8 ont 16 gemport 200 multi-service 
+user-vlan 200 tag-transform translate
+ service-port 2283 vlan 926 gpon 0/2/10 ont 18 gemport 200 multi-service 
 user-vlan 200 tag-transform translate
  service-port 2284 vlan 926 gpon 0/2/10 ont 14 gemport 200 multi-service 
 user-vlan 200 tag-transform translate
@@ -11303,29 +11337,72 @@ user-vlan 200 tag-transform translate
  service-port 2286 vlan 912 gpon 0/1/12 ont 7 gemport 1 multi-service user-vlan 200 tag-transform translate
  service-port 2287 vlan 907 gpon 0/1/7 ont 46 gemport 200 multi-service 
 user-vlan 200 tag-transform translate
+ service-port 2288 vlan 910 gpon 0/1/10 ont 18 gemport 200 multi-service 
+user-vlan 200 tag-transform translate
  service-port 2289 vlan 914 gpon 0/1/14 ont 22 gemport 200 multi-service 
 user-vlan 200 tag-transform translate
  service-port 2290 vlan 918 gpon 0/2/2 ont 57 gemport 200 multi-service 
 user-vlan 200 tag-transform translate
+ service-port 2291 vlan 934 gpon 0/3/2 ont 32 gemport 200 multi-service 
+user-vlan 200 tag-transform translate
  service-port 2292 vlan 925 gpon 0/2/9 ont 54 gemport 200 multi-service 
+user-vlan 200 tag-transform translate
+ service-port 2293 vlan 920 gpon 0/2/4 ont 11 gemport 200 multi-service 
+user-vlan 200 tag-transform translate
+ service-port 2294 vlan 927 gpon 0/2/11 ont 26 gemport 200 multi-service 
 user-vlan 200 tag-transform translate
  service-port 2295 vlan 927 gpon 0/2/11 ont 22 gemport 200 multi-service 
 user-vlan 200 tag-transform translate
+ service-port 2297 vlan 922 gpon 0/2/6 ont 40 gemport 200 multi-service 
+user-vlan 200 tag-transform translate
  service-port 2298 vlan 941 gpon 0/3/9 ont 25 gemport 200 multi-service 
+user-vlan 200 tag-transform translate
+ service-port 2299 vlan 906 gpon 0/1/6 ont 49 gemport 200 multi-service 
 user-vlan 200 tag-transform translate
  service-port 2300 vlan 941 gpon 0/3/9 ont 24 gemport 200 multi-service 
 user-vlan 200 tag-transform translate
  service-port 2301 vlan 945 gpon 0/3/13 ont 6 gemport 200 multi-service 
 user-vlan 200 tag-transform translate
+ service-port 2302 vlan 929 gpon 0/2/13 ont 63 gemport 200 multi-service 
+user-vlan 200 tag-transform translate
  service-port 2303 vlan 908 gpon 0/1/8 ont 10 gemport 200 multi-service 
+user-vlan 200 tag-transform translate
+ service-port 2304 vlan 926 gpon 0/2/10 ont 2 gemport 200 multi-service 
+user-vlan 200 tag-transform translate
+ service-port 2305 vlan 947 gpon 0/3/15 ont 14 gemport 200 multi-service 
+user-vlan 200 tag-transform translate
+ service-port 2306 vlan 905 gpon 0/1/5 ont 98 gemport 200 multi-service 
+user-vlan 200 tag-transform translate
+ service-port 2307 vlan 902 gpon 0/1/2 ont 1 gemport 200 multi-service user-vlan 200 tag-transform translate
+ service-port 2308 vlan 918 gpon 0/2/2 ont 99 gemport 200 multi-service 
 user-vlan 200 tag-transform translate
  service-port 2309 vlan 927 gpon 0/2/11 ont 41 gemport 200 multi-service 
 user-vlan 200 tag-transform translate
  service-port 2310 vlan 927 gpon 0/2/11 ont 90 gemport 200 multi-service 
 user-vlan 200 tag-transform translate
+ service-port 2311 vlan 906 gpon 0/1/6 ont 56 gemport 200 multi-service 
+user-vlan 200 tag-transform translate
+ service-port 2312 vlan 929 gpon 0/2/13 ont 48 gemport 200 multi-service 
+user-vlan 200 tag-transform translate
+ service-port 2313 vlan 942 gpon 0/3/10 ont 45 gemport 200 multi-service 
+user-vlan 200 tag-transform translate
+ service-port 2314 vlan 946 gpon 0/3/14 ont 11 gemport 200 multi-service 
+user-vlan 200 tag-transform translate
+ service-port 2315 vlan 932 gpon 0/3/0 ont 22 gemport 200 multi-service 
+user-vlan 200 tag-transform translate
+ service-port 2316 vlan 916 gpon 0/2/0 ont 58 gemport 200 multi-service 
+user-vlan 200 tag-transform translate
  service-port 2317 vlan 912 gpon 0/1/12 ont 52 gemport 200 multi-service 
 user-vlan 200 tag-transform translate
+ service-port 2318 vlan 928 gpon 0/2/12 ont 2 gemport 200 multi-service 
+user-vlan 200 tag-transform translate
+ service-port 2319 vlan 950 gpon 0/4/2 ont 11 gemport 200 multi-service 
+user-vlan 200 tag-transform translate
  service-port 2320 vlan 908 gpon 0/1/8 ont 94 gemport 200 multi-service 
+user-vlan 200 tag-transform translate
+ service-port 2321 vlan 934 gpon 0/3/2 ont 31 gemport 200 multi-service 
+user-vlan 200 tag-transform translate
+ service-port 2322 vlan 926 gpon 0/2/10 ont 24 gemport 200 multi-service 
 user-vlan 200 tag-transform translate
  service-port 2323 vlan 926 gpon 0/2/10 ont 25 gemport 200 multi-service 
 user-vlan 200 tag-transform translate
@@ -11374,8 +11451,6 @@ user-vlan 200 tag-transform translate
  service-port 2367 vlan 917 gpon 0/2/1 ont 78 gemport 200 multi-service 
 user-vlan 200 tag-transform translate
  service-port 2368 vlan 920 gpon 0/2/4 ont 29 gemport 200 multi-service 
-user-vlan 200 tag-transform translate
- service-port 2370 vlan 910 gpon 0/1/10 ont 72 gemport 200 multi-service 
 user-vlan 200 tag-transform translate
  service-port 2372 vlan 903 gpon 0/1/3 ont 47 gemport 200 multi-service 
 user-vlan 200 tag-transform translate
@@ -11513,8 +11588,6 @@ user-vlan 200 tag-transform translate
 user-vlan 200 tag-transform translate
  service-port 2496 vlan 926 gpon 0/2/10 ont 32 gemport 200 multi-service 
 user-vlan 200 tag-transform translate
- service-port 2497 vlan 929 gpon 0/2/13 ont 48 gemport 200 multi-service 
-user-vlan 200 tag-transform translate
  service-port 2498 vlan 917 gpon 0/2/1 ont 70 gemport 200 multi-service 
 user-vlan 200 tag-transform translate
  service-port 2502 vlan 931 gpon 0/2/15 ont 4 gemport 200 multi-service 
@@ -11570,8 +11643,6 @@ user-vlan 200 tag-transform translate
  service-port 2537 vlan 928 gpon 0/2/12 ont 25 gemport 1 multi-service user-vlan 200 tag-transform translate
  service-port 2538 vlan 931 gpon 0/2/15 ont 31 gemport 200 multi-service 
 user-vlan 200 tag-transform translate
- service-port 2539 vlan 926 gpon 0/2/10 ont 7 gemport 200 multi-service 
-user-vlan 200 tag-transform translate
  service-port 2540 vlan 910 gpon 0/1/10 ont 4 gemport 1 multi-service user-vlan 200 tag-transform translate
  service-port 2542 vlan 922 gpon 0/2/6 ont 31 gemport 200 multi-service 
 user-vlan 200 tag-transform translate
@@ -11584,8 +11655,6 @@ user-vlan 200 tag-transform translate
  service-port 2546 vlan 925 gpon 0/2/9 ont 2 gemport 200 multi-service user-vlan 200 tag-transform translate
  service-port 2547 vlan 923 gpon 0/2/7 ont 23 gemport 1 multi-service user-vlan 200 tag-transform translate
  service-port 2548 vlan 926 gpon 0/2/10 ont 15 gemport 1 multi-service user-vlan 200 tag-transform translate
- service-port 2550 vlan 905 gpon 0/1/5 ont 56 gemport 200 multi-service 
-user-vlan 200 tag-transform translate
  service-port 2551 vlan 909 gpon 0/1/9 ont 22 gemport 200 multi-service 
 user-vlan 200 tag-transform translate
  service-port 2552 vlan 903 gpon 0/1/3 ont 27 gemport 1 multi-service user-vlan 200 tag-transform translate
@@ -11610,8 +11679,6 @@ user-vlan 200 tag-transform translate
  service-port 2567 vlan 909 gpon 0/1/9 ont 27 gemport 200 multi-service 
 user-vlan 200 tag-transform translate
  service-port 2568 vlan 902 gpon 0/1/2 ont 5 gemport 200 multi-service user-vlan 200 tag-transform translate
- service-port 2569 vlan 923 gpon 0/2/7 ont 41 gemport 200 multi-service 
-user-vlan 200 tag-transform translate
  service-port 2570 vlan 918 gpon 0/2/2 ont 20 gemport 200 multi-service 
 user-vlan 200 tag-transform translate
  service-port 2571 vlan 931 gpon 0/2/15 ont 13 gemport 200 multi-service 
@@ -11687,7 +11754,6 @@ user-vlan 200 tag-transform translate
  service-port 2634 vlan 938 gpon 0/3/6 ont 2 gemport 200 multi-service user-vlan 200 tag-transform translate
  service-port 2636 vlan 938 gpon 0/3/6 ont 4 gemport 200 multi-service user-vlan 200 tag-transform translate
  service-port 2637 vlan 938 gpon 0/3/6 ont 5 gemport 200 multi-service user-vlan 200 tag-transform translate
- service-port 2639 vlan 938 gpon 0/3/6 ont 6 gemport 200 multi-service user-vlan 200 tag-transform translate
  service-port 2640 vlan 924 gpon 0/2/8 ont 6 gemport 200 multi-service user-vlan 200 tag-transform translate
  service-port 2642 vlan 938 gpon 0/3/6 ont 7 gemport 200 multi-service user-vlan 200 tag-transform translate
  service-port 2644 vlan 905 gpon 0/1/5 ont 30 gemport 200 multi-service 
@@ -11714,8 +11780,6 @@ user-vlan 200 tag-transform translate
  service-port 2674 vlan 937 gpon 0/3/5 ont 15 gemport 200 multi-service 
 user-vlan 200 tag-transform translate
  service-port 2676 vlan 937 gpon 0/3/5 ont 19 gemport 200 multi-service 
-user-vlan 200 tag-transform translate
- service-port 2677 vlan 937 gpon 0/3/5 ont 21 gemport 200 multi-service 
 user-vlan 200 tag-transform translate
  service-port 2680 vlan 932 gpon 0/3/0 ont 14 gemport 1 multi-service user-vlan 200 tag-transform translate
  service-port 2681 vlan 932 gpon 0/3/0 ont 15 gemport 1 multi-service user-vlan 200 tag-transform translate
@@ -11749,10 +11813,7 @@ user-vlan 200 tag-transform translate
  service-port 2720 vlan 935 gpon 0/3/3 ont 2 gemport 200 multi-service user-vlan 200 tag-transform translate
  service-port 2721 vlan 936 gpon 0/3/4 ont 11 gemport 200 multi-service 
 user-vlan 200 tag-transform translate
- service-port 2722 vlan 936 gpon 0/3/4 ont 12 gemport 200 multi-service 
-user-vlan 200 tag-transform translate
  service-port 2723 vlan 935 gpon 0/3/3 ont 3 gemport 200 multi-service user-vlan 200 tag-transform translate
- service-port 2724 vlan 935 gpon 0/3/3 ont 4 gemport 200 multi-service user-vlan 200 tag-transform translate
  service-port 2730 vlan 938 gpon 0/3/6 ont 3 gemport 200 multi-service user-vlan 200 tag-transform translate
  service-port 2731 vlan 935 gpon 0/3/3 ont 5 gemport 200 multi-service user-vlan 200 tag-transform translate
  service-port 2732 vlan 935 gpon 0/3/3 ont 6 gemport 200 multi-service user-vlan 200 tag-transform translate
@@ -11858,10 +11919,6 @@ user-vlan 200 tag-transform translate
 user-vlan 200 tag-transform translate
  service-port 2822 vlan 934 gpon 0/3/2 ont 30 gemport 200 multi-service 
 user-vlan 200 tag-transform translate
- service-port 2823 vlan 934 gpon 0/3/2 ont 31 gemport 200 multi-service 
-user-vlan 200 tag-transform translate
- service-port 2824 vlan 934 gpon 0/3/2 ont 32 gemport 200 multi-service 
-user-vlan 200 tag-transform translate
  service-port 2826 vlan 934 gpon 0/3/2 ont 11 gemport 200 multi-service 
 user-vlan 200 tag-transform translate
  service-port 2827 vlan 934 gpon 0/3/2 ont 34 gemport 200 multi-service 
@@ -11915,8 +11972,6 @@ user-vlan 200 tag-transform translate
 user-vlan 200 tag-transform translate
  service-port 2868 vlan 934 gpon 0/3/2 ont 54 gemport 200 multi-service 
 user-vlan 200 tag-transform translate
- service-port 2869 vlan 934 gpon 0/3/2 ont 55 gemport 200 multi-service 
-user-vlan 200 tag-transform translate
  service-port 2870 vlan 925 gpon 0/2/9 ont 13 gemport 200 multi-service 
 user-vlan 200 tag-transform translate
  service-port 2871 vlan 933 gpon 0/3/1 ont 16 gemport 200 multi-service 
@@ -11948,8 +12003,6 @@ user-vlan 200 tag-transform translate
  service-port 2888 vlan 934 gpon 0/3/2 ont 56 gemport 200 multi-service 
 user-vlan 200 tag-transform translate
  service-port 2889 vlan 933 gpon 0/3/1 ont 32 gemport 200 multi-service 
-user-vlan 200 tag-transform translate
- service-port 2890 vlan 933 gpon 0/3/1 ont 33 gemport 200 multi-service 
 user-vlan 200 tag-transform translate
  service-port 2892 vlan 933 gpon 0/3/1 ont 35 gemport 200 multi-service 
 user-vlan 200 tag-transform translate
@@ -12028,8 +12081,6 @@ user-vlan 200 tag-transform translate
  service-port 2952 vlan 944 gpon 0/3/12 ont 6 gemport 200 multi-service 
 user-vlan 200 tag-transform translate
  service-port 2953 vlan 907 gpon 0/1/7 ont 0 gemport 200 multi-service user-vlan 200 tag-transform translate
- service-port 2959 vlan 920 gpon 0/2/4 ont 11 gemport 200 multi-service 
-user-vlan 200 tag-transform translate
  service-port 2960 vlan 925 gpon 0/2/9 ont 28 gemport 200 multi-service 
 user-vlan 200 tag-transform translate
  service-port 2962 vlan 944 gpon 0/3/12 ont 7 gemport 200 multi-service 
@@ -12269,8 +12320,6 @@ user-vlan 200 tag-transform translate
 user-vlan 200 tag-transform translate
  service-port 3210 vlan 949 gpon 0/4/1 ont 12 gemport 200 multi-service 
 user-vlan 200 tag-transform translate
- service-port 3213 vlan 949 gpon 0/4/1 ont 14 gemport 200 multi-service 
-user-vlan 200 tag-transform translate
  service-port 3214 vlan 949 gpon 0/4/1 ont 13 gemport 200 multi-service 
 user-vlan 200 tag-transform translate
  service-port 3215 vlan 949 gpon 0/4/1 ont 15 gemport 200 multi-service 
@@ -12379,7 +12428,6 @@ user-vlan 200 tag-transform translate
 user-vlan 200 tag-transform translate
  service-port 3326 vlan 933 gpon 0/3/1 ont 37 gemport 200 multi-service 
 user-vlan 200 tag-transform translate
- service-port 3327 vlan 903 gpon 0/1/3 ont 4 gemport 200 multi-service user-vlan 200 tag-transform translate
  service-port 3328 vlan 926 gpon 0/2/10 ont 38 gemport 200 multi-service 
 user-vlan 200 tag-transform translate
  service-port 3329 vlan 931 gpon 0/2/15 ont 8 gemport 200 multi-service 
@@ -12798,8 +12846,6 @@ user-vlan 200 tag-transform translate
 user-vlan 200 tag-transform translate
  service-port 3702 vlan 903 gpon 0/1/3 ont 20 gemport 200 multi-service 
 user-vlan 200 tag-transform translate
- service-port 3705 vlan 917 gpon 0/2/1 ont 38 gemport 200 multi-service 
-user-vlan 200 tag-transform translate
  service-port 3706 vlan 924 gpon 0/2/8 ont 65 gemport 200 multi-service 
 user-vlan 200 tag-transform translate
  service-port 3707 vlan 904 gpon 0/1/4 ont 98 gemport 200 multi-service 
@@ -12808,8 +12854,6 @@ user-vlan 200 tag-transform translate
 user-vlan 200 tag-transform translate
  service-port 3711 vlan 921 gpon 0/2/5 ont 6 gemport 200 multi-service user-vlan 200 tag-transform translate
  service-port 3712 vlan 944 gpon 0/3/12 ont 12 gemport 200 multi-service 
-user-vlan 200 tag-transform translate
- service-port 3713 vlan 916 gpon 0/2/0 ont 58 gemport 200 multi-service 
 user-vlan 200 tag-transform translate
  service-port 3714 vlan 913 gpon 0/1/13 ont 29 gemport 200 multi-service 
 user-vlan 200 tag-transform translate
