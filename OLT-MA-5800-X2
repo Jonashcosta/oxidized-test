@@ -474,8 +474,8 @@ password "%#%#<bkD%gSNNNA<d>&}YOt$H`"NMn97Y"SrP9Rlz^S=T-@vDsbKL$bY.68K1dt~A+Y#~ 
  ont wan-config 1 7 ip-index 0 profile-id 10
  ont add 1 8 sn-auth "4857544323811075" omci ont-lineprofile-id 200 
 ont-srvprofile-id 199 desc "6326" 
- ont add 1 9 sn-auth "48575443B8D4A479" omci ont-lineprofile-id 200 
-ont-srvprofile-id 199 desc "adriano@mare" 
+ ont add 1 9 sn-auth "54504C475DDB7658" omci ont-lineprofile-id 200 
+ont-srvprofile-id 200 desc "4229 - adriano@mare" 
  ont add 1 10 sn-auth "48575443F217F4A7" omci ont-lineprofile-id 200 
 ont-srvprofile-id 200 desc "6722" 
  ont add 1 11 sn-auth "49544253F1944C7B" omci ont-lineprofile-id 200 
@@ -2229,7 +2229,6 @@ ont-srvprofile-id 200 desc "9257 - 9257"
  ont port route 1 7 eth 3 enable
  ont port route 1 7 eth 4 enable
  ont port native-vlan 1 8 eth 1 vlan 200 priority 0 
- ont port native-vlan 1 9 eth 1 vlan 200 priority 0 
  ont port native-vlan 1 11 eth 1 vlan 200 priority 0 
  ont port native-vlan 1 12 eth 1 vlan 200 priority 0 
  ont port native-vlan 1 14 eth 1 vlan 200 priority 0 
@@ -2912,7 +2911,6 @@ user-vlan 200 tag-transform translate
 user-vlan 200 tag-transform translate
  service-port 248 vlan 1008 gpon 0/1/8 ont 8 gemport 200 multi-service user-vlan 200 tag-transform translate
  service-port 249 vlan 1002 gpon 0/1/2 ont 8 gemport 200 multi-service user-vlan 200 tag-transform translate
- service-port 250 vlan 1001 gpon 0/1/1 ont 9 gemport 200 multi-service user-vlan 200 tag-transform translate
  service-port 251 vlan 1005 gpon 0/1/5 ont 16 gemport 200 multi-service 
 user-vlan 200 tag-transform translate
  service-port 252 vlan 1009 gpon 0/1/9 ont 21 gemport 200 multi-service 
@@ -4293,6 +4291,8 @@ user-vlan 200 tag-transform translate
  service-port 1173 vlan 1000 gpon 0/1/0 ont 39 gemport 200 multi-service 
 user-vlan 200 tag-transform translate
  service-port 1174 vlan 1000 gpon 0/1/0 ont 40 gemport 200 multi-service 
+user-vlan 200 tag-transform translate
+ service-port 1175 vlan 1001 gpon 0/1/1 ont 9 gemport 200 multi-service 
 user-vlan 200 tag-transform translate
 #
 [autobackup-config]
