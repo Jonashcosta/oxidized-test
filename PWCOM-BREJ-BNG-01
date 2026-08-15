@@ -61,8 +61,8 @@
 # 14       CLK     Present    Registered   Normal     OTHER  0      Master       
 # -------------------------------------------------------------------------------
 !Software Version V800R023C10SPC500
-!Last configuration was updated at 2026-07-13 13:54:13-03:00 by pwcomadmin
-!Last configuration was saved at 2026-07-13 15:08:13-03:00 by pwcomadmin
+!Last configuration was updated at 2026-08-07 17:46:23-03:00 by pwcomadmin
+!Last configuration was saved at 2026-08-07 17:47:23-03:00
 !kms_feature --
 #
 clock timezone BR minus 03:00:00
@@ -604,6 +604,9 @@ ipv6 prefix pppoe-01-v6-pd-ma delegation
  reserved prefix mac lease
  pd-unshare-only
 #
+ipv6 prefix free-wifi-01-v6 local
+ prefix 2804:5A10:100::/48
+#
 ipv6 pool bloqueiov6pd bas delegation
  dns-server 2001:4860:4860::8888
  prefix bloqueiov6pd
@@ -611,6 +614,10 @@ ipv6 pool bloqueiov6pd bas delegation
 ipv6 pool bloqueiov6prefix bas local
  dns-server 2001:4860:4860::8888
  prefix bloqueiov6prefix
+#
+ipv6 pool free-wifi-01-v6 bas local
+ dns-server 2804:5A10:701:1::2 2804:5A10:E30::2
+ prefix free-wifi-01-v6
 #
 ipv6 pool pool_aviso_bloqueio_ipv6 bas delegation
  prefix pre-pool_aviso_bloqueio_ipv6
@@ -747,8 +754,9 @@ acl number 6011
  rule 10 permit ip source source-pool SRCPBR-PBR-FREEWIFI-BYPASS
 #
 acl number 6012
- rule 5 permit ip source user-group freewifi-cgnat
- rule 10 permit ip destination user-group freewifi-cgnat
+ description EXCECAO-FREEWIFI-CGNAT
+ rule 5 permit ip source user-group freewifi-cgnat destination ip-address 10.125.50.164 0
+ rule 10 permit ip source user-group freewifi-cgnat destination ip-address 45.171.228.0 0.0.1.255
 #
 acl number 7000
  description CAMERA
@@ -786,6 +794,10 @@ acl name IPS-PRIVADOS-TO-IPS-EXCECAO ucl
  rule 65 permit ip source source-pool SRCPBR-PBR-FREEWIFI-BYPASS destination destination-pool SRCPBR-PBR-FREEWIFI-BYPASS
  rule 100 permit ip source source-pool SOURCE-PBR destination ip-address 45.171.228.0 0.0.1.255
 #
+acl ipv6 number 6102
+ rule 10 permit ipv6 source user-group freewifi
+ rule 20 permit ipv6 destination user-group freewifi
+#
 dhcpv6 duid 000100018c7fbeaf002ec7dfcc12
 dhcpv6 source-ip-address format adaptive enable
 #
@@ -796,6 +808,9 @@ traffic classifier BYPASS-V4 operator and
 #
 traffic classifier CGNAT-PERMIT operator or
  if-match acl 6011 precedence 1
+#
+traffic classifier CL-EXCECAO-FREEWIFI-CGNAT operator or
+ if-match acl 6012 precedence 1
 #
 traffic classifier CL-IPS-PRIVADOS-TO-IPS-EXCECAO operator or
  if-match acl name IPS-PRIVADOS-TO-IPS-EXCECAO precedence 1
@@ -829,6 +844,7 @@ traffic classifier tc8 operator or
 #
 traffic classifier web-deny operator or
  if-match acl 6002 precedence 1
+ if-match ipv6 acl 6102 precedence 2
 #
 traffic classifier web-permit operator or
  if-match acl 6000 precedence 1
@@ -858,6 +874,8 @@ traffic behavior PBR-RB-CGNAT
 #
 traffic behavior PERMIT
 #
+traffic behavior TB-EXCECAO-FREEWIFI-CGNAT
+#
 traffic behavior TB-IPS-PRIVADOS-TO-IPS-EXCECAO
 #
 traffic behavior no-limit-QOS
@@ -884,6 +902,7 @@ traffic behavior web-redirect
 traffic policy CLIENTES
  share-mode
  classifier CL-IPS-PRIVADOS-TO-IPS-EXCECAO behavior TB-IPS-PRIVADOS-TO-IPS-EXCECAO precedence 25
+ classifier CL-EXCECAO-FREEWIFI-CGNAT behavior TB-EXCECAO-FREEWIFI-CGNAT precedence 26
  classifier CLIENTES behavior CLIENTES precedence 101
  classifier PBR-FREE-WIFI behavior PBR-FREE-WIFI-TB1 precedence 195
  classifier web-permit behavior web-permit precedence 200
@@ -1216,8 +1235,11 @@ aaa
   authentication-scheme freewifi
   accounting-scheme freewifi
   ip-pool free-wifi
+  ipv6-pool free-wifi-01-v6
   dns primary-ip 45.171.229.14
   dns second-ip 45.171.228.19
+  dns primary-ipv6 2804:5A10:701:1::2
+  dns second-ipv6 2804:5A10:E30::2
   user-group freewifi
   web-server url https://freewifi.powercomnetwork.com.br/clientes bind web-auth-server 10.125.50.164
   web-server redirect-key user-mac-address usermac simple
@@ -1741,6 +1763,9 @@ interface Eth-Trunk0.701
  #
   access-type layer2-subscriber default-domain pre-authentication freewificlientes authentication freewifi-radius-redirect
   authentication-method ppp web
+  authentication-method-ipv6 ppp web
+  ipv6-trigger
+  nd-trigger
  #
 #
 interface Eth-Trunk0.702
@@ -1755,6 +1780,9 @@ interface Eth-Trunk0.702
   access-type layer2-subscriber default-domain pre-authentication freewifivoucher authentication freewifi-radius-redirect
   authentication-method ppp web
  #
+#
+interface Eth-Trunk0.703 mode l2
+ description L2TPv3-APs
 #
 interface Eth-Trunk0.725
  vlan-type dot1q 725
