@@ -10,6 +10,12 @@
 #   installed-version: 6.48.3
 # Flags: U - undoable, R - redoable, F - floating-undo
 #   ACTION                                   BY               POLICY
+# U filter rule moved                        pwcomadmin       write
+# U filter rule added                        pwcomadmin       write
+# U device changed                           pwcomadmin       write
+# U device changed                           pwcomadmin       write
+# U device changed                           pwcomadmin       write
+# U device changed                           pwcomadmin       write
 # 
 # software id = V6EN-BL30
 #
@@ -87,6 +93,7 @@ add address=45.171.229.18 list=DNS
 add address=45.171.228.19 list=DNS
 add address=192.168.81.0 list=ACESSO
 /ip firewall filter
+add action=fasttrack-connection chain=forward connection-state=established,related
 add action=drop chain=forward disabled=yes dst-address=172.16.198.0/26 src-address=10.60.0.0/22
 add action=drop chain=forward disabled=yes dst-address=10.56.0.0/24 src-address=10.60.0.0/22
 add action=drop chain=input dst-port=53 in-interface=sfp1 protocol=tcp src-address-list=!ACESSO
