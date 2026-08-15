@@ -449,6 +449,8 @@ ont-srvprofile-id 200 desc "9803 - 9803"
 ont-srvprofile-id 200 desc "9810 - 9810" 
  ont add 0 39 sn-auth "54504C475DDB6D40" omci ont-lineprofile-id 200 
 ont-srvprofile-id 200 desc "9784 - 9784" 
+ ont add 0 40 sn-auth "54504C475DDB8740" omci ont-lineprofile-id 200 
+ont-srvprofile-id 200 desc "9836 - 9836" 
  ont add 1 0 sn-auth "48575443232721A3" omci ont-lineprofile-id 200 
 ont-srvprofile-id 200 desc "5871" 
  ont add 1 1 sn-auth "48575443122CB9A5" omci ont-lineprofile-id 200 
@@ -4289,6 +4291,8 @@ user-vlan 200 tag-transform translate
  service-port 1172 vlan 1004 gpon 0/1/4 ont 52 gemport 200 multi-service 
 user-vlan 200 tag-transform translate
  service-port 1173 vlan 1000 gpon 0/1/0 ont 39 gemport 200 multi-service 
+user-vlan 200 tag-transform translate
+ service-port 1174 vlan 1000 gpon 0/1/0 ont 40 gemport 200 multi-service 
 user-vlan 200 tag-transform translate
 #
 [autobackup-config]
