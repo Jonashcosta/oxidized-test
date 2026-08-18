@@ -171,6 +171,8 @@ ont-srvprofile-id 200 desc "8817 - knannnz"
 ont-srvprofile-id 200 desc "9606 - 9606" 
  ont add 0 8 sn-auth "54504C47F1C182F0" omci ont-lineprofile-id 200 
 ont-srvprofile-id 200 desc "9667 - 9667" 
+ ont add 0 9 sn-auth "46485454FE27E220" omci ont-lineprofile-id 200 
+ont-srvprofile-id 200 desc "9032 - 9032" 
  ont add 1 0 sn-auth "54504C470D2FB368" omci ont-lineprofile-id 200 
 ont-srvprofile-id 200 desc "9472 - 9472" 
  ont add 1 1 sn-auth "5A5445479B030774" omci ont-lineprofile-id 200 
@@ -271,6 +273,8 @@ ont-srvprofile-id 200 desc "6793 - 6793"
 ont-srvprofile-id 199 desc "2054 - 2054" 
  ont add 1 49 sn-auth "54504C47D18BE180" omci ont-lineprofile-id 200 
 ont-srvprofile-id 200 desc "8411 - 8411" 
+ ont add 1 50 sn-auth "54504C475DDB8330" omci ont-lineprofile-id 200 
+ont-srvprofile-id 200 desc "9851 - 9851" 
  ont add 1 51 sn-auth "53553130B203826B" omci ont-lineprofile-id 200 
 ont-srvprofile-id 199 desc "1893 - 1893" 
  ont add 1 52 sn-auth "54504C478E8E7C30" omci ont-lineprofile-id 200 
@@ -563,8 +567,6 @@ ont-srvprofile-id 199 desc "2717 - 2717"
 ont-srvprofile-id 199 desc "2424 - 2424" 
  ont add 5 33 sn-auth "54504C478E8D90D8" omci ont-lineprofile-id 200 
 ont-srvprofile-id 200 desc "2163 - 2163" 
- ont add 5 34 sn-auth "46485454FE27E220" omci ont-lineprofile-id 200 
-ont-srvprofile-id 200 desc "9032 - 9032" 
  ont add 5 35 sn-auth "53554D43B29E4D7C" omci ont-lineprofile-id 200 
 ont-srvprofile-id 199 desc "2147 - jeffersonlopes" 
  ont add 5 36 sn-auth "44443732E62134B9" omci ont-lineprofile-id 200 
@@ -1057,8 +1059,10 @@ user-vlan 200 tag-transform translate
  service-port 13 vlan 1215 gpon 0/1/14 ont 0 gemport 200 multi-service user-vlan 200 tag-transform translate
  service-port 14 vlan 1216 gpon 0/1/15 ont 11 gemport 200 multi-service 
 user-vlan 200 tag-transform translate
+ service-port 15 vlan 1202 gpon 0/1/1 ont 50 gemport 200 multi-service user-vlan 200 tag-transform translate
  service-port 16 vlan 1216 gpon 0/1/15 ont 12 gemport 200 multi-service 
 user-vlan 200 tag-transform translate
+ service-port 17 vlan 1201 gpon 0/1/0 ont 9 gemport 200 multi-service user-vlan 200 tag-transform translate
  service-port 19 vlan 1216 gpon 0/1/15 ont 14 gemport 200 multi-service 
 user-vlan 200 tag-transform translate
  service-port 20 vlan 1216 gpon 0/1/15 ont 15 gemport 200 multi-service 
@@ -1509,8 +1513,6 @@ user-vlan 200 tag-transform translate
  service-port 390 vlan 1207 gpon 0/1/6 ont 10 gemport 200 multi-service 
 user-vlan 200 tag-transform translate
  service-port 391 vlan 1207 gpon 0/1/6 ont 47 gemport 200 multi-service 
-user-vlan 200 tag-transform translate
- service-port 392 vlan 1206 gpon 0/1/5 ont 34 gemport 200 multi-service 
 user-vlan 200 tag-transform translate
  service-port 396 vlan 1205 gpon 0/1/4 ont 24 gemport 200 multi-service 
 user-vlan 200 tag-transform translate
