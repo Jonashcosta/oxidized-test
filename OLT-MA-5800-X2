@@ -1044,6 +1044,8 @@ ont-srvprofile-id 200 desc "9008 - 9008"
 ont-srvprofile-id 200 desc "9228 - 9228" 
  ont add 5 62 sn-auth "54504C47D1A4AA60" omci ont-lineprofile-id 200 
 ont-srvprofile-id 200 desc "9244 - 9244" 
+ ont add 5 63 sn-auth "54504C475DDB6DE8" omci ont-lineprofile-id 200 
+ont-srvprofile-id 200 desc "9835 - 9835" 
  ont add 6 0 sn-auth "48575443EB741823" omci ont-lineprofile-id 200 
 ont-srvprofile-id 199 desc "4667" 
  ont add 6 1 sn-auth "48575443134F565F" omci ont-lineprofile-id 200 
@@ -2595,6 +2597,7 @@ ont-srvprofile-id 200 desc "9257 - 9257"
  ont port native-vlan 15 38 eth 1 vlan 200 priority 0 
  ont port native-vlan 15 39 eth 1 vlan 200 priority 0 
  ont port native-vlan 15 44 eth 1 vlan 200 priority 0 
+ ont port native-vlan 15 53 eth 1 vlan 200 priority 0 
 #
 [platform-config]
   <platform-config>
@@ -4297,6 +4300,8 @@ user-vlan 200 tag-transform translate
  service-port 1175 vlan 1001 gpon 0/1/1 ont 9 gemport 200 multi-service 
 user-vlan 200 tag-transform translate
  service-port 1176 vlan 1004 gpon 0/1/4 ont 53 gemport 200 multi-service 
+user-vlan 200 tag-transform translate
+ service-port 1177 vlan 1005 gpon 0/1/5 ont 63 gemport 200 multi-service 
 user-vlan 200 tag-transform translate
 #
 [autobackup-config]
