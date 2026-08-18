@@ -265,7 +265,7 @@ ont-srvprofile-id 200 desc "815 - 815"
 ont-srvprofile-id 199 desc "2721 - mariasales@lgpedras" 
  ont add 1 46 sn-auth "54504C47CEAF1CB8" omci ont-lineprofile-id 200 
 ont-srvprofile-id 200 desc "CLIENTE LP" 
- ont add 1 47 sn-auth "54504C47F1C183D8" omci ont-lineprofile-id 200 
+ ont add 1 47 sn-auth "54504C475DDB7B30" omci ont-lineprofile-id 200 
 ont-srvprofile-id 200 desc "6793 - 6793" 
  ont add 1 48 sn-auth "53554D43B29F375C" omci ont-lineprofile-id 200 
 ont-srvprofile-id 199 desc "2054 - 2054" 
@@ -1042,6 +1042,7 @@ ont-srvprofile-id 200 desc "9522 - 9522"
   <bbs-config>
  service-port 0 vlan 1206 gpon 0/1/5 ont 41 gemport 200 multi-service user-vlan 200 tag-transform translate
  service-port 1 vlan 1208 gpon 0/1/7 ont 28 gemport 200 multi-service user-vlan 200 tag-transform translate
+ service-port 2 vlan 1202 gpon 0/1/1 ont 47 gemport 200 multi-service user-vlan 200 tag-transform translate
  service-port 3 vlan 1216 gpon 0/1/15 ont 1 gemport 200 multi-service user-vlan 200 tag-transform translate
  service-port 4 vlan 1216 gpon 0/1/15 ont 2 gemport 200 multi-service user-vlan 200 tag-transform translate
  service-port 5 vlan 1216 gpon 0/1/15 ont 3 gemport 200 multi-service user-vlan 200 tag-transform translate
@@ -1585,8 +1586,6 @@ user-vlan 200 tag-transform translate
  service-port 442 vlan 1203 gpon 0/1/2 ont 15 gemport 200 multi-service 
 user-vlan 200 tag-transform translate
  service-port 443 vlan 1207 gpon 0/1/6 ont 31 gemport 200 multi-service 
-user-vlan 200 tag-transform translate
- service-port 444 vlan 1202 gpon 0/1/1 ont 47 gemport 200 multi-service 
 user-vlan 200 tag-transform translate
  service-port 445 vlan 1208 gpon 0/1/7 ont 7 gemport 200 multi-service user-vlan 200 tag-transform translate
  service-port 446 vlan 1201 gpon 0/1/0 ont 8 gemport 200 multi-service user-vlan 200 tag-transform translate
