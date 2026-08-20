@@ -14,8 +14,8 @@
 # 14       CLK     Present    Registered   Normal     OTHER  0      Master       
 # -------------------------------------------------------------------------------
 !Software Version V800R023C10SPC500
-!Last configuration was updated at 2026-08-10 18:15:06-03:00 by pwcomadmin
-!Last configuration was saved at 2026-08-10 18:20:07-03:00
+!Last configuration was updated at 2026-08-19 16:53:55-03:00 by pwcomadmin
+!Last configuration was saved at 2026-08-19 16:58:55-03:00
 !kms_feature --
 #
 sysname PWCOM-BREJ-BGP-01
@@ -699,6 +699,8 @@ ip as-path-filter ADTELECOM-LINKIP-PRIORIZA-PREFIXOS index 10 permit _65535$
 ip as-path-filter ADTELECOM-PRIORIZA-PREFIXOS index 10 permit _65535$
 ip as-path-filter ADTELECOM-PRIORIZA-PREFIXOS index 20 permit _58521$
 ip as-path-filter ADTELECOM-PRIORIZA-PREFIXOS index 30 permit _16509$
+ip as-path-filter ADTELECOM-PRIORIZA-PREFIXOS index 40 permit _53153$
+ip as-path-filter ADTELECOM-PRIORIZA-PREFIXOS index 50 permit _52965$
 ip as-path-filter AGRESTE-LINK-IP-AS267619-NEGA index 10 permit _65535$
 ip as-path-filter AGRESTE-LINK-IP-AS267619-PRIORIZA-PREFIXOS index 10 permit _65535$
 ip as-path-filter AGRESTE-LINK-IP-AS267619-PRIORIZA-PREFIXOS index 20 permit _267619$
