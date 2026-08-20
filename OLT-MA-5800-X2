@@ -902,6 +902,8 @@ ont-srvprofile-id 200 desc "4499 - 4499"
 ont-srvprofile-id 200 desc "9827 - 9827" 
  ont add 4 53 sn-auth "54504C475DDB8248" omci ont-lineprofile-id 200 
 ont-srvprofile-id 200 desc "9846 - 9846" 
+ ont add 4 54 sn-auth "54504C475DDB6FC8" omci ont-lineprofile-id 200 
+ont-srvprofile-id 200 desc "9853 - 9853" 
  ont add 5 0 sn-auth "48575443CA314CA5" omci ont-lineprofile-id 200 
 ont-srvprofile-id 200 desc "VINICIUS DE PAIVA DIAS" 
  ont add 5 1 sn-auth "48575443299503A3" omci ont-lineprofile-id 500 
@@ -1152,6 +1154,8 @@ ont-srvprofile-id 199 desc "Vaquejada"
 ont-srvprofile-id 200 desc "9744 - 9744" 
  ont add 6 52 sn-auth "54504C475DDB88D0" omci ont-lineprofile-id 200 
 ont-srvprofile-id 200 desc "9802 - 9802" 
+ ont add 6 53 sn-auth "54504C475DDA5280" omci ont-lineprofile-id 200 
+ont-srvprofile-id 200 desc "9852 - 9852" 
  ont add 7 0 sn-auth "54504C47B52398F1" omci ont-lineprofile-id 200 
 ont-srvprofile-id 199 desc "5848" 
  ont add 7 1 sn-auth "46485454FE27E9AC" omci ont-lineprofile-id 200 
@@ -1368,6 +1372,8 @@ ont-srvprofile-id 200 desc "9798 - 9798"
 ont-srvprofile-id 200 desc "9255 - 9255" 
  ont add 8 65 sn-auth "54504C475DDB8448" omci ont-lineprofile-id 200 
 ont-srvprofile-id 200 desc "9845 - 9845" 
+ ont add 8 66 sn-auth "54504C475DDB6EB8" omci ont-lineprofile-id 200 
+ont-srvprofile-id 200 desc "9842 - 9842" 
  ont add 9 0 sn-auth "48575443A80E69A5" omci ont-lineprofile-id 200 
 ont-srvprofile-id 200 desc "marcelo@mavm" 
  ont add 9 1 sn-auth "495442535F4540DF" omci ont-lineprofile-id 200 
@@ -4306,6 +4312,12 @@ user-vlan 200 tag-transform translate
  service-port 1177 vlan 1005 gpon 0/1/5 ont 63 gemport 200 multi-service 
 user-vlan 200 tag-transform translate
  service-port 1178 vlan 1008 gpon 0/1/8 ont 65 gemport 200 multi-service 
+user-vlan 200 tag-transform translate
+ service-port 1179 vlan 1008 gpon 0/1/8 ont 66 gemport 200 multi-service 
+user-vlan 200 tag-transform translate
+ service-port 1180 vlan 1004 gpon 0/1/4 ont 54 gemport 200 multi-service 
+user-vlan 200 tag-transform translate
+ service-port 1181 vlan 1006 gpon 0/1/6 ont 53 gemport 200 multi-service 
 user-vlan 200 tag-transform translate
 #
 [autobackup-config]
